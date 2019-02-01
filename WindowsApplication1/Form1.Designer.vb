@@ -22,9 +22,41 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
+        Me.btnSignUp = New System.Windows.Forms.Button()
+        Me.btnLogin = New System.Windows.Forms.Button()
+        Me.SuspendLayout()
+        '
+        'btnSignUp
+        '
+        Me.btnSignUp.Location = New System.Drawing.Point(503, 138)
+        Me.btnSignUp.Name = "btnSignUp"
+        Me.btnSignUp.Size = New System.Drawing.Size(191, 49)
+        Me.btnSignUp.TabIndex = 0
+        Me.btnSignUp.Text = "Sign Up"
+        Me.btnSignUp.UseVisualStyleBackColor = True
+        '
+        'btnLogin
+        '
+        Me.btnLogin.Location = New System.Drawing.Point(503, 207)
+        Me.btnLogin.Name = "btnLogin"
+        Me.btnLogin.Size = New System.Drawing.Size(191, 49)
+        Me.btnLogin.TabIndex = 1
+        Me.btnLogin.Text = "Login"
+        Me.btnLogin.UseVisualStyleBackColor = True
+        '
+        'Form1
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(981, 530)
+        Me.Controls.Add(Me.btnLogin)
+        Me.Controls.Add(Me.btnSignUp)
+        Me.Name = "Form1"
         Me.Text = "Form1"
+        Me.ResumeLayout(False)
+
     End Sub
+    Friend WithEvents btnSignUp As System.Windows.Forms.Button
+    Friend WithEvents btnLogin As System.Windows.Forms.Button
 
 End Class
