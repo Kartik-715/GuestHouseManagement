@@ -11,6 +11,8 @@ Public Class SignupForm1
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         If txtCaptcha.Text = str Then
+            UserTableBindingSource.EndEdit()
+            UserTableTableAdapter.Update(GuestHouseDataSet.userTable)
             MsgBox("Register Success")
             Me.Close()
         Else
@@ -21,6 +23,7 @@ Public Class SignupForm1
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
+        UserTableBindingSource.RemoveCurrent()
         Me.Close()
     End Sub
 
@@ -43,6 +46,9 @@ Public Class SignupForm1
     End Sub
 
     Private Sub SignupForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GuestHouseDataSet.userTable' table. You can move, or remove it, as needed.
+        Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)
+        UserTableBindingSource.AddNew()
         Dim NumCaptcha As String = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
         str = ""
         Dim R As New Random
