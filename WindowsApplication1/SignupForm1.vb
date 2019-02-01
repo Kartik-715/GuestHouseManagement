@@ -15,6 +15,8 @@ Public Class SignupForm1
             Me.Close()
         Else
             MsgBox("Register Failed")
+            btnRefresh.PerformClick()
+            txtCaptcha.Clear()
         End If
     End Sub
 
@@ -32,7 +34,7 @@ Public Class SignupForm1
         Dim b As New Bitmap(141, 36, Imaging.PixelFormat.Format32bppArgb)
         Dim g As Graphics = Graphics.FromImage(b)
         Dim Hb As New HatchBrush(HatchStyle.DottedDiamond, Color.FromArgb(255, 128, 0), Color.Black)
-        g.DrawString(str, New Font("Curlz MT", 16, FontStyle.Strikeout, GraphicsUnit.Point), Brushes.White, 5, 5)
+        g.DrawString(str, New Font("Monotype Corsiva", 16, FontStyle.Strikeout, GraphicsUnit.Point), Brushes.White, 5, 5)
         picCaptcha.Image = b
     End Sub
 
@@ -50,7 +52,7 @@ Public Class SignupForm1
         Dim b As New Bitmap(141, 36, Imaging.PixelFormat.Format32bppArgb)
         Dim g As Graphics = Graphics.FromImage(b)
         Dim Hb As New HatchBrush(HatchStyle.DottedDiamond, Color.FromArgb(255, 128, 0), Color.Black)
-        g.DrawString(str, New Font("Curlz MT", 16, FontStyle.Strikeout, GraphicsUnit.Point), Brushes.White, 5, 5)
+        g.DrawString(str, New Font("Monotype Corsiva", 16, FontStyle.Strikeout, GraphicsUnit.Point), Brushes.White, 5, 5)
         picCaptcha.Image = b
     End Sub
 End Class
