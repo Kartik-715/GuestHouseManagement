@@ -28,21 +28,23 @@ Partial Class Form1
         '
         'btnSignUp
         '
+        Me.btnSignUp.BackColor = System.Drawing.Color.Transparent
         Me.btnSignUp.Location = New System.Drawing.Point(787, 2)
         Me.btnSignUp.Name = "btnSignUp"
         Me.btnSignUp.Size = New System.Drawing.Size(191, 49)
         Me.btnSignUp.TabIndex = 0
         Me.btnSignUp.Text = "Sign Up"
-        Me.btnSignUp.UseVisualStyleBackColor = True
+        Me.btnSignUp.UseVisualStyleBackColor = False
         '
         'btnLogin
         '
+        Me.btnLogin.BackColor = System.Drawing.Color.Transparent
         Me.btnLogin.Location = New System.Drawing.Point(787, 57)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(191, 49)
         Me.btnLogin.TabIndex = 1
         Me.btnLogin.Text = "Login"
-        Me.btnLogin.UseVisualStyleBackColor = True
+        Me.btnLogin.UseVisualStyleBackColor = False
         '
         'Form1
         '
