@@ -31,7 +31,6 @@ Partial Class SignupForm1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SignupForm1))
-        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
@@ -40,22 +39,14 @@ Partial Class SignupForm1
         Me.Cancel = New System.Windows.Forms.Button()
         Me.txtConfirmPassword = New System.Windows.Forms.TextBox()
         Me.lblConfirmPassword = New System.Windows.Forms.Label()
-        Me.picCaptcha = New System.Windows.Forms.PictureBox()
         Me.lblCaptcha = New System.Windows.Forms.Label()
-        Me.btnRefresh = New System.Windows.Forms.Button()
         Me.txtCaptcha = New System.Windows.Forms.TextBox()
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.picCaptcha = New System.Windows.Forms.PictureBox()
+        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'LogoPictureBox
-        '
-        Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
-        Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
-        Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(165, 318)
-        Me.LogoPictureBox.TabIndex = 0
-        Me.LogoPictureBox.TabStop = False
         '
         'lblUsername
         '
@@ -124,14 +115,6 @@ Partial Class SignupForm1
         Me.lblConfirmPassword.Text = "&Confirm Password"
         Me.lblConfirmPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'picCaptcha
-        '
-        Me.picCaptcha.Location = New System.Drawing.Point(237, 195)
-        Me.picCaptcha.Name = "picCaptcha"
-        Me.picCaptcha.Size = New System.Drawing.Size(141, 36)
-        Me.picCaptcha.TabIndex = 8
-        Me.picCaptcha.TabStop = False
-        '
         'lblCaptcha
         '
         Me.lblCaptcha.AutoSize = True
@@ -140,6 +123,13 @@ Partial Class SignupForm1
         Me.lblCaptcha.Size = New System.Drawing.Size(60, 17)
         Me.lblCaptcha.TabIndex = 9
         Me.lblCaptcha.Text = "Captcha"
+        '
+        'txtCaptcha
+        '
+        Me.txtCaptcha.Location = New System.Drawing.Point(237, 237)
+        Me.txtCaptcha.Name = "txtCaptcha"
+        Me.txtCaptcha.Size = New System.Drawing.Size(141, 22)
+        Me.txtCaptcha.TabIndex = 11
         '
         'btnRefresh
         '
@@ -152,12 +142,23 @@ Partial Class SignupForm1
         Me.btnRefresh.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btnRefresh.UseVisualStyleBackColor = False
         '
-        'txtCaptcha
+        'picCaptcha
         '
-        Me.txtCaptcha.Location = New System.Drawing.Point(237, 237)
-        Me.txtCaptcha.Name = "txtCaptcha"
-        Me.txtCaptcha.Size = New System.Drawing.Size(141, 22)
-        Me.txtCaptcha.TabIndex = 11
+        Me.picCaptcha.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.picCaptcha.Location = New System.Drawing.Point(237, 195)
+        Me.picCaptcha.Name = "picCaptcha"
+        Me.picCaptcha.Size = New System.Drawing.Size(141, 36)
+        Me.picCaptcha.TabIndex = 8
+        Me.picCaptcha.TabStop = False
+        '
+        'LogoPictureBox
+        '
+        Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
+        Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
+        Me.LogoPictureBox.Name = "LogoPictureBox"
+        Me.LogoPictureBox.Size = New System.Drawing.Size(165, 318)
+        Me.LogoPictureBox.TabIndex = 0
+        Me.LogoPictureBox.TabStop = False
         '
         'SignupForm1
         '
@@ -186,8 +187,8 @@ Partial Class SignupForm1
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "SignupForm1"
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
