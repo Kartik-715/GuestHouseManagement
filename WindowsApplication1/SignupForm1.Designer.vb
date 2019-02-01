@@ -40,7 +40,12 @@ Partial Class SignupForm1
         Me.Cancel = New System.Windows.Forms.Button()
         Me.txtConfirmPassword = New System.Windows.Forms.TextBox()
         Me.lblConfirmPassword = New System.Windows.Forms.Label()
+        Me.picCaptcha = New System.Windows.Forms.PictureBox()
+        Me.lblCaptcha = New System.Windows.Forms.Label()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.txtCaptcha = New System.Windows.Forms.TextBox()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LogoPictureBox
@@ -48,7 +53,7 @@ Partial Class SignupForm1
         Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
         Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
         Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(165, 263)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(165, 318)
         Me.LogoPictureBox.TabIndex = 0
         Me.LogoPictureBox.TabStop = False
         '
@@ -87,7 +92,7 @@ Partial Class SignupForm1
         '
         'OK
         '
-        Me.OK.Location = New System.Drawing.Point(175, 217)
+        Me.OK.Location = New System.Drawing.Point(190, 281)
         Me.OK.Name = "OK"
         Me.OK.Size = New System.Drawing.Size(94, 23)
         Me.OK.TabIndex = 4
@@ -96,7 +101,7 @@ Partial Class SignupForm1
         'Cancel
         '
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel.Location = New System.Drawing.Point(326, 217)
+        Me.Cancel.Location = New System.Drawing.Point(326, 281)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(94, 23)
         Me.Cancel.TabIndex = 5
@@ -119,13 +124,52 @@ Partial Class SignupForm1
         Me.lblConfirmPassword.Text = "&Confirm Password"
         Me.lblConfirmPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'picCaptcha
+        '
+        Me.picCaptcha.Location = New System.Drawing.Point(237, 195)
+        Me.picCaptcha.Name = "picCaptcha"
+        Me.picCaptcha.Size = New System.Drawing.Size(141, 36)
+        Me.picCaptcha.TabIndex = 8
+        Me.picCaptcha.TabStop = False
+        '
+        'lblCaptcha
+        '
+        Me.lblCaptcha.AutoSize = True
+        Me.lblCaptcha.Location = New System.Drawing.Point(171, 195)
+        Me.lblCaptcha.Name = "lblCaptcha"
+        Me.lblCaptcha.Size = New System.Drawing.Size(60, 17)
+        Me.lblCaptcha.TabIndex = 9
+        Me.lblCaptcha.Text = "Captcha"
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.BackColor = System.Drawing.Color.White
+        Me.btnRefresh.Image = CType(resources.GetObject("btnRefresh.Image"), System.Drawing.Image)
+        Me.btnRefresh.Location = New System.Drawing.Point(386, 195)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(34, 36)
+        Me.btnRefresh.TabIndex = 10
+        Me.btnRefresh.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnRefresh.UseVisualStyleBackColor = False
+        '
+        'txtCaptcha
+        '
+        Me.txtCaptcha.Location = New System.Drawing.Point(237, 237)
+        Me.txtCaptcha.Name = "txtCaptcha"
+        Me.txtCaptcha.Size = New System.Drawing.Size(141, 22)
+        Me.txtCaptcha.TabIndex = 11
+        '
         'SignupForm1
         '
         Me.AcceptButton = Me.OK
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(462, 261)
+        Me.ClientSize = New System.Drawing.Size(459, 319)
+        Me.Controls.Add(Me.txtCaptcha)
+        Me.Controls.Add(Me.btnRefresh)
+        Me.Controls.Add(Me.lblCaptcha)
+        Me.Controls.Add(Me.picCaptcha)
         Me.Controls.Add(Me.txtConfirmPassword)
         Me.Controls.Add(Me.lblConfirmPassword)
         Me.Controls.Add(Me.Cancel)
@@ -143,11 +187,16 @@ Partial Class SignupForm1
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "SignupForm1"
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents txtConfirmPassword As System.Windows.Forms.TextBox
     Friend WithEvents lblConfirmPassword As System.Windows.Forms.Label
+    Friend WithEvents picCaptcha As System.Windows.Forms.PictureBox
+    Friend WithEvents lblCaptcha As System.Windows.Forms.Label
+    Friend WithEvents btnRefresh As System.Windows.Forms.Button
+    Friend WithEvents txtCaptcha As System.Windows.Forms.TextBox
 
 End Class
