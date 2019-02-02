@@ -157,9 +157,7 @@
     <None Include="My Project\index - Copy %282%29 - Copy.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="guestHouse.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="guestHouse.accdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
