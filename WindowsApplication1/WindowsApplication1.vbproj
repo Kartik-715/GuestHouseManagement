@@ -158,6 +158,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="guestHouse.accdb" />
+    <None Include="My Project\redo %282%29.png" />
+    <None Include="My Project\main-gate.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
