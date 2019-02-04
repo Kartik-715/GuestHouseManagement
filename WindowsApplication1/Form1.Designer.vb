@@ -25,6 +25,7 @@ Partial Class Form1
         Me.btnSignUp = New System.Windows.Forms.Button()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.btn2 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -32,7 +33,7 @@ Partial Class Form1
         '
         Me.btnSignUp.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnSignUp.BackColor = System.Drawing.Color.Transparent
-        Me.btnSignUp.Location = New System.Drawing.Point(1250, 2)
+        Me.btnSignUp.Location = New System.Drawing.Point(824, 2)
         Me.btnSignUp.Name = "btnSignUp"
         Me.btnSignUp.Size = New System.Drawing.Size(191, 49)
         Me.btnSignUp.TabIndex = 0
@@ -43,7 +44,7 @@ Partial Class Form1
         '
         Me.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnLogin.BackColor = System.Drawing.Color.Transparent
-        Me.btnLogin.Location = New System.Drawing.Point(1250, 89)
+        Me.btnLogin.Location = New System.Drawing.Point(824, 89)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(191, 49)
         Me.btnLogin.TabIndex = 1
@@ -59,10 +60,20 @@ Partial Class Form1
         Me.btn2.Text = "Button1"
         Me.btn2.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(1, 2)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(51, 17)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Label2"
+        '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(721, 18)
+        Me.Label1.Location = New System.Drawing.Point(993, 89)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(51, 17)
         Me.Label1.TabIndex = 3
@@ -73,7 +84,8 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1924, 1055)
+        Me.ClientSize = New System.Drawing.Size(1072, 522)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn2)
         Me.Controls.Add(Me.btnLogin)
@@ -87,6 +99,7 @@ Partial Class Form1
     Friend WithEvents btnSignUp As System.Windows.Forms.Button
     Friend WithEvents btnLogin As System.Windows.Forms.Button
     Friend WithEvents btn2 As System.Windows.Forms.Button
+    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class

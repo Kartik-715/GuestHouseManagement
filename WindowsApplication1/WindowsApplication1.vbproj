@@ -103,10 +103,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Signupform.Designer.vb">
-      <DependentUpon>Signupform.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Signupform.vb" />
     <Compile Include="SignupForm1.Designer.vb">
       <DependentUpon>SignupForm1.vb</DependentUpon>
     </Compile>
@@ -126,9 +122,6 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Signupform.resx">
-      <DependentUpon>Signupform.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignupForm1.resx">
       <DependentUpon>SignupForm1.vb</DependentUpon>
@@ -165,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="guestHouse.accdb" />
+    <None Include="My Project\main-gate2.jpg" />
     <None Include="My Project\redo %282%29.png" />
     <None Include="My Project\main-gate.jpg" />
   </ItemGroup>

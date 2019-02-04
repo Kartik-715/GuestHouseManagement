@@ -20,7 +20,6 @@
 
         CW = Me.Width
         CH = Me.Height
-
     End Sub
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
@@ -33,9 +32,17 @@
         LoginForm1.Show()
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load     
         IW = Me.Width
         IH = Me.Height
         max()
+        btnSignUp.PerformClick()
+        SignupForm1.Close()
+        Me.WindowState = FormWindowState.Normal
+        Me.WindowState = FormWindowState.Maximized
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
     End Sub
 End Class
