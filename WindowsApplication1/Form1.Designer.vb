@@ -24,12 +24,15 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.btnSignUp = New System.Windows.Forms.Button()
         Me.btnLogin = New System.Windows.Forms.Button()
+        Me.btn2 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnSignUp
         '
+        Me.btnSignUp.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnSignUp.BackColor = System.Drawing.Color.Transparent
-        Me.btnSignUp.Location = New System.Drawing.Point(787, 2)
+        Me.btnSignUp.Location = New System.Drawing.Point(1250, 2)
         Me.btnSignUp.Name = "btnSignUp"
         Me.btnSignUp.Size = New System.Drawing.Size(191, 49)
         Me.btnSignUp.TabIndex = 0
@@ -38,27 +41,52 @@ Partial Class Form1
         '
         'btnLogin
         '
+        Me.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnLogin.BackColor = System.Drawing.Color.Transparent
-        Me.btnLogin.Location = New System.Drawing.Point(787, 57)
+        Me.btnLogin.Location = New System.Drawing.Point(1250, 89)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(191, 49)
         Me.btnLogin.TabIndex = 1
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
+        'btn2
+        '
+        Me.btn2.Location = New System.Drawing.Point(4, 2)
+        Me.btn2.Name = "btn2"
+        Me.btn2.Size = New System.Drawing.Size(163, 49)
+        Me.btn2.TabIndex = 2
+        Me.btn2.Text = "Button1"
+        Me.btn2.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(721, 18)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(51, 17)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Label1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(981, 530)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(1924, 1055)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btn2)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.btnSignUp)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnSignUp As System.Windows.Forms.Button
     Friend WithEvents btnLogin As System.Windows.Forms.Button
+    Friend WithEvents btn2 As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class

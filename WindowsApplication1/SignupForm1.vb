@@ -41,10 +41,6 @@ Public Class SignupForm1
         picCaptcha.Image = b
     End Sub
 
-    Private Sub picCaptcha_Click(sender As Object, e As EventArgs) Handles picCaptcha.Click
-
-    End Sub
-
     Private Sub SignupForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'GuestHouseDataSet.userTable' table. You can move, or remove it, as needed.
         Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)
@@ -60,9 +56,5 @@ Public Class SignupForm1
         Dim Hb As New HatchBrush(HatchStyle.DottedDiamond, Color.FromArgb(255, 128, 0), Color.Black)
         g.DrawString(str, New Font("Monotype Corsiva", 16, FontStyle.Strikeout, GraphicsUnit.Point), Brushes.White, 5, 5)
         picCaptcha.Image = b
-    End Sub
-
-    Private Sub txtConfirmPassword_TextChanged(sender As Object, e As EventArgs) Handles txtConfirmPassword.TextChanged
-
     End Sub
 End Class
