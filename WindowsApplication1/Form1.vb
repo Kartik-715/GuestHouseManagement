@@ -36,9 +36,9 @@
         IW = Me.Width
         IH = Me.Height
         max()
-        btnSignUp.PerformClick()
-        SignupForm1.Close()
-        Me.WindowState = FormWindowState.Normal
-        Me.WindowState = FormWindowState.Maximized
+        'btnSignUp.PerformClick()
+        'SignupForm1.Close()
+        'Me.WindowState = FormWindowState.Normal
+        'Me.WindowState = FormWindowState.Maximized
     End Sub
 End Class
