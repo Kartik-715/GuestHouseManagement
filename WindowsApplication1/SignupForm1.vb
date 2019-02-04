@@ -57,8 +57,4 @@ Public Class SignupForm1
         g.DrawString(str, New Font("Monotype Corsiva", 16, FontStyle.Strikeout, GraphicsUnit.Point), Brushes.White, 5, 5)
         picCaptcha.Image = b
     End Sub
-
-    Private Sub lblCaptcha_Click(sender As Object, e As EventArgs) Handles lblCaptcha.Click
-
-    End Sub
 End Class
