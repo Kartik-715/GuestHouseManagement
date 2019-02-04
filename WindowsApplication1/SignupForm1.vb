@@ -61,4 +61,8 @@ Public Class SignupForm1
         g.DrawString(str, New Font("Monotype Corsiva", 16, FontStyle.Strikeout, GraphicsUnit.Point), Brushes.White, 5, 5)
         picCaptcha.Image = b
     End Sub
+
+    Private Sub txtConfirmPassword_TextChanged(sender As Object, e As EventArgs) Handles txtConfirmPassword.TextChanged
+
+    End Sub
 End Class
