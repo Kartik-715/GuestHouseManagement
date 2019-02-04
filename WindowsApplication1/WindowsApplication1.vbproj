@@ -165,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="guestHouse.accdb" />
+    <None Include="My Project\main-gate2.jpg" />
     <None Include="My Project\redo %282%29.png" />
     <None Include="My Project\main-gate.jpg" />
   </ItemGroup>
