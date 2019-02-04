@@ -23,6 +23,25 @@
 
     End Sub
 
+    Private Sub max2()
+        Me.WindowState = FormWindowState.Maximized
+        CW = Me.Width
+        CH = Me.Height
+        Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
+        Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
+
+        For Each Ctrl As Control In Controls
+            Ctrl.Width = CInt(Ctrl.Width * 1.35)
+            Ctrl.Height = CInt(Ctrl.Height * 1.35)
+            Ctrl.Left = CInt(Ctrl.Left * 1.35)
+            Ctrl.Top = CInt(Ctrl.Top * 1.35)
+        Next
+
+        CW = Me.Width
+        CH = Me.Height
+
+    End Sub
+
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
         SignupForm1.Show()
         max()
@@ -33,9 +52,13 @@
         LoginForm1.Show()
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load     
         IW = Me.Width
         IH = Me.Height
         max()
+        btnSignUp.PerformClick()
+        SignupForm1.Close()
+        Me.WindowState = FormWindowState.Normal
+        max2()
     End Sub
 End Class

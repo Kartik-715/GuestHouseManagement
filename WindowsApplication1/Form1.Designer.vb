@@ -32,7 +32,7 @@ Partial Class Form1
         '
         Me.btnSignUp.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnSignUp.BackColor = System.Drawing.Color.Transparent
-        Me.btnSignUp.Location = New System.Drawing.Point(1250, 2)
+        Me.btnSignUp.Location = New System.Drawing.Point(824, 2)
         Me.btnSignUp.Name = "btnSignUp"
         Me.btnSignUp.Size = New System.Drawing.Size(191, 49)
         Me.btnSignUp.TabIndex = 0
@@ -43,7 +43,7 @@ Partial Class Form1
         '
         Me.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnLogin.BackColor = System.Drawing.Color.Transparent
-        Me.btnLogin.Location = New System.Drawing.Point(1250, 89)
+        Me.btnLogin.Location = New System.Drawing.Point(824, 89)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(191, 49)
         Me.btnLogin.TabIndex = 1
@@ -73,7 +73,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1924, 1055)
+        Me.ClientSize = New System.Drawing.Size(1072, 522)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn2)
         Me.Controls.Add(Me.btnLogin)
