@@ -16,13 +16,11 @@
         Else
             If userData.password = PasswordTextBox.Text Then
                 MessageBox.Show("Login Successful")
+                Me.Close()
             Else
                 MessageBox.Show("Wrong Password")
             End If
         End If
-
-
-        Me.Close()
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click

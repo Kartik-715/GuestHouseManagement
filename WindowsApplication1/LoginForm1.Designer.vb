@@ -42,19 +42,19 @@ Partial Class LoginForm1
         Me.GuestHouseDataSet = New WindowsApplication1.guestHouseDataSet()
         Me.UserTableTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
         Me.UserTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.LogoPictureBox,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.GuestHouseDataSet,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UserTableBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
+        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
         '
         'LogoPictureBox
         '
-        Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"),System.Drawing.Image)
+        Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
         Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
         Me.LogoPictureBox.Name = "LogoPictureBox"
         Me.LogoPictureBox.Size = New System.Drawing.Size(194, 294)
         Me.LogoPictureBox.TabIndex = 0
-        Me.LogoPictureBox.TabStop = false
+        Me.LogoPictureBox.TabStop = False
         '
         'UsernameLabel
         '
@@ -119,7 +119,7 @@ Partial Class LoginForm1
         '
         'UserTableTableAdapter
         '
-        Me.UserTableTableAdapter.ClearBeforeFill = true
+        Me.UserTableTableAdapter.ClearBeforeFill = True
         '
         'UserTableBindingSource
         '
@@ -129,7 +129,7 @@ Partial Class LoginForm1
         'LoginForm1
         '
         Me.AcceptButton = Me.OK
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8!, 16!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(705, 336)
@@ -141,19 +141,19 @@ Partial Class LoginForm1
         Me.Controls.Add(Me.UsernameLabel)
         Me.Controls.Add(Me.LogoPictureBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.MaximizeBox = false
-        Me.MinimizeBox = false
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "LoginForm1"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LoginForm1"
-        CType(Me.LogoPictureBox,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.GuestHouseDataSet,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.UserTableBindingSource,System.ComponentModel.ISupportInitialize).EndInit
-        Me.ResumeLayout(false)
-        Me.PerformLayout
+        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
 
-End Sub
+    End Sub
     Friend WithEvents GuestHouseDataSet As WindowsApplication1.guestHouseDataSet
     Friend WithEvents UserTableTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
     Friend WithEvents UserTableBindingSource As System.Windows.Forms.BindingSource
