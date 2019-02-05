@@ -43,6 +43,7 @@ Partial Class LoginForm1
         Me.UserTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -137,6 +138,15 @@ Partial Class LoginForm1
         Me.Label1.Size = New System.Drawing.Size(0, 17)
         Me.Label1.TabIndex = 6
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(523, 186)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(34, 34)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'LoginForm1
         '
         Me.AcceptButton = Me.OK
@@ -145,6 +155,7 @@ Partial Class LoginForm1
         Me.AutoSize = True
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(705, 336)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)
@@ -171,5 +182,6 @@ Partial Class LoginForm1
     Friend WithEvents UserTableTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
     Friend WithEvents UserTableBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class
