@@ -10,10 +10,9 @@ Public Class SignupForm1
     ' such as the username, display name, etc.
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        UserTableBindingSource.EndEdit()
-        UserTableTableAdapter.Update(GuestHouseDataSet.userTable)
         If txtCaptcha.Text = str Then
-
+            UserTableBindingSource.EndEdit()
+            UserTableTableAdapter.Update(GuestHouseDataSet.userTable)
             MsgBox("Register Success")
             Me.Close()
         Else
