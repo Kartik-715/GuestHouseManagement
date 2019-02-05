@@ -45,10 +45,10 @@ Partial Class SignupForm1
         Me.lblCaptcha = New System.Windows.Forms.Label()
         Me.txtCaptcha = New System.Windows.Forms.TextBox()
         Me.UserTableTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.picCaptcha = New System.Windows.Forms.PictureBox()
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -170,6 +170,15 @@ Partial Class SignupForm1
         '
         Me.UserTableTableAdapter.ClearBeforeFill = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Location = New System.Drawing.Point(935, 234)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(0, 17)
+        Me.Label1.TabIndex = 11
+        '
         'btnRefresh
         '
         Me.btnRefresh.BackColor = System.Drawing.Color.White
@@ -199,18 +208,10 @@ Partial Class SignupForm1
         Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
         Me.LogoPictureBox.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(310, 514)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(288, 532)
+        Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.LogoPictureBox.TabIndex = 0
         Me.LogoPictureBox.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(935, 234)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(51, 17)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Label1"
         '
         'SignupForm1
         '
@@ -234,12 +235,13 @@ Partial Class SignupForm1
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.lblUsername)
         Me.Controls.Add(Me.LogoPictureBox)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.Name = "SignupForm1"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Sign up"
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
