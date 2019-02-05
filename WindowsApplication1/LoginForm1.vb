@@ -16,6 +16,7 @@
         Else
             If userData.password = PasswordTextBox.Text Then
                 MessageBox.Show("Login Successful")
+                Form1.Show()
                 Me.Close()
             Else
                 MessageBox.Show("Wrong Password")
@@ -24,10 +25,17 @@
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
+        Form1.Show()
         Me.Close()
     End Sub
     Private Sub LoginForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Form1.Hide()
         'TODO: This line of code loads data into the 'GuestHouseDataSet.userTable' table. You can move, or remove it, as needed.
         Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)
+    End Sub
+
+    Private Sub LoginForm1_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosing
+        UserTableBindingSource.RemoveCurrent()
+        Form1.Show()
     End Sub
 End Class

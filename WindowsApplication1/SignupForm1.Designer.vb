@@ -48,6 +48,7 @@ Partial Class SignupForm1
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.picCaptcha = New System.Windows.Forms.PictureBox()
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -202,13 +203,24 @@ Partial Class SignupForm1
         Me.LogoPictureBox.TabIndex = 0
         Me.LogoPictureBox.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(935, 234)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(51, 17)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Label1"
+        '
         'SignupForm1
         '
         Me.AcceptButton = Me.OK
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(870, 533)
+        Me.ClientSize = New System.Drawing.Size(998, 533)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtCaptcha)
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.lblCaptcha)
@@ -222,7 +234,6 @@ Partial Class SignupForm1
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.lblUsername)
         Me.Controls.Add(Me.LogoPictureBox)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
@@ -247,5 +258,6 @@ Partial Class SignupForm1
     Friend WithEvents GuestHouseDataSet As WindowsApplication1.guestHouseDataSet
     Friend WithEvents UserTableBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents UserTableTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class
