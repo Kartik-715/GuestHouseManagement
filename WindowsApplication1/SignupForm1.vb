@@ -86,4 +86,8 @@ Public Class SignupForm1
     Private Sub SignupForm1_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosed
         Form1.Show()
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
 End Class

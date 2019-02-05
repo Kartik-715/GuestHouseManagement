@@ -68,4 +68,8 @@
         UserTableBindingSource.RemoveCurrent()
         Form1.Show()
     End Sub
+
+    Private Sub PassButton_Click(sender As Object, e As EventArgs) Handles PassButton.Click
+
+    End Sub
 End Class

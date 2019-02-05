@@ -151,7 +151,7 @@ Partial Class LoginForm1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(529, 273)
+        Me.ClientSize = New System.Drawing.Size(442, 258)
         Me.Controls.Add(Me.PassButton)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)
