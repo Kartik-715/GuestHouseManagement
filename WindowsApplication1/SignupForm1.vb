@@ -11,10 +11,19 @@ Public Class SignupForm1
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         If txtCaptcha.Text = str Then
-            UserTableBindingSource.EndEdit()
-            UserTableTableAdapter.Update(GuestHouseDataSet.userTable)
-            MsgBox("Register Success")
-            Me.Close()
+            Dim userData As guestHouseDataSet.userTableRow
+            userData = GuestHouseDataSet.userTable.FindByusername(txtUsername.Text)
+            If userData Is Nothing Then
+                UserTableBindingSource.EndEdit()
+                UserTableTableAdapter.Update(GuestHouseDataSet.userTable)
+                MsgBox("Register Success")
+                Me.Close()
+            Else
+                MsgBox("User Already Exists! Please Try Again!")
+                txtCaptcha.Clear()
+                txtUsername.Clear()
+                btnRefresh.PerformClick()
+            End If
         Else
             MsgBox("Register Failed")
             btnRefresh.PerformClick()
