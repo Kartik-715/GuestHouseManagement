@@ -39,4 +39,8 @@
         'Me.WindowState = FormWindowState.Normal
         'Me.WindowState = FormWindowState.Maximized
     End Sub
+
+    Private Sub btn2_Click(sender As Object, e As EventArgs) Handles btn2.Click
+        Booking.Show()
+    End Sub
 End Class
