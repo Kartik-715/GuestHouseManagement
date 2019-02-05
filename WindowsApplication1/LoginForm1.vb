@@ -48,8 +48,25 @@
         Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)
     End Sub
 
+    Private Sub PassButton_MouseDown(sender As Object, e As EventArgs) Handles PassButton.MouseDown
+        PasswordTextBox.PasswordChar = ""
+        PassButton.Image = My.Resources.eye
+        PassButton.FlatStyle = FlatStyle.Flat
+    End Sub
+
+    Private Sub PassButton_MouseLeave(sender As Object, e As EventArgs) Handles PassButton.MouseUp
+        PasswordTextBox.PasswordChar = "*"
+        PassButton.Image = My.Resources.vision_off
+        PassButton.FlatStyle = FlatStyle.Popup
+        PassButton.FlatAppearance.BorderSize = 0
+    End Sub
+
     Private Sub LoginForm1_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosing
         UserTableBindingSource.RemoveCurrent()
         Form1.Show()
+    End Sub
+
+    Private Sub PassButton_Click(sender As Object, e As EventArgs) Handles PassButton.Click
+
     End Sub
 End Class

@@ -30,17 +30,16 @@
         LoginForm1.Show()
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load     
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         IW = Me.Width
         IH = Me.Height
         max()
-        'btnSignUp.PerformClick()
-        'SignupForm1.Close()
-        'Me.WindowState = FormWindowState.Normal
-        'Me.WindowState = FormWindowState.Maximized
+        btnSignUp.PerformClick()
+        SignupForm1.Close()
     End Sub
 
     Private Sub btn2_Click(sender As Object, e As EventArgs) Handles btn2.Click
         Dashboard.Show()
+        Booking.Show()
     End Sub
 End Class

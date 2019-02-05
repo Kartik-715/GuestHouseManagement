@@ -79,7 +79,7 @@ Public Class SignupForm1
         Dim b As New Bitmap(141 * 2 / RW, 36 * 2 / RH, Imaging.PixelFormat.Format32bppArgb)
         Dim g As Graphics = Graphics.FromImage(b)
         Dim Hb As New HatchBrush(HatchStyle.DottedDiamond, Color.FromArgb(255, 128, 0), Color.Black)
-        g.DrawString(str, New Font("Monotype Corsiva", 16 / RW, FontStyle.Strikeout, GraphicsUnit.Point), Brushes.White, 5 * RW, 5 * RH)
+        g.DrawString(str, New Font("Monotype Corsiva", 26 / RW, FontStyle.Strikeout, GraphicsUnit.Point), Brushes.White, 5 * RW, 5 * RH)
         picCaptcha.Image = b
     End Sub
 

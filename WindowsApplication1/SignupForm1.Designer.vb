@@ -49,6 +49,8 @@ Partial Class SignupForm1
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.picCaptcha = New System.Windows.Forms.PictureBox()
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.lblMobileNo = New System.Windows.Forms.Label()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,9 +60,9 @@ Partial Class SignupForm1
         'lblUsername
         '
         Me.lblUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsername.Location = New System.Drawing.Point(350, 13)
+        Me.lblUsername.Location = New System.Drawing.Point(468, 58)
         Me.lblUsername.Name = "lblUsername"
-        Me.lblUsername.Size = New System.Drawing.Size(220, 48)
+        Me.lblUsername.Size = New System.Drawing.Size(220, 34)
         Me.lblUsername.TabIndex = 0
         Me.lblUsername.Text = "&User name"
         Me.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -68,9 +70,9 @@ Partial Class SignupForm1
         'lblPassword
         '
         Me.lblPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPassword.Location = New System.Drawing.Point(350, 113)
+        Me.lblPassword.Location = New System.Drawing.Point(467, 174)
         Me.lblPassword.Name = "lblPassword"
-        Me.lblPassword.Size = New System.Drawing.Size(220, 44)
+        Me.lblPassword.Size = New System.Drawing.Size(220, 34)
         Me.lblPassword.TabIndex = 2
         Me.lblPassword.Text = "&Password"
         Me.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -79,8 +81,9 @@ Partial Class SignupForm1
         '
         Me.txtUsername.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserTableBindingSource, "username", True))
         Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsername.Location = New System.Drawing.Point(355, 65)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtUsername.Location = New System.Drawing.Point(678, 58)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtUsername.Multiline = True
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(343, 34)
         Me.txtUsername.TabIndex = 1
@@ -99,8 +102,9 @@ Partial Class SignupForm1
         '
         Me.txtPassword.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserTableBindingSource, "password", True))
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(355, 161)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtPassword.Location = New System.Drawing.Point(678, 174)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtPassword.Multiline = True
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(343, 34)
@@ -108,9 +112,9 @@ Partial Class SignupForm1
         '
         'OK
         '
-        Me.OK.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OK.Location = New System.Drawing.Point(355, 450)
-        Me.OK.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.OK.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OK.Location = New System.Drawing.Point(678, 436)
+        Me.OK.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.OK.Name = "OK"
         Me.OK.Size = New System.Drawing.Size(107, 39)
         Me.OK.TabIndex = 6
@@ -119,9 +123,9 @@ Partial Class SignupForm1
         'Cancel
         '
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cancel.Location = New System.Drawing.Point(591, 450)
-        Me.Cancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cancel.Location = New System.Drawing.Point(914, 436)
+        Me.Cancel.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(107, 39)
         Me.Cancel.TabIndex = 7
@@ -130,8 +134,9 @@ Partial Class SignupForm1
         'txtConfirmPassword
         '
         Me.txtConfirmPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtConfirmPassword.Location = New System.Drawing.Point(355, 269)
-        Me.txtConfirmPassword.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtConfirmPassword.Location = New System.Drawing.Point(678, 236)
+        Me.txtConfirmPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtConfirmPassword.Multiline = True
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirmPassword.Size = New System.Drawing.Size(343, 34)
@@ -140,9 +145,9 @@ Partial Class SignupForm1
         'lblConfirmPassword
         '
         Me.lblConfirmPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConfirmPassword.Location = New System.Drawing.Point(350, 217)
+        Me.lblConfirmPassword.Location = New System.Drawing.Point(467, 236)
         Me.lblConfirmPassword.Name = "lblConfirmPassword"
-        Me.lblConfirmPassword.Size = New System.Drawing.Size(321, 48)
+        Me.lblConfirmPassword.Size = New System.Drawing.Size(220, 34)
         Me.lblConfirmPassword.TabIndex = 6
         Me.lblConfirmPassword.Text = "&Confirm Password"
         Me.lblConfirmPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -151,7 +156,7 @@ Partial Class SignupForm1
         '
         Me.lblCaptcha.AutoSize = True
         Me.lblCaptcha.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCaptcha.Location = New System.Drawing.Point(350, 332)
+        Me.lblCaptcha.Location = New System.Drawing.Point(468, 300)
         Me.lblCaptcha.Name = "lblCaptcha"
         Me.lblCaptcha.Size = New System.Drawing.Size(101, 29)
         Me.lblCaptcha.TabIndex = 9
@@ -160,10 +165,10 @@ Partial Class SignupForm1
         'txtCaptcha
         '
         Me.txtCaptcha.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCaptcha.Location = New System.Drawing.Point(483, 395)
+        Me.txtCaptcha.Location = New System.Drawing.Point(678, 379)
         Me.txtCaptcha.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCaptcha.Name = "txtCaptcha"
-        Me.txtCaptcha.Size = New System.Drawing.Size(149, 34)
+        Me.txtCaptcha.Size = New System.Drawing.Size(233, 34)
         Me.txtCaptcha.TabIndex = 5
         '
         'UserTableTableAdapter
@@ -174,7 +179,8 @@ Partial Class SignupForm1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(913, 265)
+        Me.Label1.Location = New System.Drawing.Point(1075, 263)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(0, 17)
         Me.Label1.TabIndex = 11
@@ -184,10 +190,10 @@ Partial Class SignupForm1
         Me.btnRefresh.BackColor = System.Drawing.Color.White
         Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRefresh.Image = Global.WindowsApplication1.My.Resources.Resources.redo__2_
-        Me.btnRefresh.Location = New System.Drawing.Point(659, 332)
-        Me.btnRefresh.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnRefresh.Location = New System.Drawing.Point(975, 300)
+        Me.btnRefresh.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(39, 36)
+        Me.btnRefresh.Size = New System.Drawing.Size(46, 46)
         Me.btnRefresh.TabIndex = 10
         Me.btnRefresh.TextAlign = System.Drawing.ContentAlignment.TopLeft
         Me.btnRefresh.UseVisualStyleBackColor = False
@@ -195,23 +201,44 @@ Partial Class SignupForm1
         'picCaptcha
         '
         Me.picCaptcha.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.picCaptcha.Location = New System.Drawing.Point(483, 332)
-        Me.picCaptcha.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.picCaptcha.Location = New System.Drawing.Point(678, 300)
+        Me.picCaptcha.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.picCaptcha.Name = "picCaptcha"
-        Me.picCaptcha.Size = New System.Drawing.Size(151, 55)
+        Me.picCaptcha.Size = New System.Drawing.Size(233, 70)
         Me.picCaptcha.TabIndex = 8
         Me.picCaptcha.TabStop = False
         '
         'LogoPictureBox
         '
-        Me.LogoPictureBox.Image = Global.WindowsApplication1.My.Resources.Resources.main_gate21
-        Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
+        Me.LogoPictureBox.Image = Global.WindowsApplication1.My.Resources.Resources.main_gate5
+        Me.LogoPictureBox.Location = New System.Drawing.Point(1, -2)
         Me.LogoPictureBox.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(288, 532)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(384, 503)
         Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.LogoPictureBox.TabIndex = 0
         Me.LogoPictureBox.TabStop = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserTableBindingSource, "password", True))
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(678, 119)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBox1.Size = New System.Drawing.Size(343, 34)
+        Me.TextBox1.TabIndex = 12
+        '
+        'lblMobileNo
+        '
+        Me.lblMobileNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMobileNo.Location = New System.Drawing.Point(468, 122)
+        Me.lblMobileNo.Name = "lblMobileNo"
+        Me.lblMobileNo.Size = New System.Drawing.Size(140, 31)
+        Me.lblMobileNo.TabIndex = 13
+        Me.lblMobileNo.Text = "&Mobile No."
         '
         'SignupForm1
         '
@@ -220,8 +247,10 @@ Partial Class SignupForm1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(971, 488)
+        Me.ClientSize = New System.Drawing.Size(1087, 504)
+        Me.Controls.Add(Me.lblMobileNo)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.txtCaptcha)
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.lblCaptcha)
@@ -260,6 +289,8 @@ Partial Class SignupForm1
     Friend WithEvents GuestHouseDataSet As WindowsApplication1.guestHouseDataSet
     Friend WithEvents UserTableBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents UserTableTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblMobileNo As System.Windows.Forms.Label
 
 End Class
