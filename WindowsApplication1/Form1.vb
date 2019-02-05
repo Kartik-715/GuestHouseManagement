@@ -24,11 +24,9 @@
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
         SignupForm1.Show()
-        max()
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        max()
         LoginForm1.Show()
     End Sub
 
