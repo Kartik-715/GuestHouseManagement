@@ -49,7 +49,7 @@ Partial Class SignupForm1
         Me.picCaptcha = New System.Windows.Forms.PictureBox()
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblMobile = New System.Windows.Forms.Label()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -219,16 +219,16 @@ Partial Class SignupForm1
         Me.TextBox1.Size = New System.Drawing.Size(258, 28)
         Me.TextBox1.TabIndex = 12
         '
-        'Label1
+        'lblMobile
         '
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(263, 82)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(165, 36)
-        Me.Label1.TabIndex = 13
-        Me.Label1.Text = "&Mobile Number"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblMobile.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMobile.Location = New System.Drawing.Point(263, 82)
+        Me.lblMobile.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblMobile.Name = "lblMobile"
+        Me.lblMobile.Size = New System.Drawing.Size(165, 36)
+        Me.lblMobile.TabIndex = 13
+        Me.lblMobile.Text = "&Mobile Number"
+        Me.lblMobile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'SignupForm1
         '
@@ -238,7 +238,7 @@ Partial Class SignupForm1
         Me.AutoSize = True
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(553, 460)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblMobile)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.txtCaptcha)
         Me.Controls.Add(Me.btnRefresh)
@@ -278,6 +278,6 @@ Partial Class SignupForm1
     Friend WithEvents UserTableBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents UserTableTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblMobile As System.Windows.Forms.Label
 
 End Class
