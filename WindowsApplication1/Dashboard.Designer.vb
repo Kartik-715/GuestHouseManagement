@@ -29,14 +29,13 @@ Partial Class Dashboard
         Me.tabMyBills = New System.Windows.Forms.TabPage()
         Me.tabMyBooking = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.tabDashboard = New System.Windows.Forms.TabControl()
         Me.tabHome = New System.Windows.Forms.TabPage()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.TabPage5.SuspendLayout()
         Me.tabMyBooking.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -65,7 +64,7 @@ Partial Class Dashboard
         '
         'TabPage5
         '
-        Me.TabPage5.Controls.Add(Me.Button6)
+        Me.TabPage5.Controls.Add(Me.Button5)
         Me.TabPage5.Location = New System.Drawing.Point(4, 81)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
@@ -109,7 +108,6 @@ Partial Class Dashboard
         'Panel1
         '
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button2)
@@ -117,15 +115,6 @@ Partial Class Dashboard
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(186, 311)
         Me.Panel1.TabIndex = 1
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(0, 120)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(183, 40)
-        Me.Button5.TabIndex = 3
-        Me.Button5.Text = "Log Out"
-        Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
         '
@@ -183,7 +172,6 @@ Partial Class Dashboard
         '
         'tabHome
         '
-        Me.tabHome.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.main_gate
         Me.tabHome.Location = New System.Drawing.Point(4, 81)
         Me.tabHome.Name = "tabHome"
         Me.tabHome.Padding = New System.Windows.Forms.Padding(3)
@@ -192,14 +180,14 @@ Partial Class Dashboard
         Me.tabHome.Text = "    Home    "
         Me.tabHome.UseVisualStyleBackColor = True
         '
-        'Button6
+        'Button5
         '
-        Me.Button6.Location = New System.Drawing.Point(587, 97)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(185, 66)
-        Me.Button6.TabIndex = 0
-        Me.Button6.Text = "Button6"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.Button5.Location = New System.Drawing.Point(679, 49)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(183, 46)
+        Me.Button5.TabIndex = 4
+        Me.Button5.Text = "Log Out"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Dashboard
         '
@@ -223,12 +211,11 @@ Partial Class Dashboard
     Friend WithEvents tabMyBills As System.Windows.Forms.TabPage
     Friend WithEvents tabMyBooking As System.Windows.Forms.TabPage
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents tabDashboard As System.Windows.Forms.TabControl
     Friend WithEvents tabHome As System.Windows.Forms.TabPage
-    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents Button5 As System.Windows.Forms.Button
 End Class
