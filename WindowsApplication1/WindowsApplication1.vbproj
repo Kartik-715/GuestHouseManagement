@@ -157,10 +157,15 @@
     <None Include="My Project\index - Copy %282%29 - Copy.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="guestHouse.accdb" />
+    <Content Include="guestHouse.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="My Project\main-gate2.jpg" />
     <None Include="My Project\redo %282%29.png" />
     <None Include="My Project\main-gate.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
