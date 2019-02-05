@@ -112,7 +112,7 @@ Partial Class SignupForm1
         Me.OK.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.OK.Name = "OK"
         Me.OK.Size = New System.Drawing.Size(107, 39)
-        Me.OK.TabIndex = 4
+        Me.OK.TabIndex = 6
         Me.OK.Text = "&OK"
         '
         'Cancel
@@ -123,7 +123,7 @@ Partial Class SignupForm1
         Me.Cancel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(107, 39)
-        Me.Cancel.TabIndex = 5
+        Me.Cancel.TabIndex = 7
         Me.Cancel.Text = "&Cancel"
         '
         'txtConfirmPassword
@@ -134,7 +134,7 @@ Partial Class SignupForm1
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirmPassword.Size = New System.Drawing.Size(343, 34)
-        Me.txtConfirmPassword.TabIndex = 7
+        Me.txtConfirmPassword.TabIndex = 4
         '
         'lblConfirmPassword
         '
@@ -163,7 +163,7 @@ Partial Class SignupForm1
         Me.txtCaptcha.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCaptcha.Name = "txtCaptcha"
         Me.txtCaptcha.Size = New System.Drawing.Size(149, 34)
-        Me.txtCaptcha.TabIndex = 11
+        Me.txtCaptcha.TabIndex = 5
         '
         'UserTableTableAdapter
         '

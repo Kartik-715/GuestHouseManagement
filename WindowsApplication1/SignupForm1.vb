@@ -45,7 +45,7 @@ Public Class SignupForm1
     Private Sub SignupForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'GuestHouseDataSet.userTable' table. You can move, or remove it, as needed.
         Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)
-        'UserTableBindingSource.AddNew()
+        UserTableBindingSource.AddNew()
         Dim NumCaptcha As String = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
         str = ""
         Dim R As New Random
