@@ -32,7 +32,6 @@ Partial Class LoginForm1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm1))
-        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.PasswordLabel = New System.Windows.Forms.Label()
         Me.UsernameTextBox = New System.Windows.Forms.TextBox()
@@ -42,26 +41,20 @@ Partial Class LoginForm1
         Me.GuestHouseDataSet = New WindowsApplication1.guestHouseDataSet()
         Me.UserTableTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
         Me.UserTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PassButton = New System.Windows.Forms.Button()
+        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'LogoPictureBox
-        '
-        Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
-        Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
-        Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(194, 294)
-        Me.LogoPictureBox.TabIndex = 0
-        Me.LogoPictureBox.TabStop = False
         '
         'UsernameLabel
         '
         Me.UsernameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UsernameLabel.Location = New System.Drawing.Point(221, 64)
+        Me.UsernameLabel.Location = New System.Drawing.Point(166, 52)
+        Me.UsernameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.UsernameLabel.Name = "UsernameLabel"
-        Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
+        Me.UsernameLabel.Size = New System.Drawing.Size(165, 19)
         Me.UsernameLabel.TabIndex = 0
         Me.UsernameLabel.Text = "&User name"
         Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -69,9 +62,10 @@ Partial Class LoginForm1
         'PasswordLabel
         '
         Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PasswordLabel.Location = New System.Drawing.Point(221, 157)
+        Me.PasswordLabel.Location = New System.Drawing.Point(166, 128)
+        Me.PasswordLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.PasswordLabel.Name = "PasswordLabel"
-        Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
+        Me.PasswordLabel.Size = New System.Drawing.Size(165, 19)
         Me.PasswordLabel.TabIndex = 2
         Me.PasswordLabel.Text = "&Password"
         Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -79,26 +73,29 @@ Partial Class LoginForm1
         'UsernameTextBox
         '
         Me.UsernameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UsernameTextBox.Location = New System.Drawing.Point(225, 99)
+        Me.UsernameTextBox.Location = New System.Drawing.Point(169, 80)
+        Me.UsernameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.UsernameTextBox.Name = "UsernameTextBox"
-        Me.UsernameTextBox.Size = New System.Drawing.Size(334, 28)
+        Me.UsernameTextBox.Size = New System.Drawing.Size(252, 24)
         Me.UsernameTextBox.TabIndex = 1
         '
         'PasswordTextBox
         '
         Me.PasswordTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PasswordTextBox.Location = New System.Drawing.Point(225, 192)
+        Me.PasswordTextBox.Location = New System.Drawing.Point(169, 156)
+        Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.PasswordTextBox.Size = New System.Drawing.Size(334, 28)
+        Me.PasswordTextBox.Size = New System.Drawing.Size(252, 24)
         Me.PasswordTextBox.TabIndex = 3
         '
         'OK
         '
         Me.OK.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OK.Location = New System.Drawing.Point(225, 262)
+        Me.OK.Location = New System.Drawing.Point(169, 213)
+        Me.OK.Margin = New System.Windows.Forms.Padding(2)
         Me.OK.Name = "OK"
-        Me.OK.Size = New System.Drawing.Size(120, 40)
+        Me.OK.Size = New System.Drawing.Size(90, 32)
         Me.OK.TabIndex = 4
         Me.OK.Text = "&OK"
         '
@@ -106,9 +103,10 @@ Partial Class LoginForm1
         '
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cancel.Location = New System.Drawing.Point(437, 262)
+        Me.Cancel.Location = New System.Drawing.Point(328, 213)
+        Me.Cancel.Margin = New System.Windows.Forms.Padding(2)
         Me.Cancel.Name = "Cancel"
-        Me.Cancel.Size = New System.Drawing.Size(120, 40)
+        Me.Cancel.Size = New System.Drawing.Size(90, 32)
         Me.Cancel.TabIndex = 5
         Me.Cancel.Text = "&Cancel"
         '
@@ -126,13 +124,35 @@ Partial Class LoginForm1
         Me.UserTableBindingSource.DataMember = "userTable"
         Me.UserTableBindingSource.DataSource = Me.GuestHouseDataSet
         '
+        'PassButton
+        '
+        Me.PassButton.BackColor = System.Drawing.Color.Transparent
+        Me.PassButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PassButton.Image = Global.WindowsApplication1.My.Resources.Resources.vision_off
+        Me.PassButton.Location = New System.Drawing.Point(397, 156)
+        Me.PassButton.Name = "PassButton"
+        Me.PassButton.Size = New System.Drawing.Size(23, 23)
+        Me.PassButton.TabIndex = 6
+        Me.PassButton.UseVisualStyleBackColor = False
+        '
+        'LogoPictureBox
+        '
+        Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
+        Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
+        Me.LogoPictureBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.LogoPictureBox.Name = "LogoPictureBox"
+        Me.LogoPictureBox.Size = New System.Drawing.Size(146, 239)
+        Me.LogoPictureBox.TabIndex = 0
+        Me.LogoPictureBox.TabStop = False
+        '
         'LoginForm1
         '
         Me.AcceptButton = Me.OK
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(705, 336)
+        Me.ClientSize = New System.Drawing.Size(529, 273)
+        Me.Controls.Add(Me.PassButton)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)
         Me.Controls.Add(Me.PasswordTextBox)
@@ -141,15 +161,16 @@ Partial Class LoginForm1
         Me.Controls.Add(Me.UsernameLabel)
         Me.Controls.Add(Me.LogoPictureBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "LoginForm1"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LoginForm1"
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -157,5 +178,6 @@ Partial Class LoginForm1
     Friend WithEvents GuestHouseDataSet As WindowsApplication1.guestHouseDataSet
     Friend WithEvents UserTableTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
     Friend WithEvents UserTableBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents PassButton As System.Windows.Forms.Button
 
 End Class

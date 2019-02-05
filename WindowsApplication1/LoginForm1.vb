@@ -7,7 +7,7 @@
     ' where CustomPrincipal is the IPrincipal implementation used to perform authentication. 
     ' Subsequently, My.User will return identity information encapsulated in the CustomPrincipal object
     ' such as the username, display name, etc.
-
+    Dim showPassword As Boolean = False
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         Dim userData As guestHouseDataSet.userTableRow
         userData = GuestHouseDataSet.userTable.FindByusername(UsernameTextBox.Text)
@@ -29,5 +29,43 @@
     Private Sub LoginForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'GuestHouseDataSet.userTable' table. You can move, or remove it, as needed.
         Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)
+    End Sub
+
+    Private Sub PasswordTextBox_TextChanged(sender As Object, e As EventArgs) Handles PasswordTextBox.TextChanged
+
+    End Sub
+
+    Private Sub PassButton_MouseDown(sender As Object, e As EventArgs) Handles PassButton.MouseDown
+
+
+        'showPassword = Not showPassword
+        'If showPassword = True Then
+        PasswordTextBox.PasswordChar = ""
+        PassButton.Image = My.Resources.eye
+        PassButton.FlatStyle = FlatStyle.Flat
+
+    End Sub
+
+    Private Sub PassButton_MouseLeave(sender As Object, e As EventArgs) Handles PassButton.MouseUp
+
+
+
+
+        'showPassword = Not showPassword
+        'If showPassword = True Then
+        PasswordTextBox.PasswordChar = "*"
+        PassButton.Image = My.Resources.vision_off
+        PassButton.FlatStyle = FlatStyle.Popup
+        PassButton.FlatAppearance.BorderSize = 0
+
+
+    End Sub
+
+    Private Sub PassButton_MouseLeave(sender As Object, e As MouseEventArgs) Handles PassButton.MouseUp
+
+    End Sub
+
+    Private Sub PassButton_MouseDown(sender As Object, e As MouseEventArgs) Handles PassButton.MouseDown
+
     End Sub
 End Class
