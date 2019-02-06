@@ -35,6 +35,8 @@ Partial Class SignupForm1
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.UserTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GuestHouseDataSet = New WindowsApplication1.guestHouseDataSet()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.OK = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
@@ -48,14 +50,12 @@ Partial Class SignupForm1
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.lblMobileNo = New System.Windows.Forms.Label()
-        Me.UserTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GuestHouseDataSet = New WindowsApplication1.guestHouseDataSet()
         Me.UserTableTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
         Me.UserTableBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserTableBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -88,6 +88,16 @@ Partial Class SignupForm1
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(343, 34)
         Me.txtUsername.TabIndex = 1
+        '
+        'UserTableBindingSource
+        '
+        Me.UserTableBindingSource.DataMember = "userTable"
+        Me.UserTableBindingSource.DataSource = Me.GuestHouseDataSet
+        '
+        'GuestHouseDataSet
+        '
+        Me.GuestHouseDataSet.DataSetName = "guestHouseDataSet"
+        Me.GuestHouseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'txtPassword
         '
@@ -223,16 +233,6 @@ Partial Class SignupForm1
         Me.lblMobileNo.TabIndex = 13
         Me.lblMobileNo.Text = "&Mobile No."
         '
-        'UserTableBindingSource
-        '
-        Me.UserTableBindingSource.DataMember = "userTable"
-        Me.UserTableBindingSource.DataSource = Me.GuestHouseDataSet
-        '
-        'GuestHouseDataSet
-        '
-        Me.GuestHouseDataSet.DataSetName = "guestHouseDataSet"
-        Me.GuestHouseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'UserTableTableAdapter
         '
         Me.UserTableTableAdapter.ClearBeforeFill = True
@@ -274,10 +274,10 @@ Partial Class SignupForm1
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Sign up"
-        CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserTableBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
