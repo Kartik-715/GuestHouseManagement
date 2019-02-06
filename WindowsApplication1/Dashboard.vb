@@ -31,6 +31,7 @@
 
     Private Sub btnUpdatePassword_Click(sender As Object, e As EventArgs) Handles btnUpdatePassword.Click
         formUpdatePassword.loggedUser = loggedUser
+        formUpdatePassword.Close()
         formUpdatePassword.Show()
     End Sub
 

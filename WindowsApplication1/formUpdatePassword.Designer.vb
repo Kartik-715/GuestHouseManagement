@@ -125,6 +125,7 @@ Partial Class formUpdatePassword
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblHello)
         Me.Name = "formUpdatePassword"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "formUpdatePassword"
         CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
