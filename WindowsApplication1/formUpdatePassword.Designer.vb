@@ -41,66 +41,73 @@ Partial Class formUpdatePassword
         'lblHello
         '
         Me.lblHello.AutoSize = True
-        Me.lblHello.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.lblHello.Location = New System.Drawing.Point(456, 34)
+        Me.lblHello.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHello.Location = New System.Drawing.Point(404, 42)
         Me.lblHello.Name = "lblHello"
-        Me.lblHello.Size = New System.Drawing.Size(131, 29)
+        Me.lblHello.Size = New System.Drawing.Size(157, 32)
         Me.lblHello.TabIndex = 0
         Me.lblHello.Text = "Hello User"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(64, 113)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(64, 120)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(133, 17)
+        Me.Label1.Size = New System.Drawing.Size(228, 29)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Enter Old Password"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(64, 173)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(64, 170)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(138, 17)
+        Me.Label2.Size = New System.Drawing.Size(239, 29)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Enter New Password"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(64, 223)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(64, 225)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(121, 17)
+        Me.Label3.Size = New System.Drawing.Size(210, 29)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Confirm Password"
         '
         'txtOldPass
         '
-        Me.txtOldPass.Location = New System.Drawing.Point(296, 113)
+        Me.txtOldPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtOldPass.Location = New System.Drawing.Point(309, 115)
         Me.txtOldPass.Name = "txtOldPass"
-        Me.txtOldPass.Size = New System.Drawing.Size(166, 22)
+        Me.txtOldPass.Size = New System.Drawing.Size(292, 34)
         Me.txtOldPass.TabIndex = 4
         '
         'txtNewPass
         '
-        Me.txtNewPass.Location = New System.Drawing.Point(296, 168)
+        Me.txtNewPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNewPass.Location = New System.Drawing.Point(309, 170)
         Me.txtNewPass.Name = "txtNewPass"
-        Me.txtNewPass.Size = New System.Drawing.Size(166, 22)
+        Me.txtNewPass.Size = New System.Drawing.Size(292, 34)
         Me.txtNewPass.TabIndex = 5
         '
         'txtConfirmNewPass
         '
-        Me.txtConfirmNewPass.Location = New System.Drawing.Point(296, 223)
+        Me.txtConfirmNewPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtConfirmNewPass.Location = New System.Drawing.Point(309, 225)
         Me.txtConfirmNewPass.Name = "txtConfirmNewPass"
-        Me.txtConfirmNewPass.Size = New System.Drawing.Size(166, 22)
+        Me.txtConfirmNewPass.Size = New System.Drawing.Size(292, 34)
         Me.txtConfirmNewPass.TabIndex = 6
         '
         'btnUpdatePass
         '
-        Me.btnUpdatePass.Location = New System.Drawing.Point(207, 295)
+        Me.btnUpdatePass.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdatePass.Location = New System.Drawing.Point(161, 297)
         Me.btnUpdatePass.Name = "btnUpdatePass"
-        Me.btnUpdatePass.Size = New System.Drawing.Size(143, 37)
+        Me.btnUpdatePass.Size = New System.Drawing.Size(299, 49)
         Me.btnUpdatePass.TabIndex = 7
         Me.btnUpdatePass.Text = "Update Password"
         Me.btnUpdatePass.UseVisualStyleBackColor = True
