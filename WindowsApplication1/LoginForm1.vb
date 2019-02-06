@@ -1,17 +1,19 @@
 ﻿Public Class LoginForm1
-    Dim screenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
-    Dim screenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
-    Dim RW As Double = (screenWidth) / 1920 ' Ratio change of width
-    Dim RH As Double = (screenHeight) / 1080 ' Ratio change of height
     Private Sub max()
+        Dim CW As Integer = Me.Width ' Current Width
+        Dim CH As Integer = Me.Height ' Current Height
+        Me.WindowState = FormWindowState.Normal
+        Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
+        Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
+
         For Each Ctrl As Control In Controls
             Ctrl.Width += CInt(Ctrl.Width * RW)
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
         Next
-        Me.Width = CInt(Me.Width * RW)
-        Me.Height = CInt(Me.Height * RH)
+        CW = Me.Width
+        CH = Me.Height
     End Sub
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
@@ -35,6 +37,7 @@
         Me.Close()
     End Sub
     Private Sub LoginForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        max()
         Form1.Hide()
         'TODO: This line of code loads data into the 'GuestHouseDataSet.userTable' table. You can move, or remove it, as needed.
         Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)

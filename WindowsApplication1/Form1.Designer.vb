@@ -25,17 +25,14 @@ Partial Class Form1
         Me.btnSignUp = New System.Windows.Forms.Button()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.btn2 = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnSignUp
         '
         Me.btnSignUp.BackColor = System.Drawing.Color.Transparent
-        Me.btnSignUp.Location = New System.Drawing.Point(752, 3)
+        Me.btnSignUp.Location = New System.Drawing.Point(825, 12)
         Me.btnSignUp.Name = "btnSignUp"
-        Me.btnSignUp.Size = New System.Drawing.Size(243, 67)
+        Me.btnSignUp.Size = New System.Drawing.Size(165, 49)
         Me.btnSignUp.TabIndex = 0
         Me.btnSignUp.Text = "Sign Up"
         Me.btnSignUp.UseVisualStyleBackColor = False
@@ -43,46 +40,21 @@ Partial Class Form1
         'btnLogin
         '
         Me.btnLogin.BackColor = System.Drawing.Color.Transparent
-        Me.btnLogin.Location = New System.Drawing.Point(752, 88)
+        Me.btnLogin.Location = New System.Drawing.Point(825, 80)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(243, 67)
+        Me.btnLogin.Size = New System.Drawing.Size(165, 48)
         Me.btnLogin.TabIndex = 1
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
         'btn2
         '
-        Me.btn2.Location = New System.Drawing.Point(3, 3)
+        Me.btn2.Location = New System.Drawing.Point(12, 12)
         Me.btn2.Name = "btn2"
-        Me.btn2.Size = New System.Drawing.Size(163, 49)
+        Me.btn2.Size = New System.Drawing.Size(139, 49)
         Me.btn2.TabIndex = 2
         Me.btn2.Text = "Button1"
         Me.btn2.UseVisualStyleBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.Controls.Add(Me.CheckBox1)
-        Me.Panel1.Controls.Add(Me.btn2)
-        Me.Panel1.Controls.Add(Me.btnLogin)
-        Me.Panel1.Controls.Add(Me.btnSignUp)
-        Me.Panel1.Location = New System.Drawing.Point(1, 2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(998, 713)
-        Me.Panel1.TabIndex = 3
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(889, 682)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(100, 21)
-        Me.CheckBox1.TabIndex = 3
-        Me.CheckBox1.Text = "CheckBox1"
-        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -90,20 +62,18 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1002, 717)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.btnLogin)
+        Me.Controls.Add(Me.btn2)
+        Me.Controls.Add(Me.btnSignUp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Text = "Form1"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents btnSignUp As System.Windows.Forms.Button
     Friend WithEvents btnLogin As System.Windows.Forms.Button
     Friend WithEvents btn2 As System.Windows.Forms.Button
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
 
 End Class
