@@ -130,10 +130,10 @@
   <data name="main-gate3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="main-gate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="main-gate5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="main-gate2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="main-gate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="redo (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -142,13 +142,16 @@
   <data name="main-gate4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="vision-off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>vision-off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="main-gate5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main-gate2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ghover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ghover.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
