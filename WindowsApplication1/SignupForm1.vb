@@ -43,7 +43,6 @@ Public Class SignupForm1
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
         UserTableBindingSource.RemoveCurrent()
-        Form1.Show()
         Me.Close()
     End Sub
 
@@ -64,13 +63,12 @@ Public Class SignupForm1
     Private Sub SignupForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'GuestHouseDataSet.userTable' table. You can move, or remove it, as needed.
         max()
-        Form1.Hide()
         Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)
         UserTableBindingSource.AddNew()
         btnRefresh.PerformClick()
     End Sub
 
     Private Sub SignupForm1_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosed
-        Form1.Show()
+        UserTableBindingSource.RemoveCurrent()
     End Sub
 End Class

@@ -33,4 +33,10 @@
         formUpdatePassword.loggedUser = loggedUser
         formUpdatePassword.Show()
     End Sub
+
+    Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+        Form1.Show()
+        Me.Hide()
+        LoginForm1.Close()
+    End Sub
 End Class
