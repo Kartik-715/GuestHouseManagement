@@ -22,6 +22,7 @@ Partial Class formUpdatePassword
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lblHello = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -30,9 +31,11 @@ Partial Class formUpdatePassword
         Me.txtNewPass = New System.Windows.Forms.TextBox()
         Me.txtConfirmNewPass = New System.Windows.Forms.TextBox()
         Me.btnUpdatePass = New System.Windows.Forms.Button()
-        Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
-        Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
-        CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UserTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GuestHouseDataSet = New WindowsApplication1.guestHouseDataSet()
+        Me.UserTableTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
+        CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblHello
@@ -102,14 +105,19 @@ Partial Class formUpdatePassword
         Me.btnUpdatePass.Text = "Update Password"
         Me.btnUpdatePass.UseVisualStyleBackColor = True
         '
-        'GuestHouseDataSet1
+        'UserTableBindingSource
         '
-        Me.GuestHouseDataSet1.DataSetName = "guestHouseDataSet"
-        Me.GuestHouseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.UserTableBindingSource.DataMember = "userTable"
+        Me.UserTableBindingSource.DataSource = Me.GuestHouseDataSet
         '
-        'UserTableTableAdapter1
+        'GuestHouseDataSet
         '
-        Me.UserTableTableAdapter1.ClearBeforeFill = True
+        Me.GuestHouseDataSet.DataSetName = "guestHouseDataSet"
+        Me.GuestHouseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'UserTableTableAdapter
+        '
+        Me.UserTableTableAdapter.ClearBeforeFill = True
         '
         'formUpdatePassword
         '
@@ -127,7 +135,8 @@ Partial Class formUpdatePassword
         Me.Name = "formUpdatePassword"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "formUpdatePassword"
-        CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -140,6 +149,7 @@ Partial Class formUpdatePassword
     Friend WithEvents txtNewPass As System.Windows.Forms.TextBox
     Friend WithEvents txtConfirmNewPass As System.Windows.Forms.TextBox
     Friend WithEvents btnUpdatePass As System.Windows.Forms.Button
-    Friend WithEvents GuestHouseDataSet1 As WindowsApplication1.guestHouseDataSet
-    Friend WithEvents UserTableTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
+    Friend WithEvents UserTableBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents GuestHouseDataSet As WindowsApplication1.guestHouseDataSet
+    Friend WithEvents UserTableTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
 End Class
