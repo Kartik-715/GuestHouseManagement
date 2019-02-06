@@ -26,6 +26,7 @@ Partial Class Dashboard
         Me.btnBookARoom = New System.Windows.Forms.Button()
         Me.btnMyBills = New System.Windows.Forms.Button()
         Me.btnUpdatePassword = New System.Windows.Forms.Button()
+        Me.lblHello = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Button5
@@ -64,11 +65,22 @@ Partial Class Dashboard
         Me.btnUpdatePassword.Text = "Update Password"
         Me.btnUpdatePassword.UseVisualStyleBackColor = True
         '
+        'lblHello
+        '
+        Me.lblHello.AutoSize = True
+        Me.lblHello.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.lblHello.Location = New System.Drawing.Point(779, 29)
+        Me.lblHello.Name = "lblHello"
+        Me.lblHello.Size = New System.Drawing.Size(131, 29)
+        Me.lblHello.TabIndex = 8
+        Me.lblHello.Text = "Hello User"
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1121, 721)
+        Me.Controls.Add(Me.lblHello)
         Me.Controls.Add(Me.btnUpdatePassword)
         Me.Controls.Add(Me.btnMyBills)
         Me.Controls.Add(Me.btnBookARoom)
@@ -76,10 +88,12 @@ Partial Class Dashboard
         Me.Name = "Dashboard"
         Me.Text = "Dashboard"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents btnBookARoom As System.Windows.Forms.Button
     Friend WithEvents btnMyBills As System.Windows.Forms.Button
     Friend WithEvents btnUpdatePassword As System.Windows.Forms.Button
+    Friend WithEvents lblHello As System.Windows.Forms.Label
 End Class

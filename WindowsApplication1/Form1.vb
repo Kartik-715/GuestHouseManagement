@@ -35,7 +35,6 @@ Public Class Form1
     End Sub
 
     Private Sub btn2_Click(sender As Object, e As EventArgs) Handles btn2.Click
-        Dashboard.Show()
         Booking.Show()
     End Sub
 End Class

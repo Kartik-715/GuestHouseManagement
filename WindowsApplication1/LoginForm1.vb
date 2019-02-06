@@ -24,6 +24,7 @@
         Else
             If userData.password = PasswordTextBox.Text Then
                 MessageBox.Show("Login Successful")
+                Dashboard.loggedUser = userData.username
                 Dashboard.Show()
                 Me.Hide()
             Else
