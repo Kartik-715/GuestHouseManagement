@@ -160,7 +160,6 @@
     </None>
     <None Include="guestHouseDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>guestHouseDataSet2.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="guestHouseDataSet2.xss">

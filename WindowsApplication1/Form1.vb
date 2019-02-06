@@ -4,10 +4,10 @@ Public Class Form1
     Private Shared Function SetProcessDPIAware() As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
     Private Sub max()
-       Dim CW As Integer = Me.Width ' Current Width
+        Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
         Me.WindowState = FormWindowState.Maximized
-       Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
+        Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
         Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
 
         For Each Ctrl As Control In Controls
