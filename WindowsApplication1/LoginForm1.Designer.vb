@@ -175,8 +175,13 @@ Partial Class LoginForm1
         Me.MinimizeBox = False
         Me.Name = "LoginForm1"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
+<<<<<<< HEAD
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Log In"
+=======
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "LoginForm1"
+>>>>>>> 6a852f95e336b83ff9364f7f118fe8d2b139d0f1
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()

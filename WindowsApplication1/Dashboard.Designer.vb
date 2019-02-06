@@ -22,21 +22,21 @@ Partial Class Dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btnLogOut = New System.Windows.Forms.Button()
         Me.btnBookARoom = New System.Windows.Forms.Button()
         Me.btnMyBills = New System.Windows.Forms.Button()
         Me.btnUpdatePassword = New System.Windows.Forms.Button()
         Me.lblHello = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Button5
+        'btnLogOut
         '
-        Me.Button5.Location = New System.Drawing.Point(957, 1)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(164, 57)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "Log Out"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btnLogOut.Location = New System.Drawing.Point(957, 1)
+        Me.btnLogOut.Name = "btnLogOut"
+        Me.btnLogOut.Size = New System.Drawing.Size(164, 57)
+        Me.btnLogOut.TabIndex = 4
+        Me.btnLogOut.Text = "Log Out"
+        Me.btnLogOut.UseVisualStyleBackColor = True
         '
         'btnBookARoom
         '
@@ -84,14 +84,14 @@ Partial Class Dashboard
         Me.Controls.Add(Me.btnUpdatePassword)
         Me.Controls.Add(Me.btnMyBills)
         Me.Controls.Add(Me.btnBookARoom)
-        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.btnLogOut)
         Me.Name = "Dashboard"
         Me.Text = "Dashboard"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents btnLogOut As System.Windows.Forms.Button
     Friend WithEvents btnBookARoom As System.Windows.Forms.Button
     Friend WithEvents btnMyBills As System.Windows.Forms.Button
     Friend WithEvents btnUpdatePassword As System.Windows.Forms.Button

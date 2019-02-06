@@ -3,6 +3,7 @@ Public Class Form1
     <DllImport("user32.dll", EntryPoint:="SetProcessDPIAware")> _
     Private Shared Function SetProcessDPIAware() As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
+
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
@@ -21,8 +22,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
-        Console.Write(Me.Size.ToString)
-        SignupForm1.Show()
+       SignupForm1.Show()
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
@@ -35,7 +35,6 @@ Public Class Form1
     End Sub
 
     Private Sub btn2_Click(sender As Object, e As EventArgs) Handles btn2.Click
-        Dashboard.Show()
         Booking.Show()
     End Sub
 End Class
