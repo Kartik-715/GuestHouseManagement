@@ -89,6 +89,12 @@
     <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formUpdatePassword.Designer.vb">
+      <DependentUpon>formUpdatePassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formUpdatePassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="guestHouseDataSet2.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formUpdatePassword.resx">
+      <DependentUpon>formUpdatePassword.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm1.resx">
       <DependentUpon>LoginForm1.vb</DependentUpon>
