@@ -1,14 +1,12 @@
 ﻿Imports System.Drawing.Drawing2D
 Public Class SignupForm1
     Dim str As String
-    Dim screenWidth As Integer = Screen.PrimaryScreen.Bounds.Width
-    Dim screenHeight As Integer = Screen.PrimaryScreen.Bounds.Height
     Dim RW As Double ' Ratio change of width
     Dim RH As Double ' Ratio change of height
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
-        Me.WindowState = FormWindowState.Normal
+        Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1080)
         Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
         Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
 
@@ -56,8 +54,6 @@ Public Class SignupForm1
         For i As Integer = 0 To 5
             str = str + NumCaptcha(R.Next(0, 60))
         Next
-        Console.Write(Form1.Size.ToString)
-
         Dim b As New Bitmap(141 * 2, 36 * 2, Imaging.PixelFormat.Format32bppArgb)
         Dim g As Graphics = Graphics.FromImage(b)
         Dim Hb As New HatchBrush(HatchStyle.DottedDiamond, Color.FromArgb(255, 128, 0), Color.Black)
@@ -76,10 +72,5 @@ Public Class SignupForm1
 
     Private Sub SignupForm1_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosed
         Form1.Show()
-        Console.Write(Form1.Size.ToString)
-    End Sub
-
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-
     End Sub
 End Class

@@ -2,7 +2,7 @@
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
-        Me.WindowState = FormWindowState.Normal
+        Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1080)
         Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
         Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
 

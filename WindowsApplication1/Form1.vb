@@ -3,11 +3,12 @@ Public Class Form1
     <DllImport("user32.dll", EntryPoint:="SetProcessDPIAware")> _
     Private Shared Function SetProcessDPIAware() As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
+
     Private Sub max()
-       Dim CW As Integer = Me.Width ' Current Width
+        Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
         Me.WindowState = FormWindowState.Maximized
-       Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
+        Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
         Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
 
         For Each Ctrl As Control In Controls
@@ -21,8 +22,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
-        Console.Write(Me.Size.ToString)
-        SignupForm1.Show()
+       SignupForm1.Show()
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
