@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.btnSignUp = New System.Windows.Forms.Button()
         Me.btnLogin = New System.Windows.Forms.Button()
-        Me.btn2 = New System.Windows.Forms.Button()
+        Me.btnCheckAvailabality = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnSignUp
@@ -47,14 +47,14 @@ Partial Class Form1
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
-        'btn2
+        'btnCheckAvailabality
         '
-        Me.btn2.Location = New System.Drawing.Point(12, 12)
-        Me.btn2.Name = "btn2"
-        Me.btn2.Size = New System.Drawing.Size(139, 49)
-        Me.btn2.TabIndex = 2
-        Me.btn2.Text = "Button1"
-        Me.btn2.UseVisualStyleBackColor = True
+        Me.btnCheckAvailabality.Location = New System.Drawing.Point(825, 144)
+        Me.btnCheckAvailabality.Name = "btnCheckAvailabality"
+        Me.btnCheckAvailabality.Size = New System.Drawing.Size(165, 48)
+        Me.btnCheckAvailabality.TabIndex = 2
+        Me.btnCheckAvailabality.Text = "Check Availability"
+        Me.btnCheckAvailabality.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -63,7 +63,7 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1002, 717)
         Me.Controls.Add(Me.btnLogin)
-        Me.Controls.Add(Me.btn2)
+        Me.Controls.Add(Me.btnCheckAvailabality)
         Me.Controls.Add(Me.btnSignUp)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
@@ -74,6 +74,6 @@ Partial Class Form1
     End Sub
     Friend WithEvents btnSignUp As System.Windows.Forms.Button
     Friend WithEvents btnLogin As System.Windows.Forms.Button
-    Friend WithEvents btn2 As System.Windows.Forms.Button
+    Friend WithEvents btnCheckAvailabality As System.Windows.Forms.Button
 
 End Class

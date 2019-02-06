@@ -34,7 +34,9 @@ Public Class Form1
         max()
     End Sub
 
-    Private Sub btn2_Click(sender As Object, e As EventArgs) Handles btn2.Click
-        Booking.Show()
+    Private Sub Form1_Closing(sender As Object, e As EventArgs) Handles MyBase.FormClosing
+        For Each frm As Form In Me.MdiChildren
+            frm.Close()
+        Next
     End Sub
 End Class
