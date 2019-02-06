@@ -4,23 +4,17 @@ Public Class Form1
     Private Shared Function SetProcessDPIAware() As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
     Private Sub max()
-        Console.Write(Me.Size.ToString)
-        Console.Write(Me.btnLogin.Size.ToString)
-        Dim CW As Integer = Me.Width ' Current Width
+       Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
         Me.WindowState = FormWindowState.Maximized
-        Console.Write(Me.btnLogin.Size.ToString)
-        Console.Write(Me.Size.ToString)
-        Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
+       Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
         Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
 
         For Each Ctrl As Control In Controls
-            Console.Write(Ctrl.Size.ToString)
             Ctrl.Width += CInt(Ctrl.Width * RW)
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
-            Console.Write(Ctrl.Size.ToString)
         Next
         CW = Me.Width
         CH = Me.Height
