@@ -32,7 +32,6 @@ Partial Class Form1
         '
         'btnSignUp
         '
-        Me.btnSignUp.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnSignUp.BackColor = System.Drawing.Color.Transparent
         Me.btnSignUp.Location = New System.Drawing.Point(752, 3)
         Me.btnSignUp.Name = "btnSignUp"
@@ -43,7 +42,6 @@ Partial Class Form1
         '
         'btnLogin
         '
-        Me.btnLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLogin.BackColor = System.Drawing.Color.Transparent
         Me.btnLogin.Location = New System.Drawing.Point(752, 88)
         Me.btnLogin.Name = "btnLogin"

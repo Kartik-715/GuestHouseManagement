@@ -55,7 +55,7 @@ Partial Class LoginForm1
         Me.UsernameLabel.Location = New System.Drawing.Point(232, 16)
         Me.UsernameLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.UsernameLabel.Name = "UsernameLabel"
-        Me.UsernameLabel.Size = New System.Drawing.Size(133, 46)
+        Me.UsernameLabel.Size = New System.Drawing.Size(212, 46)
         Me.UsernameLabel.TabIndex = 0
         Me.UsernameLabel.Text = "&User name"
         Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -66,7 +66,7 @@ Partial Class LoginForm1
         Me.PasswordLabel.Location = New System.Drawing.Point(232, 126)
         Me.PasswordLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.PasswordLabel.Name = "PasswordLabel"
-        Me.PasswordLabel.Size = New System.Drawing.Size(133, 46)
+        Me.PasswordLabel.Size = New System.Drawing.Size(250, 46)
         Me.PasswordLabel.TabIndex = 2
         Me.PasswordLabel.Text = "&Password"
         Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
