@@ -24,8 +24,13 @@
         Else
             If userData.password = PasswordTextBox.Text Then
                 MessageBox.Show("Login Successful")
-                Dashboard.loggedUser = userData.username
-                Dashboard.Show()
+                If userData.username = "Admin" Then
+                    AdminDashboard.loggedUser = userData.username
+                    Dashboard.Show()
+                Else
+                    Dashboard.loggedUser = userData.username
+                    Dashboard.Show()
+                End If
                 Me.Close()
             Else
                 MessageBox.Show("Wrong Password")
