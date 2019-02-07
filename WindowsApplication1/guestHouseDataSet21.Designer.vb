@@ -361,6 +361,8 @@
 
 '        Private columnMobileNo As Global.System.Data.DataColumn
 
+'        Private columnisApproved As Global.System.Data.DataColumn
+
 '        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
 '         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
 '        Public Sub New()
@@ -429,6 +431,14 @@
 '        End Property
 
 '        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+'         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+'        Public ReadOnly Property isApprovedColumn() As Global.System.Data.DataColumn
+'            Get
+'                Return Me.columnisApproved
+'            End Get
+'        End Property
+
+'        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
 '         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
 '         Global.System.ComponentModel.Browsable(false)>  _
 '        Public ReadOnly Property Count() As Integer
@@ -465,9 +475,9 @@
 
 '        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
 '         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-'        Public Overloads Function AdduserTableRow(ByVal username As String, ByVal password As String, ByVal MobileNo As String) As userTableRow
+'        Public Overloads Function AdduserTableRow(ByVal username As String, ByVal password As String, ByVal MobileNo As String, ByVal isApproved As Boolean) As userTableRow
 '            Dim rowuserTableRow As userTableRow = CType(Me.NewRow,userTableRow)
-'            Dim columnValuesArray() As Object = New Object() {Nothing, username, password, MobileNo}
+'            Dim columnValuesArray() As Object = New Object() {Nothing, username, password, MobileNo, isApproved}
 '            rowuserTableRow.ItemArray = columnValuesArray
 '            Me.Rows.Add(rowuserTableRow)
 '            Return rowuserTableRow
@@ -500,6 +510,7 @@
 '            Me.columnusername = MyBase.Columns("username")
 '            Me.columnpassword = MyBase.Columns("password")
 '            Me.columnMobileNo = MyBase.Columns("MobileNo")
+'            Me.columnisApproved = MyBase.Columns("isApproved")
 '        End Sub
 
 '        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -513,6 +524,8 @@
 '            MyBase.Columns.Add(Me.columnpassword)
 '            Me.columnMobileNo = New Global.System.Data.DataColumn("MobileNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
 '            MyBase.Columns.Add(Me.columnMobileNo)
+'            Me.columnisApproved = New Global.System.Data.DataColumn("isApproved", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+'            MyBase.Columns.Add(Me.columnisApproved)
 '            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnusername}, true))
 '            Me.columnID.AutoIncrement = true
 '            Me.columnID.AutoIncrementSeed = -1
@@ -1438,6 +1451,21 @@
 
 '        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
 '         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+'        Public Property isApproved() As Boolean
+'            Get
+'                Try 
+'                    Return CType(Me(Me.tableuserTable.isApprovedColumn),Boolean)
+'                Catch e As Global.System.InvalidCastException
+'                    Throw New Global.System.Data.StrongTypingException("The value for column 'isApproved' in table 'userTable' is DBNull.", e)
+'                End Try
+'            End Get
+'            Set
+'                Me(Me.tableuserTable.isApprovedColumn) = value
+'            End Set
+'        End Property
+
+'        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+'         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
 '        Public Function IspasswordNull() As Boolean
 '            Return Me.IsNull(Me.tableuserTable.passwordColumn)
 '        End Function
@@ -1458,6 +1486,18 @@
 '         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
 '        Public Sub SetMobileNoNull()
 '            Me(Me.tableuserTable.MobileNoColumn) = Global.System.Convert.DBNull
+'        End Sub
+
+'        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+'         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+'        Public Function IsisApprovedNull() As Boolean
+'            Return Me.IsNull(Me.tableuserTable.isApprovedColumn)
+'        End Function
+
+'        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+'         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+'        Public Sub SetisApprovedNull()
+'            Me(Me.tableuserTable.isApprovedColumn) = Global.System.Convert.DBNull
 '        End Sub
 '    End Class
 
@@ -2135,12 +2175,14 @@
 '            tableMapping.ColumnMappings.Add("username", "username")
 '            tableMapping.ColumnMappings.Add("password", "password")
 '            tableMapping.ColumnMappings.Add("MobileNo", "MobileNo")
+'            tableMapping.ColumnMappings.Add("isApproved", "isApproved")
 '            Me._adapter.TableMappings.Add(tableMapping)
 '            Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
 '            Me._adapter.DeleteCommand.Connection = Me.Connection
 '            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `userTable` WHERE ((`ID` = ?) AND ((? = 1 AND `username` IS NULL) OR "& _ 
 '                "(`username` = ?)) AND ((? = 1 AND `password` IS NULL) OR (`password` = ?)) AND ("& _ 
-'                "(? = 1 AND `MobileNo` IS NULL) OR (`MobileNo` = ?)))"
+'                "(? = 1 AND `MobileNo` IS NULL) OR (`MobileNo` = ?)) AND ((? = 1 AND `isApproved`"& _ 
+'                " IS NULL) OR (`isApproved` = ?)))"
 '            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
 '            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
 '            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_username", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "username", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -2149,23 +2191,29 @@
 '            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_password", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "password", Global.System.Data.DataRowVersion.Original, false, Nothing))
 '            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_MobileNo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MobileNo", Global.System.Data.DataRowVersion.Original, true, Nothing))
 '            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MobileNo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MobileNo", Global.System.Data.DataRowVersion.Original, false, Nothing))
+'            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_isApproved", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "isApproved", Global.System.Data.DataRowVersion.Original, true, Nothing))
+'            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_isApproved", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "isApproved", Global.System.Data.DataRowVersion.Original, false, Nothing))
 '            Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
 '            Me._adapter.InsertCommand.Connection = Me.Connection
-'            Me._adapter.InsertCommand.CommandText = "INSERT INTO `userTable` (`username`, `password`, `MobileNo`) VALUES (?, ?, ?)"
+'            Me._adapter.InsertCommand.CommandText = "INSERT INTO `userTable` (`username`, `password`, `MobileNo`, `isApproved`) VALUES"& _ 
+'                " (?, ?, ?, ?)"
 '            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
 '            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "username", Global.System.Data.DataRowVersion.Current, false, Nothing))
 '            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("password", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "password", Global.System.Data.DataRowVersion.Current, false, Nothing))
 '            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MobileNo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MobileNo", Global.System.Data.DataRowVersion.Current, false, Nothing))
+'            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("isApproved", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "isApproved", Global.System.Data.DataRowVersion.Current, false, Nothing))
 '            Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
 '            Me._adapter.UpdateCommand.Connection = Me.Connection
-'            Me._adapter.UpdateCommand.CommandText = "UPDATE `userTable` SET `username` = ?, `password` = ?, `MobileNo` = ? WHERE ((`ID"& _ 
-'                "` = ?) AND ((? = 1 AND `username` IS NULL) OR (`username` = ?)) AND ((? = 1 AND "& _ 
-'                "`password` IS NULL) OR (`password` = ?)) AND ((? = 1 AND `MobileNo` IS NULL) OR "& _ 
-'                "(`MobileNo` = ?)))"
+'            Me._adapter.UpdateCommand.CommandText = "UPDATE `userTable` SET `username` = ?, `password` = ?, `MobileNo` = ?, `isApprove"& _ 
+'                "d` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `username` IS NULL) OR (`username` = ?)"& _ 
+'                ") AND ((? = 1 AND `password` IS NULL) OR (`password` = ?)) AND ((? = 1 AND `Mobi"& _ 
+'                "leNo` IS NULL) OR (`MobileNo` = ?)) AND ((? = 1 AND `isApproved` IS NULL) OR (`i"& _ 
+'                "sApproved` = ?)))"
 '            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
 '            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "username", Global.System.Data.DataRowVersion.Current, false, Nothing))
 '            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("password", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "password", Global.System.Data.DataRowVersion.Current, false, Nothing))
 '            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MobileNo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MobileNo", Global.System.Data.DataRowVersion.Current, false, Nothing))
+'            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("isApproved", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "isApproved", Global.System.Data.DataRowVersion.Current, false, Nothing))
 '            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ID", Global.System.Data.DataRowVersion.Original, false, Nothing))
 '            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_username", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "username", Global.System.Data.DataRowVersion.Original, true, Nothing))
 '            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "username", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -2173,6 +2221,8 @@
 '            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_password", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "password", Global.System.Data.DataRowVersion.Original, false, Nothing))
 '            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_MobileNo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MobileNo", Global.System.Data.DataRowVersion.Original, true, Nothing))
 '            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MobileNo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MobileNo", Global.System.Data.DataRowVersion.Original, false, Nothing))
+'            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_isApproved", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "isApproved", Global.System.Data.DataRowVersion.Original, true, Nothing))
+'            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_isApproved", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "isApproved", Global.System.Data.DataRowVersion.Original, false, Nothing))
 '        End Sub
 
 '        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2188,7 +2238,7 @@
 '            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(3) {}
 '            Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
 '            Me._commandCollection(0).Connection = Me.Connection
-'            Me._commandCollection(0).CommandText = "SELECT ID, username, [password], MobileNo FROM userTable"
+'            Me._commandCollection(0).CommandText = "SELECT ID, username, [password], MobileNo, isApproved FROM userTable"
 '            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
 '            Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
 '            Me._commandCollection(1).Connection = Me.Connection
@@ -2197,7 +2247,7 @@
 '            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("username", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "username", Global.System.Data.DataRowVersion.Original, false, Nothing))
 '            Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
 '            Me._commandCollection(2).Connection = Me.Connection
-'            Me._commandCollection(2).CommandText = "SELECT [password]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     userTable"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (username = ?)"
+'            Me._commandCollection(2).CommandText = "SELECT [password], isApproved FROM userTable WHERE (username = ?)"
 '            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
 '            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("username", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "username", Global.System.Data.DataRowVersion.Current, false, Nothing))
 '            Me._commandCollection(3) = New Global.System.Data.OleDb.OleDbCommand()
@@ -2264,7 +2314,7 @@
 '         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
 '         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
 '         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-'        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_username As String, ByVal Original_password As String, ByVal Original_MobileNo As String) As Integer
+'        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_username As String, ByVal Original_password As String, ByVal Original_MobileNo As String, ByVal Original_isApproved As Boolean) As Integer
 '            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
 '            If (Original_username Is Nothing) Then
 '                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -2287,6 +2337,8 @@
 '                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
 '                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_MobileNo,String)
 '            End If
+'            Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+'            Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_isApproved,Boolean)
 '            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
 '            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
 '                        <> Global.System.Data.ConnectionState.Open) Then
@@ -2306,7 +2358,7 @@
 '         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
 '         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
 '         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-'        Public Overloads Overridable Function Insert(ByVal username As String, ByVal password As String, ByVal MobileNo As String) As Integer
+'        Public Overloads Overridable Function Insert(ByVal username As String, ByVal password As String, ByVal MobileNo As String, ByVal isApproved As Boolean) As Integer
 '            If (username Is Nothing) Then
 '                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
 '            Else
@@ -2322,6 +2374,7 @@
 '            Else
 '                Me.Adapter.InsertCommand.Parameters(2).Value = CType(MobileNo,String)
 '            End If
+'            Me.Adapter.InsertCommand.Parameters(3).Value = CType(isApproved,Boolean)
 '            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
 '            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
 '                        <> Global.System.Data.ConnectionState.Open) Then
@@ -2341,7 +2394,7 @@
 '         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
 '         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
 '         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-'        Public Overloads Overridable Function Update(ByVal username As String, ByVal password As String, ByVal MobileNo As String, ByVal Original_ID As Integer, ByVal Original_username As String, ByVal Original_password As String, ByVal Original_MobileNo As String) As Integer
+'        Public Overloads Overridable Function Update(ByVal username As String, ByVal password As String, ByVal MobileNo As String, ByVal isApproved As Boolean, ByVal Original_ID As Integer, ByVal Original_username As String, ByVal Original_password As String, ByVal Original_MobileNo As String, ByVal Original_isApproved As Boolean) As Integer
 '            If (username Is Nothing) Then
 '                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
 '            Else
@@ -2357,28 +2410,31 @@
 '            Else
 '                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(MobileNo,String)
 '            End If
-'            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_ID,Integer)
+'            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(isApproved,Boolean)
+'            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_ID,Integer)
 '            If (Original_username Is Nothing) Then
-'                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
-'                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+'                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
+'                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
 '            Else
-'                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
-'                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_username,String)
+'                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
+'                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_username,String)
 '            End If
 '            If (Original_password Is Nothing) Then
-'                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
-'                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+'                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+'                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
 '            Else
-'                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-'                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_password,String)
+'                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+'                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_password,String)
 '            End If
 '            If (Original_MobileNo Is Nothing) Then
-'                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-'                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+'                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+'                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
 '            Else
-'                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-'                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_MobileNo,String)
+'                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+'                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_MobileNo,String)
 '            End If
+'            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+'            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_isApproved,Boolean)
 '            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
 '            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
 '                        <> Global.System.Data.ConnectionState.Open) Then
@@ -2398,8 +2454,8 @@
 '         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
 '         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
 '         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-'        Public Overloads Overridable Function Update(ByVal password As String, ByVal MobileNo As String, ByVal Original_ID As Integer, ByVal Original_username As String, ByVal Original_password As String, ByVal Original_MobileNo As String) As Integer
-'            Return Me.Update(Original_username, password, MobileNo, Original_ID, Original_username, Original_password, Original_MobileNo)
+'        Public Overloads Overridable Function Update(ByVal password As String, ByVal MobileNo As String, ByVal isApproved As Boolean, ByVal Original_ID As Integer, ByVal Original_username As String, ByVal Original_password As String, ByVal Original_MobileNo As String, ByVal Original_isApproved As Boolean) As Integer
+'            Return Me.Update(Original_username, password, MobileNo, isApproved, Original_ID, Original_username, Original_password, Original_MobileNo, Original_isApproved)
 '        End Function
 
 '        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
