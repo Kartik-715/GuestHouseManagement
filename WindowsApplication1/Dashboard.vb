@@ -19,10 +19,6 @@
 
     Public loggedUser As String
 
-    Private Sub Dashboard_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosed
-        Form1.Close()
-    End Sub
-
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         max()
         Me.WindowState = FormWindowState.Maximized
@@ -30,14 +26,14 @@
     End Sub
 
     Private Sub btnUpdatePassword_Click(sender As Object, e As EventArgs) Handles btnUpdatePassword.Click
+        Console.WriteLine(loggedUser)
         formUpdatePassword.loggedUser = loggedUser
-        formUpdatePassword.Close()
         formUpdatePassword.Show()
     End Sub
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
         Form1.Show()
-        Me.Hide()
-        LoginForm1.Close()
+        Me.Close()
+        'LoginForm1.Close()
     End Sub
 End Class

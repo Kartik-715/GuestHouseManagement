@@ -7,10 +7,10 @@
     End Sub
 
     Private Sub btnUpdatePass_Click(sender As Object, e As EventArgs) Handles btnUpdatePass.Click
-
-        If txtOldPass.Text = UserTableTableAdapter1.getPassword(loggedUser) Then
+        Console.WriteLine("hi" & UserTableTableAdapter.getPassword(loggedUser))
+        If txtOldPass.Text = UserTableTableAdapter.getPassword(loggedUser) Then
             If txtNewPass.Text = txtConfirmNewPass.Text Then
-                UserTableTableAdapter1.UpdatePassword(txtNewPass.Text, loggedUser)
+                UserTableTableAdapter.UpdatePassword(txtNewPass.Text, loggedUser)
                 MessageBox.Show("Password changed successfully!")
                 Me.Close()
                 Dashboard.Show()

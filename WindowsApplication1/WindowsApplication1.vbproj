@@ -100,6 +100,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>guestHouseDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="guestHouseDataSet21.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>guestHouseDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm1.Designer.vb">
       <DependentUpon>LoginForm1.vb</DependentUpon>
     </Compile>
@@ -161,6 +166,7 @@
     <None Include="guestHouseDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>guestHouseDataSet21.Designer.vb</LastGenOutput>
     </None>
     <None Include="guestHouseDataSet2.xss">
       <DependentUpon>guestHouseDataSet2.xsd</DependentUpon>

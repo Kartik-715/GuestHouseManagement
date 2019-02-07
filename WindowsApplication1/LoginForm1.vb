@@ -26,7 +26,7 @@
                 MessageBox.Show("Login Successful")
                 Dashboard.loggedUser = userData.username
                 Dashboard.Show()
-                Me.Hide()
+                Me.Close()
             Else
                 MessageBox.Show("Wrong Password")
             End If
