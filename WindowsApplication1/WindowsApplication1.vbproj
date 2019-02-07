@@ -184,7 +184,6 @@
     <None Include="guestHouseDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>guestHouseDataSet21.Designer.vb</LastGenOutput>
     </None>
     <None Include="guestHouseDataSet2.xss">
       <DependentUpon>guestHouseDataSet2.xsd</DependentUpon>

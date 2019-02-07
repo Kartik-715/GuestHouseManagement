@@ -22,7 +22,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
-       SignupForm1.Show()
+        SignupForm1.Show()
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click

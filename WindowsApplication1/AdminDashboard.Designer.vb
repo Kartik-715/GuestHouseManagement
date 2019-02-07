@@ -28,13 +28,15 @@ Partial Class AdminDashboard
         Me.btnBookARoom = New System.Windows.Forms.Button()
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.btnApproveUsers = New System.Windows.Forms.Button()
+        Me.labelNonApproved = New System.Windows.Forms.Label()
+        Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
         Me.SuspendLayout()
         '
         'lblHello
         '
         Me.lblHello.AutoSize = True
         Me.lblHello.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.lblHello.Location = New System.Drawing.Point(652, 40)
+        Me.lblHello.Location = New System.Drawing.Point(351, 21)
         Me.lblHello.Name = "lblHello"
         Me.lblHello.Size = New System.Drawing.Size(131, 29)
         Me.lblHello.TabIndex = 13
@@ -85,11 +87,25 @@ Partial Class AdminDashboard
         Me.btnApproveUsers.Text = "Approve Users"
         Me.btnApproveUsers.UseVisualStyleBackColor = True
         '
+        'labelNonApproved
+        '
+        Me.labelNonApproved.AutoSize = True
+        Me.labelNonApproved.Location = New System.Drawing.Point(374, 75)
+        Me.labelNonApproved.Name = "labelNonApproved"
+        Me.labelNonApproved.Size = New System.Drawing.Size(51, 17)
+        Me.labelNonApproved.TabIndex = 15
+        Me.labelNonApproved.Text = "Label1"
+        '
+        'UserTableTableAdapter1
+        '
+        Me.UserTableTableAdapter1.ClearBeforeFill = True
+        '
         'AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1006, 721)
+        Me.Controls.Add(Me.labelNonApproved)
         Me.Controls.Add(Me.btnApproveUsers)
         Me.Controls.Add(Me.lblHello)
         Me.Controls.Add(Me.btnUpdatePassword)
@@ -108,4 +124,6 @@ Partial Class AdminDashboard
     Friend WithEvents btnBookARoom As System.Windows.Forms.Button
     Friend WithEvents btnLogOut As System.Windows.Forms.Button
     Friend WithEvents btnApproveUsers As System.Windows.Forms.Button
+    Friend WithEvents labelNonApproved As System.Windows.Forms.Label
+    Friend WithEvents UserTableTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
 End Class

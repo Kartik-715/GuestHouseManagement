@@ -14,6 +14,8 @@
 
     Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
         Me.Close()
+        AdminDashboard.loggedUser = "Admin"
+        AdminDashboard.Show()
     End Sub
 
     Private Sub btnSaveReload_Click(sender As Object, e As EventArgs) Handles btnSaveReload.Click
