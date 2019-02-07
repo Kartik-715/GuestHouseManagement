@@ -1,4 +1,5 @@
 ﻿Public Class AdminDashboard
+    Public loggedUser As String
 
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
@@ -17,10 +18,13 @@
         CH = Me.Height
     End Sub
 
-    Public loggedUser As String
+    Private Sub AdminDashboard_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosing
+        Form1.Show()
+    End Sub
 
     Private Sub AdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         max()
+        Form1.Hide()
         Me.WindowState = FormWindowState.Maximized
         lblHello.Text = "Hello! " & loggedUser
         labelNonApproved.Text = "There are " & UserTableTableAdapter1.numNonApproved & " non Approved Users "
@@ -32,13 +36,10 @@
     End Sub
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
-        Form1.Show()
         Me.Close()
     End Sub
 
     Private Sub btnApproveUsers_Click(sender As Object, e As EventArgs) Handles btnApproveUsers.Click
-        Me.Close()
-        Form1.Hide()
         approveUsers.Show()
     End Sub
 End Class

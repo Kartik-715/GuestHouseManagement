@@ -209,6 +209,7 @@
     <Content Include="guestHouse.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="My Project\ghover.jpg" />
     <None Include="My Project\vision-off.png" />
     <None Include="My Project\eye.png" />
     <None Include="My Project\main-gate2.jpg" />
