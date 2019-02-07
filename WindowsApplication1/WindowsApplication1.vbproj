@@ -178,6 +178,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="guestHouseDataSet2.xsc">
       <DependentUpon>guestHouseDataSet2.xsd</DependentUpon>
     </None>

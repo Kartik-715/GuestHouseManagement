@@ -1,4 +1,18 @@
 ﻿Public Class Dashboard
+    Public loggedUser As String
+    Private images(3) As System.Drawing.Image
+    Private index As Integer
+    Dim check As Integer = 0
+
+    Private Sub PreVentFlicker()
+        With Me
+            .SetStyle(ControlStyles.OptimizedDoubleBuffer, True)
+            .SetStyle(ControlStyles.UserPaint, True)
+            .SetStyle(ControlStyles.AllPaintingInWmPaint, True)
+            .UpdateStyles()
+        End With
+
+    End Sub
 
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
@@ -17,13 +31,15 @@
         CH = Me.Height
     End Sub
 
-    Public loggedUser As String
-
     Private Sub Dashboard_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosed
         Form1.Show()
+        If check = 0 Then
+            Form1.Close()
+        End If
     End Sub
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PreVentFlicker()
         max()
         lblHello.Parent = PictureBox1
         Me.WindowState = FormWindowState.Maximized
@@ -37,13 +53,9 @@
     End Sub
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+        check = 1
         Me.Close()
     End Sub
-
-
-
-    Private images(3) As System.Drawing.Image
-    Private index As Integer
 
     Public Sub New()
         InitializeComponent()
