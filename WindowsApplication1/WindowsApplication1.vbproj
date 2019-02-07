@@ -76,6 +76,12 @@
     <Compile Include="AdminDashboard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="approveUsers.Designer.vb">
+      <DependentUpon>approveUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="approveUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Dashboard.Designer.vb">
       <DependentUpon>Dashboard.vb</DependentUpon>
     </Compile>
@@ -143,6 +149,9 @@
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="approveUsers.resx">
+      <DependentUpon>approveUsers.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.vb</DependentUpon>
     </EmbeddedResource>
@@ -175,7 +184,6 @@
     <None Include="guestHouseDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>guestHouseDataSet21.Designer.vb</LastGenOutput>
     </None>
     <None Include="guestHouseDataSet2.xss">
       <DependentUpon>guestHouseDataSet2.xsd</DependentUpon>

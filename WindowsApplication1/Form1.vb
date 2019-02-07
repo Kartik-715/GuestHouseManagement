@@ -16,14 +16,14 @@ Public Class Form1
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
+            Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * RW), FontStyle.Bold)
         Next
-        lblWelcome.Font = New Font("Microsoft Tai Le", CInt(28 * RW), FontStyle.Bold)
         CW = Me.Width
         CH = Me.Height
     End Sub
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
-       SignupForm1.Show()
+        SignupForm1.Show()
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click

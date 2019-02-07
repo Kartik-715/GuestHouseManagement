@@ -1,4 +1,5 @@
 ﻿Public Class Dashboard
+    Public loggedUser As String
 
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
@@ -17,9 +18,12 @@
         CH = Me.Height
     End Sub
 
-    Public loggedUser As String
+    Private Sub Dashboard_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosing
+        Form1.Show()
+    End Sub
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Form1.Hide()
         max()
         Me.WindowState = FormWindowState.Maximized
         lblHello.Text = "Hello! " & loggedUser
@@ -32,8 +36,6 @@
     End Sub
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
-        Form1.Show()
         Me.Close()
-        'LoginForm1.Close()
     End Sub
 End Class

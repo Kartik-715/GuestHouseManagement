@@ -23,8 +23,10 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.lblWelcome = New System.Windows.Forms.Label()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.btnLogin = New WindowsApplication1.RoundButton()
         Me.btnCheckAvailabality = New WindowsApplication1.RoundButton()
         Me.btnSignUp = New WindowsApplication1.RoundButton()
@@ -44,12 +46,19 @@ Partial Class Form1
         Me.lblWelcome.Text = "Welcome to IITG Guest House Portal"
         Me.lblWelcome.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.NotifyIcon1.Text = "NotifyIcon1"
+        Me.NotifyIcon1.Visible = True
+        '
         'btnLogin
         '
         Me.btnLogin.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnLogin.FlatAppearance.BorderSize = 0
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.ForeColor = System.Drawing.Color.White
         Me.btnLogin.Location = New System.Drawing.Point(437, 606)
         Me.btnLogin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnLogin.Name = "btnLogin"
@@ -63,7 +72,8 @@ Partial Class Form1
         Me.btnCheckAvailabality.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnCheckAvailabality.FlatAppearance.BorderSize = 0
         Me.btnCheckAvailabality.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCheckAvailabality.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheckAvailabality.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheckAvailabality.ForeColor = System.Drawing.Color.White
         Me.btnCheckAvailabality.Location = New System.Drawing.Point(608, 606)
         Me.btnCheckAvailabality.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCheckAvailabality.Name = "btnCheckAvailabality"
@@ -77,7 +87,8 @@ Partial Class Form1
         Me.btnSignUp.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnSignUp.FlatAppearance.BorderSize = 0
         Me.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSignUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignUp.ForeColor = System.Drawing.Color.White
         Me.btnSignUp.Location = New System.Drawing.Point(267, 606)
         Me.btnSignUp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSignUp.Name = "btnSignUp"
@@ -110,6 +121,7 @@ Partial Class Form1
     Friend WithEvents btnLogin As WindowsApplication1.RoundButton
     Friend WithEvents btnCheckAvailabality As WindowsApplication1.RoundButton
     Friend WithEvents lblWelcome As System.Windows.Forms.Label
+    Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
 
 End Class
 

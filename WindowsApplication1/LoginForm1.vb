@@ -26,7 +26,7 @@
                 MessageBox.Show("Login Successful")
                 If userData.username = "Admin" Then
                     AdminDashboard.loggedUser = userData.username
-                    Dashboard.Show()
+                    AdminDashboard.Show()
                 Else
                     Dashboard.loggedUser = userData.username
                     Dashboard.Show()
