@@ -1,4 +1,4 @@
-﻿Public Class Dashboard
+﻿Public Class AdminDashboard
 
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
@@ -19,7 +19,7 @@
 
     Public loggedUser As String
 
-    Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub AdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         max()
         Me.WindowState = FormWindowState.Maximized
         lblHello.Text = "Hello! " & loggedUser

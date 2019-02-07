@@ -17,6 +17,7 @@ Public Class Form1
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
         Next
+        lblWelcome.Font = New Font("Microsoft Tai Le", CInt(28 * RW), FontStyle.Bold)
         CW = Me.Width
         CH = Me.Height
     End Sub
