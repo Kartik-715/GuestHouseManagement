@@ -73,7 +73,7 @@
               <Mapping SourceColumn="isApproved" DataSetColumn="isApproved" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="changeApprovalStatus" Modifier="Public" Name="changeApprovalStatus" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="changeApprovalStatus">
+              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="changeApprovalStatus" Modifier="Public" Name="changeApprovalStatus" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="changeApprovalStatus">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE userTable
@@ -86,7 +86,7 @@ WHERE  (username = ?)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteUser" Modifier="Public" Name="DeleteUser" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteUser">
+              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteUser" Modifier="Public" Name="DeleteUser" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteUser">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM userTable
@@ -97,7 +97,17 @@ WHERE  (username = ?)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="userTable" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getPassword" Modifier="Public" Name="getPassword" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="getPassword">
+              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="userTable" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="getNonApproved" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="getNonApproved" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="getNonApproved">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT userTable.*
+FROM     userTable
+WHERE  (isApproved = false)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="userTable" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getPassword" Modifier="Public" Name="getPassword" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="getPassword">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT [password], isApproved FROM userTable WHERE (username = ?)</CommandText>
@@ -107,7 +117,7 @@ WHERE  (username = ?)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdatePassword" Modifier="Public" Name="UpdatePassword" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdatePassword">
+              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdatePassword" Modifier="Public" Name="UpdatePassword" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdatePassword">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE userTable
@@ -306,7 +316,7 @@ WHERE  (username = ?)</CommandText>
   <xs:element name="guestHouseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="guestHouseDataSet" msprop:Generator_UserDSName="guestHouseDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="userTable" msprop:Generator_TableClassName="userTableDataTable" msprop:Generator_TableVarName="tableuserTable" msprop:Generator_TablePropName="userTable" msprop:Generator_RowDeletingName="userTableRowDeleting" msprop:Generator_RowChangingName="userTableRowChanging" msprop:Generator_RowEvHandlerName="userTableRowChangeEventHandler" msprop:Generator_RowDeletedName="userTableRowDeleted" msprop:Generator_UserTableName="userTable" msprop:Generator_RowChangedName="userTableRowChanged" msprop:Generator_RowEvArgName="userTableRowChangeEvent" msprop:Generator_RowClassName="userTableRow">
+        <xs:element name="userTable" msprop:Generator_TableClassName="userTableDataTable" msprop:Generator_TableVarName="tableuserTable" msprop:Generator_RowChangedName="userTableRowChanged" msprop:Generator_TablePropName="userTable" msprop:Generator_RowDeletingName="userTableRowDeleting" msprop:Generator_RowChangingName="userTableRowChanging" msprop:Generator_RowEvHandlerName="userTableRowChangeEventHandler" msprop:Generator_RowDeletedName="userTableRowDeleted" msprop:Generator_RowClassName="userTableRow" msprop:Generator_UserTableName="userTable" msprop:Generator_RowEvArgName="userTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -335,7 +345,7 @@ WHERE  (username = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Room" msprop:Generator_TableClassName="RoomDataTable" msprop:Generator_TableVarName="tableRoom" msprop:Generator_TablePropName="Room" msprop:Generator_RowDeletingName="RoomRowDeleting" msprop:Generator_RowChangingName="RoomRowChanging" msprop:Generator_RowEvHandlerName="RoomRowChangeEventHandler" msprop:Generator_RowDeletedName="RoomRowDeleted" msprop:Generator_UserTableName="Room" msprop:Generator_RowChangedName="RoomRowChanged" msprop:Generator_RowEvArgName="RoomRowChangeEvent" msprop:Generator_RowClassName="RoomRow">
+        <xs:element name="Room" msprop:Generator_TableClassName="RoomDataTable" msprop:Generator_TableVarName="tableRoom" msprop:Generator_RowChangedName="RoomRowChanged" msprop:Generator_TablePropName="Room" msprop:Generator_RowDeletingName="RoomRowDeleting" msprop:Generator_RowChangingName="RoomRowChanging" msprop:Generator_RowEvHandlerName="RoomRowChangeEventHandler" msprop:Generator_RowDeletedName="RoomRowDeleted" msprop:Generator_RowClassName="RoomRow" msprop:Generator_UserTableName="Room" msprop:Generator_RowEvArgName="RoomRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
@@ -374,7 +384,7 @@ WHERE  (username = ?)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Booking" msprop:Generator_TableClassName="BookingDataTable" msprop:Generator_TableVarName="tableBooking" msprop:Generator_TablePropName="Booking" msprop:Generator_RowDeletingName="BookingRowDeleting" msprop:Generator_RowChangingName="BookingRowChanging" msprop:Generator_RowEvHandlerName="BookingRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingRowDeleted" msprop:Generator_UserTableName="Booking" msprop:Generator_RowChangedName="BookingRowChanged" msprop:Generator_RowEvArgName="BookingRowChangeEvent" msprop:Generator_RowClassName="BookingRow">
+        <xs:element name="Booking" msprop:Generator_TableClassName="BookingDataTable" msprop:Generator_TableVarName="tableBooking" msprop:Generator_RowChangedName="BookingRowChanged" msprop:Generator_TablePropName="Booking" msprop:Generator_RowDeletingName="BookingRowDeleting" msprop:Generator_RowChangingName="BookingRowChanging" msprop:Generator_RowEvHandlerName="BookingRowChangeEventHandler" msprop:Generator_RowDeletedName="BookingRowDeleted" msprop:Generator_RowClassName="BookingRow" msprop:Generator_UserTableName="Booking" msprop:Generator_RowEvArgName="BookingRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />

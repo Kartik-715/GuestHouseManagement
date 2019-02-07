@@ -27,6 +27,7 @@ Partial Class AdminDashboard
         Me.btnMyBills = New System.Windows.Forms.Button()
         Me.btnBookARoom = New System.Windows.Forms.Button()
         Me.btnLogOut = New System.Windows.Forms.Button()
+        Me.btnApproveUsers = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblHello
@@ -75,11 +76,21 @@ Partial Class AdminDashboard
         Me.btnLogOut.Text = "Log Out"
         Me.btnLogOut.UseVisualStyleBackColor = True
         '
+        'btnApproveUsers
+        '
+        Me.btnApproveUsers.Location = New System.Drawing.Point(830, 264)
+        Me.btnApproveUsers.Name = "btnApproveUsers"
+        Me.btnApproveUsers.Size = New System.Drawing.Size(164, 43)
+        Me.btnApproveUsers.TabIndex = 14
+        Me.btnApproveUsers.Text = "Approve Users"
+        Me.btnApproveUsers.UseVisualStyleBackColor = True
+        '
         'AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1006, 721)
+        Me.Controls.Add(Me.btnApproveUsers)
         Me.Controls.Add(Me.lblHello)
         Me.Controls.Add(Me.btnUpdatePassword)
         Me.Controls.Add(Me.btnMyBills)
@@ -96,4 +107,5 @@ Partial Class AdminDashboard
     Friend WithEvents btnMyBills As System.Windows.Forms.Button
     Friend WithEvents btnBookARoom As System.Windows.Forms.Button
     Friend WithEvents btnLogOut As System.Windows.Forms.Button
+    Friend WithEvents btnApproveUsers As System.Windows.Forms.Button
 End Class

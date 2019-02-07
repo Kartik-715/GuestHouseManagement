@@ -36,4 +36,8 @@
         Me.Close()
         'LoginForm1.Close()
     End Sub
+
+    Private Sub btnApproveUsers_Click(sender As Object, e As EventArgs) Handles btnApproveUsers.Click
+        approveUsers.Show()
+    End Sub
 End Class
