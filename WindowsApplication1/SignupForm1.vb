@@ -26,6 +26,7 @@ Public Class SignupForm1
             If userData Is Nothing Then
                 UserTableBindingSource.EndEdit()
                 UserTableTableAdapter.Update(GuestHouseDataSet.userTable)
+                UserTableTableAdapter.changeApprovalStatus(False, txtUsername.Text)
                 MsgBox("Register Success")
                 Me.Close()
             Else
