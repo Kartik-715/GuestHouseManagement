@@ -8,7 +8,7 @@
 
 # Build results
 [Bb]in/
-WindowsApplication1/[bB]in/[Dd]ebug/
+WindowsApplication1/bin/Debug/
 [Rr]elease/
 x64/
 [Oo]bj/
