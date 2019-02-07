@@ -31,7 +31,7 @@ Partial Class Dashboard
         '
         'btnLogOut
         '
-        Me.btnLogOut.Location = New System.Drawing.Point(957, 1)
+        Me.btnLogOut.Location = New System.Drawing.Point(830, 12)
         Me.btnLogOut.Name = "btnLogOut"
         Me.btnLogOut.Size = New System.Drawing.Size(164, 57)
         Me.btnLogOut.TabIndex = 4
@@ -40,7 +40,7 @@ Partial Class Dashboard
         '
         'btnBookARoom
         '
-        Me.btnBookARoom.Location = New System.Drawing.Point(957, 64)
+        Me.btnBookARoom.Location = New System.Drawing.Point(830, 75)
         Me.btnBookARoom.Name = "btnBookARoom"
         Me.btnBookARoom.Size = New System.Drawing.Size(164, 57)
         Me.btnBookARoom.TabIndex = 5
@@ -49,7 +49,7 @@ Partial Class Dashboard
         '
         'btnMyBills
         '
-        Me.btnMyBills.Location = New System.Drawing.Point(957, 127)
+        Me.btnMyBills.Location = New System.Drawing.Point(830, 138)
         Me.btnMyBills.Name = "btnMyBills"
         Me.btnMyBills.Size = New System.Drawing.Size(164, 57)
         Me.btnMyBills.TabIndex = 6
@@ -58,7 +58,7 @@ Partial Class Dashboard
         '
         'btnUpdatePassword
         '
-        Me.btnUpdatePassword.Location = New System.Drawing.Point(957, 190)
+        Me.btnUpdatePassword.Location = New System.Drawing.Point(830, 201)
         Me.btnUpdatePassword.Name = "btnUpdatePassword"
         Me.btnUpdatePassword.Size = New System.Drawing.Size(164, 57)
         Me.btnUpdatePassword.TabIndex = 7
@@ -69,7 +69,7 @@ Partial Class Dashboard
         '
         Me.lblHello.AutoSize = True
         Me.lblHello.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.lblHello.Location = New System.Drawing.Point(779, 29)
+        Me.lblHello.Location = New System.Drawing.Point(652, 40)
         Me.lblHello.Name = "lblHello"
         Me.lblHello.Size = New System.Drawing.Size(131, 29)
         Me.lblHello.TabIndex = 8
@@ -79,7 +79,7 @@ Partial Class Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1121, 721)
+        Me.ClientSize = New System.Drawing.Size(1006, 721)
         Me.Controls.Add(Me.lblHello)
         Me.Controls.Add(Me.btnUpdatePassword)
         Me.Controls.Add(Me.btnMyBills)
