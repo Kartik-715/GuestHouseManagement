@@ -23,78 +23,18 @@ Partial Class Dashboard
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.btnLogOut = New WindowsApplication1.RoundButton()
-        Me.btnBookARoom = New WindowsApplication1.RoundButton()
-        Me.btnMyBills = New WindowsApplication1.RoundButton()
-        Me.btnUpdatePassword = New WindowsApplication1.RoundButton()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblHello = New System.Windows.Forms.Label()
+        Me.btnUpdatePassword = New WindowsApplication1.RoundButton()
+        Me.btnMyBills = New WindowsApplication1.RoundButton()
+        Me.btnBookARoom = New WindowsApplication1.RoundButton()
+        Me.btnLogOut = New WindowsApplication1.RoundButton()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'btnLogOut
-        '
-        Me.btnLogOut.BackColor = System.Drawing.Color.Navy
-        Me.btnLogOut.FlatAppearance.BorderSize = 0
-        Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogOut.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogOut.ForeColor = System.Drawing.Color.White
-        Me.btnLogOut.Location = New System.Drawing.Point(11, 498)
-        Me.btnLogOut.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnLogOut.Name = "btnLogOut"
-        Me.btnLogOut.Size = New System.Drawing.Size(180, 74)
-        Me.btnLogOut.TabIndex = 4
-        Me.btnLogOut.Text = "Log Out"
-        Me.btnLogOut.UseVisualStyleBackColor = False
-        '
-        'btnBookARoom
-        '
-        Me.btnBookARoom.BackColor = System.Drawing.Color.Navy
-        Me.btnBookARoom.FlatAppearance.BorderSize = 0
-        Me.btnBookARoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBookARoom.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBookARoom.ForeColor = System.Drawing.Color.White
-        Me.btnBookARoom.Location = New System.Drawing.Point(11, 222)
-        Me.btnBookARoom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnBookARoom.Name = "btnBookARoom"
-        Me.btnBookARoom.Size = New System.Drawing.Size(180, 74)
-        Me.btnBookARoom.TabIndex = 5
-        Me.btnBookARoom.Text = "Book A Room"
-        Me.btnBookARoom.UseVisualStyleBackColor = False
-        '
-        'btnMyBills
-        '
-        Me.btnMyBills.BackColor = System.Drawing.Color.Navy
-        Me.btnMyBills.FlatAppearance.BorderSize = 0
-        Me.btnMyBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMyBills.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMyBills.ForeColor = System.Drawing.Color.White
-        Me.btnMyBills.Location = New System.Drawing.Point(11, 314)
-        Me.btnMyBills.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnMyBills.Name = "btnMyBills"
-        Me.btnMyBills.Size = New System.Drawing.Size(180, 74)
-        Me.btnMyBills.TabIndex = 6
-        Me.btnMyBills.Text = "My Bills"
-        Me.btnMyBills.UseVisualStyleBackColor = False
-        '
-        'btnUpdatePassword
-        '
-        Me.btnUpdatePassword.BackColor = System.Drawing.Color.Navy
-        Me.btnUpdatePassword.FlatAppearance.BorderSize = 0
-        Me.btnUpdatePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUpdatePassword.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdatePassword.ForeColor = System.Drawing.Color.White
-        Me.btnUpdatePassword.Location = New System.Drawing.Point(11, 406)
-        Me.btnUpdatePassword.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnUpdatePassword.Name = "btnUpdatePassword"
-        Me.btnUpdatePassword.Size = New System.Drawing.Size(180, 74)
-        Me.btnUpdatePassword.TabIndex = 7
-        Me.btnUpdatePassword.Text = "Update Password"
-        Me.btnUpdatePassword.UseVisualStyleBackColor = False
         '
         'ImageList1
         '
@@ -109,9 +49,9 @@ Partial Class Dashboard
         '
         Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.ghover
         Me.PictureBox2.Location = New System.Drawing.Point(201, 194)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(932, 548)
+        Me.PictureBox2.Size = New System.Drawing.Size(933, 554)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 10
         Me.PictureBox2.TabStop = False
@@ -120,10 +60,10 @@ Partial Class Dashboard
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.yellowAbstract1
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(-6, 0)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1133, 194)
+        Me.PictureBox1.Size = New System.Drawing.Size(1141, 194)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
@@ -141,6 +81,66 @@ Partial Class Dashboard
         Me.lblHello.TabIndex = 11
         Me.lblHello.Text = "Hello! User"
         '
+        'btnUpdatePassword
+        '
+        Me.btnUpdatePassword.BackColor = System.Drawing.Color.Navy
+        Me.btnUpdatePassword.FlatAppearance.BorderSize = 0
+        Me.btnUpdatePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdatePassword.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdatePassword.ForeColor = System.Drawing.Color.White
+        Me.btnUpdatePassword.Location = New System.Drawing.Point(11, 406)
+        Me.btnUpdatePassword.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnUpdatePassword.Name = "btnUpdatePassword"
+        Me.btnUpdatePassword.Size = New System.Drawing.Size(180, 74)
+        Me.btnUpdatePassword.TabIndex = 7
+        Me.btnUpdatePassword.Text = "Update Password"
+        Me.btnUpdatePassword.UseVisualStyleBackColor = False
+        '
+        'btnMyBills
+        '
+        Me.btnMyBills.BackColor = System.Drawing.Color.Navy
+        Me.btnMyBills.FlatAppearance.BorderSize = 0
+        Me.btnMyBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMyBills.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMyBills.ForeColor = System.Drawing.Color.White
+        Me.btnMyBills.Location = New System.Drawing.Point(11, 314)
+        Me.btnMyBills.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnMyBills.Name = "btnMyBills"
+        Me.btnMyBills.Size = New System.Drawing.Size(180, 74)
+        Me.btnMyBills.TabIndex = 6
+        Me.btnMyBills.Text = "My Bills"
+        Me.btnMyBills.UseVisualStyleBackColor = False
+        '
+        'btnBookARoom
+        '
+        Me.btnBookARoom.BackColor = System.Drawing.Color.Navy
+        Me.btnBookARoom.FlatAppearance.BorderSize = 0
+        Me.btnBookARoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBookARoom.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBookARoom.ForeColor = System.Drawing.Color.White
+        Me.btnBookARoom.Location = New System.Drawing.Point(11, 222)
+        Me.btnBookARoom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnBookARoom.Name = "btnBookARoom"
+        Me.btnBookARoom.Size = New System.Drawing.Size(180, 74)
+        Me.btnBookARoom.TabIndex = 5
+        Me.btnBookARoom.Text = "Book A Room"
+        Me.btnBookARoom.UseVisualStyleBackColor = False
+        '
+        'btnLogOut
+        '
+        Me.btnLogOut.BackColor = System.Drawing.Color.Navy
+        Me.btnLogOut.FlatAppearance.BorderSize = 0
+        Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogOut.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogOut.ForeColor = System.Drawing.Color.White
+        Me.btnLogOut.Location = New System.Drawing.Point(11, 498)
+        Me.btnLogOut.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnLogOut.Name = "btnLogOut"
+        Me.btnLogOut.Size = New System.Drawing.Size(180, 74)
+        Me.btnLogOut.TabIndex = 4
+        Me.btnLogOut.Text = "Log Out"
+        Me.btnLogOut.UseVisualStyleBackColor = False
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -155,6 +155,7 @@ Partial Class Dashboard
         Me.Controls.Add(Me.btnMyBills)
         Me.Controls.Add(Me.btnBookARoom)
         Me.Controls.Add(Me.btnLogOut)
+        Me.DoubleBuffered = True
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Dashboard"
         Me.Text = "Dashboard"

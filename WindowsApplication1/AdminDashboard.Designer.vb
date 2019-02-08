@@ -44,6 +44,7 @@ Partial Class AdminDashboard
         '
         'btnUpdatePassword
         '
+        Me.btnUpdatePassword.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnUpdatePassword.Location = New System.Drawing.Point(830, 201)
         Me.btnUpdatePassword.Name = "btnUpdatePassword"
         Me.btnUpdatePassword.Size = New System.Drawing.Size(164, 57)
@@ -53,6 +54,7 @@ Partial Class AdminDashboard
         '
         'btnMyBills
         '
+        Me.btnMyBills.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMyBills.Location = New System.Drawing.Point(830, 138)
         Me.btnMyBills.Name = "btnMyBills"
         Me.btnMyBills.Size = New System.Drawing.Size(164, 57)
@@ -62,6 +64,7 @@ Partial Class AdminDashboard
         '
         'btnBookARoom
         '
+        Me.btnBookARoom.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBookARoom.Location = New System.Drawing.Point(830, 75)
         Me.btnBookARoom.Name = "btnBookARoom"
         Me.btnBookARoom.Size = New System.Drawing.Size(164, 57)
@@ -71,6 +74,7 @@ Partial Class AdminDashboard
         '
         'btnLogOut
         '
+        Me.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLogOut.Location = New System.Drawing.Point(830, 12)
         Me.btnLogOut.Name = "btnLogOut"
         Me.btnLogOut.Size = New System.Drawing.Size(164, 57)
@@ -80,6 +84,7 @@ Partial Class AdminDashboard
         '
         'btnApproveUsers
         '
+        Me.btnApproveUsers.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnApproveUsers.Location = New System.Drawing.Point(830, 264)
         Me.btnApproveUsers.Name = "btnApproveUsers"
         Me.btnApproveUsers.Size = New System.Drawing.Size(164, 43)

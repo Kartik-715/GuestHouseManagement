@@ -55,6 +55,7 @@ Partial Class Form1
         'btnLogin
         '
         Me.btnLogin.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLogin.FlatAppearance.BorderSize = 0
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -70,6 +71,7 @@ Partial Class Form1
         'btnCheckAvailabality
         '
         Me.btnCheckAvailabality.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnCheckAvailabality.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCheckAvailabality.FlatAppearance.BorderSize = 0
         Me.btnCheckAvailabality.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCheckAvailabality.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -85,6 +87,7 @@ Partial Class Form1
         'btnSignUp
         '
         Me.btnSignUp.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnSignUp.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSignUp.FlatAppearance.BorderSize = 0
         Me.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSignUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -109,6 +112,7 @@ Partial Class Form1
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.btnCheckAvailabality)
         Me.Controls.Add(Me.btnSignUp)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)

@@ -1,12 +1,11 @@
 ﻿Imports System.Drawing.Drawing2D
 Public Class SignupForm1
     Dim str As String
-    Dim RW As Double ' Ratio change of width
-    Dim RH As Double ' Ratio change of height
+
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
-        Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1080)
+        Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1024)
         Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
         Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
 

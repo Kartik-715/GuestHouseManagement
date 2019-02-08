@@ -24,6 +24,9 @@ Partial Class approveUsers
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.UsernameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MobileNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IsApprovedDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.UserTableBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.GuestHouseDataSet = New WindowsApplication1.guestHouseDataSet()
         Me.UserTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -32,9 +35,6 @@ Partial Class approveUsers
         Me.btnSaveChanges = New System.Windows.Forms.Button()
         Me.btnQuit = New System.Windows.Forms.Button()
         Me.btnSaveReload = New System.Windows.Forms.Button()
-        Me.UsernameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MobileNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IsApprovedDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserTableBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,14 +44,38 @@ Partial Class approveUsers
         'DataGridView1
         '
         Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UsernameDataGridViewTextBoxColumn, Me.MobileNoDataGridViewTextBoxColumn, Me.IsApprovedDataGridViewCheckBoxColumn})
         Me.DataGridView1.DataSource = Me.UserTableBindingSource1
         Me.DataGridView1.Location = New System.Drawing.Point(127, 97)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(714, 391)
+        Me.DataGridView1.Size = New System.Drawing.Size(343, 128)
         Me.DataGridView1.TabIndex = 0
+        '
+        'UsernameDataGridViewTextBoxColumn
+        '
+        Me.UsernameDataGridViewTextBoxColumn.DataPropertyName = "username"
+        Me.UsernameDataGridViewTextBoxColumn.HeaderText = "username"
+        Me.UsernameDataGridViewTextBoxColumn.Name = "UsernameDataGridViewTextBoxColumn"
+        Me.UsernameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'MobileNoDataGridViewTextBoxColumn
+        '
+        Me.MobileNoDataGridViewTextBoxColumn.DataPropertyName = "MobileNo"
+        Me.MobileNoDataGridViewTextBoxColumn.HeaderText = "MobileNo"
+        Me.MobileNoDataGridViewTextBoxColumn.Name = "MobileNoDataGridViewTextBoxColumn"
+        Me.MobileNoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.MobileNoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'IsApprovedDataGridViewCheckBoxColumn
+        '
+        Me.IsApprovedDataGridViewCheckBoxColumn.DataPropertyName = "isApproved"
+        Me.IsApprovedDataGridViewCheckBoxColumn.HeaderText = "isApproved"
+        Me.IsApprovedDataGridViewCheckBoxColumn.Name = "IsApprovedDataGridViewCheckBoxColumn"
         '
         'UserTableBindingSource1
         '
@@ -108,27 +132,6 @@ Partial Class approveUsers
         Me.btnSaveReload.Text = "Save and Reload"
         Me.btnSaveReload.UseVisualStyleBackColor = True
         '
-        'UsernameDataGridViewTextBoxColumn
-        '
-        Me.UsernameDataGridViewTextBoxColumn.DataPropertyName = "username"
-        Me.UsernameDataGridViewTextBoxColumn.HeaderText = "username"
-        Me.UsernameDataGridViewTextBoxColumn.Name = "UsernameDataGridViewTextBoxColumn"
-        Me.UsernameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'MobileNoDataGridViewTextBoxColumn
-        '
-        Me.MobileNoDataGridViewTextBoxColumn.DataPropertyName = "MobileNo"
-        Me.MobileNoDataGridViewTextBoxColumn.HeaderText = "MobileNo"
-        Me.MobileNoDataGridViewTextBoxColumn.Name = "MobileNoDataGridViewTextBoxColumn"
-        Me.MobileNoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.MobileNoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'IsApprovedDataGridViewCheckBoxColumn
-        '
-        Me.IsApprovedDataGridViewCheckBoxColumn.DataPropertyName = "isApproved"
-        Me.IsApprovedDataGridViewCheckBoxColumn.HeaderText = "isApproved"
-        Me.IsApprovedDataGridViewCheckBoxColumn.Name = "IsApprovedDataGridViewCheckBoxColumn"
-        '
         'approveUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -139,6 +142,7 @@ Partial Class approveUsers
         Me.Controls.Add(Me.btnSaveChanges)
         Me.Controls.Add(Me.GetNonApprovedToolStrip)
         Me.Controls.Add(Me.DataGridView1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "approveUsers"
         Me.Text = "approveUsers"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

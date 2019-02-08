@@ -45,20 +45,20 @@ Partial Class SignupForm1
         Me.lblCaptcha = New System.Windows.Forms.Label()
         Me.txtCaptcha = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnRefresh = New System.Windows.Forms.Button()
-        Me.picCaptcha = New System.Windows.Forms.PictureBox()
-        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.lblMobileNo = New System.Windows.Forms.Label()
         Me.UserTableTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
         Me.UserTableBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.lblCategory = New System.Windows.Forms.Label()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.picCaptcha = New System.Windows.Forms.PictureBox()
+        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserTableBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UserTableBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblUsername
@@ -183,40 +183,6 @@ Partial Class SignupForm1
         Me.Label1.Size = New System.Drawing.Size(0, 17)
         Me.Label1.TabIndex = 11
         '
-        'btnRefresh
-        '
-        Me.btnRefresh.BackColor = System.Drawing.Color.White
-        Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRefresh.Image = Global.WindowsApplication1.My.Resources.Resources.redo__2_
-        Me.btnRefresh.Location = New System.Drawing.Point(1006, 352)
-        Me.btnRefresh.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(49, 46)
-        Me.btnRefresh.TabIndex = 7
-        Me.btnRefresh.TextAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnRefresh.UseVisualStyleBackColor = False
-        '
-        'picCaptcha
-        '
-        Me.picCaptcha.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.picCaptcha.Location = New System.Drawing.Point(712, 352)
-        Me.picCaptcha.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.picCaptcha.Name = "picCaptcha"
-        Me.picCaptcha.Size = New System.Drawing.Size(233, 70)
-        Me.picCaptcha.TabIndex = 8
-        Me.picCaptcha.TabStop = False
-        '
-        'LogoPictureBox
-        '
-        Me.LogoPictureBox.Image = Global.WindowsApplication1.My.Resources.Resources.main_gate5
-        Me.LogoPictureBox.Location = New System.Drawing.Point(0, -2)
-        Me.LogoPictureBox.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(333, 558)
-        Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.LogoPictureBox.TabIndex = 0
-        Me.LogoPictureBox.TabStop = False
-        '
         'TextBox1
         '
         Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserTableBindingSource, "MobileNo", True))
@@ -266,12 +232,45 @@ Partial Class SignupForm1
         Me.lblCategory.Text = "I am a"
         Me.lblCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'btnRefresh
+        '
+        Me.btnRefresh.BackColor = System.Drawing.Color.White
+        Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRefresh.Image = Global.WindowsApplication1.My.Resources.Resources.redo__2_
+        Me.btnRefresh.Location = New System.Drawing.Point(1006, 352)
+        Me.btnRefresh.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(49, 46)
+        Me.btnRefresh.TabIndex = 7
+        Me.btnRefresh.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnRefresh.UseVisualStyleBackColor = False
+        '
+        'picCaptcha
+        '
+        Me.picCaptcha.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.picCaptcha.Location = New System.Drawing.Point(712, 352)
+        Me.picCaptcha.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.picCaptcha.Name = "picCaptcha"
+        Me.picCaptcha.Size = New System.Drawing.Size(233, 70)
+        Me.picCaptcha.TabIndex = 8
+        Me.picCaptcha.TabStop = False
+        '
+        'LogoPictureBox
+        '
+        Me.LogoPictureBox.Image = Global.WindowsApplication1.My.Resources.Resources.main_gate5
+        Me.LogoPictureBox.Location = New System.Drawing.Point(0, -2)
+        Me.LogoPictureBox.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        Me.LogoPictureBox.Name = "LogoPictureBox"
+        Me.LogoPictureBox.Size = New System.Drawing.Size(333, 559)
+        Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.LogoPictureBox.TabIndex = 0
+        Me.LogoPictureBox.TabStop = False
+        '
         'SignupForm1
         '
         Me.AcceptButton = Me.OK
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSize = True
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(1077, 555)
         Me.Controls.Add(Me.lblCategory)
@@ -302,9 +301,9 @@ Partial Class SignupForm1
         Me.Text = "Sign up"
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserTableBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picCaptcha, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UserTableBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -12,7 +12,6 @@ Public Class Form1
             .SetStyle(ControlStyles.AllPaintingInWmPaint, True)
             .UpdateStyles()
         End With
-
     End Sub
 
     Private Sub max()
@@ -48,7 +47,7 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PreVentFlicker()
+        'PreVentFlicker()
         SetProcessDPIAware()
         max()
     End Sub
