@@ -1,5 +1,6 @@
 ﻿Public Class AdminDashboard
     Public loggedUser As String
+    Dim check As Integer = 0
 
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
@@ -20,7 +21,11 @@
     End Sub
 
     Private Sub AdminDashboard_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosing
-        Form1.Show()
+        If check = 1 Then
+            Form1.Show()
+        Else
+            Form1.Close()
+        End If
     End Sub
 
     Private Sub AdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -41,10 +46,14 @@
     End Sub
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+        check = 1
         Me.Close()
     End Sub
 
     Private Sub btnApproveUsers_Click(sender As Object, e As EventArgs) Handles btnApproveUsers.Click
+        UserControl_admindashboard1.DataGridView1.Show()
+    End Sub
 
+    Private Sub btnAddRoom_Click(sender As Object, e As EventArgs) Handles btnAddRoom.Click
     End Sub
 End Class

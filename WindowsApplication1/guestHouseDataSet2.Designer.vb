@@ -2855,12 +2855,18 @@ Namespace guestHouseDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT ID, RoomNo, isBooked, BookedTo, isVIP, currBill, BookedFrom, BookedTill, B" & _
                 "ookingType FROM Room"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "INSERT INTO Room" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                  (RoomNo, isVIP)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "VALUES (?, ?)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RoomNo", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "RoomNo", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("isVIP", Global.System.Data.OleDb.OleDbType.[Boolean], 2, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "isVIP", Global.System.Data.DataRowVersion.Current, False, Nothing))
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -3170,6 +3176,34 @@ Namespace guestHouseDataSetTableAdapters
                     ByVal Original_BookedTill As Global.System.Nullable(Of Date), _
                     ByVal Original_BookingType As String) As Integer
             Return Me.Update(Original_RoomNo, isBooked, BookedTo, isVIP, currBill, BookedFrom, BookedTill, BookingType, Original_ID, Original_RoomNo, Original_isBooked, Original_BookedTo, Original_isVIP, Original_currBill, Original_BookedFrom, Original_BookedTill, Original_BookingType)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, False)> _
+        Public Overridable Overloads Function AddRoom(ByVal RoomNo As String, ByVal isVIP As Boolean) As Integer
+            Dim command As Global.System.Data.OleDb.OleDbCommand = Me.CommandCollection(1)
+            If (RoomNo Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("RoomNo")
+            Else
+                command.Parameters(0).Value = CType(RoomNo, String)
+            End If
+            command.Parameters(1).Value = CType(isVIP, Boolean)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open()
+            End If
+            Dim returnValue As Integer
+            Try
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close()
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
 

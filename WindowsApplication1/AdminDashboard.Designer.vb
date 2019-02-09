@@ -30,8 +30,10 @@ Partial Class AdminDashboard
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.btnApproveUsers = New System.Windows.Forms.Button()
         Me.labelNonApproved = New System.Windows.Forms.Label()
-        Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.btnAddRoom = New System.Windows.Forms.Button()
+        Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
+        Me.RoomTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter()
         Me.UserControl_admindashboard1 = New WindowsApplication1.UserControl_admindashboard()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -105,19 +107,32 @@ Partial Class AdminDashboard
         Me.labelNonApproved.TabIndex = 15
         Me.labelNonApproved.Text = "Label1"
         '
-        'UserTableTableAdapter1
-        '
-        Me.UserTableTableAdapter1.ClearBeforeFill = True
-        '
         'ErrorProvider1
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'btnAddRoom
+        '
+        Me.btnAddRoom.Location = New System.Drawing.Point(62, 566)
+        Me.btnAddRoom.Name = "btnAddRoom"
+        Me.btnAddRoom.Size = New System.Drawing.Size(164, 50)
+        Me.btnAddRoom.TabIndex = 17
+        Me.btnAddRoom.Text = "Add Room"
+        Me.btnAddRoom.UseVisualStyleBackColor = True
+        '
+        'UserTableTableAdapter1
+        '
+        Me.UserTableTableAdapter1.ClearBeforeFill = True
+        '
+        'RoomTableAdapter1
+        '
+        Me.RoomTableAdapter1.ClearBeforeFill = True
+        '
         'UserControl_admindashboard1
         '
-        Me.UserControl_admindashboard1.Location = New System.Drawing.Point(283, 254)
+        Me.UserControl_admindashboard1.Location = New System.Drawing.Point(306, 215)
         Me.UserControl_admindashboard1.Name = "UserControl_admindashboard1"
-        Me.UserControl_admindashboard1.Size = New System.Drawing.Size(366, 381)
+        Me.UserControl_admindashboard1.Size = New System.Drawing.Size(468, 383)
         Me.UserControl_admindashboard1.TabIndex = 16
         '
         'AdminDashboard
@@ -125,6 +140,7 @@ Partial Class AdminDashboard
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1006, 721)
+        Me.Controls.Add(Me.btnAddRoom)
         Me.Controls.Add(Me.UserControl_admindashboard1)
         Me.Controls.Add(Me.labelNonApproved)
         Me.Controls.Add(Me.btnApproveUsers)
@@ -150,4 +166,6 @@ Partial Class AdminDashboard
     Friend WithEvents UserTableTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
     Friend WithEvents UserControl_admindashboard1 As WindowsApplication1.UserControl_admindashboard
+    Friend WithEvents btnAddRoom As System.Windows.Forms.Button
+    Friend WithEvents RoomTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter
 End Class
