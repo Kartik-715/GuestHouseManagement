@@ -176,6 +176,7 @@ Partial Class LoginForm1
         Me.Controls.Add(Me.PasswordLabel)
         Me.Controls.Add(Me.UsernameLabel)
         Me.Controls.Add(Me.LogoPictureBox)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)

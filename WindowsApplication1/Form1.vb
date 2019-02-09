@@ -26,7 +26,7 @@ Public Class Form1
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
-            Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * RW), Ctrl.Font.Style)
+            Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (RW)), Ctrl.Font.Style)
         Next
         CW = Me.Width
         CH = Me.Height
@@ -56,6 +56,10 @@ Public Class Form1
         For Each frm As Form In Me.MdiChildren
             frm.Close()
         Next
+    End Sub
+
+    Private Sub btnCheckAvailabality_Click(sender As Object, e As EventArgs) Handles btnCheckAvailabality.Click
+        Check_Availability.Show()
     End Sub
 End Class
 

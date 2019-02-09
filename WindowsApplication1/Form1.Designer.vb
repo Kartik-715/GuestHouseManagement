@@ -36,7 +36,7 @@ Partial Class Form1
         '
         Me.lblWelcome.BackColor = System.Drawing.Color.Transparent
         Me.lblWelcome.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.lblWelcome.Font = New System.Drawing.Font("Microsoft Tai Le", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWelcome.Font = New System.Drawing.Font("Microsoft Tai Le", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWelcome.ForeColor = System.Drawing.Color.Ivory
         Me.lblWelcome.Location = New System.Drawing.Point(79, 47)
         Me.lblWelcome.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
@@ -60,10 +60,10 @@ Partial Class Form1
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.White
-        Me.btnLogin.Location = New System.Drawing.Point(437, 606)
+        Me.btnLogin.Location = New System.Drawing.Point(444, 606)
         Me.btnLogin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(165, 49)
+        Me.btnLogin.Size = New System.Drawing.Size(165, 52)
         Me.btnLogin.TabIndex = 1
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = False
@@ -74,12 +74,12 @@ Partial Class Form1
         Me.btnCheckAvailabality.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCheckAvailabality.FlatAppearance.BorderSize = 0
         Me.btnCheckAvailabality.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCheckAvailabality.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheckAvailabality.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheckAvailabality.ForeColor = System.Drawing.Color.White
-        Me.btnCheckAvailabality.Location = New System.Drawing.Point(608, 606)
+        Me.btnCheckAvailabality.Location = New System.Drawing.Point(640, 606)
         Me.btnCheckAvailabality.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCheckAvailabality.Name = "btnCheckAvailabality"
-        Me.btnCheckAvailabality.Size = New System.Drawing.Size(165, 49)
+        Me.btnCheckAvailabality.Size = New System.Drawing.Size(188, 52)
         Me.btnCheckAvailabality.TabIndex = 2
         Me.btnCheckAvailabality.Text = "Check Availability"
         Me.btnCheckAvailabality.UseVisualStyleBackColor = False
@@ -92,10 +92,10 @@ Partial Class Form1
         Me.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSignUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSignUp.ForeColor = System.Drawing.Color.White
-        Me.btnSignUp.Location = New System.Drawing.Point(267, 606)
+        Me.btnSignUp.Location = New System.Drawing.Point(245, 606)
         Me.btnSignUp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSignUp.Name = "btnSignUp"
-        Me.btnSignUp.Size = New System.Drawing.Size(165, 49)
+        Me.btnSignUp.Size = New System.Drawing.Size(165, 52)
         Me.btnSignUp.TabIndex = 0
         Me.btnSignUp.Text = "Sign Up"
         Me.btnSignUp.UseVisualStyleBackColor = False

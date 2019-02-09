@@ -259,7 +259,7 @@ Partial Class SignupForm1
         '
         Me.LogoPictureBox.Image = Global.WindowsApplication1.My.Resources.Resources.main_gate5
         Me.LogoPictureBox.Location = New System.Drawing.Point(0, -2)
-        Me.LogoPictureBox.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
+        Me.LogoPictureBox.Margin = New System.Windows.Forms.Padding(0)
         Me.LogoPictureBox.Name = "LogoPictureBox"
         Me.LogoPictureBox.Size = New System.Drawing.Size(333, 559)
         Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -291,6 +291,7 @@ Partial Class SignupForm1
         Me.Controls.Add(Me.lblPassword)
         Me.Controls.Add(Me.lblUsername)
         Me.Controls.Add(Me.LogoPictureBox)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)

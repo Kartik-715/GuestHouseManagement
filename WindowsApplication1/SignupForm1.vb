@@ -15,7 +15,7 @@ Public Class SignupForm1
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
             If TypeOf Ctrl Is Label Then
-                'Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * RW), Ctrl.Font.Style)
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(14 * (RW + 1)), FontStyle.Regular)
             End If
         Next
         CW = Me.Width
