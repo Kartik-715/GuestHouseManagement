@@ -38,7 +38,7 @@ Partial Class Form1
         Me.lblWelcome.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.lblWelcome.Font = New System.Drawing.Font("Microsoft Tai Le", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWelcome.ForeColor = System.Drawing.Color.Ivory
-        Me.lblWelcome.Location = New System.Drawing.Point(79, 47)
+        Me.lblWelcome.Location = New System.Drawing.Point(74, 44)
         Me.lblWelcome.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblWelcome.Name = "lblWelcome"
         Me.lblWelcome.Size = New System.Drawing.Size(849, 61)
