@@ -19,11 +19,11 @@
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         Dim userData As guestHouseDataSet.userTableRow
-        userData = GuestHouseDataSet.userTable.FindByusername(UsernameTextBox.Text)
+        userData = GuestHouseDataSet.userTable.FindByusername(txtEmail.Text)
         If userData Is Nothing Then
             MessageBox.Show("Username doesn't exist")
         Else
-            If userData.password = PasswordTextBox.Text Then
+            If userData.password = txtPassword.Text Then
                 MessageBox.Show("Login Successful")
                 If userData.username = "Admin" Then
                     AdminDashboard.loggedUser = userData.username
@@ -49,13 +49,13 @@
     End Sub
 
     Private Sub PassButton_MouseDown(sender As Object, e As EventArgs) Handles PassButton.MouseDown
-        PasswordTextBox.PasswordChar = ""
+        txtPassword.PasswordChar = ""
         PassButton.Image = My.Resources.eye
         PassButton.FlatStyle = FlatStyle.Flat
     End Sub
 
     Private Sub PassButton_MouseLeave(sender As Object, e As EventArgs) Handles PassButton.MouseUp
-        PasswordTextBox.PasswordChar = "*"
+        txtPassword.PasswordChar = "*"
         PassButton.Image = My.Resources.vision_off
         PassButton.FlatStyle = FlatStyle.Popup
         PassButton.FlatAppearance.BorderSize = 0
