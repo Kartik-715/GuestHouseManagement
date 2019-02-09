@@ -32,6 +32,7 @@ Partial Class AdminDashboard
         Me.labelNonApproved = New System.Windows.Forms.Label()
         Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.UserControl_admindashboard1 = New WindowsApplication1.UserControl_admindashboard()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -112,11 +113,19 @@ Partial Class AdminDashboard
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'UserControl_admindashboard1
+        '
+        Me.UserControl_admindashboard1.Location = New System.Drawing.Point(283, 254)
+        Me.UserControl_admindashboard1.Name = "UserControl_admindashboard1"
+        Me.UserControl_admindashboard1.Size = New System.Drawing.Size(366, 381)
+        Me.UserControl_admindashboard1.TabIndex = 16
+        '
         'AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1006, 721)
+        Me.Controls.Add(Me.UserControl_admindashboard1)
         Me.Controls.Add(Me.labelNonApproved)
         Me.Controls.Add(Me.btnApproveUsers)
         Me.Controls.Add(Me.lblHello)
@@ -140,4 +149,5 @@ Partial Class AdminDashboard
     Friend WithEvents labelNonApproved As System.Windows.Forms.Label
     Friend WithEvents UserTableTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents UserControl_admindashboard1 As WindowsApplication1.UserControl_admindashboard
 End Class

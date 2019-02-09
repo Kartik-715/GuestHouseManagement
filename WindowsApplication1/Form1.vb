@@ -14,19 +14,22 @@ Public Class Form1
         End With
     End Sub
 
-    Private Sub max()
+    Public Sub max()
         Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
         Me.WindowState = FormWindowState.Maximized
         Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
         Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
-
+        Dim min As Double = RW
+        If RW > RH Then
+            min = RH
+        End If
         For Each Ctrl As Control In Controls
             Ctrl.Width += CInt(Ctrl.Width * RW)
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
-            Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (RH + 1)), Ctrl.Font.Style)
+            Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (min + 1)), Ctrl.Font.Style)
         Next
         CW = Me.Width
         CH = Me.Height

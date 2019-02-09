@@ -28,6 +28,10 @@
         Form1.Hide()
         Me.WindowState = FormWindowState.Maximized
         lblHello.Text = "Hello! " & loggedUser
+        reload_data()
+    End Sub
+
+    Public Sub reload_data()
         labelNonApproved.Text = "There are " & UserTableTableAdapter1.numNonApproved & " non Approved Users "
     End Sub
 
@@ -41,6 +45,6 @@
     End Sub
 
     Private Sub btnApproveUsers_Click(sender As Object, e As EventArgs) Handles btnApproveUsers.Click
-        approveUsers.Show()
+
     End Sub
 End Class

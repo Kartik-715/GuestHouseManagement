@@ -23,10 +23,8 @@
     End Sub
 
     Private Sub btnCheckAval_Click(sender As Object, e As EventArgs) Handles btnCheckAval.Click
-        'BookingTableAdapter1.BookRoom("A10", "sdfs", CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd")), CInt(DateTimePickerTo.Value.ToString("yyyyMMdd")))
+        BookingTableAdapter1.BookRoom("A10", "sdfs", CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd")), CInt(DateTimePickerTo.Value.ToString("yyyyMMdd")))
         Dim timeFrom As Integer = CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd"))
         Dim timeTo As Integer = CInt(DateTimePickerTo.Value.ToString("yyyyMMdd"))
-
-
     End Sub
 End Class
