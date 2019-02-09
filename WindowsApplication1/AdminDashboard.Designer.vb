@@ -22,6 +22,7 @@ Partial Class AdminDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lblHello = New System.Windows.Forms.Label()
         Me.btnUpdatePassword = New System.Windows.Forms.Button()
         Me.btnMyBills = New System.Windows.Forms.Button()
@@ -30,6 +31,8 @@ Partial Class AdminDashboard
         Me.btnApproveUsers = New System.Windows.Forms.Button()
         Me.labelNonApproved = New System.Windows.Forms.Label()
         Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblHello
@@ -105,6 +108,10 @@ Partial Class AdminDashboard
         '
         Me.UserTableTableAdapter1.ClearBeforeFill = True
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -119,6 +126,7 @@ Partial Class AdminDashboard
         Me.Controls.Add(Me.btnLogOut)
         Me.Name = "AdminDashboard"
         Me.Text = "AdminDashboard"
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -131,4 +139,5 @@ Partial Class AdminDashboard
     Friend WithEvents btnApproveUsers As System.Windows.Forms.Button
     Friend WithEvents labelNonApproved As System.Windows.Forms.Label
     Friend WithEvents UserTableTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
+    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
 End Class

@@ -103,6 +103,7 @@ Partial Class Check_Availability
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.MaximizeBox = False
         Me.Name = "Check_Availability"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Check Availability"
         Me.ResumeLayout(False)
         Me.PerformLayout()
