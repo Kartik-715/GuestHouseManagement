@@ -34,12 +34,14 @@ Public Class Form1
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
         SignupForm1.Close()
+        Check_Availability.Close()
         LoginForm1.Close()
         SignupForm1.Show()
         SignupForm1.Focus()
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        Check_Availability.Close()
         SignupForm1.Close()
         LoginForm1.Close()
         LoginForm1.Show()

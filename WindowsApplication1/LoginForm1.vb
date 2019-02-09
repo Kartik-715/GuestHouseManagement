@@ -32,6 +32,7 @@
                     Dashboard.loggedUser = userData.username
                     Dashboard.Show()
                 End If
+                Form1.Hide()
                 Me.Close()
             Else
                 MessageBox.Show("Wrong Password")

@@ -84,6 +84,7 @@ Partial Class Dashboard
         'btnUpdatePassword
         '
         Me.btnUpdatePassword.BackColor = System.Drawing.Color.Navy
+        Me.btnUpdatePassword.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnUpdatePassword.FlatAppearance.BorderSize = 0
         Me.btnUpdatePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdatePassword.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -99,6 +100,7 @@ Partial Class Dashboard
         'btnMyBills
         '
         Me.btnMyBills.BackColor = System.Drawing.Color.Navy
+        Me.btnMyBills.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMyBills.FlatAppearance.BorderSize = 0
         Me.btnMyBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMyBills.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -114,6 +116,7 @@ Partial Class Dashboard
         'btnBookARoom
         '
         Me.btnBookARoom.BackColor = System.Drawing.Color.Navy
+        Me.btnBookARoom.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBookARoom.FlatAppearance.BorderSize = 0
         Me.btnBookARoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBookARoom.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -129,6 +132,7 @@ Partial Class Dashboard
         'btnLogOut
         '
         Me.btnLogOut.BackColor = System.Drawing.Color.Navy
+        Me.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnLogOut.FlatAppearance.BorderSize = 0
         Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogOut.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

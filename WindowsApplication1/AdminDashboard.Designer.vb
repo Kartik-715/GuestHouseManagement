@@ -45,9 +45,9 @@ Partial Class AdminDashboard
         'btnUpdatePassword
         '
         Me.btnUpdatePassword.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUpdatePassword.Location = New System.Drawing.Point(830, 201)
+        Me.btnUpdatePassword.Location = New System.Drawing.Point(62, 441)
         Me.btnUpdatePassword.Name = "btnUpdatePassword"
-        Me.btnUpdatePassword.Size = New System.Drawing.Size(164, 57)
+        Me.btnUpdatePassword.Size = New System.Drawing.Size(164, 56)
         Me.btnUpdatePassword.TabIndex = 12
         Me.btnUpdatePassword.Text = "Update Password"
         Me.btnUpdatePassword.UseVisualStyleBackColor = True
@@ -55,9 +55,9 @@ Partial Class AdminDashboard
         'btnMyBills
         '
         Me.btnMyBills.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMyBills.Location = New System.Drawing.Point(830, 138)
+        Me.btnMyBills.Location = New System.Drawing.Point(62, 316)
         Me.btnMyBills.Name = "btnMyBills"
-        Me.btnMyBills.Size = New System.Drawing.Size(164, 57)
+        Me.btnMyBills.Size = New System.Drawing.Size(164, 56)
         Me.btnMyBills.TabIndex = 11
         Me.btnMyBills.Text = "My Bills"
         Me.btnMyBills.UseVisualStyleBackColor = True
@@ -65,9 +65,9 @@ Partial Class AdminDashboard
         'btnBookARoom
         '
         Me.btnBookARoom.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBookARoom.Location = New System.Drawing.Point(830, 75)
+        Me.btnBookARoom.Location = New System.Drawing.Point(62, 254)
         Me.btnBookARoom.Name = "btnBookARoom"
-        Me.btnBookARoom.Size = New System.Drawing.Size(164, 57)
+        Me.btnBookARoom.Size = New System.Drawing.Size(164, 56)
         Me.btnBookARoom.TabIndex = 10
         Me.btnBookARoom.Text = "Book A Room"
         Me.btnBookARoom.UseVisualStyleBackColor = True
@@ -75,9 +75,9 @@ Partial Class AdminDashboard
         'btnLogOut
         '
         Me.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLogOut.Location = New System.Drawing.Point(830, 12)
+        Me.btnLogOut.Location = New System.Drawing.Point(62, 503)
         Me.btnLogOut.Name = "btnLogOut"
-        Me.btnLogOut.Size = New System.Drawing.Size(164, 57)
+        Me.btnLogOut.Size = New System.Drawing.Size(164, 56)
         Me.btnLogOut.TabIndex = 9
         Me.btnLogOut.Text = "Log Out"
         Me.btnLogOut.UseVisualStyleBackColor = True
@@ -85,9 +85,9 @@ Partial Class AdminDashboard
         'btnApproveUsers
         '
         Me.btnApproveUsers.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnApproveUsers.Location = New System.Drawing.Point(830, 264)
+        Me.btnApproveUsers.Location = New System.Drawing.Point(62, 379)
         Me.btnApproveUsers.Name = "btnApproveUsers"
-        Me.btnApproveUsers.Size = New System.Drawing.Size(164, 43)
+        Me.btnApproveUsers.Size = New System.Drawing.Size(164, 56)
         Me.btnApproveUsers.TabIndex = 14
         Me.btnApproveUsers.Text = "Approve Users"
         Me.btnApproveUsers.UseVisualStyleBackColor = True
