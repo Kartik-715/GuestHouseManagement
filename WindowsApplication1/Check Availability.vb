@@ -1,5 +1,4 @@
 ﻿Public Class Check_Availability
-
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
@@ -23,8 +22,21 @@
     End Sub
 
     Private Sub btnCheckAval_Click(sender As Object, e As EventArgs) Handles btnCheckAval.Click
-        BookingTableAdapter1.BookRoom("A10", "sdfs", CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd")), CInt(DateTimePickerTo.Value.ToString("yyyyMMdd")))
+        'BookingTableAdapter1.BookRoom("A10", "sdfs", CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd")), CInt(DateTimePickerTo.Value.ToString("yyyyMMdd")))
         Dim timeFrom As Integer = CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd"))
         Dim timeTo As Integer = CInt(DateTimePickerTo.Value.ToString("yyyyMMdd"))
+        BookingTableAdapter1.fillNonAvailRooms(GuestHouseDataSet1.Booking, timeFrom, timeFrom, timeTo, timeTo)
+        RoomTableAdapter1.Fill(GuestHouseDataSet1.Room)
+
+        Dim allRooms(-1) As String
+        Dim nonAvailRooms(-1) As String
+
+        For Each row As guestHouseDataSet.BookingRow In GuestHouseDataSet1.Booking
+            nonAvailRooms = nonAvailRooms.Concat({row.RoomNo}).ToArray
+        Next
+
+        For Each row As guestHouseDataSet.RoomRow In GuestHouseDataSet1.Room
+            allRooms = allRooms.Concat({row.RoomNo}).ToArray
+        Next
     End Sub
 End Class

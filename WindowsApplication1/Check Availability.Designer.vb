@@ -29,6 +29,9 @@ Partial Class Check_Availability
         Me.btnCheckAval = New System.Windows.Forms.Button()
         Me.lblBooking = New System.Windows.Forms.Label()
         Me.BookingTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
+        Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
+        Me.RoomTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter()
+        CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CheckIn
@@ -94,6 +97,15 @@ Partial Class Check_Availability
         '
         Me.BookingTableAdapter1.ClearBeforeFill = True
         '
+        'GuestHouseDataSet1
+        '
+        Me.GuestHouseDataSet1.DataSetName = "guestHouseDataSet"
+        Me.GuestHouseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'RoomTableAdapter1
+        '
+        Me.RoomTableAdapter1.ClearBeforeFill = True
+        '
         'Check_Availability
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -110,6 +122,7 @@ Partial Class Check_Availability
         Me.Name = "Check_Availability"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Check Availability"
+        CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -121,4 +134,6 @@ Partial Class Check_Availability
     Friend WithEvents btnCheckAval As System.Windows.Forms.Button
     Friend WithEvents lblBooking As System.Windows.Forms.Label
     Friend WithEvents BookingTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter
+    Friend WithEvents GuestHouseDataSet1 As WindowsApplication1.guestHouseDataSet
+    Friend WithEvents RoomTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter
 End Class
