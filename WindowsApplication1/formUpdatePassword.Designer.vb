@@ -34,6 +34,9 @@ Partial Class formUpdatePassword
         Me.UserTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GuestHouseDataSet = New WindowsApplication1.guestHouseDataSet()
         Me.UserTableTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
+        Me.PassButton1 = New System.Windows.Forms.Button()
+        Me.PassButton2 = New System.Windows.Forms.Button()
+        Me.PassButton3 = New System.Windows.Forms.Button()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -41,47 +44,45 @@ Partial Class formUpdatePassword
         'lblHello
         '
         Me.lblHello.AutoSize = True
-        Me.lblHello.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHello.Location = New System.Drawing.Point(459, 36)
+        Me.lblHello.Font = New System.Drawing.Font("Microsoft Tai Le", 17.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHello.Location = New System.Drawing.Point(510, 22)
         Me.lblHello.Name = "lblHello"
-        Me.lblHello.Size = New System.Drawing.Size(157, 32)
+        Me.lblHello.Size = New System.Drawing.Size(159, 37)
         Me.lblHello.TabIndex = 0
         Me.lblHello.Text = "Hello User"
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(66, 93)
+        Me.Label1.Location = New System.Drawing.Point(40, 89)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(228, 29)
+        Me.Label1.Size = New System.Drawing.Size(494, 30)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Enter Old Password"
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(66, 143)
+        Me.Label2.Location = New System.Drawing.Point(40, 146)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(239, 29)
+        Me.Label2.Size = New System.Drawing.Size(463, 30)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Enter New Password"
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(66, 198)
+        Me.Label3.Location = New System.Drawing.Point(40, 203)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(210, 29)
+        Me.Label3.Size = New System.Drawing.Size(494, 30)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Confirm Password"
         '
         'txtOldPass
         '
         Me.txtOldPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtOldPass.Location = New System.Drawing.Point(324, 90)
+        Me.txtOldPass.Location = New System.Drawing.Point(376, 89)
+        Me.txtOldPass.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtOldPass.Name = "txtOldPass"
         Me.txtOldPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtOldPass.Size = New System.Drawing.Size(292, 34)
@@ -90,7 +91,8 @@ Partial Class formUpdatePassword
         'txtNewPass
         '
         Me.txtNewPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNewPass.Location = New System.Drawing.Point(324, 140)
+        Me.txtNewPass.Location = New System.Drawing.Point(376, 144)
+        Me.txtNewPass.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNewPass.Name = "txtNewPass"
         Me.txtNewPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtNewPass.Size = New System.Drawing.Size(292, 34)
@@ -99,7 +101,8 @@ Partial Class formUpdatePassword
         'txtConfirmNewPass
         '
         Me.txtConfirmNewPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtConfirmNewPass.Location = New System.Drawing.Point(324, 195)
+        Me.txtConfirmNewPass.Location = New System.Drawing.Point(376, 199)
+        Me.txtConfirmNewPass.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtConfirmNewPass.Name = "txtConfirmNewPass"
         Me.txtConfirmNewPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirmNewPass.Size = New System.Drawing.Size(292, 34)
@@ -107,8 +110,9 @@ Partial Class formUpdatePassword
         '
         'btnUpdatePass
         '
-        Me.btnUpdatePass.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdatePass.Location = New System.Drawing.Point(219, 281)
+        Me.btnUpdatePass.Font = New System.Drawing.Font("Microsoft Tai Le", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdatePass.Location = New System.Drawing.Point(376, 263)
+        Me.btnUpdatePass.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnUpdatePass.Name = "btnUpdatePass"
         Me.btnUpdatePass.Size = New System.Drawing.Size(253, 49)
         Me.btnUpdatePass.TabIndex = 7
@@ -129,12 +133,51 @@ Partial Class formUpdatePassword
         '
         Me.UserTableTableAdapter.ClearBeforeFill = True
         '
+        'PassButton1
+        '
+        Me.PassButton1.BackColor = System.Drawing.Color.Transparent
+        Me.PassButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PassButton1.Image = Global.WindowsApplication1.My.Resources.Resources.vision_off
+        Me.PassButton1.Location = New System.Drawing.Point(634, 89)
+        Me.PassButton1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PassButton1.Name = "PassButton1"
+        Me.PassButton1.Size = New System.Drawing.Size(35, 34)
+        Me.PassButton1.TabIndex = 8
+        Me.PassButton1.UseVisualStyleBackColor = False
+        '
+        'PassButton2
+        '
+        Me.PassButton2.BackColor = System.Drawing.Color.Transparent
+        Me.PassButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PassButton2.Image = Global.WindowsApplication1.My.Resources.Resources.vision_off
+        Me.PassButton2.Location = New System.Drawing.Point(634, 144)
+        Me.PassButton2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PassButton2.Name = "PassButton2"
+        Me.PassButton2.Size = New System.Drawing.Size(35, 34)
+        Me.PassButton2.TabIndex = 9
+        Me.PassButton2.UseVisualStyleBackColor = False
+        '
+        'PassButton3
+        '
+        Me.PassButton3.BackColor = System.Drawing.Color.Transparent
+        Me.PassButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PassButton3.Image = Global.WindowsApplication1.My.Resources.Resources.vision_off
+        Me.PassButton3.Location = New System.Drawing.Point(634, 199)
+        Me.PassButton3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PassButton3.Name = "PassButton3"
+        Me.PassButton3.Size = New System.Drawing.Size(35, 34)
+        Me.PassButton3.TabIndex = 10
+        Me.PassButton3.UseVisualStyleBackColor = False
+        '
         'formUpdatePassword
         '
         Me.AcceptButton = Me.btnUpdatePass
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(676, 365)
+        Me.ClientSize = New System.Drawing.Size(752, 334)
+        Me.Controls.Add(Me.PassButton3)
+        Me.Controls.Add(Me.PassButton2)
+        Me.Controls.Add(Me.PassButton1)
         Me.Controls.Add(Me.btnUpdatePass)
         Me.Controls.Add(Me.txtConfirmNewPass)
         Me.Controls.Add(Me.txtNewPass)
@@ -143,9 +186,12 @@ Partial Class formUpdatePassword
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblHello)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximizeBox = False
         Me.Name = "formUpdatePassword"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "formUpdatePassword"
+        Me.Text = "Update Password"
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -163,4 +209,7 @@ Partial Class formUpdatePassword
     Friend WithEvents UserTableBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents GuestHouseDataSet As WindowsApplication1.guestHouseDataSet
     Friend WithEvents UserTableTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
+    Friend WithEvents PassButton1 As System.Windows.Forms.Button
+    Friend WithEvents PassButton2 As System.Windows.Forms.Button
+    Friend WithEvents PassButton3 As System.Windows.Forms.Button
 End Class
