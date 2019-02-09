@@ -31,6 +31,10 @@ Partial Class Check_Availability
         Me.BookingTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
         Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
         Me.RoomTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter()
+        Me.lblAvailRoom = New System.Windows.Forms.Label()
+        Me.comboBoxAvailRooms = New System.Windows.Forms.ComboBox()
+        Me.lblnumAvail = New System.Windows.Forms.Label()
+        Me.btnBookNow = New System.Windows.Forms.Button()
         CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -106,11 +110,53 @@ Partial Class Check_Availability
         '
         Me.RoomTableAdapter1.ClearBeforeFill = True
         '
+        'lblAvailRoom
+        '
+        Me.lblAvailRoom.AutoSize = True
+        Me.lblAvailRoom.Location = New System.Drawing.Point(170, 442)
+        Me.lblAvailRoom.Name = "lblAvailRoom"
+        Me.lblAvailRoom.Size = New System.Drawing.Size(121, 17)
+        Me.lblAvailRoom.TabIndex = 6
+        Me.lblAvailRoom.Text = "Available Rooms: "
+        '
+        'comboBoxAvailRooms
+        '
+        Me.comboBoxAvailRooms.FormattingEnabled = True
+        Me.comboBoxAvailRooms.Location = New System.Drawing.Point(172, 477)
+        Me.comboBoxAvailRooms.Name = "comboBoxAvailRooms"
+        Me.comboBoxAvailRooms.Size = New System.Drawing.Size(121, 24)
+        Me.comboBoxAvailRooms.TabIndex = 7
+        Me.comboBoxAvailRooms.Visible = False
+        '
+        'lblnumAvail
+        '
+        Me.lblnumAvail.AutoSize = True
+        Me.lblnumAvail.Location = New System.Drawing.Point(307, 442)
+        Me.lblnumAvail.Name = "lblnumAvail"
+        Me.lblnumAvail.Size = New System.Drawing.Size(51, 17)
+        Me.lblnumAvail.TabIndex = 8
+        Me.lblnumAvail.Text = "Label1"
+        Me.lblnumAvail.Visible = False
+        '
+        'btnBookNow
+        '
+        Me.btnBookNow.Location = New System.Drawing.Point(361, 477)
+        Me.btnBookNow.Name = "btnBookNow"
+        Me.btnBookNow.Size = New System.Drawing.Size(136, 23)
+        Me.btnBookNow.TabIndex = 9
+        Me.btnBookNow.Text = "Book Now"
+        Me.btnBookNow.UseVisualStyleBackColor = True
+        Me.btnBookNow.Visible = False
+        '
         'Check_Availability
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(787, 368)
+        Me.ClientSize = New System.Drawing.Size(1053, 632)
+        Me.Controls.Add(Me.btnBookNow)
+        Me.Controls.Add(Me.lblnumAvail)
+        Me.Controls.Add(Me.comboBoxAvailRooms)
+        Me.Controls.Add(Me.lblAvailRoom)
         Me.Controls.Add(Me.lblBooking)
         Me.Controls.Add(Me.btnCheckAval)
         Me.Controls.Add(Me.DateTimePickerTo)
@@ -136,4 +182,8 @@ Partial Class Check_Availability
     Friend WithEvents BookingTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter
     Friend WithEvents GuestHouseDataSet1 As WindowsApplication1.guestHouseDataSet
     Friend WithEvents RoomTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter
+    Friend WithEvents lblAvailRoom As System.Windows.Forms.Label
+    Friend WithEvents comboBoxAvailRooms As System.Windows.Forms.ComboBox
+    Friend WithEvents lblnumAvail As System.Windows.Forms.Label
+    Friend WithEvents btnBookNow As System.Windows.Forms.Button
 End Class
