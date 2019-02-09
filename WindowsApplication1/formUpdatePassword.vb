@@ -5,7 +5,7 @@
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
-        Me.Size = New Size(CW * Form1.Width / 1500, CH * Form1.Height / 1024)
+        Me.Size = New Size(CW * Form1.Width / 1386, CH * Form1.Height / 768)
         Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
         Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
 
@@ -40,4 +40,42 @@
             MessageBox.Show("Incorrect password!")
         End If
     End Sub
+    Private Sub PassButton1_MouseDown(sender As Object, e As EventArgs) Handles PassButton1.MouseDown
+        txtOldPass.PasswordChar = ""
+        PassButton1.Image = My.Resources.eye
+        PassButton1.FlatStyle = FlatStyle.Flat
+    End Sub
+
+    Private Sub PassButton1_MouseLeave(sender As Object, e As EventArgs) Handles PassButton1.MouseUp
+        txtOldPass.PasswordChar = "*"
+        PassButton1.Image = My.Resources.vision_off
+        PassButton1.FlatStyle = FlatStyle.Popup
+        PassButton1.FlatAppearance.BorderSize = 0
+    End Sub
+    Private Sub PassButton2_MouseDown(sender As Object, e As EventArgs) Handles PassButton2.MouseDown
+        txtNewPass.PasswordChar = ""
+        PassButton2.Image = My.Resources.eye
+        PassButton2.FlatStyle = FlatStyle.Flat
+    End Sub
+
+    Private Sub PassButton2_MouseLeave(sender As Object, e As EventArgs) Handles PassButton2.MouseUp
+        txtNewPass.PasswordChar = "*"
+        PassButton2.Image = My.Resources.vision_off
+        PassButton2.FlatStyle = FlatStyle.Popup
+        PassButton2.FlatAppearance.BorderSize = 0
+    End Sub
+    Private Sub PassButton3_MouseDown(sender As Object, e As EventArgs) Handles PassButton3.MouseDown
+        txtConfirmNewPass.PasswordChar = ""
+        PassButton3.Image = My.Resources.eye
+        PassButton3.FlatStyle = FlatStyle.Flat
+    End Sub
+
+    Private Sub PassButton3_MouseLeave(sender As Object, e As EventArgs) Handles PassButton3.MouseUp
+        txtConfirmNewPass.PasswordChar = "*"
+        PassButton3.Image = My.Resources.vision_off
+        PassButton3.FlatStyle = FlatStyle.Popup
+        PassButton3.FlatAppearance.BorderSize = 0
+    End Sub
+   
+    
 End Class

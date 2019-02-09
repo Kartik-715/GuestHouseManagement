@@ -38,10 +38,9 @@ Partial Class Form1
         Me.lblWelcome.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.lblWelcome.Font = New System.Drawing.Font("Microsoft Tai Le", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWelcome.ForeColor = System.Drawing.Color.Ivory
-        Me.lblWelcome.Location = New System.Drawing.Point(74, 44)
-        Me.lblWelcome.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblWelcome.Location = New System.Drawing.Point(56, 36)
         Me.lblWelcome.Name = "lblWelcome"
-        Me.lblWelcome.Size = New System.Drawing.Size(849, 61)
+        Me.lblWelcome.Size = New System.Drawing.Size(637, 50)
         Me.lblWelcome.TabIndex = 3
         Me.lblWelcome.Text = "Welcome to IITG Guest House Portal"
         Me.lblWelcome.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -60,10 +59,10 @@ Partial Class Form1
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.White
-        Me.btnLogin.Location = New System.Drawing.Point(444, 606)
-        Me.btnLogin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnLogin.Location = New System.Drawing.Point(314, 483)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(165, 52)
+        Me.btnLogin.Size = New System.Drawing.Size(124, 42)
         Me.btnLogin.TabIndex = 1
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = False
@@ -76,10 +75,10 @@ Partial Class Form1
         Me.btnCheckAvailabality.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCheckAvailabality.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheckAvailabality.ForeColor = System.Drawing.Color.White
-        Me.btnCheckAvailabality.Location = New System.Drawing.Point(640, 606)
-        Me.btnCheckAvailabality.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnCheckAvailabality.Location = New System.Drawing.Point(461, 483)
+        Me.btnCheckAvailabality.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCheckAvailabality.Name = "btnCheckAvailabality"
-        Me.btnCheckAvailabality.Size = New System.Drawing.Size(188, 52)
+        Me.btnCheckAvailabality.Size = New System.Drawing.Size(141, 42)
         Me.btnCheckAvailabality.TabIndex = 2
         Me.btnCheckAvailabality.Text = "Check Availability"
         Me.btnCheckAvailabality.UseVisualStyleBackColor = False
@@ -92,22 +91,22 @@ Partial Class Form1
         Me.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSignUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSignUp.ForeColor = System.Drawing.Color.White
-        Me.btnSignUp.Location = New System.Drawing.Point(245, 606)
-        Me.btnSignUp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSignUp.Location = New System.Drawing.Point(165, 483)
+        Me.btnSignUp.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSignUp.Name = "btnSignUp"
-        Me.btnSignUp.Size = New System.Drawing.Size(165, 52)
+        Me.btnSignUp.Size = New System.Drawing.Size(124, 42)
         Me.btnSignUp.TabIndex = 0
         Me.btnSignUp.Text = "Sign Up"
         Me.btnSignUp.UseVisualStyleBackColor = False
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.ghover
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1002, 717)
+        Me.ClientSize = New System.Drawing.Size(752, 583)
         Me.Controls.Add(Me.lblWelcome)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.btnCheckAvailabality)
@@ -115,7 +114,7 @@ Partial Class Form1
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Form1"
         Me.Text = "IITG Guest House Portal"
         Me.ResumeLayout(False)
