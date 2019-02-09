@@ -24,10 +24,11 @@ Partial Class Check_Availability
     Private Sub InitializeComponent()
         Me.CheckIn = New System.Windows.Forms.Label()
         Me.Checkout = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.DateTimePickerFrom = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePickerTo = New System.Windows.Forms.DateTimePicker()
+        Me.btnCheckAval = New System.Windows.Forms.Button()
         Me.lblBooking = New System.Windows.Forms.Label()
+        Me.BookingTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
         Me.SuspendLayout()
         '
         'CheckIn
@@ -50,34 +51,34 @@ Partial Class Check_Availability
         Me.Checkout.TabIndex = 1
         Me.Checkout.Text = "To"
         '
-        'DateTimePicker1
+        'DateTimePickerFrom
         '
-        Me.DateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Tai Le", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(404, 126)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(217, 42)
-        Me.DateTimePicker1.TabIndex = 2
+        Me.DateTimePickerFrom.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DateTimePickerFrom.Font = New System.Drawing.Font("Microsoft Tai Le", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePickerFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePickerFrom.Location = New System.Drawing.Point(404, 126)
+        Me.DateTimePickerFrom.Name = "DateTimePickerFrom"
+        Me.DateTimePickerFrom.Size = New System.Drawing.Size(217, 42)
+        Me.DateTimePickerFrom.TabIndex = 2
         '
-        'DateTimePicker2
+        'DateTimePickerTo
         '
-        Me.DateTimePicker2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Tai Le", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker2.Location = New System.Drawing.Point(404, 194)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(217, 42)
-        Me.DateTimePicker2.TabIndex = 3
+        Me.DateTimePickerTo.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.DateTimePickerTo.Font = New System.Drawing.Font("Microsoft Tai Le", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePickerTo.Location = New System.Drawing.Point(404, 194)
+        Me.DateTimePickerTo.Name = "DateTimePickerTo"
+        Me.DateTimePickerTo.Size = New System.Drawing.Size(217, 42)
+        Me.DateTimePickerTo.TabIndex = 3
         '
-        'Button1
+        'btnCheckAval
         '
-        Me.Button1.Location = New System.Drawing.Point(284, 283)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(213, 56)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Check Availability"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnCheckAval.Location = New System.Drawing.Point(284, 283)
+        Me.btnCheckAval.Name = "btnCheckAval"
+        Me.btnCheckAval.Size = New System.Drawing.Size(213, 56)
+        Me.btnCheckAval.TabIndex = 4
+        Me.btnCheckAval.Text = "Check Availability"
+        Me.btnCheckAval.UseVisualStyleBackColor = True
         '
         'lblBooking
         '
@@ -89,15 +90,19 @@ Partial Class Check_Availability
         Me.lblBooking.TabIndex = 5
         Me.lblBooking.Text = "Booking"
         '
+        'BookingTableAdapter1
+        '
+        Me.BookingTableAdapter1.ClearBeforeFill = True
+        '
         'Check_Availability
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(787, 368)
         Me.Controls.Add(Me.lblBooking)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.DateTimePicker2)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.btnCheckAval)
+        Me.Controls.Add(Me.DateTimePickerTo)
+        Me.Controls.Add(Me.DateTimePickerFrom)
         Me.Controls.Add(Me.Checkout)
         Me.Controls.Add(Me.CheckIn)
         Me.Cursor = System.Windows.Forms.Cursors.Default
@@ -111,8 +116,9 @@ Partial Class Check_Availability
     End Sub
     Friend WithEvents CheckIn As System.Windows.Forms.Label
     Friend WithEvents Checkout As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents DateTimePickerFrom As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DateTimePickerTo As System.Windows.Forms.DateTimePicker
+    Friend WithEvents btnCheckAval As System.Windows.Forms.Button
     Friend WithEvents lblBooking As System.Windows.Forms.Label
+    Friend WithEvents BookingTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter
 End Class

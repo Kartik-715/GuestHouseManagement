@@ -32,6 +32,7 @@ Partial Class Dashboard
         Me.btnMyBills = New WindowsApplication1.RoundButton()
         Me.btnBookARoom = New WindowsApplication1.RoundButton()
         Me.btnLogOut = New WindowsApplication1.RoundButton()
+        Me.BookingTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -145,6 +146,10 @@ Partial Class Dashboard
         Me.btnLogOut.Text = "Log Out"
         Me.btnLogOut.UseVisualStyleBackColor = False
         '
+        'BookingTableAdapter1
+        '
+        Me.BookingTableAdapter1.ClearBeforeFill = True
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -178,4 +183,5 @@ Partial Class Dashboard
     Friend WithEvents btnBookARoom As WindowsApplication1.RoundButton
     Friend WithEvents btnMyBills As WindowsApplication1.RoundButton
     Friend WithEvents btnUpdatePassword As WindowsApplication1.RoundButton
+    Friend WithEvents BookingTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter
 End Class
