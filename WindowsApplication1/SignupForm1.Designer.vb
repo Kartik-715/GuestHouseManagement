@@ -54,6 +54,7 @@ Partial Class SignupForm1
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.picCaptcha = New System.Windows.Forms.PictureBox()
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
+        Me.RoomTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserTableBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -266,11 +267,16 @@ Partial Class SignupForm1
         Me.LogoPictureBox.TabIndex = 0
         Me.LogoPictureBox.TabStop = False
         '
+        'RoomTableAdapter1
+        '
+        Me.RoomTableAdapter1.ClearBeforeFill = True
+        '
         'SignupForm1
         '
         Me.AcceptButton = Me.OK
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(1077, 555)
         Me.Controls.Add(Me.lblCategory)
@@ -324,4 +330,5 @@ Partial Class SignupForm1
     Friend WithEvents UserTableBindingSource1 As System.Windows.Forms.BindingSource
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents lblCategory As System.Windows.Forms.Label
+    Friend WithEvents RoomTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter
 End Class
