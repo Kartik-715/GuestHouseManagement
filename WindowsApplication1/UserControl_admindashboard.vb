@@ -47,4 +47,32 @@ Public Class UserControl_admindashboard
             End Try
         End If
     End Sub
+
+    Private Sub txtRoomNo_TextChanged(sender As Object, e As EventArgs) Handles txtRoomNo.TextChanged
+
+    End Sub
+
+    Private Sub rbtnIsVIP_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnIsVIP.CheckedChanged
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub btnAddRemoveRoom_Click(sender As Object, e As EventArgs) Handles btnAddRemoveRoom.Click
+        If rbtnAddARoomToService.Checked = True Then
+            If rbtnIsVIP.Checked = True Then
+                RoomTableAdapter1.AddRoom(txtRoomNo.Text, True)
+            Else
+                Try
+                    RoomTableAdapter1.AddRoom(txtRoomNo.Text, False)
+                Catch ex As Exception
+                    MsgBox("Room Already Exists!")
+                End Try
+            End If
+        Else
+            RoomTableAdapter1.DeleteRoom(txtRoomNo.Text)
+        End If
+    End Sub
 End Class

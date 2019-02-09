@@ -40,6 +40,8 @@ Partial Class UserControl_admindashboard
         Me.lblRoomNo = New System.Windows.Forms.Label()
         Me.rbtnIsVIP = New System.Windows.Forms.RadioButton()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnAddRemoveRoom = New System.Windows.Forms.Button()
+        Me.RoomTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -183,10 +185,24 @@ Partial Class UserControl_admindashboard
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Label1"
         '
+        'btnAddRemoveRoom
+        '
+        Me.btnAddRemoveRoom.Location = New System.Drawing.Point(282, 399)
+        Me.btnAddRemoveRoom.Name = "btnAddRemoveRoom"
+        Me.btnAddRemoveRoom.Size = New System.Drawing.Size(75, 82)
+        Me.btnAddRemoveRoom.TabIndex = 13
+        Me.btnAddRemoveRoom.Text = "Save Changes"
+        Me.btnAddRemoveRoom.UseVisualStyleBackColor = True
+        '
+        'RoomTableAdapter1
+        '
+        Me.RoomTableAdapter1.ClearBeforeFill = True
+        '
         'UserControl_admindashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.btnAddRemoveRoom)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.rbtnAddARoomToService)
         Me.Controls.Add(Me.rbtnIsVIP)
@@ -222,5 +238,7 @@ Partial Class UserControl_admindashboard
     Friend WithEvents lblRoomNo As System.Windows.Forms.Label
     Friend WithEvents rbtnIsVIP As System.Windows.Forms.RadioButton
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents btnAddRemoveRoom As System.Windows.Forms.Button
+    Friend WithEvents RoomTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter
 
 End Class
