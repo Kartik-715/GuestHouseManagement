@@ -3893,10 +3893,11 @@ Namespace guestHouseDataSetTableAdapters
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT ID, RoomNo, BookedBy, Bill, BookingConfirmed, BookedFrom, BookedTill, Book" & _
-                "ingForFirstName, BookingForLastName, BookingForMobileNo, isVIP FROM Booking WHER" & _
-                "E (BookingConfirmed = False) ORDER BY BookedFrom"
+            Me._commandCollection(3).CommandText = "SELECT RoomNo, BookedBy, BookingConfirmed, BookedFrom, BookedTill" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM     Booki" & _
+                "ng" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE  (BookedTill >= ?) AND (BookedBy = ?)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedTill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedTill", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedBy", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedBy", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(4) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(4).Connection = Me.Connection
             Me._commandCollection(4).CommandText = "SELECT RoomNo, BookingConfirmed, BookedFrom, BookedTill, BookingForFirstName, Boo" & _
@@ -3937,7 +3938,7 @@ Namespace guestHouseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, False)> _
-        Public Overridable Overloads Function FillBy(ByVal dataTable As guestHouseDataSet.BookingDataTable) As Integer
+        Public Overridable Overloads Function FillByPendingBookings(ByVal dataTable As guestHouseDataSet.BookingDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(2)
             If (Me.ClearBeforeFill = True) Then
                 dataTable.Clear()
@@ -3950,8 +3951,18 @@ Namespace guestHouseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, False)> _
-        Public Overridable Overloads Function FillByPendingBookings(ByVal dataTable As guestHouseDataSet.BookingDataTable) As Integer
+        Public Overridable Overloads Function FillCurrentBooking(ByVal dataTable As guestHouseDataSet.BookingDataTable, ByVal BookedTill As Global.System.Nullable(Of Integer), ByVal BookedBy As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (BookedTill.HasValue = True) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(BookedTill.Value, Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (BookedBy Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(BookedBy, String)
+            End If
             If (Me.ClearBeforeFill = True) Then
                 dataTable.Clear()
             End If
