@@ -114,7 +114,7 @@
 
     End Sub
 
-    Private Sub FillByPendingBookingsToolStripButton_Click_1(sender As Object, e As EventArgs) Handles FillByPendingBookingsToolStripButton.Click
+    Private Sub FillByPendingBookingsToolStripButton_Click_1(sender As Object, e As EventArgs)
         Try
             Me.BookingTableAdapter.FillByPendingBookings(Me.GuestHouseDataSet.Booking)
         Catch ex As System.Exception
