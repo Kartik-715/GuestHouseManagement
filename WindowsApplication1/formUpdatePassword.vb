@@ -26,13 +26,17 @@
     End Sub
 
     Private Sub btnUpdatePass_Click(sender As Object, e As EventArgs) Handles btnUpdatePass.Click
-        Console.WriteLine("hi" & UserTableTableAdapter.getPassword(loggedUser))
+        'Console.WriteLine("hi" & UserTableTableAdapter.getPassword(loggedUser))
         If txtOldPass.Text = UserTableTableAdapter.getPassword(loggedUser) Then
             If txtNewPass.Text = txtConfirmNewPass.Text Then
                 UserTableTableAdapter.UpdatePassword(txtNewPass.Text, loggedUser)
                 MessageBox.Show("Password changed successfully!")
                 Me.Close()
-                Dashboard.Show()
+                If loggedUser = "Admin" Then
+                    AdminDashboard.Show()
+                Else
+                    Dashboard.Show()
+                End If
             Else
                 MessageBox.Show("New passwords dont match!")
             End If
