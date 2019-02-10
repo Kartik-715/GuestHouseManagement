@@ -23,7 +23,6 @@ Partial Class formUpdatePassword
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.lblHello = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -34,22 +33,13 @@ Partial Class formUpdatePassword
         Me.UserTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GuestHouseDataSet = New WindowsApplication1.guestHouseDataSet()
         Me.UserTableTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
-        Me.PassButton1 = New System.Windows.Forms.Button()
-        Me.PassButton2 = New System.Windows.Forms.Button()
         Me.PassButton3 = New System.Windows.Forms.Button()
+        Me.PassButton2 = New System.Windows.Forms.Button()
+        Me.PassButton1 = New System.Windows.Forms.Button()
+        Me.lblHello = New System.Windows.Forms.Label()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'lblHello
-        '
-        Me.lblHello.AutoSize = True
-        Me.lblHello.Font = New System.Drawing.Font("Microsoft Tai Le", 17.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHello.Location = New System.Drawing.Point(510, 22)
-        Me.lblHello.Name = "lblHello"
-        Me.lblHello.Size = New System.Drawing.Size(159, 37)
-        Me.lblHello.TabIndex = 0
-        Me.lblHello.Text = "Hello User"
         '
         'Label1
         '
@@ -133,17 +123,17 @@ Partial Class formUpdatePassword
         '
         Me.UserTableTableAdapter.ClearBeforeFill = True
         '
-        'PassButton1
+        'PassButton3
         '
-        Me.PassButton1.BackColor = System.Drawing.Color.Transparent
-        Me.PassButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.PassButton1.Image = Global.WindowsApplication1.My.Resources.Resources.vision_off
-        Me.PassButton1.Location = New System.Drawing.Point(634, 89)
-        Me.PassButton1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PassButton1.Name = "PassButton1"
-        Me.PassButton1.Size = New System.Drawing.Size(35, 34)
-        Me.PassButton1.TabIndex = 8
-        Me.PassButton1.UseVisualStyleBackColor = False
+        Me.PassButton3.BackColor = System.Drawing.Color.Transparent
+        Me.PassButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PassButton3.Image = Global.WindowsApplication1.My.Resources.Resources.vision_off
+        Me.PassButton3.Location = New System.Drawing.Point(634, 199)
+        Me.PassButton3.Margin = New System.Windows.Forms.Padding(4)
+        Me.PassButton3.Name = "PassButton3"
+        Me.PassButton3.Size = New System.Drawing.Size(35, 34)
+        Me.PassButton3.TabIndex = 10
+        Me.PassButton3.UseVisualStyleBackColor = False
         '
         'PassButton2
         '
@@ -151,23 +141,33 @@ Partial Class formUpdatePassword
         Me.PassButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.PassButton2.Image = Global.WindowsApplication1.My.Resources.Resources.vision_off
         Me.PassButton2.Location = New System.Drawing.Point(634, 144)
-        Me.PassButton2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PassButton2.Margin = New System.Windows.Forms.Padding(4)
         Me.PassButton2.Name = "PassButton2"
         Me.PassButton2.Size = New System.Drawing.Size(35, 34)
         Me.PassButton2.TabIndex = 9
         Me.PassButton2.UseVisualStyleBackColor = False
         '
-        'PassButton3
+        'PassButton1
         '
-        Me.PassButton3.BackColor = System.Drawing.Color.Transparent
-        Me.PassButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.PassButton3.Image = Global.WindowsApplication1.My.Resources.Resources.vision_off
-        Me.PassButton3.Location = New System.Drawing.Point(634, 199)
-        Me.PassButton3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PassButton3.Name = "PassButton3"
-        Me.PassButton3.Size = New System.Drawing.Size(35, 34)
-        Me.PassButton3.TabIndex = 10
-        Me.PassButton3.UseVisualStyleBackColor = False
+        Me.PassButton1.BackColor = System.Drawing.Color.Transparent
+        Me.PassButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PassButton1.Image = Global.WindowsApplication1.My.Resources.Resources.vision_off
+        Me.PassButton1.Location = New System.Drawing.Point(634, 89)
+        Me.PassButton1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PassButton1.Name = "PassButton1"
+        Me.PassButton1.Size = New System.Drawing.Size(35, 34)
+        Me.PassButton1.TabIndex = 8
+        Me.PassButton1.UseVisualStyleBackColor = False
+        '
+        'lblHello
+        '
+        Me.lblHello.AutoSize = True
+        Me.lblHello.Font = New System.Drawing.Font("Microsoft Tai Le", 17.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHello.Location = New System.Drawing.Point(510, 22)
+        Me.lblHello.Name = "lblHello"
+        Me.lblHello.Size = New System.Drawing.Size(159, 37)
+        Me.lblHello.TabIndex = 0
+        Me.lblHello.Text = "Hello User"
         '
         'formUpdatePassword
         '
@@ -198,7 +198,6 @@ Partial Class formUpdatePassword
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents lblHello As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -212,4 +211,5 @@ Partial Class formUpdatePassword
     Friend WithEvents PassButton1 As System.Windows.Forms.Button
     Friend WithEvents PassButton2 As System.Windows.Forms.Button
     Friend WithEvents PassButton3 As System.Windows.Forms.Button
+    Friend WithEvents lblHello As System.Windows.Forms.Label
 End Class

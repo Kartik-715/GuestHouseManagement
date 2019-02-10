@@ -84,4 +84,22 @@
     End Sub
 
 
+    Private Sub PassButton1_MouseLeave(sender As Object, e As MouseEventArgs) Handles PassButton1.MouseUp
+
+    End Sub
+    Private Sub PassButton1_MouseDown(sender As Object, e As MouseEventArgs) Handles PassButton1.MouseDown
+
+    End Sub
+    Private Sub PassButton2_MouseLeave(sender As Object, e As MouseEventArgs) Handles PassButton2.MouseUp
+
+    End Sub
+    Private Sub PassButton2_MouseDown(sender As Object, e As MouseEventArgs) Handles PassButton2.MouseDown
+
+    End Sub
+    Private Sub PassButton3_MouseLeave(sender As Object, e As MouseEventArgs) Handles PassButton3.MouseUp
+
+    End Sub
+    Private Sub PassButton3_MouseDown(sender As Object, e As MouseEventArgs) Handles PassButton3.MouseDown
+
+    End Sub
 End Class

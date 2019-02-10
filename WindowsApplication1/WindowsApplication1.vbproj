@@ -158,6 +158,12 @@
     <Compile Include="UserControl_admindashboardnontabular.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl_dynamiccontrol.Designer.vb">
+      <DependentUpon>UserControl_dynamiccontrol.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_dynamiccontrol.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdminDashboard.resx">
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_admindashboardnontabular.resx">
       <DependentUpon>UserControl_admindashboardnontabular.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_dynamiccontrol.resx">
+      <DependentUpon>UserControl_dynamiccontrol.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

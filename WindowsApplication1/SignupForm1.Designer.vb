@@ -209,9 +209,10 @@ Partial Class SignupForm1
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Student", "Professor", "Staff"})
+        Me.ComboBox1.Items.AddRange(New Object() {"Guest", "Student", "Faculty", "Staff"})
         Me.ComboBox1.Location = New System.Drawing.Point(712, 396)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ComboBox1.Name = "ComboBox1"
