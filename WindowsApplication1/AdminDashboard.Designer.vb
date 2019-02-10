@@ -34,8 +34,26 @@ Partial Class AdminDashboard
         Me.btnAddRoom = New System.Windows.Forms.Button()
         Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
         Me.RoomTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter()
+        Me.DataGridPendingBookings = New System.Windows.Forms.DataGridView()
+        Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GuestHouseDataSet = New WindowsApplication1.guestHouseDataSet()
+        Me.btnPendingBookings = New System.Windows.Forms.Button()
+        Me.BookingTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
+        Me.btnConfirmBookings = New System.Windows.Forms.Button()
+        Me.FillByPendingBookingsToolStrip = New System.Windows.Forms.ToolStrip()
         Me.UserControl_admindashboard1 = New WindowsApplication1.UserControl_admindashboard()
+        Me.RoomNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BookedByDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BookedFromDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BookedTillDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BookingConfirmedDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.FillByPendingBookingsToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.FillByPendingBookingsToolStripButton = New System.Windows.Forms.ToolStripButton()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridPendingBookings, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FillByPendingBookingsToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblHello
@@ -128,18 +146,126 @@ Partial Class AdminDashboard
         '
         Me.RoomTableAdapter1.ClearBeforeFill = True
         '
+        'DataGridPendingBookings
+        '
+        Me.DataGridPendingBookings.AllowUserToAddRows = False
+        Me.DataGridPendingBookings.AutoGenerateColumns = False
+        Me.DataGridPendingBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridPendingBookings.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RoomNoDataGridViewTextBoxColumn, Me.BookedByDataGridViewTextBoxColumn, Me.BookedFromDataGridViewTextBoxColumn, Me.BookedTillDataGridViewTextBoxColumn, Me.BookingConfirmedDataGridViewCheckBoxColumn})
+        Me.DataGridPendingBookings.DataSource = Me.BookingBindingSource
+        Me.DataGridPendingBookings.Location = New System.Drawing.Point(259, 154)
+        Me.DataGridPendingBookings.Name = "DataGridPendingBookings"
+        Me.DataGridPendingBookings.RowTemplate.Height = 24
+        Me.DataGridPendingBookings.Size = New System.Drawing.Size(711, 196)
+        Me.DataGridPendingBookings.TabIndex = 19
+        Me.DataGridPendingBookings.Visible = False
+        '
+        'BookingBindingSource
+        '
+        Me.BookingBindingSource.DataMember = "Booking"
+        Me.BookingBindingSource.DataSource = Me.GuestHouseDataSet
+        '
+        'GuestHouseDataSet
+        '
+        Me.GuestHouseDataSet.DataSetName = "guestHouseDataSet"
+        Me.GuestHouseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'btnPendingBookings
+        '
+        Me.btnPendingBookings.Location = New System.Drawing.Point(62, 182)
+        Me.btnPendingBookings.Name = "btnPendingBookings"
+        Me.btnPendingBookings.Size = New System.Drawing.Size(164, 66)
+        Me.btnPendingBookings.TabIndex = 20
+        Me.btnPendingBookings.Text = "Pending Bookings"
+        Me.btnPendingBookings.UseVisualStyleBackColor = True
+        '
+        'BookingTableAdapter
+        '
+        Me.BookingTableAdapter.ClearBeforeFill = True
+        '
+        'btnConfirmBookings
+        '
+        Me.btnConfirmBookings.Location = New System.Drawing.Point(814, 389)
+        Me.btnConfirmBookings.Name = "btnConfirmBookings"
+        Me.btnConfirmBookings.Size = New System.Drawing.Size(159, 46)
+        Me.btnConfirmBookings.TabIndex = 22
+        Me.btnConfirmBookings.Text = "Confirm Bookings"
+        Me.btnConfirmBookings.UseVisualStyleBackColor = True
+        Me.btnConfirmBookings.Visible = False
+        '
+        'FillByPendingBookingsToolStrip
+        '
+        Me.FillByPendingBookingsToolStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.FillByPendingBookingsToolStrip.Location = New System.Drawing.Point(0, 0)
+        Me.FillByPendingBookingsToolStrip.Name = "FillByPendingBookingsToolStrip"
+        Me.FillByPendingBookingsToolStrip.Size = New System.Drawing.Size(1006, 25)
+        Me.FillByPendingBookingsToolStrip.TabIndex = 23
+        Me.FillByPendingBookingsToolStrip.Text = "FillByPendingBookingsToolStrip"
+        '
         'UserControl_admindashboard1
         '
         Me.UserControl_admindashboard1.Location = New System.Drawing.Point(232, 172)
         Me.UserControl_admindashboard1.Name = "UserControl_admindashboard1"
-        Me.UserControl_admindashboard1.Size = New System.Drawing.Size(264, 338)
+        Me.UserControl_admindashboard1.Size = New System.Drawing.Size(6, 44)
         Me.UserControl_admindashboard1.TabIndex = 18
+        '
+        'RoomNoDataGridViewTextBoxColumn
+        '
+        Me.RoomNoDataGridViewTextBoxColumn.DataPropertyName = "RoomNo"
+        Me.RoomNoDataGridViewTextBoxColumn.HeaderText = "RoomNo"
+        Me.RoomNoDataGridViewTextBoxColumn.Name = "RoomNoDataGridViewTextBoxColumn"
+        '
+        'BookedByDataGridViewTextBoxColumn
+        '
+        Me.BookedByDataGridViewTextBoxColumn.DataPropertyName = "BookedBy"
+        Me.BookedByDataGridViewTextBoxColumn.HeaderText = "BookedBy"
+        Me.BookedByDataGridViewTextBoxColumn.Name = "BookedByDataGridViewTextBoxColumn"
+        '
+        'BookedFromDataGridViewTextBoxColumn
+        '
+        Me.BookedFromDataGridViewTextBoxColumn.DataPropertyName = "BookedFrom"
+        Me.BookedFromDataGridViewTextBoxColumn.HeaderText = "BookedFrom"
+        Me.BookedFromDataGridViewTextBoxColumn.Name = "BookedFromDataGridViewTextBoxColumn"
+        '
+        'BookedTillDataGridViewTextBoxColumn
+        '
+        Me.BookedTillDataGridViewTextBoxColumn.DataPropertyName = "BookedTill"
+        Me.BookedTillDataGridViewTextBoxColumn.HeaderText = "BookedTill"
+        Me.BookedTillDataGridViewTextBoxColumn.Name = "BookedTillDataGridViewTextBoxColumn"
+        '
+        'BookingConfirmedDataGridViewCheckBoxColumn
+        '
+        Me.BookingConfirmedDataGridViewCheckBoxColumn.DataPropertyName = "BookingConfirmed"
+        Me.BookingConfirmedDataGridViewCheckBoxColumn.HeaderText = "BookingConfirmed"
+        Me.BookingConfirmedDataGridViewCheckBoxColumn.Name = "BookingConfirmedDataGridViewCheckBoxColumn"
+        '
+        'FillByPendingBookingsToolStrip1
+        '
+        Me.FillByPendingBookingsToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.FillByPendingBookingsToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FillByPendingBookingsToolStripButton})
+        Me.FillByPendingBookingsToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.FillByPendingBookingsToolStrip1.Name = "FillByPendingBookingsToolStrip1"
+        Me.FillByPendingBookingsToolStrip1.Size = New System.Drawing.Size(111, 25)
+        Me.FillByPendingBookingsToolStrip1.TabIndex = 24
+        Me.FillByPendingBookingsToolStrip1.Text = "FillByPendingBookingsToolStrip1"
+        '
+        'FillByPendingBookingsToolStripButton
+        '
+        Me.FillByPendingBookingsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.FillByPendingBookingsToolStripButton.Name = "FillByPendingBookingsToolStripButton"
+        Me.FillByPendingBookingsToolStripButton.Size = New System.Drawing.Size(23, 23)
+        Me.FillByPendingBookingsToolStripButton.Text = "FillByPendingBookings"
         '
         'AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1006, 721)
+        Me.Controls.Add(Me.FillByPendingBookingsToolStrip1)
+        Me.Controls.Add(Me.FillByPendingBookingsToolStrip)
+        Me.Controls.Add(Me.btnConfirmBookings)
+        Me.Controls.Add(Me.btnPendingBookings)
+        Me.Controls.Add(Me.DataGridPendingBookings)
         Me.Controls.Add(Me.UserControl_admindashboard1)
         Me.Controls.Add(Me.btnAddRoom)
         Me.Controls.Add(Me.labelNonApproved)
@@ -152,6 +278,11 @@ Partial Class AdminDashboard
         Me.Name = "AdminDashboard"
         Me.Text = "AdminDashboard"
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridPendingBookings, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FillByPendingBookingsToolStrip1.ResumeLayout(False)
+        Me.FillByPendingBookingsToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -168,4 +299,18 @@ Partial Class AdminDashboard
     Friend WithEvents btnAddRoom As System.Windows.Forms.Button
     Friend WithEvents RoomTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter
     Friend WithEvents UserControl_admindashboard1 As WindowsApplication1.UserControl_admindashboard
+    Friend WithEvents DataGridPendingBookings As System.Windows.Forms.DataGridView
+    Friend WithEvents btnPendingBookings As System.Windows.Forms.Button
+    Friend WithEvents GuestHouseDataSet As WindowsApplication1.guestHouseDataSet
+    Friend WithEvents BookingBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents BookingTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter
+    Friend WithEvents btnConfirmBookings As System.Windows.Forms.Button
+    Friend WithEvents FillByPendingBookingsToolStrip As System.Windows.Forms.ToolStrip
+    Friend WithEvents RoomNoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BookedByDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BookedFromDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BookedTillDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BookingConfirmedDataGridViewCheckBoxColumn As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents FillByPendingBookingsToolStrip1 As System.Windows.Forms.ToolStrip
+    Friend WithEvents FillByPendingBookingsToolStripButton As System.Windows.Forms.ToolStripButton
 End Class

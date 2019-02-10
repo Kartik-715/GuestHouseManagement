@@ -45,6 +45,8 @@
     End Sub
 
     Private Sub AdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GuestHouseDataSet.Booking' table. You can move, or remove it, as needed.
+        Me.BookingTableAdapter.Fill(Me.GuestHouseDataSet.Booking)
         max()
         Form1.Hide()
         Me.WindowState = FormWindowState.Maximized
@@ -81,5 +83,43 @@
     Private Sub btnBookARoom_Click(sender As Object, e As EventArgs) Handles btnBookARoom.Click
         Check_Availability.loggedUser = loggedUser
         Check_Availability.Show()
+    End Sub
+
+    Private Sub FillByToolStripButton_Click(sender As Object, e As EventArgs)
+        Try
+            Me.BookingTableAdapter.FillBy(Me.GuestHouseDataSet.Booking)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub btnPendingBookings_Click(sender As Object, e As EventArgs) Handles btnPendingBookings.Click
+        DataGridPendingBookings.Show()
+        btnConfirmBookings.Show()
+        Me.BookingTableAdapter.FillByPendingBookings(Me.GuestHouseDataSet.Booking)
+    End Sub
+
+    Private Sub btnConfirmBookings_Click(sender As Object, e As EventArgs) Handles btnConfirmBookings.Click
+        Me.BookingTableAdapter.Update(GuestHouseDataSet.Booking)
+        Me.BookingTableAdapter.FillByPendingBookings(Me.GuestHouseDataSet.Booking)
+    End Sub
+
+    Private Sub FillByPendingBookingsToolStripButton_Click(sender As Object, e As EventArgs)
+        Try
+            Me.BookingTableAdapter.FillByPendingBookings(Me.GuestHouseDataSet.Booking)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub FillByPendingBookingsToolStripButton_Click_1(sender As Object, e As EventArgs) Handles FillByPendingBookingsToolStripButton.Click
+        Try
+            Me.BookingTableAdapter.FillByPendingBookings(Me.GuestHouseDataSet.Booking)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
     End Sub
 End Class
