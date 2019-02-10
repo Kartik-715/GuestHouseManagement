@@ -21,6 +21,7 @@
 
     Private Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         max()
+        DateTimePickerFrom.MinDate = Date.Today
     End Sub
 
     Private Sub btnCheckAval_Click(sender As Object, e As EventArgs) Handles btnCheckAval.Click
@@ -83,5 +84,21 @@
             End If
             reloadForm()
         End If
+    End Sub
+
+    Private Sub DateTimePickerFrom_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerFrom.ValueChanged
+        DateTimePickerTo.MinDate = DateTimePickerFrom.Value
+    End Sub
+
+    Private Sub DateTimePickerTo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles DateTimePickerTo.KeyPress
+        DateTimePickerTo.MinDate = DateTimePickerFrom.Value
+    End Sub
+
+    Private Sub DateTimePickerTo_DropDown(sender As Object, e As EventArgs) Handles DateTimePickerTo.DropDown
+        DateTimePickerTo.MinDate = DateTimePickerFrom.Value
+    End Sub
+
+    Private Sub DateTimePickerFrom_DropDown(sender As Object, e As EventArgs) Handles DateTimePickerFrom.DropDown
+        DateTimePickerTo.MinDate = DateTimePickerFrom.Value
     End Sub
 End Class

@@ -169,7 +169,7 @@ Partial Class UserControl_admindashboard
         '
         Me.rbtnIsVIP.AutoSize = True
         Me.rbtnIsVIP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbtnIsVIP.Location = New System.Drawing.Point(152, 196)
+        Me.rbtnIsVIP.Location = New System.Drawing.Point(153, 196)
         Me.rbtnIsVIP.Name = "rbtnIsVIP"
         Me.rbtnIsVIP.Size = New System.Drawing.Size(85, 29)
         Me.rbtnIsVIP.TabIndex = 11

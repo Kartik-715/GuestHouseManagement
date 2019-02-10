@@ -35,6 +35,13 @@ Partial Class Check_Availability
         Me.comboBoxAvailRooms = New System.Windows.Forms.ComboBox()
         Me.lblnumAvail = New System.Windows.Forms.Label()
         Me.btnBookNow = New System.Windows.Forms.Button()
+        Me.lblFirstName = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.lblLastName = New System.Windows.Forms.Label()
+        Me.lblMobileNo = New System.Windows.Forms.Label()
+        Me.txtPhone = New System.Windows.Forms.TextBox()
+        Me.rbtnIsVIP = New System.Windows.Forms.RadioButton()
         CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -67,6 +74,7 @@ Partial Class Check_Availability
         Me.DateTimePickerFrom.Name = "DateTimePickerFrom"
         Me.DateTimePickerFrom.Size = New System.Drawing.Size(217, 42)
         Me.DateTimePickerFrom.TabIndex = 2
+        Me.DateTimePickerFrom.Value = New Date(2019, 2, 10, 0, 0, 0, 0)
         '
         'DateTimePickerTo
         '
@@ -80,7 +88,7 @@ Partial Class Check_Availability
         '
         'btnCheckAval
         '
-        Me.btnCheckAval.Location = New System.Drawing.Point(284, 283)
+        Me.btnCheckAval.Location = New System.Drawing.Point(299, 283)
         Me.btnCheckAval.Name = "btnCheckAval"
         Me.btnCheckAval.Size = New System.Drawing.Size(213, 56)
         Me.btnCheckAval.TabIndex = 4
@@ -113,9 +121,10 @@ Partial Class Check_Availability
         'lblAvailRoom
         '
         Me.lblAvailRoom.AutoSize = True
-        Me.lblAvailRoom.Location = New System.Drawing.Point(170, 442)
+        Me.lblAvailRoom.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAvailRoom.Location = New System.Drawing.Point(143, 376)
         Me.lblAvailRoom.Name = "lblAvailRoom"
-        Me.lblAvailRoom.Size = New System.Drawing.Size(121, 17)
+        Me.lblAvailRoom.Size = New System.Drawing.Size(261, 32)
         Me.lblAvailRoom.TabIndex = 6
         Me.lblAvailRoom.Text = "Available Rooms: "
         '
@@ -123,7 +132,7 @@ Partial Class Check_Availability
         '
         Me.comboBoxAvailRooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboBoxAvailRooms.FormattingEnabled = True
-        Me.comboBoxAvailRooms.Location = New System.Drawing.Point(172, 477)
+        Me.comboBoxAvailRooms.Location = New System.Drawing.Point(376, 615)
         Me.comboBoxAvailRooms.Name = "comboBoxAvailRooms"
         Me.comboBoxAvailRooms.Size = New System.Drawing.Size(121, 24)
         Me.comboBoxAvailRooms.TabIndex = 7
@@ -132,28 +141,105 @@ Partial Class Check_Availability
         'lblnumAvail
         '
         Me.lblnumAvail.AutoSize = True
-        Me.lblnumAvail.Location = New System.Drawing.Point(307, 442)
+        Me.lblnumAvail.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblnumAvail.Location = New System.Drawing.Point(410, 376)
         Me.lblnumAvail.Name = "lblnumAvail"
-        Me.lblnumAvail.Size = New System.Drawing.Size(51, 17)
+        Me.lblnumAvail.Size = New System.Drawing.Size(108, 32)
         Me.lblnumAvail.TabIndex = 8
         Me.lblnumAvail.Text = "Label1"
         Me.lblnumAvail.Visible = False
         '
         'btnBookNow
         '
-        Me.btnBookNow.Location = New System.Drawing.Point(361, 477)
+        Me.btnBookNow.Location = New System.Drawing.Point(376, 654)
         Me.btnBookNow.Name = "btnBookNow"
-        Me.btnBookNow.Size = New System.Drawing.Size(136, 23)
+        Me.btnBookNow.Size = New System.Drawing.Size(136, 39)
         Me.btnBookNow.TabIndex = 9
         Me.btnBookNow.Text = "Book Now"
         Me.btnBookNow.UseVisualStyleBackColor = True
         Me.btnBookNow.Visible = False
         '
+        'lblFirstName
+        '
+        Me.lblFirstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFirstName.Location = New System.Drawing.Point(144, 442)
+        Me.lblFirstName.Name = "lblFirstName"
+        Me.lblFirstName.Size = New System.Drawing.Size(140, 31)
+        Me.lblFirstName.TabIndex = 1390
+        Me.lblFirstName.Text = "&First Name"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(376, 439)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(343, 34)
+        Me.TextBox1.TabIndex = 1386
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(376, 497)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBox2.Size = New System.Drawing.Size(343, 34)
+        Me.TextBox2.TabIndex = 1387
+        '
+        'lblLastName
+        '
+        Me.lblLastName.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLastName.Location = New System.Drawing.Point(144, 497)
+        Me.lblLastName.Name = "lblLastName"
+        Me.lblLastName.Size = New System.Drawing.Size(220, 34)
+        Me.lblLastName.TabIndex = 1389
+        Me.lblLastName.Text = "&Last Name"
+        Me.lblLastName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblMobileNo
+        '
+        Me.lblMobileNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMobileNo.Location = New System.Drawing.Point(144, 556)
+        Me.lblMobileNo.Name = "lblMobileNo"
+        Me.lblMobileNo.Size = New System.Drawing.Size(140, 31)
+        Me.lblMobileNo.TabIndex = 1392
+        Me.lblMobileNo.Text = "&Mobile No."
+        '
+        'txtPhone
+        '
+        Me.txtPhone.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPhone.Location = New System.Drawing.Point(376, 553)
+        Me.txtPhone.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtPhone.Name = "txtPhone"
+        Me.txtPhone.Size = New System.Drawing.Size(343, 34)
+        Me.txtPhone.TabIndex = 1388
+        '
+        'rbtnIsVIP
+        '
+        Me.rbtnIsVIP.AutoSize = True
+        Me.rbtnIsVIP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtnIsVIP.Location = New System.Drawing.Point(404, 248)
+        Me.rbtnIsVIP.Name = "rbtnIsVIP"
+        Me.rbtnIsVIP.Size = New System.Drawing.Size(85, 29)
+        Me.rbtnIsVIP.TabIndex = 1393
+        Me.rbtnIsVIP.TabStop = True
+        Me.rbtnIsVIP.Text = "Is VIP"
+        Me.rbtnIsVIP.UseVisualStyleBackColor = True
+        Me.rbtnIsVIP.Visible = False
+        '
         'Check_Availability
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1053, 632)
+        Me.ClientSize = New System.Drawing.Size(1006, 705)
+        Me.Controls.Add(Me.rbtnIsVIP)
+        Me.Controls.Add(Me.lblFirstName)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.lblLastName)
+        Me.Controls.Add(Me.lblMobileNo)
+        Me.Controls.Add(Me.txtPhone)
         Me.Controls.Add(Me.btnBookNow)
         Me.Controls.Add(Me.lblnumAvail)
         Me.Controls.Add(Me.comboBoxAvailRooms)
@@ -187,4 +273,11 @@ Partial Class Check_Availability
     Friend WithEvents comboBoxAvailRooms As System.Windows.Forms.ComboBox
     Friend WithEvents lblnumAvail As System.Windows.Forms.Label
     Friend WithEvents btnBookNow As System.Windows.Forms.Button
+    Friend WithEvents lblFirstName As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents lblLastName As System.Windows.Forms.Label
+    Friend WithEvents lblMobileNo As System.Windows.Forms.Label
+    Friend WithEvents txtPhone As System.Windows.Forms.TextBox
+    Friend WithEvents rbtnIsVIP As System.Windows.Forms.RadioButton
 End Class
