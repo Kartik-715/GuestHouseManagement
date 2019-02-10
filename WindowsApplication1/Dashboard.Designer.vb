@@ -49,6 +49,8 @@ Partial Class Dashboard
         Me.btnMyBills = New WindowsApplication1.RoundButton()
         Me.btnBookARoom = New WindowsApplication1.RoundButton()
         Me.btnLogOut = New WindowsApplication1.RoundButton()
+        Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
+        Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IITGLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +58,7 @@ Partial Class Dashboard
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -71,9 +74,9 @@ Partial Class Dashboard
         '
         Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.ghover
         Me.PictureBox2.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(8, 8, 8, 8)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(933, 554)
+        Me.PictureBox2.Size = New System.Drawing.Size(1866, 1073)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 10
         Me.PictureBox2.TabStop = False
@@ -82,10 +85,10 @@ Partial Class Dashboard
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.IITgGH1
-        Me.PictureBox1.Location = New System.Drawing.Point(-5, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Location = New System.Drawing.Point(-10, 0)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(8, 8, 8, 8)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1141, 194)
+        Me.PictureBox1.Size = New System.Drawing.Size(2282, 376)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
@@ -96,8 +99,8 @@ Partial Class Dashboard
         Me.lblHello.BackColor = System.Drawing.Color.Transparent
         Me.lblHello.Font = New System.Drawing.Font("Microsoft Tai Le", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHello.ForeColor = System.Drawing.Color.White
-        Me.lblHello.Location = New System.Drawing.Point(881, 145)
-        Me.lblHello.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblHello.Location = New System.Drawing.Point(1762, 281)
+        Me.lblHello.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.lblHello.Name = "lblHello"
         Me.lblHello.Size = New System.Drawing.Size(213, 48)
         Me.lblHello.TabIndex = 11
@@ -108,10 +111,10 @@ Partial Class Dashboard
         Me.IITGLogo.BackColor = System.Drawing.Color.Transparent
         Me.IITGLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.IITGLogo.Image = Global.WindowsApplication1.My.Resources.Resources.IITG_logo_png
-        Me.IITGLogo.Location = New System.Drawing.Point(71, 39)
-        Me.IITGLogo.Margin = New System.Windows.Forms.Padding(4)
+        Me.IITGLogo.Location = New System.Drawing.Point(142, 76)
+        Me.IITGLogo.Margin = New System.Windows.Forms.Padding(8, 8, 8, 8)
         Me.IITGLogo.Name = "IITGLogo"
-        Me.IITGLogo.Size = New System.Drawing.Size(120, 111)
+        Me.IITGLogo.Size = New System.Drawing.Size(240, 215)
         Me.IITGLogo.TabIndex = 12
         Me.IITGLogo.TabStop = False
         '
@@ -121,8 +124,8 @@ Partial Class Dashboard
         Me.lblGH.BackColor = System.Drawing.Color.Transparent
         Me.lblGH.Font = New System.Drawing.Font("Georgia", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblGH.ForeColor = System.Drawing.Color.White
-        Me.lblGH.Location = New System.Drawing.Point(223, 39)
-        Me.lblGH.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblGH.Location = New System.Drawing.Point(446, 76)
+        Me.lblGH.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.lblGH.Name = "lblGH"
         Me.lblGH.Size = New System.Drawing.Size(846, 69)
         Me.lblGH.TabIndex = 13
@@ -134,8 +137,8 @@ Partial Class Dashboard
         Me.lblDashboard.BackColor = System.Drawing.Color.Transparent
         Me.lblDashboard.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDashboard.ForeColor = System.Drawing.Color.Transparent
-        Me.lblDashboard.Location = New System.Drawing.Point(443, 126)
-        Me.lblDashboard.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDashboard.Location = New System.Drawing.Point(886, 244)
+        Me.lblDashboard.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.lblDashboard.Name = "lblDashboard"
         Me.lblDashboard.Size = New System.Drawing.Size(264, 42)
         Me.lblDashboard.TabIndex = 16
@@ -145,9 +148,9 @@ Partial Class Dashboard
         '
         Me.PictureBox3.Image = Global.WindowsApplication1.My.Resources.Resources.ghnight
         Me.PictureBox3.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(8, 8, 8, 8)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(933, 554)
+        Me.PictureBox3.Size = New System.Drawing.Size(1866, 1073)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 17
         Me.PictureBox3.TabStop = False
@@ -156,9 +159,9 @@ Partial Class Dashboard
         '
         Me.PictureBox4.Image = Global.WindowsApplication1.My.Resources.Resources.GH_dinning
         Me.PictureBox4.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(8, 8, 8, 8)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(933, 554)
+        Me.PictureBox4.Size = New System.Drawing.Size(1866, 1073)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 18
         Me.PictureBox4.TabStop = False
@@ -170,10 +173,10 @@ Partial Class Dashboard
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Controls.Add(Me.PictureBox4)
-        Me.Panel1.Location = New System.Drawing.Point(227, 194)
+        Me.Panel1.Location = New System.Drawing.Point(454, 376)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(947, 566)
+        Me.Panel1.Size = New System.Drawing.Size(1894, 1097)
         Me.Panel1.TabIndex = 19
         '
         'GroupBox1
@@ -188,9 +191,11 @@ Partial Class Dashboard
         Me.GroupBox1.Controls.Add(Me.lblBookedFrom)
         Me.GroupBox1.Controls.Add(Me.lblBookingID)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(223, 159)
+        Me.GroupBox1.Location = New System.Drawing.Point(446, 308)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(471, 285)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.GroupBox1.Size = New System.Drawing.Size(942, 552)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Current Booking"
@@ -198,7 +203,8 @@ Partial Class Dashboard
         'lblBookedTillval
         '
         Me.lblBookedTillval.AutoSize = True
-        Me.lblBookedTillval.Location = New System.Drawing.Point(308, 220)
+        Me.lblBookedTillval.Location = New System.Drawing.Point(616, 426)
+        Me.lblBookedTillval.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblBookedTillval.Name = "lblBookedTillval"
         Me.lblBookedTillval.Size = New System.Drawing.Size(108, 32)
         Me.lblBookedTillval.TabIndex = 7
@@ -207,7 +213,8 @@ Partial Class Dashboard
         'lblBookedFromval
         '
         Me.lblBookedFromval.AutoSize = True
-        Me.lblBookedFromval.Location = New System.Drawing.Point(308, 170)
+        Me.lblBookedFromval.Location = New System.Drawing.Point(616, 329)
+        Me.lblBookedFromval.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblBookedFromval.Name = "lblBookedFromval"
         Me.lblBookedFromval.Size = New System.Drawing.Size(108, 32)
         Me.lblBookedFromval.TabIndex = 6
@@ -216,7 +223,8 @@ Partial Class Dashboard
         'lblBookedForval
         '
         Me.lblBookedForval.AutoSize = True
-        Me.lblBookedForval.Location = New System.Drawing.Point(308, 120)
+        Me.lblBookedForval.Location = New System.Drawing.Point(616, 232)
+        Me.lblBookedForval.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblBookedForval.Name = "lblBookedForval"
         Me.lblBookedForval.Size = New System.Drawing.Size(108, 32)
         Me.lblBookedForval.TabIndex = 5
@@ -225,7 +233,8 @@ Partial Class Dashboard
         'lblBookingIDval
         '
         Me.lblBookingIDval.AutoSize = True
-        Me.lblBookingIDval.Location = New System.Drawing.Point(308, 70)
+        Me.lblBookingIDval.Location = New System.Drawing.Point(616, 136)
+        Me.lblBookingIDval.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblBookingIDval.Name = "lblBookingIDval"
         Me.lblBookingIDval.Size = New System.Drawing.Size(108, 32)
         Me.lblBookingIDval.TabIndex = 4
@@ -234,7 +243,8 @@ Partial Class Dashboard
         'lblBookedFor
         '
         Me.lblBookedFor.AutoSize = True
-        Me.lblBookedFor.Location = New System.Drawing.Point(54, 120)
+        Me.lblBookedFor.Location = New System.Drawing.Point(108, 232)
+        Me.lblBookedFor.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblBookedFor.Name = "lblBookedFor"
         Me.lblBookedFor.Size = New System.Drawing.Size(171, 32)
         Me.lblBookedFor.TabIndex = 3
@@ -243,7 +253,8 @@ Partial Class Dashboard
         'lblBookedTill
         '
         Me.lblBookedTill.AutoSize = True
-        Me.lblBookedTill.Location = New System.Drawing.Point(54, 220)
+        Me.lblBookedTill.Location = New System.Drawing.Point(108, 426)
+        Me.lblBookedTill.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblBookedTill.Name = "lblBookedTill"
         Me.lblBookedTill.Size = New System.Drawing.Size(168, 32)
         Me.lblBookedTill.TabIndex = 2
@@ -252,7 +263,8 @@ Partial Class Dashboard
         'lblBookedFrom
         '
         Me.lblBookedFrom.AutoSize = True
-        Me.lblBookedFrom.Location = New System.Drawing.Point(54, 170)
+        Me.lblBookedFrom.Location = New System.Drawing.Point(108, 329)
+        Me.lblBookedFrom.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblBookedFrom.Name = "lblBookedFrom"
         Me.lblBookedFrom.Size = New System.Drawing.Size(195, 32)
         Me.lblBookedFrom.TabIndex = 1
@@ -261,7 +273,8 @@ Partial Class Dashboard
         'lblBookingID
         '
         Me.lblBookingID.AutoSize = True
-        Me.lblBookingID.Location = New System.Drawing.Point(54, 70)
+        Me.lblBookingID.Location = New System.Drawing.Point(108, 136)
+        Me.lblBookingID.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblBookingID.Name = "lblBookingID"
         Me.lblBookingID.Size = New System.Drawing.Size(163, 32)
         Me.lblBookingID.TabIndex = 0
@@ -275,10 +288,10 @@ Partial Class Dashboard
         Me.RoundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RoundButton1.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RoundButton1.ForeColor = System.Drawing.Color.White
-        Me.RoundButton1.Location = New System.Drawing.Point(11, 222)
-        Me.RoundButton1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.RoundButton1.Location = New System.Drawing.Point(22, 430)
+        Me.RoundButton1.Margin = New System.Windows.Forms.Padding(6, 4, 6, 4)
         Me.RoundButton1.Name = "RoundButton1"
-        Me.RoundButton1.Size = New System.Drawing.Size(180, 74)
+        Me.RoundButton1.Size = New System.Drawing.Size(360, 143)
         Me.RoundButton1.TabIndex = 15
         Me.RoundButton1.Text = "My Bookings"
         Me.RoundButton1.UseVisualStyleBackColor = False
@@ -291,10 +304,10 @@ Partial Class Dashboard
         Me.btnUpdatePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdatePassword.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdatePassword.ForeColor = System.Drawing.Color.White
-        Me.btnUpdatePassword.Location = New System.Drawing.Point(11, 498)
-        Me.btnUpdatePassword.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnUpdatePassword.Location = New System.Drawing.Point(22, 965)
+        Me.btnUpdatePassword.Margin = New System.Windows.Forms.Padding(6, 4, 6, 4)
         Me.btnUpdatePassword.Name = "btnUpdatePassword"
-        Me.btnUpdatePassword.Size = New System.Drawing.Size(180, 74)
+        Me.btnUpdatePassword.Size = New System.Drawing.Size(360, 143)
         Me.btnUpdatePassword.TabIndex = 7
         Me.btnUpdatePassword.Text = "Update Password"
         Me.btnUpdatePassword.UseVisualStyleBackColor = False
@@ -307,10 +320,10 @@ Partial Class Dashboard
         Me.btnMyBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnMyBills.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMyBills.ForeColor = System.Drawing.Color.White
-        Me.btnMyBills.Location = New System.Drawing.Point(11, 406)
-        Me.btnMyBills.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnMyBills.Location = New System.Drawing.Point(22, 787)
+        Me.btnMyBills.Margin = New System.Windows.Forms.Padding(6, 4, 6, 4)
         Me.btnMyBills.Name = "btnMyBills"
-        Me.btnMyBills.Size = New System.Drawing.Size(180, 74)
+        Me.btnMyBills.Size = New System.Drawing.Size(360, 143)
         Me.btnMyBills.TabIndex = 6
         Me.btnMyBills.Text = "My Bills"
         Me.btnMyBills.UseVisualStyleBackColor = False
@@ -323,10 +336,10 @@ Partial Class Dashboard
         Me.btnBookARoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBookARoom.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBookARoom.ForeColor = System.Drawing.Color.White
-        Me.btnBookARoom.Location = New System.Drawing.Point(11, 314)
-        Me.btnBookARoom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnBookARoom.Location = New System.Drawing.Point(22, 608)
+        Me.btnBookARoom.Margin = New System.Windows.Forms.Padding(6, 4, 6, 4)
         Me.btnBookARoom.Name = "btnBookARoom"
-        Me.btnBookARoom.Size = New System.Drawing.Size(180, 74)
+        Me.btnBookARoom.Size = New System.Drawing.Size(360, 143)
         Me.btnBookARoom.TabIndex = 5
         Me.btnBookARoom.Text = "Book A Room"
         Me.btnBookARoom.UseVisualStyleBackColor = False
@@ -339,21 +352,30 @@ Partial Class Dashboard
         Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogOut.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogOut.ForeColor = System.Drawing.Color.White
-        Me.btnLogOut.Location = New System.Drawing.Point(11, 591)
-        Me.btnLogOut.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnLogOut.Location = New System.Drawing.Point(22, 1145)
+        Me.btnLogOut.Margin = New System.Windows.Forms.Padding(6, 4, 6, 4)
         Me.btnLogOut.Name = "btnLogOut"
-        Me.btnLogOut.Size = New System.Drawing.Size(180, 74)
+        Me.btnLogOut.Size = New System.Drawing.Size(360, 143)
         Me.btnLogOut.TabIndex = 4
         Me.btnLogOut.Text = "Log Out"
         Me.btnLogOut.UseVisualStyleBackColor = False
         '
+        'UserTableTableAdapter1
+        '
+        Me.UserTableTableAdapter1.ClearBeforeFill = True
+        '
+        'GuestHouseDataSet1
+        '
+        Me.GuestHouseDataSet1.DataSetName = "guestHouseDataSet"
+        Me.GuestHouseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Dashboard
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DodgerBlue
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.blueAbstract2
-        Me.ClientSize = New System.Drawing.Size(1121, 721)
+        Me.ClientSize = New System.Drawing.Size(1906, 1157)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblDashboard)
         Me.Controls.Add(Me.RoundButton1)
@@ -367,7 +389,7 @@ Partial Class Dashboard
         Me.Controls.Add(Me.btnLogOut)
         Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(6, 4, 6, 4)
         Me.Name = "Dashboard"
         Me.Text = "Dashboard"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -378,6 +400,7 @@ Partial Class Dashboard
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -407,4 +430,6 @@ Partial Class Dashboard
     Friend WithEvents lblBookedTill As System.Windows.Forms.Label
     Friend WithEvents lblBookedFrom As System.Windows.Forms.Label
     Friend WithEvents lblBookingID As System.Windows.Forms.Label
+    Friend WithEvents UserTableTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
+    Friend WithEvents GuestHouseDataSet1 As WindowsApplication1.guestHouseDataSet
 End Class

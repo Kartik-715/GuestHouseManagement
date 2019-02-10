@@ -31,7 +31,7 @@
                     MessageBox.Show("You have not been approved Yet!")
                 Else
                     MessageBox.Show("Login Successful")
-                    If userData.username = "admin" Then
+                    If userData.username = "admin" Or userData.Category = "Staff" Then
                         AdminDashboard.loggedUser = userData.username
                         Check_Availability.loggedUser = userData.username
                         AdminDashboard.Show()

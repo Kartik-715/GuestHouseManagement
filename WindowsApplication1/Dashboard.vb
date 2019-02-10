@@ -1,5 +1,6 @@
 ﻿Public Class Dashboard
     Public loggedUser As String
+    Public NameofUser As String
     Private images(3) As System.Drawing.Image
     Private index As Integer
     Dim check As Integer = 0
@@ -66,7 +67,9 @@
         lblGH.Parent = PictureBox1
         IITGLogo.Parent = PictureBox1
         Me.WindowState = FormWindowState.Maximized
-        lblHello.Text = "Hello! " & loggedUser
+        NameofUser = UserTableTableAdapter1.getNamebyUsername(loggedUser)
+        lblHello.Text = "Hello! " & NameofUser
+        Console.WriteLine(lblHello.Text)
     End Sub
 
     Private Sub btnUpdatePassword_Click(sender As Object, e As EventArgs) Handles btnUpdatePassword.Click
