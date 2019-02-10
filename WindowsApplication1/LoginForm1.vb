@@ -27,9 +27,11 @@
                 MessageBox.Show("Login Successful")
                 If userData.username = "Admin" Then
                     AdminDashboard.loggedUser = userData.username
+                    Check_Availability.loggedUser = userData.username
                     AdminDashboard.Show()
                 Else
                     Dashboard.loggedUser = userData.username
+                    Check_Availability.loggedUser = userData.username
                     Dashboard.Show()
                 End If
                 Form1.Hide()

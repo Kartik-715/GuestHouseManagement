@@ -1,4 +1,6 @@
 ﻿Public Class Check_Availability
+    Public loggedUser As String = "anonymous"
+
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
@@ -22,6 +24,7 @@
     End Sub
 
     Private Sub btnCheckAval_Click(sender As Object, e As EventArgs) Handles btnCheckAval.Click
+        'Console.WriteLine(loggedUser)
         Dim timeFrom As Integer = CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd"))
         Dim timeTo As Integer = CInt(DateTimePickerTo.Value.ToString("yyyyMMdd"))
         BookingTableAdapter1.fillNonAvailRooms(GuestHouseDataSet1.Booking, timeFrom, timeFrom, timeTo, timeTo)
@@ -67,12 +70,18 @@
     End Sub
 
     Private Sub btnBookNow_Click(sender As Object, e As EventArgs) Handles btnBookNow.Click
-        If comboBoxAvailRooms.Text = Nothing Or (Not comboBoxAvailRooms.Items.Contains(comboBoxAvailRooms.Text)) Then
-            MsgBox("Please Select A Room!")
+        If loggedUser = "anonymous" Then
+            MessageBox.Show("You need to login first!")
+            Me.Hide()
+            LoginForm1.Show()
         Else
-            BookingTableAdapter1.BookRoom(comboBoxAvailRooms.Text, "admin", CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd")), CInt(DateTimePickerTo.Value.ToString("yyyyMMdd")))
-            MsgBox("Room: " & comboBoxAvailRooms.Text & " booked Successfully!")
+            If comboBoxAvailRooms.Text = Nothing Or (Not comboBoxAvailRooms.Items.Contains(comboBoxAvailRooms.Text)) Then
+                MsgBox("Please Select A Room!")
+            Else
+                BookingTableAdapter1.BookRoom(comboBoxAvailRooms.Text, loggedUser, CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd")), CInt(DateTimePickerTo.Value.ToString("yyyyMMdd")))
+                MsgBox("Room: " & comboBoxAvailRooms.Text & " booked Successfully!")
+            End If
+            reloadForm()
         End If
-        reloadForm()
     End Sub
 End Class

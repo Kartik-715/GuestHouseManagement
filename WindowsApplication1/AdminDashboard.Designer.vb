@@ -132,7 +132,7 @@ Partial Class AdminDashboard
         '
         Me.UserControl_admindashboard1.Location = New System.Drawing.Point(232, 172)
         Me.UserControl_admindashboard1.Name = "UserControl_admindashboard1"
-        Me.UserControl_admindashboard1.Size = New System.Drawing.Size(928, 667)
+        Me.UserControl_admindashboard1.Size = New System.Drawing.Size(264, 338)
         Me.UserControl_admindashboard1.TabIndex = 18
         '
         'AdminDashboard

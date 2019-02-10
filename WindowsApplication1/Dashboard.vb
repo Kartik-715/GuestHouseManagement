@@ -114,4 +114,9 @@
         Timer1.Start()
         Console.Write(count.ToString)
     End Sub
+
+    Private Sub btnBookARoom_Click(sender As Object, e As EventArgs) Handles btnBookARoom.Click
+        Check_Availability.loggedUser = loggedUser
+        Check_Availability.Show()
+    End Sub
 End Class

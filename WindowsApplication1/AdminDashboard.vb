@@ -77,4 +77,9 @@
         UserControl_admindashboard1.GroupBox1.Show()
         UserControl_admindashboard1.GroupBox2.Hide()
     End Sub
+
+    Private Sub btnBookARoom_Click(sender As Object, e As EventArgs) Handles btnBookARoom.Click
+        Check_Availability.loggedUser = loggedUser
+        Check_Availability.Show()
+    End Sub
 End Class
