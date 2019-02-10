@@ -14,10 +14,10 @@ Public Class UserControl_admindashboard
         Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
 
         For Each Ctrl As Control In Controls
-            Ctrl.Width += CInt(Ctrl.Width * RW)
-            Ctrl.Height += CInt(Ctrl.Height * RH)
-            Ctrl.Left += CInt(Ctrl.Left * RW)
-            Ctrl.Top += CInt(Ctrl.Top * RH)
+            'Ctrl.Width += CInt(Ctrl.Width * RW)
+            'Ctrl.Height += CInt(Ctrl.Height * RH)
+            'Ctrl.Left += CInt(Ctrl.Left * RW)
+            'Ctrl.Top += CInt(Ctrl.Top * RH)
             'Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * RW), Ctrl.Font.Style)
         Next
         CW = Me.Width

@@ -30,7 +30,7 @@
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
-            Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * RW), Ctrl.Font.Style)
+            'Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * RW), Ctrl.Font.Style)
         Next
         CW = Me.Width
         CH = Me.Height
@@ -50,6 +50,16 @@
         max()
         Form1.Hide()
         Me.WindowState = FormWindowState.Maximized
+        btnApproveUsers.Parent = PictureBoxSidebar
+        btnAddRoom.Parent = PictureBoxSidebar
+        btnBookARoom.Parent = PictureBoxSidebar
+        btnConfirmBookings.Parent = PictureBoxSidebar
+        PictureBox1.Parent = PictureBoxSidebar
+        btnLogOut.Parent = PictureBoxSidebar
+        btnMyBills.Parent = PictureBoxSidebar
+        btnUpdatePassword.Parent = PictureBoxSidebar
+        btnPendingBookings.Parent = PictureBoxSidebar
+        lblWelcome.Parent = PictureBoxHeader
         lblHello.Text = "Hello! " & loggedUser
         reload_data()
     End Sub
@@ -114,7 +124,7 @@
 
     End Sub
 
-    Private Sub FillByPendingBookingsToolStripButton_Click_1(sender As Object, e As EventArgs) Handles FillByPendingBookingsToolStripButton.Click
+    Private Sub FillByPendingBookingsToolStripButton_Click_1(sender As Object, e As EventArgs)
         Try
             Me.BookingTableAdapter.FillByPendingBookings(Me.GuestHouseDataSet.Booking)
         Catch ex As System.Exception

@@ -63,4 +63,12 @@
         PassButton.FlatStyle = FlatStyle.Popup
         PassButton.FlatAppearance.BorderSize = 0
     End Sub
+
+    Private Sub PassButton_MouseLeave(sender As Object, e As MouseEventArgs) Handles PassButton.MouseUp
+
+    End Sub
+
+    Private Sub PassButton_MouseDown(sender As Object, e As MouseEventArgs) Handles PassButton.MouseDown
+
+    End Sub
 End Class

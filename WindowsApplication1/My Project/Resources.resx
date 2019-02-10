@@ -124,14 +124,23 @@
   <data name="greenAbstract2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>greenAbstract2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eye1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="blueAbstract2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>blueAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tealSolid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>tealSolid.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IITG logo png1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>IITG logo png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="main-gate21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>main-gate2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="greenAbstract1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>greenAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="greySolid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>greySolid.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IITG logo png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>IITG logo png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,6 +165,9 @@
   </data>
   <data name="main-gate5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eye1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="main-gate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,7 +220,7 @@
   <data name="main-gate3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="blueAbstract2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>blueAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tealAbstract" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>tealAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
