@@ -3,6 +3,7 @@
     Private images(3) As System.Drawing.Image
     Private index As Integer
     Dim check As Integer = 0
+    Dim count As Integer = 0
 
     Private Sub PreVentFlicker()
         With Me
@@ -28,6 +29,18 @@
             Ctrl.Top += CInt(Ctrl.Top * RH)
             Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (RH + 1)), Ctrl.Font.Style)
         Next
+        With PictureBox2
+            .Width += CInt(PictureBox2.Width * RW)
+            .Height += CInt(PictureBox2.Height * RH)
+        End With
+        With PictureBox3
+            .Width += CInt(PictureBox3.Width * RW)
+            .Height += CInt(PictureBox3.Height * RH)
+        End With
+        With PictureBox4
+            .Width += CInt(PictureBox4.Width * RW)
+            .Height += CInt(PictureBox4.Height * RH)
+        End With
         CW = Me.Width
         CH = Me.Height
     End Sub
@@ -43,6 +56,9 @@
         PreVentFlicker()
         max()
         lblHello.Parent = PictureBox1
+        lblDashboard.Parent = PictureBox1
+        lblGH.Parent = PictureBox1
+        IITGLogo.Parent = PictureBox1
         Me.WindowState = FormWindowState.Maximized
         lblHello.Text = "Hello! " & loggedUser
     End Sub
@@ -60,20 +76,42 @@
 
     Public Sub New()
         InitializeComponent()
-        images(0) = My.Resources.ghgate
-        images(1) = My.Resources.ghnight
-        images(2) = My.Resources.GH_dinning
-        Timer1.Interval = 3000
+        Timer1.Interval = 1
         Timer1.Start()
     End Sub
 
-    Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles Timer1.Tick
-        If images.Count > 0 Then
-            If index = 3 Then
-                index = 0
-            End If
-            PictureBox2.Image = images(index)
-            index += 1
+    Private Sub slideshow()
+        If count = 0 Then
+            PictureBox3.Left = PictureBox2.Width + PictureBox2.Left - 3
+            PictureBox4.Left = PictureBox3.Width + PictureBox3.Left - 3
+        ElseIf count = 1 Then
+            PictureBox4.Left = PictureBox3.Width + PictureBox3.Left - 3
+            PictureBox2.Left = PictureBox4.Width + PictureBox4.Left - 3
+        Else
+            PictureBox2.Left = PictureBox4.Width + PictureBox4.Left - 3
+            PictureBox3.Left = PictureBox2.Width + PictureBox2.Left - 3
         End If
+    End Sub
+
+    Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles Timer1.Tick
+        If count = 0 Then
+            PictureBox2.Left -= 1
+            slideshow()
+        ElseIf count = 1 Then
+            PictureBox3.Left -= 1
+            slideshow()
+        Else
+            PictureBox4.Left -= 1
+            slideshow()
+        End If
+        If PictureBox2.Left = 0 Then
+            count = 0
+        ElseIf PictureBox3.Left = 0 Then
+            count = 1
+        ElseIf PictureBox4.Left = 0 Then
+            count = 2
+        End If
+        Timer1.Start()
+        Console.Write(count.ToString)
     End Sub
 End Class

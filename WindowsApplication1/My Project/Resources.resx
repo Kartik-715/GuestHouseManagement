@@ -118,67 +118,97 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="yellowAbstract1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>yellowAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ghgate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ghgate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="vision-off" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>vision-off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="greenAbstract2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>greenAbstract2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="main-gate1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ghover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ghover.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="blueAbstract" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>blueAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ghentry" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ghentry.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="guest-house-500x500" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>guest-house-500x500.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="redo (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>redo (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="main-gate2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="main-gate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="main-gate5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="eye1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="main-gate21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>main-gate2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ghnight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ghnight.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="greenAbstract1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>greenAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="main-gate4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IITG logo png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>IITG logo png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GH-dinning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>GH-dinning.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eye1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ghgate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>ghgate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="main-gate3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="main-gate4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ghnight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ghnight.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IITgGH1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>IITgGH.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ghentry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ghentry.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ghover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ghover.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main-gate5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main-gate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="redo (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>redo (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blueAbstract1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>blueAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1946" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>1946.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IITgGH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>IITgGH.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main-gate2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vision-off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>vision-off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="yellowAbstract" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>yellowAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="blueAbstract1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="guest-house-500x500" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>guest-house-500x500.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blueAbstract" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>blueAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yellowAbstract1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>yellowAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main-gate1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="voiletabstract" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>voiletabstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="greyAbstract" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>greyAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="greenAbstract" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>greenAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main-gate3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>main-gate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blueAbstract2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>blueAbstract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
