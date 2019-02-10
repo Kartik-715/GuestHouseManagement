@@ -59,7 +59,7 @@ Partial Class SignupForm1
         Me.lblValidatioMessage = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblFirstName = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtFirName = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.lblLastName = New System.Windows.Forms.Label()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -309,28 +309,27 @@ Partial Class SignupForm1
         Me.lblFirstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFirstName.Location = New System.Drawing.Point(379, 103)
         Me.lblFirstName.Name = "lblFirstName"
-        Me.lblFirstName.Size = New System.Drawing.Size(140, 31)
+        Me.lblFirstName.Size = New System.Drawing.Size(220, 31)
         Me.lblFirstName.TabIndex = 22
         Me.lblFirstName.Text = "&First Name"
         '
-        'TextBox1
+        'txtFirName
         '
-        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserTableBindingSource, "MobileNo", True))
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(712, 100)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(343, 34)
-        Me.TextBox1.TabIndex = 2
+        Me.txtFirName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserTableBindingSource, "First Name", True))
+        Me.txtFirName.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFirName.Location = New System.Drawing.Point(712, 100)
+        Me.txtFirName.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtFirName.Name = "txtFirName"
+        Me.txtFirName.Size = New System.Drawing.Size(343, 34)
+        Me.txtFirName.TabIndex = 2
         '
         'TextBox2
         '
-        Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserTableBindingSource, "password", True))
+        Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserTableBindingSource, "Last Name", True))
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.Location = New System.Drawing.Point(712, 158)
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox2.Size = New System.Drawing.Size(343, 34)
         Me.TextBox2.TabIndex = 3
         '
@@ -354,7 +353,7 @@ Partial Class SignupForm1
         Me.ClientSize = New System.Drawing.Size(1127, 621)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblFirstName)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtFirName)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.lblLastName)
         Me.Controls.Add(Me.lblValidatioMessage)
@@ -415,7 +414,7 @@ Partial Class SignupForm1
     Friend WithEvents lblValidatioMessage As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents lblFirstName As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtFirName As System.Windows.Forms.TextBox
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents lblLastName As System.Windows.Forms.Label
 End Class

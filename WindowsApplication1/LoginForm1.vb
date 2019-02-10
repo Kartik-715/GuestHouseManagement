@@ -23,19 +23,23 @@
         If userData Is Nothing Then
             MessageBox.Show("Username doesn't exist")
         Else
-            If userData.password = txtPassword.Text Then
-                MessageBox.Show("Login Successful")
-                If userData.username = "Admin" Then
-                    AdminDashboard.loggedUser = userData.username
-                    Check_Availability.loggedUser = userData.username
-                    AdminDashboard.Show()
+            If userData.password = SignupForm1.GenerateSHA256String(txtPassword.Text) Then
+                If userData.isApproved = False Then
+                    MessageBox.Show("You have not been approved Yet!")
                 Else
-                    Dashboard.loggedUser = userData.username
-                    Check_Availability.loggedUser = userData.username
-                    Dashboard.Show()
+                    MessageBox.Show("Login Successful")
+                    If userData.username = "Admin" Then
+                        AdminDashboard.loggedUser = userData.username
+                        Check_Availability.loggedUser = userData.username
+                        AdminDashboard.Show()
+                    Else
+                        Dashboard.loggedUser = userData.username
+                        Check_Availability.loggedUser = userData.username
+                        Dashboard.Show()
+                    End If
+                    Form1.Hide()
+                    Me.Close()
                 End If
-                Form1.Hide()
-                Me.Close()
             Else
                 MessageBox.Show("Wrong Password")
             End If
