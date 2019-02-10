@@ -121,6 +121,7 @@ Partial Class Check_Availability
         '
         'comboBoxAvailRooms
         '
+        Me.comboBoxAvailRooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboBoxAvailRooms.FormattingEnabled = True
         Me.comboBoxAvailRooms.Location = New System.Drawing.Point(172, 477)
         Me.comboBoxAvailRooms.Name = "comboBoxAvailRooms"

@@ -130,18 +130,18 @@ Partial Class AdminDashboard
         '
         'UserControl_admindashboard1
         '
-        Me.UserControl_admindashboard1.Location = New System.Drawing.Point(306, 215)
+        Me.UserControl_admindashboard1.Location = New System.Drawing.Point(232, 172)
         Me.UserControl_admindashboard1.Name = "UserControl_admindashboard1"
-        Me.UserControl_admindashboard1.Size = New System.Drawing.Size(468, 383)
-        Me.UserControl_admindashboard1.TabIndex = 16
+        Me.UserControl_admindashboard1.Size = New System.Drawing.Size(928, 667)
+        Me.UserControl_admindashboard1.TabIndex = 18
         '
         'AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1006, 721)
-        Me.Controls.Add(Me.btnAddRoom)
         Me.Controls.Add(Me.UserControl_admindashboard1)
+        Me.Controls.Add(Me.btnAddRoom)
         Me.Controls.Add(Me.labelNonApproved)
         Me.Controls.Add(Me.btnApproveUsers)
         Me.Controls.Add(Me.lblHello)
@@ -165,7 +165,7 @@ Partial Class AdminDashboard
     Friend WithEvents labelNonApproved As System.Windows.Forms.Label
     Friend WithEvents UserTableTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
-    Friend WithEvents UserControl_admindashboard1 As WindowsApplication1.UserControl_admindashboard
     Friend WithEvents btnAddRoom As System.Windows.Forms.Button
     Friend WithEvents RoomTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter
+    Friend WithEvents UserControl_admindashboard1 As WindowsApplication1.UserControl_admindashboard
 End Class

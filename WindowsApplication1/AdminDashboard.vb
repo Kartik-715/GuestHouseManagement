@@ -1,6 +1,22 @@
 ﻿Public Class AdminDashboard
     Public loggedUser As String
+    Public approveuser As Integer
+    Public bookroom As Integer
+    Public addremoveroom As Integer
     Dim check As Integer = 0
+
+    Public Sub forminit()
+        approveuser = 0
+        bookroom = 0
+        addremoveroom = 0
+    End Sub
+
+    Private Sub btnclicks()
+        With UserControl_admindashboard1
+            .GroupBox1.Hide()
+            .DataGridView1.Hide()
+        End With
+    End Sub
 
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
@@ -51,9 +67,14 @@
     End Sub
 
     Private Sub btnApproveUsers_Click(sender As Object, e As EventArgs) Handles btnApproveUsers.Click
+        btnclicks()
         UserControl_admindashboard1.DataGridView1.Show()
+        UserControl_admindashboard1.GroupBox2.Hide()
     End Sub
 
     Private Sub btnAddRoom_Click(sender As Object, e As EventArgs) Handles btnAddRoom.Click
+        btnclicks()
+        UserControl_admindashboard1.GroupBox1.Show()
+        UserControl_admindashboard1.GroupBox2.Hide()
     End Sub
 End Class

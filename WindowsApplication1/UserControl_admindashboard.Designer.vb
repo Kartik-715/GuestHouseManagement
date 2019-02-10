@@ -39,13 +39,14 @@ Partial Class UserControl_admindashboard
         Me.txtRoomNo = New System.Windows.Forms.TextBox()
         Me.lblRoomNo = New System.Windows.Forms.Label()
         Me.rbtnIsVIP = New System.Windows.Forms.RadioButton()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnAddRemoveRoom = New System.Windows.Forms.Button()
         Me.RoomTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnSaveChanges
@@ -69,7 +70,7 @@ Partial Class UserControl_admindashboard
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(0)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(555, 291)
+        Me.DataGridView1.Size = New System.Drawing.Size(592, 303)
         Me.DataGridView1.TabIndex = 5
         '
         'IDDataGridViewTextBoxColumn
@@ -127,7 +128,7 @@ Partial Class UserControl_admindashboard
         Me.rbtnAddARoomToService.Checked = True
         Me.rbtnAddARoomToService.Cursor = System.Windows.Forms.Cursors.Hand
         Me.rbtnAddARoomToService.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbtnAddARoomToService.Location = New System.Drawing.Point(110, 180)
+        Me.rbtnAddARoomToService.Location = New System.Drawing.Point(19, 60)
         Me.rbtnAddARoomToService.Name = "rbtnAddARoomToService"
         Me.rbtnAddARoomToService.Size = New System.Drawing.Size(209, 24)
         Me.rbtnAddARoomToService.TabIndex = 7
@@ -140,7 +141,7 @@ Partial Class UserControl_admindashboard
         Me.rbtnRemoveARoomFromService.AutoSize = True
         Me.rbtnRemoveARoomFromService.Cursor = System.Windows.Forms.Cursors.Hand
         Me.rbtnRemoveARoomFromService.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbtnRemoveARoomFromService.Location = New System.Drawing.Point(330, 180)
+        Me.rbtnRemoveARoomFromService.Location = New System.Drawing.Point(239, 60)
         Me.rbtnRemoveARoomFromService.Name = "rbtnRemoveARoomFromService"
         Me.rbtnRemoveARoomFromService.Size = New System.Drawing.Size(217, 24)
         Me.rbtnRemoveARoomFromService.TabIndex = 8
@@ -149,7 +150,7 @@ Partial Class UserControl_admindashboard
         '
         'txtRoomNo
         '
-        Me.txtRoomNo.Location = New System.Drawing.Point(243, 277)
+        Me.txtRoomNo.Location = New System.Drawing.Point(152, 157)
         Me.txtRoomNo.Name = "txtRoomNo"
         Me.txtRoomNo.Size = New System.Drawing.Size(94, 22)
         Me.txtRoomNo.TabIndex = 9
@@ -158,7 +159,7 @@ Partial Class UserControl_admindashboard
         '
         Me.lblRoomNo.AutoSize = True
         Me.lblRoomNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRoomNo.Location = New System.Drawing.Point(105, 279)
+        Me.lblRoomNo.Location = New System.Drawing.Point(14, 159)
         Me.lblRoomNo.Name = "lblRoomNo"
         Me.lblRoomNo.Size = New System.Drawing.Size(98, 25)
         Me.lblRoomNo.TabIndex = 10
@@ -168,7 +169,7 @@ Partial Class UserControl_admindashboard
         '
         Me.rbtnIsVIP.AutoSize = True
         Me.rbtnIsVIP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbtnIsVIP.Location = New System.Drawing.Point(243, 316)
+        Me.rbtnIsVIP.Location = New System.Drawing.Point(152, 196)
         Me.rbtnIsVIP.Name = "rbtnIsVIP"
         Me.rbtnIsVIP.Size = New System.Drawing.Size(85, 29)
         Me.rbtnIsVIP.TabIndex = 11
@@ -176,49 +177,51 @@ Partial Class UserControl_admindashboard
         Me.rbtnIsVIP.Text = "Is VIP"
         Me.rbtnIsVIP.UseVisualStyleBackColor = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(225, 474)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(51, 17)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "Label1"
-        '
-        'btnAddRemoveRoom
-        '
-        Me.btnAddRemoveRoom.Location = New System.Drawing.Point(282, 399)
-        Me.btnAddRemoveRoom.Name = "btnAddRemoveRoom"
-        Me.btnAddRemoveRoom.Size = New System.Drawing.Size(75, 82)
-        Me.btnAddRemoveRoom.TabIndex = 13
-        Me.btnAddRemoveRoom.Text = "Save Changes"
-        Me.btnAddRemoveRoom.UseVisualStyleBackColor = True
-        '
         'RoomTableAdapter1
         '
         Me.RoomTableAdapter1.ClearBeforeFill = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.rbtnAddARoomToService)
+        Me.GroupBox1.Controls.Add(Me.txtRoomNo)
+        Me.GroupBox1.Controls.Add(Me.lblRoomNo)
+        Me.GroupBox1.Controls.Add(Me.rbtnRemoveARoomFromService)
+        Me.GroupBox1.Controls.Add(Me.rbtnIsVIP)
+        Me.GroupBox1.Location = New System.Drawing.Point(58, 75)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(479, 321)
+        Me.GroupBox1.TabIndex = 14
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Add Or Remove Rooms"
+        Me.GroupBox1.Visible = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Location = New System.Drawing.Point(58, 75)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(487, 321)
+        Me.GroupBox2.TabIndex = 15
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Default"
         '
         'UserControl_admindashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.btnAddRemoveRoom)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.rbtnAddARoomToService)
-        Me.Controls.Add(Me.rbtnIsVIP)
-        Me.Controls.Add(Me.rbtnRemoveARoomFromService)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnSaveChanges)
-        Me.Controls.Add(Me.lblRoomNo)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.txtRoomNo)
         Me.Name = "UserControl_admindashboard"
-        Me.Size = New System.Drawing.Size(726, 555)
+        Me.Size = New System.Drawing.Size(928, 667)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GuestHouseDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnSaveChanges As System.Windows.Forms.Button
@@ -237,8 +240,8 @@ Partial Class UserControl_admindashboard
     Friend WithEvents txtRoomNo As System.Windows.Forms.TextBox
     Friend WithEvents lblRoomNo As System.Windows.Forms.Label
     Friend WithEvents rbtnIsVIP As System.Windows.Forms.RadioButton
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents btnAddRemoveRoom As System.Windows.Forms.Button
     Friend WithEvents RoomTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
 
 End Class

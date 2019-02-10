@@ -35,44 +35,32 @@ Public Class UserControl_admindashboard
     End Sub
 
     Private Sub btnSaveReload_Click(sender As Object, e As EventArgs) Handles btnSaveChanges.Click
-        Dim ans As DialogResult
-        ans = MessageBox.Show("Are You Sure?", "Save Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If ans = vbYes Then
-            UserTableTableAdapter.Update(Me.GuestHouseDataSet.userTable)
-            AdminDashboard.reload_data()
-            Try
-                Me.UserTableTableAdapter.getNonApproved(Me.GuestHouseDataSet.userTable)
-            Catch ex As System.Exception
-                System.Windows.Forms.MessageBox.Show(ex.Message)
-            End Try
-        End If
-    End Sub
-
-    Private Sub txtRoomNo_TextChanged(sender As Object, e As EventArgs) Handles txtRoomNo.TextChanged
-
-    End Sub
-
-    Private Sub rbtnIsVIP_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnIsVIP.CheckedChanged
-
-    End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
-
-    Private Sub btnAddRemoveRoom_Click(sender As Object, e As EventArgs) Handles btnAddRemoveRoom.Click
-        If rbtnAddARoomToService.Checked = True Then
-            If rbtnIsVIP.Checked = True Then
-                RoomTableAdapter1.AddRoom(txtRoomNo.Text, True)
-            Else
+        If AdminDashboard.approveuser = 1 Then
+            Dim ans As DialogResult
+            ans = MessageBox.Show("Are You Sure?", "Save Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If ans = vbYes Then
+                UserTableTableAdapter.Update(Me.GuestHouseDataSet.userTable)
+                AdminDashboard.reload_data()
                 Try
-                    RoomTableAdapter1.AddRoom(txtRoomNo.Text, False)
-                Catch ex As Exception
-                    MsgBox("Room Already Exists!")
+                    Me.UserTableTableAdapter.getNonApproved(Me.GuestHouseDataSet.userTable)
+                Catch ex As System.Exception
+                    System.Windows.Forms.MessageBox.Show(ex.Message)
                 End Try
             End If
-        Else
-            RoomTableAdapter1.DeleteRoom(txtRoomNo.Text)
+        ElseIf AdminDashboard.addremoveroom = 1 Then
+            If rbtnAddARoomToService.Checked = True Then
+                If rbtnIsVIP.Checked = True Then
+                    RoomTableAdapter1.AddRoom(txtRoomNo.Text, True)
+                Else
+                    Try
+                        RoomTableAdapter1.AddRoom(txtRoomNo.Text, False)
+                    Catch ex As Exception
+                        MsgBox("Room Already Exists!")
+                    End Try
+                End If
+            Else
+                RoomTableAdapter1.DeleteRoom(txtRoomNo.Text)
+            End If
         End If
     End Sub
 End Class
