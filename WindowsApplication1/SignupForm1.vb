@@ -11,15 +11,16 @@ Public Class SignupForm1
         Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1024)
         Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
         Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
-
+        Dim min As Double = RW
+        If RW > RH Then
+            min = RH
+        End If
         For Each Ctrl As Control In Controls
             Ctrl.Width += CInt(Ctrl.Width * RW)
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
-            If TypeOf Ctrl Is Label Then
-                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(14 * (RW + 1)), FontStyle.Regular)
-            End If
+            'Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * min), Ctrl.Font.Style)
         Next
         CW = Me.Width
         CH = Me.Height
@@ -82,6 +83,7 @@ Public Class SignupForm1
         Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)
         UserTableBindingSource.AddNew()
         LblEmail1.Visible = False
+        lblValidatioMessage.Visible = False
         btnRefresh.PerformClick()
     End Sub
 

@@ -1,9 +1,10 @@
 ﻿Imports System.Runtime.InteropServices
-Public Class UserControl_admindashboard
+Public Class UserControl_admindashboardnontabular
 
     <DllImport("user32.dll", EntryPoint:="SetProcessDPIAware")> _
     Private Shared Function SetProcessDPIAware() As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
+
 
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
@@ -26,8 +27,7 @@ Public Class UserControl_admindashboard
         CH = Me.Height
     End Sub
 
-    Private Sub approveUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DataGridView1.Hide()
+    Private Sub usercontrol_load(sender As Object, e As EventArgs) Handles MyBase.Load
         max()
         Try
             Me.UserTableTableAdapter.getNonApproved(Me.GuestHouseDataSet.userTable)
@@ -37,21 +37,20 @@ Public Class UserControl_admindashboard
     End Sub
 
     Private Sub btnSaveReload_Click(sender As Object, e As EventArgs) Handles btnSaveChanges.Click
-        If AdminDashboard.approveuser = 1 Then
-            Dim ans As DialogResult
-            ans = MessageBox.Show("Are You Sure?", "Save Changes", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If ans = vbYes Then
-                UserTableTableAdapter.Update(Me.GuestHouseDataSet.userTable)
-                AdminDashboard.reload_data()
-                Try
-                    Me.UserTableTableAdapter.getNonApproved(Me.GuestHouseDataSet.userTable)
-                Catch ex As System.Exception
-                    System.Windows.Forms.MessageBox.Show(ex.Message)
-                End Try
+        If AdminDashboard.addremoveroom = 1 Then
+            If rbtnAddARoomToService.Checked = True Then
+                If rbtnIsVIP.Checked = True Then
+                    RoomTableAdapter1.AddRoom(txtRoomNo.Text, True)
+                Else
+                    Try
+                        RoomTableAdapter1.AddRoom(txtRoomNo.Text, False)
+                    Catch ex As Exception
+                        MsgBox("Room Already Exists!")
+                    End Try
+                End If
+            Else
+                RoomTableAdapter1.DeleteRoom(txtRoomNo.Text)
             End If
-        ElseIf AdminDashboard.pendingbooking = 1 Then
-            Me.BookingTableAdapter.Update(GuestHouseDataSet.Booking)
-            Me.BookingTableAdapter.FillByPendingBookings(Me.GuestHouseDataSet.Booking)
         End If
     End Sub
 End Class

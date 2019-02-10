@@ -152,6 +152,12 @@
     <Compile Include="UserControl_admindashboard.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UserControl_admindashboardnontabular.Designer.vb">
+      <DependentUpon>UserControl_admindashboardnontabular.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_admindashboardnontabular.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdminDashboard.resx">
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_admindashboard.resx">
       <DependentUpon>UserControl_admindashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_admindashboardnontabular.resx">
+      <DependentUpon>UserControl_admindashboardnontabular.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

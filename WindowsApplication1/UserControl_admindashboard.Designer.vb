@@ -34,19 +34,27 @@ Partial Class UserControl_admindashboard
         Me.GuestHouseDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GuestHouseDataSet = New WindowsApplication1.guestHouseDataSet()
         Me.UserTableTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
-        Me.rbtnAddARoomToService = New System.Windows.Forms.RadioButton()
-        Me.rbtnRemoveARoomFromService = New System.Windows.Forms.RadioButton()
-        Me.txtRoomNo = New System.Windows.Forms.TextBox()
-        Me.lblRoomNo = New System.Windows.Forms.Label()
-        Me.rbtnIsVIP = New System.Windows.Forms.RadioButton()
         Me.RoomTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.DataGridPendingBookings = New System.Windows.Forms.DataGridView()
+        Me.BookingTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
+        Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RoomNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BookedByDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BillDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BookingConfirmedDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.BookedFromDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BookedTillDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BookingForFirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BookingForLastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BookingForMobileNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IsVIPDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
+        CType(Me.DataGridPendingBookings, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSaveChanges
@@ -122,95 +130,104 @@ Partial Class UserControl_admindashboard
         '
         Me.UserTableTableAdapter.ClearBeforeFill = True
         '
-        'rbtnAddARoomToService
-        '
-        Me.rbtnAddARoomToService.AutoSize = True
-        Me.rbtnAddARoomToService.Checked = True
-        Me.rbtnAddARoomToService.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.rbtnAddARoomToService.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbtnAddARoomToService.Location = New System.Drawing.Point(19, 60)
-        Me.rbtnAddARoomToService.Name = "rbtnAddARoomToService"
-        Me.rbtnAddARoomToService.Size = New System.Drawing.Size(209, 24)
-        Me.rbtnAddARoomToService.TabIndex = 7
-        Me.rbtnAddARoomToService.TabStop = True
-        Me.rbtnAddARoomToService.Text = "Add A Room To Service"
-        Me.rbtnAddARoomToService.UseVisualStyleBackColor = True
-        '
-        'rbtnRemoveARoomFromService
-        '
-        Me.rbtnRemoveARoomFromService.AutoSize = True
-        Me.rbtnRemoveARoomFromService.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.rbtnRemoveARoomFromService.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbtnRemoveARoomFromService.Location = New System.Drawing.Point(239, 60)
-        Me.rbtnRemoveARoomFromService.Name = "rbtnRemoveARoomFromService"
-        Me.rbtnRemoveARoomFromService.Size = New System.Drawing.Size(217, 24)
-        Me.rbtnRemoveARoomFromService.TabIndex = 8
-        Me.rbtnRemoveARoomFromService.Text = "Remove A Room Service"
-        Me.rbtnRemoveARoomFromService.UseVisualStyleBackColor = True
-        '
-        'txtRoomNo
-        '
-        Me.txtRoomNo.Location = New System.Drawing.Point(152, 157)
-        Me.txtRoomNo.Name = "txtRoomNo"
-        Me.txtRoomNo.Size = New System.Drawing.Size(94, 22)
-        Me.txtRoomNo.TabIndex = 9
-        '
-        'lblRoomNo
-        '
-        Me.lblRoomNo.AutoSize = True
-        Me.lblRoomNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRoomNo.Location = New System.Drawing.Point(14, 159)
-        Me.lblRoomNo.Name = "lblRoomNo"
-        Me.lblRoomNo.Size = New System.Drawing.Size(98, 25)
-        Me.lblRoomNo.TabIndex = 10
-        Me.lblRoomNo.Text = "Room No."
-        '
-        'rbtnIsVIP
-        '
-        Me.rbtnIsVIP.AutoSize = True
-        Me.rbtnIsVIP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbtnIsVIP.Location = New System.Drawing.Point(153, 196)
-        Me.rbtnIsVIP.Name = "rbtnIsVIP"
-        Me.rbtnIsVIP.Size = New System.Drawing.Size(85, 29)
-        Me.rbtnIsVIP.TabIndex = 11
-        Me.rbtnIsVIP.TabStop = True
-        Me.rbtnIsVIP.Text = "Is VIP"
-        Me.rbtnIsVIP.UseVisualStyleBackColor = True
-        '
         'RoomTableAdapter1
         '
         Me.RoomTableAdapter1.ClearBeforeFill = True
         '
-        'GroupBox1
+        'DataGridPendingBookings
         '
-        Me.GroupBox1.Controls.Add(Me.rbtnAddARoomToService)
-        Me.GroupBox1.Controls.Add(Me.txtRoomNo)
-        Me.GroupBox1.Controls.Add(Me.lblRoomNo)
-        Me.GroupBox1.Controls.Add(Me.rbtnRemoveARoomFromService)
-        Me.GroupBox1.Controls.Add(Me.rbtnIsVIP)
-        Me.GroupBox1.Location = New System.Drawing.Point(58, 75)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(479, 321)
-        Me.GroupBox1.TabIndex = 14
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Add Or Remove Rooms"
-        Me.GroupBox1.Visible = False
+        Me.DataGridPendingBookings.AllowUserToAddRows = False
+        Me.DataGridPendingBookings.AutoGenerateColumns = False
+        Me.DataGridPendingBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridPendingBookings.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn1, Me.RoomNoDataGridViewTextBoxColumn, Me.BookedByDataGridViewTextBoxColumn, Me.BillDataGridViewTextBoxColumn, Me.BookingConfirmedDataGridViewCheckBoxColumn, Me.BookedFromDataGridViewTextBoxColumn, Me.BookedTillDataGridViewTextBoxColumn, Me.BookingForFirstNameDataGridViewTextBoxColumn, Me.BookingForLastNameDataGridViewTextBoxColumn, Me.BookingForMobileNoDataGridViewTextBoxColumn, Me.IsVIPDataGridViewCheckBoxColumn})
+        Me.DataGridPendingBookings.DataSource = Me.BookingBindingSource
+        Me.DataGridPendingBookings.Location = New System.Drawing.Point(58, 93)
+        Me.DataGridPendingBookings.Name = "DataGridPendingBookings"
+        Me.DataGridPendingBookings.RowTemplate.Height = 24
+        Me.DataGridPendingBookings.Size = New System.Drawing.Size(711, 196)
+        Me.DataGridPendingBookings.TabIndex = 20
+        Me.DataGridPendingBookings.Visible = False
         '
-        'GroupBox2
+        'BookingTableAdapter
         '
-        Me.GroupBox2.Location = New System.Drawing.Point(58, 75)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(487, 321)
-        Me.GroupBox2.TabIndex = 15
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Default"
+        Me.BookingTableAdapter.ClearBeforeFill = True
+        '
+        'BookingBindingSource
+        '
+        Me.BookingBindingSource.DataMember = "Booking"
+        Me.BookingBindingSource.DataSource = Me.GuestHouseDataSet
+        '
+        'IDDataGridViewTextBoxColumn1
+        '
+        Me.IDDataGridViewTextBoxColumn1.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn1.Name = "IDDataGridViewTextBoxColumn1"
+        '
+        'RoomNoDataGridViewTextBoxColumn
+        '
+        Me.RoomNoDataGridViewTextBoxColumn.DataPropertyName = "RoomNo"
+        Me.RoomNoDataGridViewTextBoxColumn.HeaderText = "RoomNo"
+        Me.RoomNoDataGridViewTextBoxColumn.Name = "RoomNoDataGridViewTextBoxColumn"
+        '
+        'BookedByDataGridViewTextBoxColumn
+        '
+        Me.BookedByDataGridViewTextBoxColumn.DataPropertyName = "BookedBy"
+        Me.BookedByDataGridViewTextBoxColumn.HeaderText = "BookedBy"
+        Me.BookedByDataGridViewTextBoxColumn.Name = "BookedByDataGridViewTextBoxColumn"
+        '
+        'BillDataGridViewTextBoxColumn
+        '
+        Me.BillDataGridViewTextBoxColumn.DataPropertyName = "Bill"
+        Me.BillDataGridViewTextBoxColumn.HeaderText = "Bill"
+        Me.BillDataGridViewTextBoxColumn.Name = "BillDataGridViewTextBoxColumn"
+        '
+        'BookingConfirmedDataGridViewCheckBoxColumn
+        '
+        Me.BookingConfirmedDataGridViewCheckBoxColumn.DataPropertyName = "BookingConfirmed"
+        Me.BookingConfirmedDataGridViewCheckBoxColumn.HeaderText = "BookingConfirmed"
+        Me.BookingConfirmedDataGridViewCheckBoxColumn.Name = "BookingConfirmedDataGridViewCheckBoxColumn"
+        '
+        'BookedFromDataGridViewTextBoxColumn
+        '
+        Me.BookedFromDataGridViewTextBoxColumn.DataPropertyName = "BookedFrom"
+        Me.BookedFromDataGridViewTextBoxColumn.HeaderText = "BookedFrom"
+        Me.BookedFromDataGridViewTextBoxColumn.Name = "BookedFromDataGridViewTextBoxColumn"
+        '
+        'BookedTillDataGridViewTextBoxColumn
+        '
+        Me.BookedTillDataGridViewTextBoxColumn.DataPropertyName = "BookedTill"
+        Me.BookedTillDataGridViewTextBoxColumn.HeaderText = "BookedTill"
+        Me.BookedTillDataGridViewTextBoxColumn.Name = "BookedTillDataGridViewTextBoxColumn"
+        '
+        'BookingForFirstNameDataGridViewTextBoxColumn
+        '
+        Me.BookingForFirstNameDataGridViewTextBoxColumn.DataPropertyName = "BookingForFirstName"
+        Me.BookingForFirstNameDataGridViewTextBoxColumn.HeaderText = "BookingForFirstName"
+        Me.BookingForFirstNameDataGridViewTextBoxColumn.Name = "BookingForFirstNameDataGridViewTextBoxColumn"
+        '
+        'BookingForLastNameDataGridViewTextBoxColumn
+        '
+        Me.BookingForLastNameDataGridViewTextBoxColumn.DataPropertyName = "BookingForLastName"
+        Me.BookingForLastNameDataGridViewTextBoxColumn.HeaderText = "BookingForLastName"
+        Me.BookingForLastNameDataGridViewTextBoxColumn.Name = "BookingForLastNameDataGridViewTextBoxColumn"
+        '
+        'BookingForMobileNoDataGridViewTextBoxColumn
+        '
+        Me.BookingForMobileNoDataGridViewTextBoxColumn.DataPropertyName = "BookingForMobileNo"
+        Me.BookingForMobileNoDataGridViewTextBoxColumn.HeaderText = "BookingForMobileNo"
+        Me.BookingForMobileNoDataGridViewTextBoxColumn.Name = "BookingForMobileNoDataGridViewTextBoxColumn"
+        '
+        'IsVIPDataGridViewCheckBoxColumn
+        '
+        Me.IsVIPDataGridViewCheckBoxColumn.DataPropertyName = "isVIP"
+        Me.IsVIPDataGridViewCheckBoxColumn.HeaderText = "isVIP"
+        Me.IsVIPDataGridViewCheckBoxColumn.Name = "IsVIPDataGridViewCheckBoxColumn"
         '
         'UserControl_admindashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.DataGridPendingBookings)
         Me.Controls.Add(Me.btnSaveChanges)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "UserControl_admindashboard"
@@ -219,8 +236,8 @@ Partial Class UserControl_admindashboard
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GuestHouseDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        CType(Me.DataGridPendingBookings, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -235,13 +252,20 @@ Partial Class UserControl_admindashboard
     Friend WithEvents GuestHouseDataSetBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents GuestHouseDataSet As WindowsApplication1.guestHouseDataSet
     Friend WithEvents UserTableTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
-    Friend WithEvents rbtnAddARoomToService As System.Windows.Forms.RadioButton
-    Friend WithEvents rbtnRemoveARoomFromService As System.Windows.Forms.RadioButton
-    Friend WithEvents txtRoomNo As System.Windows.Forms.TextBox
-    Friend WithEvents lblRoomNo As System.Windows.Forms.Label
-    Friend WithEvents rbtnIsVIP As System.Windows.Forms.RadioButton
     Friend WithEvents RoomTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents DataGridPendingBookings As System.Windows.Forms.DataGridView
+    Friend WithEvents IDDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents RoomNoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BookedByDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BillDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BookingConfirmedDataGridViewCheckBoxColumn As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents BookedFromDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BookedTillDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BookingForFirstNameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BookingForLastNameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BookingForMobileNoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents IsVIPDataGridViewCheckBoxColumn As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents BookingBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents BookingTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter
 
 End Class

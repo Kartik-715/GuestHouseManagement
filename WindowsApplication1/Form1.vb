@@ -29,24 +29,26 @@ Public Class Form1
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
-            Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (min + 1)), Ctrl.Font.Style)
+            'Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * min), Ctrl.Font.Style)
         Next
         CW = Me.Width
         CH = Me.Height
     End Sub
 
-    Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
+    Private Sub init()
         SignupForm1.Close()
         Check_Availability.Close()
         LoginForm1.Close()
+    End Sub
+
+    Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
+        init()
         SignupForm1.Show()
         SignupForm1.Focus()
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Check_Availability.Close()
-        SignupForm1.Close()
-        LoginForm1.Close()
+        init()
         LoginForm1.Show()
         LoginForm1.Focus()
     End Sub
@@ -64,7 +66,9 @@ Public Class Form1
     End Sub
 
     Private Sub btnCheckAvailabality_Click(sender As Object, e As EventArgs) Handles btnCheckAvailabality.Click
+        init()
         Check_Availability.Show()
+        Check_Availability.Focus()
     End Sub
 End Class
 

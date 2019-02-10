@@ -36,14 +36,14 @@ Partial Class Dashboard
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.lblBookingID = New System.Windows.Forms.Label()
-        Me.lblBookedFrom = New System.Windows.Forms.Label()
-        Me.lblBookedTill = New System.Windows.Forms.Label()
-        Me.lblBookedFor = New System.Windows.Forms.Label()
-        Me.lblBookingIDval = New System.Windows.Forms.Label()
-        Me.lblBookedForval = New System.Windows.Forms.Label()
-        Me.lblBookedFromval = New System.Windows.Forms.Label()
         Me.lblBookedTillval = New System.Windows.Forms.Label()
+        Me.lblBookedFromval = New System.Windows.Forms.Label()
+        Me.lblBookedForval = New System.Windows.Forms.Label()
+        Me.lblBookingIDval = New System.Windows.Forms.Label()
+        Me.lblBookedFor = New System.Windows.Forms.Label()
+        Me.lblBookedTill = New System.Windows.Forms.Label()
+        Me.lblBookedFrom = New System.Windows.Forms.Label()
+        Me.lblBookingID = New System.Windows.Forms.Label()
         Me.RoundButton1 = New WindowsApplication1.RoundButton()
         Me.btnUpdatePassword = New WindowsApplication1.RoundButton()
         Me.btnMyBills = New WindowsApplication1.RoundButton()
@@ -195,59 +195,14 @@ Partial Class Dashboard
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Current Booking"
         '
-        'lblBookingID
+        'lblBookedTillval
         '
-        Me.lblBookingID.AutoSize = True
-        Me.lblBookingID.Location = New System.Drawing.Point(54, 70)
-        Me.lblBookingID.Name = "lblBookingID"
-        Me.lblBookingID.Size = New System.Drawing.Size(163, 32)
-        Me.lblBookingID.TabIndex = 0
-        Me.lblBookingID.Text = "Booking ID"
-        '
-        'lblBookedFrom
-        '
-        Me.lblBookedFrom.AutoSize = True
-        Me.lblBookedFrom.Location = New System.Drawing.Point(54, 170)
-        Me.lblBookedFrom.Name = "lblBookedFrom"
-        Me.lblBookedFrom.Size = New System.Drawing.Size(195, 32)
-        Me.lblBookedFrom.TabIndex = 1
-        Me.lblBookedFrom.Text = "Booked From"
-        '
-        'lblBookedTill
-        '
-        Me.lblBookedTill.AutoSize = True
-        Me.lblBookedTill.Location = New System.Drawing.Point(54, 220)
-        Me.lblBookedTill.Name = "lblBookedTill"
-        Me.lblBookedTill.Size = New System.Drawing.Size(168, 32)
-        Me.lblBookedTill.TabIndex = 2
-        Me.lblBookedTill.Text = "Booked Till"
-        '
-        'lblBookedFor
-        '
-        Me.lblBookedFor.AutoSize = True
-        Me.lblBookedFor.Location = New System.Drawing.Point(54, 120)
-        Me.lblBookedFor.Name = "lblBookedFor"
-        Me.lblBookedFor.Size = New System.Drawing.Size(171, 32)
-        Me.lblBookedFor.TabIndex = 3
-        Me.lblBookedFor.Text = "Booked For"
-        '
-        'lblBookingIDval
-        '
-        Me.lblBookingIDval.AutoSize = True
-        Me.lblBookingIDval.Location = New System.Drawing.Point(308, 70)
-        Me.lblBookingIDval.Name = "lblBookingIDval"
-        Me.lblBookingIDval.Size = New System.Drawing.Size(108, 32)
-        Me.lblBookingIDval.TabIndex = 4
-        Me.lblBookingIDval.Text = "Label3"
-        '
-        'lblBookedForval
-        '
-        Me.lblBookedForval.AutoSize = True
-        Me.lblBookedForval.Location = New System.Drawing.Point(308, 120)
-        Me.lblBookedForval.Name = "lblBookedForval"
-        Me.lblBookedForval.Size = New System.Drawing.Size(108, 32)
-        Me.lblBookedForval.TabIndex = 5
-        Me.lblBookedForval.Text = "Label4"
+        Me.lblBookedTillval.AutoSize = True
+        Me.lblBookedTillval.Location = New System.Drawing.Point(308, 220)
+        Me.lblBookedTillval.Name = "lblBookedTillval"
+        Me.lblBookedTillval.Size = New System.Drawing.Size(108, 32)
+        Me.lblBookedTillval.TabIndex = 7
+        Me.lblBookedTillval.Text = "Label6"
         '
         'lblBookedFromval
         '
@@ -258,14 +213,59 @@ Partial Class Dashboard
         Me.lblBookedFromval.TabIndex = 6
         Me.lblBookedFromval.Text = "Label5"
         '
-        'lblBookedTillval
+        'lblBookedForval
         '
-        Me.lblBookedTillval.AutoSize = True
-        Me.lblBookedTillval.Location = New System.Drawing.Point(308, 220)
-        Me.lblBookedTillval.Name = "lblBookedTillval"
-        Me.lblBookedTillval.Size = New System.Drawing.Size(108, 32)
-        Me.lblBookedTillval.TabIndex = 7
-        Me.lblBookedTillval.Text = "Label6"
+        Me.lblBookedForval.AutoSize = True
+        Me.lblBookedForval.Location = New System.Drawing.Point(308, 120)
+        Me.lblBookedForval.Name = "lblBookedForval"
+        Me.lblBookedForval.Size = New System.Drawing.Size(108, 32)
+        Me.lblBookedForval.TabIndex = 5
+        Me.lblBookedForval.Text = "Label4"
+        '
+        'lblBookingIDval
+        '
+        Me.lblBookingIDval.AutoSize = True
+        Me.lblBookingIDval.Location = New System.Drawing.Point(308, 70)
+        Me.lblBookingIDval.Name = "lblBookingIDval"
+        Me.lblBookingIDval.Size = New System.Drawing.Size(108, 32)
+        Me.lblBookingIDval.TabIndex = 4
+        Me.lblBookingIDval.Text = "Label3"
+        '
+        'lblBookedFor
+        '
+        Me.lblBookedFor.AutoSize = True
+        Me.lblBookedFor.Location = New System.Drawing.Point(54, 120)
+        Me.lblBookedFor.Name = "lblBookedFor"
+        Me.lblBookedFor.Size = New System.Drawing.Size(171, 32)
+        Me.lblBookedFor.TabIndex = 3
+        Me.lblBookedFor.Text = "Booked For"
+        '
+        'lblBookedTill
+        '
+        Me.lblBookedTill.AutoSize = True
+        Me.lblBookedTill.Location = New System.Drawing.Point(54, 220)
+        Me.lblBookedTill.Name = "lblBookedTill"
+        Me.lblBookedTill.Size = New System.Drawing.Size(168, 32)
+        Me.lblBookedTill.TabIndex = 2
+        Me.lblBookedTill.Text = "Booked Till"
+        '
+        'lblBookedFrom
+        '
+        Me.lblBookedFrom.AutoSize = True
+        Me.lblBookedFrom.Location = New System.Drawing.Point(54, 170)
+        Me.lblBookedFrom.Name = "lblBookedFrom"
+        Me.lblBookedFrom.Size = New System.Drawing.Size(195, 32)
+        Me.lblBookedFrom.TabIndex = 1
+        Me.lblBookedFrom.Text = "Booked From"
+        '
+        'lblBookingID
+        '
+        Me.lblBookingID.AutoSize = True
+        Me.lblBookingID.Location = New System.Drawing.Point(54, 70)
+        Me.lblBookingID.Name = "lblBookingID"
+        Me.lblBookingID.Size = New System.Drawing.Size(163, 32)
+        Me.lblBookingID.TabIndex = 0
+        Me.lblBookingID.Text = "Booking ID"
         '
         'RoundButton1
         '

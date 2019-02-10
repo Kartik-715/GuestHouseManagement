@@ -44,7 +44,6 @@ Partial Class SignupForm1
         Me.lblConfirmPassword = New System.Windows.Forms.Label()
         Me.lblCaptcha = New System.Windows.Forms.Label()
         Me.txtCaptcha = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.txtPhone = New System.Windows.Forms.TextBox()
         Me.lblMobileNo = New System.Windows.Forms.Label()
         Me.UserTableTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
@@ -179,16 +178,6 @@ Partial Class SignupForm1
         Me.txtCaptcha.Name = "txtCaptcha"
         Me.txtCaptcha.Size = New System.Drawing.Size(233, 34)
         Me.txtCaptcha.TabIndex = 8
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(1039, 352)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(0, 17)
-        Me.Label1.TabIndex = 11
         '
         'txtPhone
         '
@@ -361,7 +350,6 @@ Partial Class SignupForm1
         Me.Controls.Add(Me.lblCategory)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.lblMobileNo)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtPhone)
         Me.Controls.Add(Me.txtCaptcha)
         Me.Controls.Add(Me.btnRefresh)
@@ -404,7 +392,6 @@ Partial Class SignupForm1
     Friend WithEvents UserTableBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents UserTableTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
     Friend WithEvents txtPhone As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lblMobileNo As System.Windows.Forms.Label
     Friend WithEvents UserTableBindingSource1 As System.Windows.Forms.BindingSource
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox

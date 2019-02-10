@@ -8,13 +8,16 @@
         Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1024)
         Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
         Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
-
+        Dim min As Double = RW
+        If RW > RH Then
+            min = RH
+        End If
         For Each Ctrl As Control In Controls
             Ctrl.Width += CInt(Ctrl.Width * RW)
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
-            Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (RW + 1)), Ctrl.Font.Style)
+            'Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * min), Ctrl.Font.Style)
         Next
         CW = Me.Width
         CH = Me.Height

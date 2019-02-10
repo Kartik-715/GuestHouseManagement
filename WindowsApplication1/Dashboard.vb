@@ -21,13 +21,16 @@
         Me.WindowState = FormWindowState.Maximized
         Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
         Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
-
+        Dim min As Double = RW
+        If RW > RH Then
+            min = RH
+        End If
         For Each Ctrl As Control In Controls
             Ctrl.Width += CInt(Ctrl.Width * RW)
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
-            Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (RH + 1)), Ctrl.Font.Style)
+            ' Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * min), Ctrl.Font.Style)
         Next
         With PictureBox2
             .Width += CInt(PictureBox2.Width * RW)
@@ -45,7 +48,10 @@
         CH = Me.Height
     End Sub
 
-    Private Sub Dashboard_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosed
+    Private Sub Dashboard_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosing
+        For Each frm As Form In Me.MdiChildren
+            frm.Close()
+        Next
         Form1.Show()
         If check = 0 Then
             Form1.Close()
