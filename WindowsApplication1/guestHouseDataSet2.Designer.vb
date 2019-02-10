@@ -3878,13 +3878,17 @@ Namespace guestHouseDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "INSERT INTO Booking" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                  (RoomNo, BookedBy, BookedFrom, BookedTill)" & _
-                "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "VALUES (?, ?, ?, ?)"
+            Me._commandCollection(1).CommandText = "INSERT INTO Booking" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                  (RoomNo, BookedBy, BookedFrom, BookedTill," & _
+                " BookingForFirstName, BookingForLastName, BookingForMobileNo)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "VALUES (?, ?, ?, " & _
+                "?, ?, ?, ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RoomNo", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "RoomNo", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedBy", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedBy", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedFrom", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedFrom", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedTill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedTill", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingForFirstName", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForFirstName", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingForLastName", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForLastName", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingForMobileNo", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForMobileNo", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT ID, RoomNo, BookedBy, Bill, BookingConfirmed, BookedFrom, BookedTill, Book" & _
@@ -4322,7 +4326,7 @@ Namespace guestHouseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, False)> _
-        Public Overridable Overloads Function BookRoom(ByVal RoomNo As String, ByVal BookedBy As String, ByVal BookedFrom As Global.System.Nullable(Of Integer), ByVal BookedTill As Global.System.Nullable(Of Integer)) As Integer
+        Public Overridable Overloads Function BookRoom(ByVal RoomNo As String, ByVal BookedBy As String, ByVal BookedFrom As Global.System.Nullable(Of Integer), ByVal BookedTill As Global.System.Nullable(Of Integer), ByVal BookingForFirstName As String, ByVal BookingForLastName As String, ByVal BookingForMobileNo As String) As Integer
             Dim command As Global.System.Data.OleDb.OleDbCommand = Me.CommandCollection(1)
             If (RoomNo Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
@@ -4343,6 +4347,21 @@ Namespace guestHouseDataSetTableAdapters
                 command.Parameters(3).Value = CType(BookedTill.Value, Integer)
             Else
                 command.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (BookingForFirstName Is Nothing) Then
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(4).Value = CType(BookingForFirstName, String)
+            End If
+            If (BookingForLastName Is Nothing) Then
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(5).Value = CType(BookingForLastName, String)
+            End If
+            If (BookingForMobileNo Is Nothing) Then
+                command.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(6).Value = CType(BookingForMobileNo, String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _

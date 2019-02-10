@@ -25,10 +25,12 @@
     Private Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         max()
         DateTimePickerFrom.MinDate = Date.Today
+        If loggedUser = "admin" Then
+            rbtnIsVIP.Show()
+        End If
     End Sub
 
     Private Sub btnCheckAval_Click(sender As Object, e As EventArgs) Handles btnCheckAval.Click
-        'Console.WriteLine(loggedUser)
         Dim timeFrom As Integer = CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd"))
         Dim timeTo As Integer = CInt(DateTimePickerTo.Value.ToString("yyyyMMdd"))
         BookingTableAdapter1.fillNonAvailRooms(GuestHouseDataSet1.Booking, timeFrom, timeFrom, timeTo, timeTo)
@@ -45,7 +47,13 @@
         Next
 
         For Each row As guestHouseDataSet.RoomRow In GuestHouseDataSet1.Room
-            allRooms = allRooms.Concat({row.RoomNo}).ToArray
+            If rbtnIsVIP.Checked Then
+                If row.isVIP Then
+                    allRooms = allRooms.Concat({row.RoomNo}).ToArray
+                End If
+            Else
+                allRooms = allRooms.Concat({row.RoomNo}).ToArray
+            End If
         Next
 
         For Each room As String In allRooms
@@ -58,6 +66,12 @@
         lblnumAvail.Show()
 
         If availRooms.Length >= 1 Then
+            lblFirstName.Show()
+            lblLastName.Show()
+            lblMobileNo.Show()
+            txtPhone.Show()
+            txtLastName.Show()
+            txtName.Show()
             comboBoxAvailRooms.Items.AddRange(availRooms)
             comboBoxAvailRooms.Show()
             btnBookNow.Show()
@@ -82,7 +96,7 @@
             If comboBoxAvailRooms.Text = Nothing Or (Not comboBoxAvailRooms.Items.Contains(comboBoxAvailRooms.Text)) Then
                 MsgBox("Please Select A Room!")
             Else
-                BookingTableAdapter1.BookRoom(comboBoxAvailRooms.Text, loggedUser, CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd")), CInt(DateTimePickerTo.Value.ToString("yyyyMMdd")))
+                BookingTableAdapter1.BookRoom(comboBoxAvailRooms.Text, loggedUser, CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd")), CInt(DateTimePickerTo.Value.ToString("yyyyMMdd")), txtName.Text, txtLastName.Text, txtPhone.Text)
                 MsgBox("Room: " & comboBoxAvailRooms.Text & " booked Successfully!")
             End If
             reloadForm()
