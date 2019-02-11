@@ -98,6 +98,12 @@
     <Compile Include="Check Availability.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forgotPass.Designer.vb">
+      <DependentUpon>forgotPass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forgotPass.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="formUpdatePassword.Designer.vb">
       <DependentUpon>formUpdatePassword.vb</DependentUpon>
     </Compile>
@@ -107,6 +113,9 @@
     <Compile Include="guestHouseDataSet2.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>guestHouseDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="guestHouseDataSet2.vb">
       <DependentUpon>guestHouseDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="guestHouseDataSet21.Designer.vb">
@@ -173,6 +182,9 @@
     <EmbeddedResource Include="Check Availability.resx">
       <DependentUpon>Check Availability.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgotPass.resx">
+      <DependentUpon>forgotPass.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formUpdatePassword.resx">
       <DependentUpon>formUpdatePassword.vb</DependentUpon>

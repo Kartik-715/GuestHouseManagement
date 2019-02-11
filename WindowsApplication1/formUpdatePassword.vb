@@ -1,6 +1,7 @@
 ﻿Public Class formUpdatePassword
 
     Public loggedUser As String
+    Public forgottenPassword As Boolean = False
 
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
@@ -26,24 +27,41 @@
     Private Sub formUpdatePassword_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         max()
         lblHello.Text = "Hello! " & loggedUser
+        If forgottenPassword Then
+            txtOldPass.ReadOnly = True
+            txtOldPass.Text = "asdkasjdkasjd"
+        End If
     End Sub
 
     Private Sub btnUpdatePass_Click(sender As Object, e As EventArgs) Handles btnUpdatePass.Click
-        If UserTableTableAdapter.getPassword(loggedUser) = SignupForm1.GenerateSHA256String(txtOldPass.Text) Then
+        If forgottenPassword Then
             If txtNewPass.Text = txtConfirmNewPass.Text Then
                 UserTableTableAdapter.UpdatePassword(SignupForm1.GenerateSHA256String(txtNewPass.Text), loggedUser)
+                ForgotPassTableAdapter.DeleteToken(loggedUser)
+                forgottenPassword = False
                 MessageBox.Show("Password changed successfully!")
                 Me.Close()
-                If loggedUser = "Admin" Then
-                    AdminDashboard.Show()
-                Else
-                    Dashboard.Show()
-                End If
+                LoginForm1.Show()
             Else
                 MessageBox.Show("New passwords dont match!")
             End If
         Else
-            MessageBox.Show("Incorrect password!")
+            If UserTableTableAdapter.getPassword(loggedUser) = SignupForm1.GenerateSHA256String(txtOldPass.Text) Then
+                If txtNewPass.Text = txtConfirmNewPass.Text Then
+                    UserTableTableAdapter.UpdatePassword(SignupForm1.GenerateSHA256String(txtNewPass.Text), loggedUser)
+                    MessageBox.Show("Password changed successfully!")
+                    Me.Close()
+                    If loggedUser = "Admin" Then
+                        AdminDashboard.Show()
+                    Else
+                        Dashboard.Show()
+                    End If
+                Else
+                    MessageBox.Show("New passwords dont match!")
+                End If
+            Else
+                MessageBox.Show("Incorrect password!")
+            End If
         End If
     End Sub
     Private Sub PassButton1_MouseDown(sender As Object, e As EventArgs) Handles PassButton1.MouseDown
