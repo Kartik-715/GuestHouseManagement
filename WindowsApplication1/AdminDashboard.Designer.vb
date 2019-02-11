@@ -38,6 +38,7 @@ Partial Class AdminDashboard
         Me.GuestHouseDataSet = New WindowsApplication1.guestHouseDataSet()
         Me.btnPendingBookings = New System.Windows.Forms.Button()
         Me.BookingTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
+        Me.UserControl_dynamiccontrol1 = New WindowsApplication1.UserControl_dynamiccontrol()
         Me.UserControl_admindashboardnontabular1 = New WindowsApplication1.UserControl_admindashboardnontabular()
         Me.UserControl_admindashboard1 = New WindowsApplication1.UserControl_admindashboard()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -158,18 +159,26 @@ Partial Class AdminDashboard
         '
         Me.BookingTableAdapter.ClearBeforeFill = True
         '
+        'UserControl_dynamiccontrol1
+        '
+        Me.UserControl_dynamiccontrol1.AutoScroll = True
+        Me.UserControl_dynamiccontrol1.Location = New System.Drawing.Point(291, 182)
+        Me.UserControl_dynamiccontrol1.Name = "UserControl_dynamiccontrol1"
+        Me.UserControl_dynamiccontrol1.Size = New System.Drawing.Size(1, 1)
+        Me.UserControl_dynamiccontrol1.TabIndex = 24
+        '
         'UserControl_admindashboardnontabular1
         '
         Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(268, 154)
         Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
-        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(7, 41)
+        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(1, 1)
         Me.UserControl_admindashboardnontabular1.TabIndex = 23
         '
         'UserControl_admindashboard1
         '
         Me.UserControl_admindashboard1.Location = New System.Drawing.Point(334, 154)
         Me.UserControl_admindashboard1.Name = "UserControl_admindashboard1"
-        Me.UserControl_admindashboard1.Size = New System.Drawing.Size(7, 56)
+        Me.UserControl_admindashboard1.Size = New System.Drawing.Size(1, 1)
         Me.UserControl_admindashboard1.TabIndex = 18
         '
         'AdminDashboard
@@ -177,6 +186,7 @@ Partial Class AdminDashboard
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1006, 721)
+        Me.Controls.Add(Me.UserControl_dynamiccontrol1)
         Me.Controls.Add(Me.UserControl_admindashboardnontabular1)
         Me.Controls.Add(Me.btnPendingBookings)
         Me.Controls.Add(Me.UserControl_admindashboard1)
@@ -214,4 +224,5 @@ Partial Class AdminDashboard
     Friend WithEvents BookingBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents BookingTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter
     Friend WithEvents UserControl_admindashboardnontabular1 As WindowsApplication1.UserControl_admindashboardnontabular
+    Friend WithEvents UserControl_dynamiccontrol1 As WindowsApplication1.UserControl_dynamiccontrol
 End Class

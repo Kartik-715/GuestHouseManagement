@@ -70,7 +70,6 @@
     End Sub
 
     Private Sub btnUpdatePassword_Click(sender As Object, e As EventArgs) Handles btnUpdatePassword.Click
-        Console.WriteLine(loggedUser)
         formUpdatePassword.loggedUser = loggedUser
         formUpdatePassword.Show()
     End Sub
@@ -118,7 +117,6 @@
             count = 2
         End If
         Timer1.Start()
-        Console.Write(count.ToString)
     End Sub
 
     Private Sub btnBookARoom_Click(sender As Object, e As EventArgs) Handles btnBookARoom.Click
