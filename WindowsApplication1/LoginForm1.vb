@@ -71,4 +71,9 @@
         PassButton.FlatStyle = FlatStyle.Popup
         PassButton.FlatAppearance.BorderSize = 0
     End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        Me.Close()
+        forgotPass.Show()
+    End Sub
 End Class
