@@ -38,7 +38,6 @@
                     Else
                         Dashboard.loggedUser = userData.username
                         Check_Availability.loggedUser = userData.username
-                        'Dashboard.Dashboard_Load(e, e)
                         Dashboard.Show()
                     End If
                     Form1.Hide()
@@ -55,6 +54,7 @@
     End Sub
     Private Sub LoginForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         max()
+        'lblLogin.Parent = PictureBoxGrey
         'TODO: This line of code loads data into the 'GuestHouseDataSet.userTable' table. You can move, or remove it, as needed.
         Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)
     End Sub
@@ -72,8 +72,11 @@
         PassButton.FlatAppearance.BorderSize = 0
     End Sub
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-        Me.Close()
-        forgotPass.Show()
+    Private Sub PassButton_MouseLeave(sender As Object, e As MouseEventArgs) Handles PassButton.MouseUp
+
+    End Sub
+
+    Private Sub PassButton_MouseDown(sender As Object, e As MouseEventArgs) Handles PassButton.MouseDown
+
     End Sub
 End Class

@@ -107,6 +107,8 @@
         lblnumAvail.Show()
 
         If availRooms.Length >= 1 Then
+            Me.Height = 868
+            Me.StartPosition = FormStartPosition.CenterScreen
             lblFirstName.Show()
             lblLastName.Show()
             lblMobileNo.Show()

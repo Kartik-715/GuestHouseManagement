@@ -24,33 +24,40 @@ Partial Class AdminDashboard
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.lblHello = New System.Windows.Forms.Label()
-        Me.btnUpdatePassword = New System.Windows.Forms.Button()
-        Me.btnMyBills = New System.Windows.Forms.Button()
-        Me.btnBookARoom = New System.Windows.Forms.Button()
-        Me.btnLogOut = New System.Windows.Forms.Button()
-        Me.btnApproveUsers = New System.Windows.Forms.Button()
+        Me.btnUpdatePassword = New WindowsApplication1.RoundButton()
+        Me.btnMyBills = New WindowsApplication1.RoundButton()
+        Me.btnBookARoom = New WindowsApplication1.RoundButton()
+        Me.btnLogOut = New WindowsApplication1.RoundButton()
+        Me.btnApproveUsers = New WindowsApplication1.RoundButton()
         Me.labelNonApproved = New System.Windows.Forms.Label()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.btnAddRoom = New System.Windows.Forms.Button()
+        Me.btnAddRoom = New WindowsApplication1.RoundButton()
         Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
         Me.RoomTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter()
         Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GuestHouseDataSet = New WindowsApplication1.guestHouseDataSet()
-        Me.btnPendingBookings = New System.Windows.Forms.Button()
+        Me.btnPendingBookings = New WindowsApplication1.RoundButton()
         Me.BookingTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
         Me.UserControl_dynamiccontrol1 = New WindowsApplication1.UserControl_dynamiccontrol()
         Me.UserControl_admindashboardnontabular1 = New WindowsApplication1.UserControl_admindashboardnontabular()
-        Me.btnAllBookings = New System.Windows.Forms.Button()
+        Me.btnAllBookings = New WindowsApplication1.RoundButton()
+        Me.PictureBoxGrey = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxLogo = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxHeader = New System.Windows.Forms.PictureBox()
+        Me.lblWelcome = New System.Windows.Forms.Label()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxGrey, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblHello
         '
         Me.lblHello.AutoSize = True
         Me.lblHello.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.lblHello.Location = New System.Drawing.Point(351, 21)
+        Me.lblHello.Location = New System.Drawing.Point(871, 85)
         Me.lblHello.Name = "lblHello"
         Me.lblHello.Size = New System.Drawing.Size(131, 29)
         Me.lblHello.TabIndex = 13
@@ -58,58 +65,93 @@ Partial Class AdminDashboard
         '
         'btnUpdatePassword
         '
+        Me.btnUpdatePassword.BackColor = System.Drawing.Color.Transparent
         Me.btnUpdatePassword.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUpdatePassword.Location = New System.Drawing.Point(61, 407)
+        Me.btnUpdatePassword.FlatAppearance.BorderSize = 0
+        Me.btnUpdatePassword.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnUpdatePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnUpdatePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUpdatePassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdatePassword.ForeColor = System.Drawing.Color.White
+        Me.btnUpdatePassword.Location = New System.Drawing.Point(-10, 467)
         Me.btnUpdatePassword.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnUpdatePassword.Name = "btnUpdatePassword"
-        Me.btnUpdatePassword.Size = New System.Drawing.Size(164, 50)
+        Me.btnUpdatePassword.Size = New System.Drawing.Size(270, 52)
         Me.btnUpdatePassword.TabIndex = 12
         Me.btnUpdatePassword.Text = "Update Password"
-        Me.btnUpdatePassword.UseVisualStyleBackColor = True
+        Me.btnUpdatePassword.UseVisualStyleBackColor = False
         '
         'btnMyBills
         '
+        Me.btnMyBills.BackColor = System.Drawing.Color.Transparent
         Me.btnMyBills.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMyBills.Location = New System.Drawing.Point(61, 353)
+        Me.btnMyBills.FlatAppearance.BorderSize = 0
+        Me.btnMyBills.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnMyBills.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnMyBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMyBills.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMyBills.ForeColor = System.Drawing.Color.White
+        Me.btnMyBills.Location = New System.Drawing.Point(-10, 407)
         Me.btnMyBills.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnMyBills.Name = "btnMyBills"
-        Me.btnMyBills.Size = New System.Drawing.Size(164, 50)
+        Me.btnMyBills.Size = New System.Drawing.Size(270, 52)
         Me.btnMyBills.TabIndex = 11
         Me.btnMyBills.Text = "My Bills"
-        Me.btnMyBills.UseVisualStyleBackColor = True
+        Me.btnMyBills.UseVisualStyleBackColor = False
         '
         'btnBookARoom
         '
+        Me.btnBookARoom.BackColor = System.Drawing.Color.Transparent
         Me.btnBookARoom.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBookARoom.Location = New System.Drawing.Point(61, 299)
+        Me.btnBookARoom.FlatAppearance.BorderSize = 0
+        Me.btnBookARoom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnBookARoom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnBookARoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBookARoom.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBookARoom.ForeColor = System.Drawing.Color.White
+        Me.btnBookARoom.Location = New System.Drawing.Point(-10, 347)
         Me.btnBookARoom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnBookARoom.Name = "btnBookARoom"
-        Me.btnBookARoom.Size = New System.Drawing.Size(164, 50)
+        Me.btnBookARoom.Size = New System.Drawing.Size(270, 52)
         Me.btnBookARoom.TabIndex = 10
         Me.btnBookARoom.Text = "Book A Room"
-        Me.btnBookARoom.UseVisualStyleBackColor = True
+        Me.btnBookARoom.UseVisualStyleBackColor = False
         '
         'btnLogOut
         '
+        Me.btnLogOut.BackColor = System.Drawing.Color.Transparent
         Me.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLogOut.Location = New System.Drawing.Point(61, 187)
+        Me.btnLogOut.FlatAppearance.BorderSize = 0
+        Me.btnLogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogOut.ForeColor = System.Drawing.Color.White
+        Me.btnLogOut.Location = New System.Drawing.Point(-10, 227)
         Me.btnLogOut.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnLogOut.Name = "btnLogOut"
-        Me.btnLogOut.Size = New System.Drawing.Size(164, 50)
+        Me.btnLogOut.Size = New System.Drawing.Size(270, 52)
         Me.btnLogOut.TabIndex = 9
         Me.btnLogOut.Text = "Log Out"
-        Me.btnLogOut.UseVisualStyleBackColor = True
+        Me.btnLogOut.UseVisualStyleBackColor = False
         '
         'btnApproveUsers
         '
+        Me.btnApproveUsers.BackColor = System.Drawing.Color.Transparent
         Me.btnApproveUsers.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnApproveUsers.Location = New System.Drawing.Point(61, 515)
+        Me.btnApproveUsers.FlatAppearance.BorderSize = 0
+        Me.btnApproveUsers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnApproveUsers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnApproveUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnApproveUsers.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnApproveUsers.ForeColor = System.Drawing.Color.White
+        Me.btnApproveUsers.Location = New System.Drawing.Point(-10, 587)
         Me.btnApproveUsers.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnApproveUsers.Name = "btnApproveUsers"
-        Me.btnApproveUsers.Size = New System.Drawing.Size(164, 50)
+        Me.btnApproveUsers.Size = New System.Drawing.Size(270, 52)
         Me.btnApproveUsers.TabIndex = 14
         Me.btnApproveUsers.Text = "Approve Users"
-        Me.btnApproveUsers.UseVisualStyleBackColor = True
+        Me.btnApproveUsers.UseVisualStyleBackColor = False
         Me.btnApproveUsers.Visible = False
         '
         'labelNonApproved
@@ -127,13 +169,20 @@ Partial Class AdminDashboard
         '
         'btnAddRoom
         '
-        Me.btnAddRoom.Location = New System.Drawing.Point(61, 461)
+        Me.btnAddRoom.BackColor = System.Drawing.Color.Transparent
+        Me.btnAddRoom.FlatAppearance.BorderSize = 0
+        Me.btnAddRoom.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnAddRoom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnAddRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddRoom.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddRoom.ForeColor = System.Drawing.Color.White
+        Me.btnAddRoom.Location = New System.Drawing.Point(-10, 527)
         Me.btnAddRoom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAddRoom.Name = "btnAddRoom"
-        Me.btnAddRoom.Size = New System.Drawing.Size(164, 50)
+        Me.btnAddRoom.Size = New System.Drawing.Size(270, 52)
         Me.btnAddRoom.TabIndex = 17
         Me.btnAddRoom.Text = "Add Room"
-        Me.btnAddRoom.UseVisualStyleBackColor = True
+        Me.btnAddRoom.UseVisualStyleBackColor = False
         Me.btnAddRoom.Visible = False
         '
         'UserTableTableAdapter1
@@ -156,13 +205,20 @@ Partial Class AdminDashboard
         '
         'btnPendingBookings
         '
-        Me.btnPendingBookings.Location = New System.Drawing.Point(61, 569)
+        Me.btnPendingBookings.BackColor = System.Drawing.Color.Transparent
+        Me.btnPendingBookings.FlatAppearance.BorderSize = 0
+        Me.btnPendingBookings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnPendingBookings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnPendingBookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPendingBookings.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPendingBookings.ForeColor = System.Drawing.Color.White
+        Me.btnPendingBookings.Location = New System.Drawing.Point(-10, 647)
         Me.btnPendingBookings.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnPendingBookings.Name = "btnPendingBookings"
-        Me.btnPendingBookings.Size = New System.Drawing.Size(164, 50)
+        Me.btnPendingBookings.Size = New System.Drawing.Size(270, 52)
         Me.btnPendingBookings.TabIndex = 20
         Me.btnPendingBookings.Text = "Pending Bookings"
-        Me.btnPendingBookings.UseVisualStyleBackColor = True
+        Me.btnPendingBookings.UseVisualStyleBackColor = False
         Me.btnPendingBookings.Visible = False
         '
         'BookingTableAdapter
@@ -172,7 +228,7 @@ Partial Class AdminDashboard
         'UserControl_dynamiccontrol1
         '
         Me.UserControl_dynamiccontrol1.AutoScroll = True
-        Me.UserControl_dynamiccontrol1.Location = New System.Drawing.Point(245, 187)
+        Me.UserControl_dynamiccontrol1.Location = New System.Drawing.Point(723, 371)
         Me.UserControl_dynamiccontrol1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UserControl_dynamiccontrol1.Name = "UserControl_dynamiccontrol1"
         Me.UserControl_dynamiccontrol1.Size = New System.Drawing.Size(873, 656)
@@ -180,27 +236,83 @@ Partial Class AdminDashboard
         '
         'UserControl_admindashboardnontabular1
         '
-        Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(268, 154)
+        Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(876, 227)
         Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
-        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(1, 1)
+        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(2, 4)
         Me.UserControl_admindashboardnontabular1.TabIndex = 23
         '
         'btnAllBookings
         '
-        Me.btnAllBookings.Location = New System.Drawing.Point(61, 243)
+        Me.btnAllBookings.BackColor = System.Drawing.Color.Transparent
+        Me.btnAllBookings.FlatAppearance.BorderSize = 0
+        Me.btnAllBookings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnAllBookings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnAllBookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAllBookings.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAllBookings.ForeColor = System.Drawing.Color.White
+        Me.btnAllBookings.Location = New System.Drawing.Point(-10, 287)
         Me.btnAllBookings.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAllBookings.Name = "btnAllBookings"
-        Me.btnAllBookings.Size = New System.Drawing.Size(164, 50)
+        Me.btnAllBookings.Size = New System.Drawing.Size(270, 52)
         Me.btnAllBookings.TabIndex = 25
         Me.btnAllBookings.Text = "Current Bookings"
-        Me.btnAllBookings.UseVisualStyleBackColor = True
+        Me.btnAllBookings.UseVisualStyleBackColor = False
+        '
+        'PictureBoxGrey
+        '
+        Me.PictureBoxGrey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBoxGrey.Image = Global.WindowsApplication1.My.Resources.Resources.greySolid
+        Me.PictureBoxGrey.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBoxGrey.Name = "PictureBoxGrey"
+        Me.PictureBoxGrey.Size = New System.Drawing.Size(253, 745)
+        Me.PictureBoxGrey.TabIndex = 26
+        Me.PictureBoxGrey.TabStop = False
+        '
+        'PictureBoxLogo
+        '
+        Me.PictureBoxLogo.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBoxLogo.Image = Global.WindowsApplication1.My.Resources.Resources.IITG_logo_png
+        Me.PictureBoxLogo.Location = New System.Drawing.Point(61, 57)
+        Me.PictureBoxLogo.Name = "PictureBoxLogo"
+        Me.PictureBoxLogo.Size = New System.Drawing.Size(130, 130)
+        Me.PictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBoxLogo.TabIndex = 27
+        Me.PictureBoxLogo.TabStop = False
+        '
+        'PictureBoxHeader
+        '
+        Me.PictureBoxHeader.Image = Global.WindowsApplication1.My.Resources.Resources.tealAbstract
+        Me.PictureBoxHeader.Location = New System.Drawing.Point(253, 0)
+        Me.PictureBoxHeader.Margin = New System.Windows.Forms.Padding(0)
+        Me.PictureBoxHeader.Name = "PictureBoxHeader"
+        Me.PictureBoxHeader.Size = New System.Drawing.Size(756, 131)
+        Me.PictureBoxHeader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBoxHeader.TabIndex = 28
+        Me.PictureBoxHeader.TabStop = False
+        '
+        'lblWelcome
+        '
+        Me.lblWelcome.AutoSize = True
+        Me.lblWelcome.BackColor = System.Drawing.Color.Transparent
+        Me.lblWelcome.Font = New System.Drawing.Font("Georgia", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWelcome.ForeColor = System.Drawing.Color.White
+        Me.lblWelcome.Location = New System.Drawing.Point(259, 32)
+        Me.lblWelcome.Name = "lblWelcome"
+        Me.lblWelcome.Size = New System.Drawing.Size(1390, 69)
+        Me.lblWelcome.TabIndex = 29
+        Me.lblWelcome.Text = "Welcome to IITG Guest House Admin Portal"
         '
         'AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Azure
         Me.ClientSize = New System.Drawing.Size(1005, 721)
+        Me.Controls.Add(Me.lblWelcome)
+        Me.Controls.Add(Me.PictureBoxHeader)
+        Me.Controls.Add(Me.PictureBoxLogo)
+        Me.Controls.Add(Me.PictureBoxGrey)
         Me.Controls.Add(Me.btnAllBookings)
         Me.Controls.Add(Me.UserControl_dynamiccontrol1)
         Me.Controls.Add(Me.UserControl_admindashboardnontabular1)
@@ -219,26 +331,33 @@ Partial Class AdminDashboard
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxGrey, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxHeader, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents lblHello As System.Windows.Forms.Label
-    Friend WithEvents btnUpdatePassword As System.Windows.Forms.Button
-    Friend WithEvents btnMyBills As System.Windows.Forms.Button
-    Friend WithEvents btnBookARoom As System.Windows.Forms.Button
-    Friend WithEvents btnLogOut As System.Windows.Forms.Button
-    Friend WithEvents btnApproveUsers As System.Windows.Forms.Button
     Friend WithEvents labelNonApproved As System.Windows.Forms.Label
     Friend WithEvents UserTableTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
-    Friend WithEvents btnAddRoom As System.Windows.Forms.Button
     Friend WithEvents RoomTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter
-    Friend WithEvents btnPendingBookings As System.Windows.Forms.Button
     Friend WithEvents GuestHouseDataSet As WindowsApplication1.guestHouseDataSet
     Friend WithEvents BookingBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents BookingTableAdapter As WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter
     Friend WithEvents UserControl_admindashboardnontabular1 As WindowsApplication1.UserControl_admindashboardnontabular
     Friend WithEvents UserControl_dynamiccontrol1 As WindowsApplication1.UserControl_dynamiccontrol
-    Friend WithEvents btnAllBookings As System.Windows.Forms.Button
+    Friend WithEvents PictureBoxGrey As System.Windows.Forms.PictureBox
+    Friend WithEvents btnUpdatePassword As WindowsApplication1.RoundButton
+    Friend WithEvents btnMyBills As WindowsApplication1.RoundButton
+    Friend WithEvents btnBookARoom As WindowsApplication1.RoundButton
+    Friend WithEvents btnLogOut As WindowsApplication1.RoundButton
+    Friend WithEvents btnApproveUsers As WindowsApplication1.RoundButton
+    Friend WithEvents btnAddRoom As WindowsApplication1.RoundButton
+    Friend WithEvents btnPendingBookings As WindowsApplication1.RoundButton
+    Friend WithEvents btnAllBookings As WindowsApplication1.RoundButton
+    Friend WithEvents PictureBoxLogo As System.Windows.Forms.PictureBox
+    Friend WithEvents lblWelcome As System.Windows.Forms.Label
+    Friend WithEvents PictureBoxHeader As System.Windows.Forms.PictureBox
 End Class

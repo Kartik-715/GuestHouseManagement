@@ -40,20 +40,20 @@ Partial Class Check_Availability
         Me.lblWelcome = New System.Windows.Forms.Label()
         Me.rbtnIsVIP = New System.Windows.Forms.CheckBox()
         Me.lblSelectRoom = New System.Windows.Forms.Label()
-        Me.PictureBoxHeader = New System.Windows.Forms.PictureBox()
         Me.BookingTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
         Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
         Me.RoomTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter()
         Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
         Me.GroupBoxOccupancy = New System.Windows.Forms.GroupBox()
-        Me.rbtnSingle = New System.Windows.Forms.RadioButton()
-        Me.rbtnDouble = New System.Windows.Forms.RadioButton()
         Me.lblOccupancy = New System.Windows.Forms.Label()
+        Me.rbtnDouble = New System.Windows.Forms.RadioButton()
+        Me.rbtnSingle = New System.Windows.Forms.RadioButton()
+        Me.PictureBoxHeader = New System.Windows.Forms.PictureBox()
         Me.btnBookNow = New WindowsApplication1.RoundButton()
         Me.btnCheckAval = New WindowsApplication1.RoundButton()
-        CType(Me.PictureBoxHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxOccupancy.SuspendLayout()
+        CType(Me.PictureBoxHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CheckIn
@@ -90,7 +90,7 @@ Partial Class Check_Availability
         '
         'DateTimePickerTo
         '
-        Me.DateTimePickerTo.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.DateTimePickerTo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DateTimePickerTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePickerTo.Location = New System.Drawing.Point(240, 194)
@@ -209,7 +209,7 @@ Partial Class Check_Availability
         Me.lblWelcome.BackColor = System.Drawing.Color.Transparent
         Me.lblWelcome.Font = New System.Drawing.Font("Microsoft Tai Le", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWelcome.ForeColor = System.Drawing.Color.White
-        Me.lblWelcome.Location = New System.Drawing.Point(20, 11)
+        Me.lblWelcome.Location = New System.Drawing.Point(50, 9)
         Me.lblWelcome.Name = "lblWelcome"
         Me.lblWelcome.Size = New System.Drawing.Size(479, 51)
         Me.lblWelcome.TabIndex = 1395
@@ -240,17 +240,6 @@ Partial Class Check_Availability
         Me.lblSelectRoom.Text = "Select Room"
         Me.lblSelectRoom.Visible = False
         '
-        'PictureBoxHeader
-        '
-        Me.PictureBoxHeader.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.tealAbstract
-        Me.PictureBoxHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBoxHeader.Location = New System.Drawing.Point(-3, 0)
-        Me.PictureBoxHeader.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBoxHeader.Name = "PictureBoxHeader"
-        Me.PictureBoxHeader.Size = New System.Drawing.Size(568, 74)
-        Me.PictureBoxHeader.TabIndex = 1394
-        Me.PictureBoxHeader.TabStop = False
-        '
         'BookingTableAdapter1
         '
         Me.BookingTableAdapter1.ClearBeforeFill = True
@@ -273,6 +262,7 @@ Partial Class Check_Availability
         Me.GroupBoxOccupancy.Controls.Add(Me.lblOccupancy)
         Me.GroupBoxOccupancy.Controls.Add(Me.rbtnDouble)
         Me.GroupBoxOccupancy.Controls.Add(Me.rbtnSingle)
+        Me.GroupBoxOccupancy.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBoxOccupancy.Location = New System.Drawing.Point(59, 598)
         Me.GroupBoxOccupancy.Name = "GroupBoxOccupancy"
         Me.GroupBoxOccupancy.Size = New System.Drawing.Size(438, 43)
@@ -280,36 +270,47 @@ Partial Class Check_Availability
         Me.GroupBoxOccupancy.TabStop = False
         Me.GroupBoxOccupancy.Visible = False
         '
+        'lblOccupancy
+        '
+        Me.lblOccupancy.AutoSize = True
+        Me.lblOccupancy.Location = New System.Drawing.Point(-5, 10)
+        Me.lblOccupancy.Name = "lblOccupancy"
+        Me.lblOccupancy.Size = New System.Drawing.Size(132, 29)
+        Me.lblOccupancy.TabIndex = 2
+        Me.lblOccupancy.Text = "Occupancy"
+        '
+        'rbtnDouble
+        '
+        Me.rbtnDouble.AutoSize = True
+        Me.rbtnDouble.Location = New System.Drawing.Point(328, 10)
+        Me.rbtnDouble.Name = "rbtnDouble"
+        Me.rbtnDouble.Size = New System.Drawing.Size(112, 33)
+        Me.rbtnDouble.TabIndex = 1
+        Me.rbtnDouble.Text = "Double"
+        Me.rbtnDouble.UseVisualStyleBackColor = True
+        '
         'rbtnSingle
         '
         Me.rbtnSingle.AutoSize = True
         Me.rbtnSingle.Checked = True
-        Me.rbtnSingle.Location = New System.Drawing.Point(181, 16)
+        Me.rbtnSingle.Location = New System.Drawing.Point(181, 8)
         Me.rbtnSingle.Name = "rbtnSingle"
-        Me.rbtnSingle.Size = New System.Drawing.Size(68, 21)
+        Me.rbtnSingle.Size = New System.Drawing.Size(103, 33)
         Me.rbtnSingle.TabIndex = 0
         Me.rbtnSingle.TabStop = True
         Me.rbtnSingle.Text = "Single"
         Me.rbtnSingle.UseVisualStyleBackColor = True
         '
-        'rbtnDouble
+        'PictureBoxHeader
         '
-        Me.rbtnDouble.AutoSize = True
-        Me.rbtnDouble.Location = New System.Drawing.Point(328, 16)
-        Me.rbtnDouble.Name = "rbtnDouble"
-        Me.rbtnDouble.Size = New System.Drawing.Size(74, 21)
-        Me.rbtnDouble.TabIndex = 1
-        Me.rbtnDouble.Text = "Double"
-        Me.rbtnDouble.UseVisualStyleBackColor = True
-        '
-        'lblOccupancy
-        '
-        Me.lblOccupancy.AutoSize = True
-        Me.lblOccupancy.Location = New System.Drawing.Point(7, 16)
-        Me.lblOccupancy.Name = "lblOccupancy"
-        Me.lblOccupancy.Size = New System.Drawing.Size(79, 17)
-        Me.lblOccupancy.TabIndex = 2
-        Me.lblOccupancy.Text = "Occupancy"
+        Me.PictureBoxHeader.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.tealAbstract
+        Me.PictureBoxHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBoxHeader.Location = New System.Drawing.Point(-3, 0)
+        Me.PictureBoxHeader.Margin = New System.Windows.Forms.Padding(0)
+        Me.PictureBoxHeader.Name = "PictureBoxHeader"
+        Me.PictureBoxHeader.Size = New System.Drawing.Size(568, 74)
+        Me.PictureBoxHeader.TabIndex = 1394
+        Me.PictureBoxHeader.TabStop = False
         '
         'btnBookNow
         '
@@ -347,7 +348,7 @@ Partial Class Check_Availability
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Azure
-        Me.ClientSize = New System.Drawing.Size(561, 717)
+        Me.ClientSize = New System.Drawing.Size(561, 307)
         Me.Controls.Add(Me.GroupBoxOccupancy)
         Me.Controls.Add(Me.lblSelectRoom)
         Me.Controls.Add(Me.rbtnIsVIP)
@@ -376,10 +377,10 @@ Partial Class Check_Availability
         Me.Name = "Check_Availability"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Check Availability"
-        CType(Me.PictureBoxHeader, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBoxOccupancy.ResumeLayout(False)
         Me.GroupBoxOccupancy.PerformLayout()
+        CType(Me.PictureBoxHeader, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

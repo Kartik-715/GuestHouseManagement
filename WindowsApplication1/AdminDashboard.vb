@@ -86,6 +86,17 @@
         lblHello.Text = "Hello! " & loggedUser
         reload_data()
         btnclicks()
+        btnLogOut.Parent = PictureBoxGrey
+        btnAllBookings.Parent = PictureBoxGrey
+        btnBookARoom.Parent = PictureBoxGrey
+        btnMyBills.Parent = PictureBoxGrey
+        btnUpdatePassword.Parent = PictureBoxGrey
+        btnAddRoom.Parent = PictureBoxGrey
+        btnApproveUsers.Parent = PictureBoxGrey
+        btnPendingBookings.Parent = PictureBoxGrey
+        PictureBoxLogo.Parent = PictureBoxGrey
+        lblWelcome.Parent = PictureBoxHeader
+        lblHello.Parent = PictureBoxHeader
     End Sub
 
     Public Sub reload_data()
@@ -149,5 +160,58 @@
         allBooking = 1
         UserControl_dynamiccontrol1.UserControl_dynamiccontrol_Load(e, e)
         UserControl_dynamiccontrol1.Show()
+    End Sub
+
+    Private Sub UserControl_dynamiccontrol1_Load(sender As Object, e As EventArgs) Handles UserControl_dynamiccontrol1.Load
+
+    End Sub
+
+    Private Sub btnLogout_MouseDown(sender As Object, e As EventArgs) Handles btnLogOut.MouseHover
+        btnLogOut.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub btnLogout_MouseOver(sender As Object, e As EventArgs) Handles btnLogOut.MouseLeave
+        btnLogOut.FlatAppearance.BorderSize = 0
+    End Sub
+    Private Sub btnAllBookings_MouseDown(sender As Object, e As EventArgs) Handles btnAllBookings.MouseHover
+        btnAllBookings.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub btnAllBookings_MouseOver(sender As Object, e As EventArgs) Handles btnAllBookings.MouseLeave
+        btnAllBookings.FlatAppearance.BorderSize = 0
+    End Sub
+    Private Sub btnPendingBookings_MouseDown(sender As Object, e As EventArgs) Handles btnPendingBookings.MouseHover
+        btnPendingBookings.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub btnPendingBookings_MouseOver(sender As Object, e As EventArgs) Handles btnPendingBookings.MouseLeave
+        btnPendingBookings.FlatAppearance.BorderSize = 0
+    End Sub
+    Private Sub btnAddRoom_MouseDown(sender As Object, e As EventArgs) Handles btnAddRoom.MouseHover
+        btnAddRoom.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub btnAddRoom_MouseOver(sender As Object, e As EventArgs) Handles btnAddRoom.MouseLeave
+        btnAddRoom.FlatAppearance.BorderSize = 0
+    End Sub
+    Private Sub btnApproveUsers_MouseDown(sender As Object, e As EventArgs) Handles btnApproveUsers.MouseHover
+        btnApproveUsers.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub btnApproveUsers_MouseOver(sender As Object, e As EventArgs) Handles btnApproveUsers.MouseLeave
+        btnApproveUsers.FlatAppearance.BorderSize = 0
+    End Sub
+    Private Sub btnUpdatePassword_MouseDown(sender As Object, e As EventArgs) Handles btnUpdatePassword.MouseHover
+        btnUpdatePassword.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub btnUpdatePassword_MouseOver(sender As Object, e As EventArgs) Handles btnUpdatePassword.MouseLeave
+        btnUpdatePassword.FlatAppearance.BorderSize = 0
+    End Sub
+    Private Sub btnMyBills_MouseDown(sender As Object, e As EventArgs) Handles btnMyBills.MouseHover
+        btnMyBills.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub btnMyBills_MouseOver(sender As Object, e As EventArgs) Handles btnMyBills.MouseLeave
+        btnMyBills.FlatAppearance.BorderSize = 0
+    End Sub
+    Private Sub btnBookARoom_MouseDown(sender As Object, e As EventArgs) Handles btnBookARoom.MouseHover
+        btnBookARoom.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub btnBookARoom_MouseOver(sender As Object, e As EventArgs) Handles btnBookARoom.MouseLeave
+        btnBookARoom.FlatAppearance.BorderSize = 0
     End Sub
 End Class

@@ -4,7 +4,11 @@ Imports System.Text.RegularExpressions
 Imports System.Security.Cryptography
 Public Class SignupForm1
     Dim str As String
-
+    Private Sub Form1_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
+        Dim brushy As Brush
+        brushy = New Drawing.SolidBrush(Color.FromArgb(100, 0, 128, 128))
+        e.Graphics.FillRectangle(brushy, Me.ClientRectangle)
+    End Sub
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
@@ -26,14 +30,13 @@ Public Class SignupForm1
         CH = Me.Height
     End Sub
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-
-        If IsValidEmailFormat(txtUsername.Text) = False Then
-            MsgBox("Invalid Email Format")
-            '  Me.Close()
-        ElseIf IsPhoneNumberValid(txtPhone.Text) = False Then
+        If IsPhoneNumberValid(txtPhone.Text) = False Then
             MsgBox("Invalid Phone Number")
-            '  Me.Close()
-            'End If
+            Me.Close()
+            If IsValidEmailFormat(txtUsername.Text) = False Then
+                MsgBox("Invalid Phone Number")
+                Me.Close()
+            End If
         ElseIf txtCaptcha.Text = str Then
             Dim userData As guestHouseDataSet.userTableRow
             userData = GuestHouseDataSet.userTable.FindByusername(txtUsername.Text)
@@ -83,9 +86,10 @@ Public Class SignupForm1
         max()
         Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)
         UserTableBindingSource.AddNew()
-        'LblEmail1.Visible = False
-        'lblValidPhone.Visible = False
+        LblEmail1.Visible = False
+        lblValidatioMessage.Visible = False
         btnRefresh.PerformClick()
+        lblSignUp.Parent = LogoPictureBox
     End Sub
 
     Private Sub SignupForm1_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosed
@@ -113,27 +117,24 @@ Public Class SignupForm1
     Protected Sub txtPhone_TextChanged(sender As Object, e As EventArgs) Handles txtPhone.TextChanged
         If Not IsPhoneNumberValid(txtPhone.Text) Then
             Dim isvalid = False
-            '  lblValidPhone.Visible = True
-            'lblValidPhone.Text = "!!"
-            txtPhone.ForeColor = Color.Red
+            lblValidatioMessage.Visible = True
+            lblValidatioMessage.Text = "!!"
         Else
-            'lblValidPhone.Visible = False
-            'lblValidPhone.Text = ""
-            txtPhone.ForeColor = Color.Black
+            lblValidatioMessage.Visible = False
+            lblValidatioMessage.Text = ""
         End If
     End Sub
 
     Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
         If IsValidEmailFormat(txtUsername.Text) = True Then
 
-            'LblEmail1.Visible = False
-            'LblEmail1.Text = ""
-            txtUsername.ForeColor = Color.Black
+            LblEmail1.Visible = False
+            LblEmail1.Text = ""
 
         Else
-            'LblEmail1.Visible = True
-            'LblEmail1.Text = "!!"
-            txtUsername.ForeColor = Color.Red
+            LblEmail1.Visible = True
+            LblEmail1.Text = "!!"
+
         End If
     End Sub
 
@@ -173,5 +174,9 @@ Public Class SignupForm1
         ElseIf (txtPhone.Text).Length = 0 And e.KeyChar = "0" Then
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub Cancel_Click_1(sender As Object, e As EventArgs)
+
     End Sub
 End Class
