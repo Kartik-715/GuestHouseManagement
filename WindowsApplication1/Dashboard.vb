@@ -1,6 +1,11 @@
 ﻿Public Class Dashboard
     Public loggedUser As String
     Public NameofUser As String
+    Public updatepasword As Boolean = False
+    Public mybookings As Boolean = False
+    Dim steps As Integer = 20
+    Dim togglBok As Boolean = False
+    Dim togglUP As Boolean = False
     Private images(3) As System.Drawing.Image
     Private index As Integer
     Dim check As Integer = 0
@@ -49,6 +54,16 @@
         CH = Me.Height
     End Sub
 
+    Private Sub frminit()
+        GroupBox1.Hide()
+        UserControl_admindashboardnontabular1.Hide()
+    End Sub
+
+    Private Sub btnclicks()
+        mybookings = False
+        updatepasword = False
+    End Sub
+
     Private Sub Dashboard_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosing
         For Each frm As Form In Me.MdiChildren
             frm.Close()
@@ -59,19 +74,18 @@
         End If
     End Sub
 
-    Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PreVentFlicker()
         max()
         lblHello.Parent = PictureBox1
         lblDashboard.Parent = PictureBox1
         lblGH.Parent = PictureBox1
         IITGLogo.Parent = PictureBox1
-        Me.WindowState = FormWindowState.Maximized
+        btnclicks()
+        frminit()
         NameofUser = UserTableTableAdapter1.getNamebyUsername(loggedUser)
         lblHello.Text = "Hello! " & NameofUser
-
         BookingTableAdapter1.FillCurrentBooking(GuestHouseDataSet1.Booking, CInt(Date.Now.ToString("yyyyMMdd")), loggedUser)
-
         Dim currBooking As guestHouseDataSet.BookingRow
         If GuestHouseDataSet1.Booking.Rows.Count = 0 Then
             MsgBox("No Current Bookings")
@@ -87,14 +101,38 @@
     End Sub
 
     Private Sub btnUpdatePassword_Click(sender As Object, e As EventArgs) Handles btnUpdatePassword.Click
+        frminit()
+        btnclicks()
+        togglBok = False
+        upsize()
+        togglUP = Not (togglUP)
+        updatepasword = True
         UserControl_admindashboardnontabular1.btnSaveChanges.Visible = False
         UserControl_admindashboardnontabular1.Visible = True
-        UserControl_admindashboardnontabular1.Top = 2
-        UserControl_admindashboardnontabular1.Left = 2
-        UserControl_admindashboardnontabular1.Width = 800
-        UserControl_admindashboardnontabular1.Height = 800
         UserControl_admindashboardnontabular1.BringToFront()
         UserControl_admindashboardnontabular1.GroupBox2.Show()
+        Timer2.Start()
+    End Sub
+
+    Private Sub upsize()
+        UserControl_admindashboardnontabular1.Width = 800
+        UserControl_admindashboardnontabular1.Height = 800
+        UserControl_admindashboardnontabular1.Top = 2
+        If togglUP = False Or updatepasword = False Then
+            UserControl_admindashboardnontabular1.Left = 2 - 810
+        End If
+        If togglUP = True Then
+            UserControl_admindashboardnontabular1.Left = 2
+        End If
+    End Sub
+
+    Private Sub myboksize()
+        If togglBok = False Or mybookings = False Then
+            GroupBox1.Left = GroupBox1.Left - GroupBox1.Width + 10
+        End If
+        If togglBok = True Then
+            GroupBox1.Left = 2
+        End If
     End Sub
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
@@ -142,12 +180,38 @@
         Timer1.Start()
     End Sub
 
+    Private Sub Timer2_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles Timer2.Tick
+        If togglUP = True Or togglBok = True Then
+            steps = 20
+        Else
+            steps = -20
+        End If
+        If mybookings = True Then
+            If (GroupBox1.Left < 2 And togglBok = True) Or (GroupBox1.Left > GroupBox1.Left - GroupBox1.Width And togglBok = False) Then
+                GroupBox1.Left += steps
+            End If
+        End If
+        If updatepasword = True Then
+            If (UserControl_admindashboardnontabular1.Left < 2 And togglUP = True) Or (UserControl_admindashboardnontabular1.Left > 2 - 810 And togglUP = False) Then
+                UserControl_admindashboardnontabular1.Left += steps
+            End If
+        End If
+        Timer2.Start()
+    End Sub
+
     Private Sub btnBookARoom_Click(sender As Object, e As EventArgs) Handles btnBookARoom.Click
         Check_Availability.loggedUser = loggedUser
         Check_Availability.Show()
     End Sub
 
     Private Sub RoundButton1_Click(sender As Object, e As EventArgs) Handles RoundButton1.Click
+        frminit()
+        btnclicks()
+        togglUP = False
+        myboksize()
+        togglBok = Not (togglBok)
+        mybookings = True
         GroupBox1.Visible = True
+        Timer2.Start()
     End Sub
 End Class
