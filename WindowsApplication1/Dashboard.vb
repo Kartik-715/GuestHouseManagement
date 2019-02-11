@@ -71,7 +71,6 @@
         lblHello.Text = "Hello! " & NameofUser
 
         BookingTableAdapter1.FillCurrentBooking(GuestHouseDataSet1.Booking, CInt(Date.Now.ToString("yyyyMMdd")), loggedUser)
-        Console.WriteLine(CInt(Date.Now.ToString("yyyyMMdd")))
 
         Dim currBooking As guestHouseDataSet.BookingRow
         If GuestHouseDataSet1.Booking.Rows.Count = 0 Then
@@ -82,17 +81,20 @@
             Console.WriteLine(currBooking.BookedBy)
             lblBookingIDval.Text = currBooking.ID.ToString
             lblBookedForval.Text = currBooking.BookingForFirstName & " " & currBooking.BookingForLastName
-            lblBookedTillval.Text = currBooking.BookedTill
-            lblBookedFromval.Text = currBooking.BookedFrom
+            lblBookedTillval.Text = DateTime.ParseExact(currBooking.BookedTill.ToString, "yyyyMMdd", Nothing)
+            lblBookedFromval.Text = DateTime.ParseExact(currBooking.BookedFrom.ToString, "yyyyMMdd", Nothing)
         End If
-
-
-
     End Sub
 
     Private Sub btnUpdatePassword_Click(sender As Object, e As EventArgs) Handles btnUpdatePassword.Click
-        formUpdatePassword.loggedUser = loggedUser
-        formUpdatePassword.Show()
+        UserControl_admindashboardnontabular1.btnSaveChanges.Visible = False
+        UserControl_admindashboardnontabular1.Visible = True
+        UserControl_admindashboardnontabular1.Top = 2
+        UserControl_admindashboardnontabular1.Left = 2
+        UserControl_admindashboardnontabular1.Width = 800
+        UserControl_admindashboardnontabular1.Height = 800
+        UserControl_admindashboardnontabular1.BringToFront()
+        UserControl_admindashboardnontabular1.GroupBox2.Show()
     End Sub
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
@@ -143,5 +145,9 @@
     Private Sub btnBookARoom_Click(sender As Object, e As EventArgs) Handles btnBookARoom.Click
         Check_Availability.loggedUser = loggedUser
         Check_Availability.Show()
+    End Sub
+
+    Private Sub RoundButton1_Click(sender As Object, e As EventArgs) Handles RoundButton1.Click
+        GroupBox1.Visible = True
     End Sub
 End Class

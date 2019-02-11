@@ -46,10 +46,9 @@ Partial Class Check_Availability
         Me.PictureBoxHeader = New System.Windows.Forms.PictureBox()
         Me.btnBookNow = New WindowsApplication1.RoundButton()
         Me.btnCheckAval = New WindowsApplication1.RoundButton()
+        Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
         CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxHeader, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
-
         Me.SuspendLayout()
         '
         'CheckIn
@@ -58,26 +57,19 @@ Partial Class Check_Availability
         Me.CheckIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckIn.Location = New System.Drawing.Point(87, 132)
         Me.CheckIn.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-
-
-        Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
-        CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-
         Me.CheckIn.Name = "CheckIn"
-        Me.CheckIn.Size = New System.Drawing.Size(55, 24)
+        Me.CheckIn.Size = New System.Drawing.Size(70, 29)
         Me.CheckIn.TabIndex = 0
         Me.CheckIn.Text = "From"
         '
         'Checkout
         '
-
         Me.Checkout.AutoSize = True
         Me.Checkout.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Checkout.Location = New System.Drawing.Point(109, 187)
         Me.Checkout.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Checkout.Name = "Checkout"
-        Me.Checkout.Size = New System.Drawing.Size(33, 24)
+        Me.Checkout.Size = New System.Drawing.Size(43, 29)
         Me.Checkout.TabIndex = 1
         Me.Checkout.Text = "To"
         '
@@ -89,48 +81,29 @@ Partial Class Check_Availability
         Me.DateTimePickerFrom.Location = New System.Drawing.Point(211, 132)
         Me.DateTimePickerFrom.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.DateTimePickerFrom.Name = "DateTimePickerFrom"
-        Me.DateTimePickerFrom.Size = New System.Drawing.Size(258, 29)
-
-
+        Me.DateTimePickerFrom.Size = New System.Drawing.Size(258, 34)
         Me.DateTimePickerFrom.TabIndex = 2
         Me.DateTimePickerFrom.Value = New Date(2019, 2, 10, 0, 0, 0, 0)
         '
         'DateTimePickerTo
         '
         Me.DateTimePickerTo.Cursor = System.Windows.Forms.Cursors.IBeam
-
         Me.DateTimePickerTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePickerTo.Location = New System.Drawing.Point(211, 187)
         Me.DateTimePickerTo.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.DateTimePickerTo.Name = "DateTimePickerTo"
-        Me.DateTimePickerTo.Size = New System.Drawing.Size(258, 29)
+        Me.DateTimePickerTo.Size = New System.Drawing.Size(258, 34)
         Me.DateTimePickerTo.TabIndex = 3
-        '
-        'lblBooking
-        '
-        Me.lblBooking.AutoSize = True
-        Me.lblBooking.Font = New System.Drawing.Font("Microsoft Tai Le", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBooking.Location = New System.Drawing.Point(37, 92)
-        Me.lblBooking.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-
-        '
-        'btnCheckAval
-        '
-        Me.btnCheckAval.Location = New System.Drawing.Point(299, 283)
-        Me.btnCheckAval.Name = "btnCheckAval"
-        Me.btnCheckAval.Size = New System.Drawing.Size(213, 56)
-        Me.btnCheckAval.TabIndex = 4
-        Me.btnCheckAval.Text = "Check Availability"
-        Me.btnCheckAval.UseVisualStyleBackColor = True
         '
         'lblBooking
         '
         Me.lblBooking.AutoSize = True
         Me.lblBooking.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBooking.Location = New System.Drawing.Point(167, 79)
+        Me.lblBooking.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblBooking.Name = "lblBooking"
-        Me.lblBooking.Size = New System.Drawing.Size(109, 31)
+        Me.lblBooking.Size = New System.Drawing.Size(126, 32)
         Me.lblBooking.TabIndex = 5
         Me.lblBooking.Text = "Booking"
         '
@@ -154,22 +127,19 @@ Partial Class Check_Availability
         Me.lblAvailRoom.Location = New System.Drawing.Point(38, 313)
         Me.lblAvailRoom.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAvailRoom.Name = "lblAvailRoom"
-        Me.lblAvailRoom.Size = New System.Drawing.Size(204, 29)
+        Me.lblAvailRoom.Size = New System.Drawing.Size(262, 37)
         Me.lblAvailRoom.TabIndex = 6
         Me.lblAvailRoom.Text = "Available Rooms: "
         '
         'comboBoxAvailRooms
         '
         Me.comboBoxAvailRooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-
         Me.comboBoxAvailRooms.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.comboBoxAvailRooms.FormattingEnabled = True
         Me.comboBoxAvailRooms.Location = New System.Drawing.Point(211, 499)
         Me.comboBoxAvailRooms.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-
         Me.comboBoxAvailRooms.Name = "comboBoxAvailRooms"
-        Me.comboBoxAvailRooms.Size = New System.Drawing.Size(258, 28)
-
+        Me.comboBoxAvailRooms.Size = New System.Drawing.Size(258, 33)
         Me.comboBoxAvailRooms.TabIndex = 7
         Me.comboBoxAvailRooms.Visible = False
         '
@@ -180,35 +150,16 @@ Partial Class Check_Availability
         Me.lblnumAvail.Location = New System.Drawing.Point(274, 313)
         Me.lblnumAvail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnumAvail.Name = "lblnumAvail"
-        Me.lblnumAvail.Size = New System.Drawing.Size(83, 29)
+        Me.lblnumAvail.Size = New System.Drawing.Size(107, 37)
         Me.lblnumAvail.TabIndex = 8
         Me.lblnumAvail.Text = "Label1"
         Me.lblnumAvail.Visible = False
         '
-
         'lblFirstName
         '
         Me.lblFirstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFirstName.Location = New System.Drawing.Point(39, 358)
-        Me.lblFirstName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblFirstName.Name = "lblFirstName"
-        Me.lblFirstName.Size = New System.Drawing.Size(105, 25)
-
-        'btnBookNow
-        '
-        Me.btnBookNow.Location = New System.Drawing.Point(376, 654)
-        Me.btnBookNow.Name = "btnBookNow"
-        Me.btnBookNow.Size = New System.Drawing.Size(136, 39)
-        Me.btnBookNow.TabIndex = 9
-        Me.btnBookNow.Text = "Book Now"
-        Me.btnBookNow.UseVisualStyleBackColor = True
-        Me.btnBookNow.Visible = False
-        '
-        'lblFirstName
-        '
-        Me.lblFirstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-
         Me.lblFirstName.Location = New System.Drawing.Point(144, 442)
+        Me.lblFirstName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFirstName.Name = "lblFirstName"
         Me.lblFirstName.Size = New System.Drawing.Size(140, 31)
         Me.lblFirstName.TabIndex = 1390
@@ -217,38 +168,32 @@ Partial Class Check_Availability
         '
         'txtName
         '
-
         Me.txtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtName.Location = New System.Drawing.Point(211, 356)
         Me.txtName.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(258, 28)
-
+        Me.txtName.Size = New System.Drawing.Size(258, 34)
         Me.txtName.TabIndex = 1386
         Me.txtName.Visible = False
         '
         'txtLastName
         '
-
         Me.txtLastName.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLastName.Location = New System.Drawing.Point(211, 403)
         Me.txtLastName.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtLastName.Size = New System.Drawing.Size(258, 28)
-
+        Me.txtLastName.Size = New System.Drawing.Size(258, 34)
         Me.txtLastName.TabIndex = 1387
         Me.txtLastName.Visible = False
         '
         'lblLastName
         '
-
         Me.lblLastName.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLastName.Location = New System.Drawing.Point(39, 403)
         Me.lblLastName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblLastName.Name = "lblLastName"
         Me.lblLastName.Size = New System.Drawing.Size(165, 28)
-
         Me.lblLastName.TabIndex = 1389
         Me.lblLastName.Text = "&Last Name"
         Me.lblLastName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -256,26 +201,22 @@ Partial Class Check_Availability
         '
         'lblMobileNo
         '
-
         Me.lblMobileNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMobileNo.Location = New System.Drawing.Point(39, 451)
         Me.lblMobileNo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblMobileNo.Name = "lblMobileNo"
         Me.lblMobileNo.Size = New System.Drawing.Size(105, 25)
-
         Me.lblMobileNo.TabIndex = 1392
         Me.lblMobileNo.Text = "&Mobile No."
         Me.lblMobileNo.Visible = False
         '
         'txtPhone
         '
-
         Me.txtPhone.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPhone.Location = New System.Drawing.Point(211, 448)
         Me.txtPhone.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtPhone.Name = "txtPhone"
-        Me.txtPhone.Size = New System.Drawing.Size(258, 28)
-
+        Me.txtPhone.Size = New System.Drawing.Size(258, 34)
         Me.txtPhone.TabIndex = 1388
         Me.txtPhone.Visible = False
         '
@@ -287,14 +228,12 @@ Partial Class Check_Availability
         Me.lblWelcome.ForeColor = System.Drawing.Color.White
         Me.lblWelcome.Location = New System.Drawing.Point(68, 19)
         Me.lblWelcome.Name = "lblWelcome"
-        Me.lblWelcome.Size = New System.Drawing.Size(383, 41)
+        Me.lblWelcome.Size = New System.Drawing.Size(479, 51)
         Me.lblWelcome.TabIndex = 1395
         Me.lblWelcome.Text = "Check Room Availability"
-
         '
         'rbtnIsVIP
         '
-
         Me.rbtnIsVIP.AutoSize = True
         Me.rbtnIsVIP.BackColor = System.Drawing.Color.PaleTurquoise
         Me.rbtnIsVIP.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -306,12 +245,6 @@ Partial Class Check_Availability
         Me.rbtnIsVIP.Text = "is VIP"
         Me.rbtnIsVIP.UseVisualStyleBackColor = False
         Me.rbtnIsVIP.Visible = False
-
-        '
-        'UserTableTableAdapter1
-        '
-        Me.UserTableTableAdapter1.ClearBeforeFill = True
-
         '
         'lblSelectRoom
         '
@@ -365,14 +298,17 @@ Partial Class Check_Availability
         Me.btnCheckAval.Text = "Check"
         Me.btnCheckAval.UseVisualStyleBackColor = False
         '
+        'UserTableTableAdapter1
+        '
+        Me.UserTableTableAdapter1.ClearBeforeFill = True
+        '
         'Check_Availability
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Azure
-        Me.ClientSize = New System.Drawing.Size(514, 624)
+        Me.ClientSize = New System.Drawing.Size(559, 611)
         Me.Controls.Add(Me.lblSelectRoom)
-
         Me.Controls.Add(Me.rbtnIsVIP)
         Me.Controls.Add(Me.lblWelcome)
         Me.Controls.Add(Me.PictureBoxHeader)
@@ -393,7 +329,6 @@ Partial Class Check_Availability
         Me.Controls.Add(Me.Checkout)
         Me.Controls.Add(Me.CheckIn)
         Me.Cursor = System.Windows.Forms.Cursors.Default
-
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.MaximizeBox = False
