@@ -62,6 +62,8 @@
 
     Private Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         max()
+        Me.Top = 100
+        Me.Left = (Form1.Width - Me.Width) / 2
         lblWelcome.Parent = PictureBoxHeader
         DateTimePickerFrom.MinDate = Date.Today
         If loggedUser = "admin" Then

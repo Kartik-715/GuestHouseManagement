@@ -28,6 +28,7 @@
         With UserControl_dynamiccontrol1
             .Hide()
         End With
+        Check_Availability.Close()
     End Sub
 
     Private Sub max()
