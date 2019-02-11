@@ -117,12 +117,12 @@
     Private Sub upsize()
         UserControl_admindashboardnontabular1.Width = 800
         UserControl_admindashboardnontabular1.Height = 800
-        UserControl_admindashboardnontabular1.Top = 2
+        UserControl_admindashboardnontabular1.Top = 0
         If togglUP = False Or updatepasword = False Then
-            UserControl_admindashboardnontabular1.Left = 2 - 810
+            UserControl_admindashboardnontabular1.Left = -810
         End If
         If togglUP = True Then
-            UserControl_admindashboardnontabular1.Left = 2
+            UserControl_admindashboardnontabular1.Left = 0
         End If
     End Sub
 
@@ -220,13 +220,19 @@
             steps = -20
         End If
         If mybookings = True Then
-            If (GroupBox1.Left < 2 And togglBok = True) Or (GroupBox1.Left > GroupBox1.Left - GroupBox1.Width And togglBok = False) Then
+            If (GroupBox1.Left < 0 And togglBok = True) Or (GroupBox1.Left > -GroupBox1.Width And togglBok = False) Then
                 GroupBox1.Left += steps
+            End If
+            If GroupBox1.Left > 0 Then
+                GroupBox1.Left = 0
             End If
         End If
         If updatepasword = True Then
-            If (UserControl_admindashboardnontabular1.Left < 2 And togglUP = True) Or (UserControl_admindashboardnontabular1.Left > 2 - 810 And togglUP = False) Then
+            If (UserControl_admindashboardnontabular1.Left < 0 And togglUP = True) Or (UserControl_admindashboardnontabular1.Left > -810 And togglUP = False) Then
                 UserControl_admindashboardnontabular1.Left += steps
+            End If
+            If UserControl_admindashboardnontabular1.Left > 0 Then
+                UserControl_admindashboardnontabular1.Left = 0
             End If
         End If
         Timer2.Start()

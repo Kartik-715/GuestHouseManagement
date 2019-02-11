@@ -28,7 +28,6 @@ Partial Class UserControl_admindashboardnontabular
         Me.txtRoomNo = New System.Windows.Forms.TextBox()
         Me.lblRoomNo = New System.Windows.Forms.Label()
         Me.rbtnRemoveARoomFromService = New System.Windows.Forms.RadioButton()
-        Me.rbtnIsVIP = New System.Windows.Forms.RadioButton()
         Me.btnSaveChanges = New System.Windows.Forms.Button()
         Me.UserTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GuestHouseDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -46,6 +45,7 @@ Partial Class UserControl_admindashboardnontabular
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.rbtnIsVIP = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,14 +55,14 @@ Partial Class UserControl_admindashboardnontabular
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.rbtnIsVIP)
         Me.GroupBox1.Controls.Add(Me.rbtnAddARoomToService)
         Me.GroupBox1.Controls.Add(Me.txtRoomNo)
         Me.GroupBox1.Controls.Add(Me.lblRoomNo)
         Me.GroupBox1.Controls.Add(Me.rbtnRemoveARoomFromService)
-        Me.GroupBox1.Controls.Add(Me.rbtnIsVIP)
-        Me.GroupBox1.Location = New System.Drawing.Point(96, 87)
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(479, 321)
+        Me.GroupBox1.Size = New System.Drawing.Size(632, 321)
         Me.GroupBox1.TabIndex = 17
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Add Or Remove Rooms"
@@ -104,28 +104,16 @@ Partial Class UserControl_admindashboardnontabular
         Me.rbtnRemoveARoomFromService.AutoSize = True
         Me.rbtnRemoveARoomFromService.Cursor = System.Windows.Forms.Cursors.Hand
         Me.rbtnRemoveARoomFromService.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbtnRemoveARoomFromService.Location = New System.Drawing.Point(239, 60)
+        Me.rbtnRemoveARoomFromService.Location = New System.Drawing.Point(326, 62)
         Me.rbtnRemoveARoomFromService.Name = "rbtnRemoveARoomFromService"
         Me.rbtnRemoveARoomFromService.Size = New System.Drawing.Size(217, 24)
         Me.rbtnRemoveARoomFromService.TabIndex = 8
         Me.rbtnRemoveARoomFromService.Text = "Remove A Room Service"
         Me.rbtnRemoveARoomFromService.UseVisualStyleBackColor = True
         '
-        'rbtnIsVIP
-        '
-        Me.rbtnIsVIP.AutoSize = True
-        Me.rbtnIsVIP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbtnIsVIP.Location = New System.Drawing.Point(153, 196)
-        Me.rbtnIsVIP.Name = "rbtnIsVIP"
-        Me.rbtnIsVIP.Size = New System.Drawing.Size(85, 29)
-        Me.rbtnIsVIP.TabIndex = 11
-        Me.rbtnIsVIP.TabStop = True
-        Me.rbtnIsVIP.Text = "Is VIP"
-        Me.rbtnIsVIP.UseVisualStyleBackColor = True
-        '
         'btnSaveChanges
         '
-        Me.btnSaveChanges.Location = New System.Drawing.Point(115, 434)
+        Me.btnSaveChanges.Location = New System.Drawing.Point(3, 342)
         Me.btnSaveChanges.Name = "btnSaveChanges"
         Me.btnSaveChanges.Size = New System.Drawing.Size(160, 44)
         Me.btnSaveChanges.TabIndex = 18
@@ -167,9 +155,9 @@ Partial Class UserControl_admindashboardnontabular
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Location = New System.Drawing.Point(96, 87)
+        Me.GroupBox2.Location = New System.Drawing.Point(0, 3)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(682, 333)
+        Me.GroupBox2.Size = New System.Drawing.Size(682, 336)
         Me.GroupBox2.TabIndex = 19
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Change Password"
@@ -278,6 +266,17 @@ Partial Class UserControl_admindashboardnontabular
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Enter Old Password"
         '
+        'rbtnIsVIP
+        '
+        Me.rbtnIsVIP.AutoSize = True
+        Me.rbtnIsVIP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtnIsVIP.Location = New System.Drawing.Point(326, 159)
+        Me.rbtnIsVIP.Name = "rbtnIsVIP"
+        Me.rbtnIsVIP.Size = New System.Drawing.Size(86, 29)
+        Me.rbtnIsVIP.TabIndex = 11
+        Me.rbtnIsVIP.Text = "Is VIP"
+        Me.rbtnIsVIP.UseVisualStyleBackColor = True
+        '
         'UserControl_admindashboardnontabular
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -302,7 +301,6 @@ Partial Class UserControl_admindashboardnontabular
     Friend WithEvents txtRoomNo As System.Windows.Forms.TextBox
     Friend WithEvents lblRoomNo As System.Windows.Forms.Label
     Friend WithEvents rbtnRemoveARoomFromService As System.Windows.Forms.RadioButton
-    Friend WithEvents rbtnIsVIP As System.Windows.Forms.RadioButton
     Friend WithEvents btnSaveChanges As System.Windows.Forms.Button
     Friend WithEvents UserTableBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents GuestHouseDataSetBindingSource As System.Windows.Forms.BindingSource
@@ -320,5 +318,6 @@ Partial Class UserControl_admindashboardnontabular
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents rbtnIsVIP As System.Windows.Forms.CheckBox
 
 End Class

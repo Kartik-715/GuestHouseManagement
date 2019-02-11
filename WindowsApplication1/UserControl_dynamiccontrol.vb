@@ -2,8 +2,31 @@
 Public Class UserControl_dynamiccontrol
 
     <DllImport("user32.dll", EntryPoint:="SetProcessDPIAware")> _
-    Public Shared Function SetProcessDPIAware() As <MarshalAs(UnmanagedType.Bool)> Boolean
+    Private Shared Function SetProcessDPIAware() As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
+
+    Private Sub max()
+        Dim CW As Integer = Me.Width + 1 ' Current Width
+        Dim CH As Integer = Me.Height + 1 ' Current Height
+        Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1080)
+        Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
+        Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
+        Dim min As Double = RW
+        If RW > RH Then
+            min = RH
+        End If
+        For Each Ctrl As Control In Controls
+            Console.WriteLine(Ctrl.Width & " " & RW)
+            Ctrl.Width += CInt(Ctrl.Width * RW)
+            Ctrl.Height += CInt(Ctrl.Height * RH)
+            Ctrl.Left += CInt(Ctrl.Left * RW)
+            Ctrl.Top += CInt(Ctrl.Top * RH)
+            'Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * min), Ctrl.Font.Style)
+        Next
+        CW = Me.Width
+        CH = Me.Height
+    End Sub
+
     Public Function createDateTimeStamp(currDate As Date) As Integer
         Return CInt(currDate.ToString("yyyyMMdd"))
     End Function
@@ -25,39 +48,38 @@ Public Class UserControl_dynamiccontrol
             Category(i) = New System.Windows.Forms.Label
             Name(i) = New System.Windows.Forms.Label
             Mobile(i) = New System.Windows.Forms.Label
-
         Next i
 
         Dim xPos As Integer = 0  ' these two lines set the location for making the button array
         Dim yPos As Integer = 0
         While (n < length)
             With (EmailID(n))
-                .Width = 500 ' Width of button
+                .Width = 1024 ' Width of button
                 .Height = 250 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Email   " & GuestHouseDataSet1.userTable.Rows(n)("username").ToString
+                .Text = "Email:   " & GuestHouseDataSet1.userTable.Rows(n)("username").ToString
                 Me.Controls.Add(EmailID(n))
                 xPos = xPos + 2 ' Left of next button
                 yPos = 50
             End With
             With (Name(n))
-                .Width = 100 ' Width of button
+                .Width = 300 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Name    " & GuestHouseDataSet1.userTable.Rows(n)("First Name").ToString & " " & GuestHouseDataSet1.userTable.Rows(n)("Last Name").ToString
+                .Text = "Name:    " & GuestHouseDataSet1.userTable.Rows(n)("First Name").ToString & " " & GuestHouseDataSet1.userTable.Rows(n)("Last Name").ToString
                 EmailID(n).Controls.Add(Name(n))
                 yPos = yPos + .Height ' Left of next button
             End With
             With (Mobile(n))
-                .Width = 100 ' Width of button
+                .Width = 300 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Mobile No.   " & GuestHouseDataSet1.userTable.Rows(n)("MobileNo").ToString
+                .Text = "Mobile No:   " & GuestHouseDataSet1.userTable.Rows(n)("MobileNo").ToString
                 EmailID(n).Controls.Add(Mobile(n))
-                xPos = xPos + 200 ' Left of next button
+                xPos = xPos + 500 ' Left of next button
             End With
             With (Confirm(n))
                 .Width = 100 ' Width of button
@@ -82,11 +104,11 @@ Public Class UserControl_dynamiccontrol
             End With
             AddHandler cancel(n).Click, AddressOf cancelbutton_click
             With (Category(n))
-                .Width = 100 ' Width of button
+                .Width = 300 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Category   " & GuestHouseDataSet1.userTable.Rows(n)("Category").ToString
+                .Text = "Category:   " & GuestHouseDataSet1.userTable.Rows(n)("Category").ToString
                 Name(n).Controls.Add(Mobile(n))
                 yPos = (50 + EmailID(n).Height) * (n + 1) 'Left of next button
                 n += 1
@@ -119,32 +141,32 @@ Public Class UserControl_dynamiccontrol
         Dim yPos As Integer = 0
         While (n < length)
             With (BookingID(n))
-                .Width = 500 ' Width of button
+                .Width = 1024 ' Width of button
                 .Height = 250 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Booking ID   " & GuestHouseDataSet1.Booking.Rows(n)("ID").ToString
+                .Text = "Booking ID:   " & GuestHouseDataSet1.Booking.Rows(n)("ID").ToString
                 Me.Controls.Add(BookingID(n))
                 xPos = xPos + 2 ' Left of next button
                 yPos = 50
             End With
             With (RoomNo(n))
-                .Width = 100 ' Width of button
+                .Width = 300 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Room No    " & GuestHouseDataSet1.Booking.Rows(n)("RoomNo").ToString
+                .Text = "Room No:    " & GuestHouseDataSet1.Booking.Rows(n)("RoomNo").ToString
                 BookingID(n).Controls.Add(RoomNo(n))
                 yPos = yPos + .Height ' Left of next button
             End With
             With (BookedBy(n))
-                .Width = 100 ' Width of button
+                .Width = 300 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Booked By   " & GuestHouseDataSet1.Booking.Rows(n)("BookedBy").ToString
+                .Text = "Booked By:   " & GuestHouseDataSet1.Booking.Rows(n)("BookedBy").ToString
                 BookingID(n).Controls.Add(BookedBy(n))
-                xPos = xPos + 200 ' Left of next button
+                xPos = xPos + 500 ' Left of next button
             End With
             With (Confirm(n))
                 .Width = 100 ' Width of button
@@ -169,20 +191,20 @@ Public Class UserControl_dynamiccontrol
             End With
             AddHandler cancel(n).Click, AddressOf cancelbutton_click
             With (BookedFrom(n))
-                .Width = 100 ' Width of button
+                .Width = 300 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Booked From    " & DateTime.ParseExact((GuestHouseDataSet1.Booking.Rows(n)("BookedFrom").ToString), "yyyyMMdd", Nothing)
+                .Text = "Booked From:    " & DateTime.ParseExact((GuestHouseDataSet1.Booking.Rows(n)("BookedFrom").ToString), "yyyyMMdd", Nothing)
                 BookingID(n).Controls.Add(BookedFrom(n))
                 yPos = yPos + .Height ' Left of next button
             End With
             With (BookedTill(n))
-                .Width = 100 ' Width of button
+                .Width = 300 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Booked Till   " & DateTime.ParseExact((GuestHouseDataSet1.Booking.Rows(n)("BookedTill").ToString), "yyyyMMdd", Nothing)
+                .Text = "Booked Till:   " & DateTime.ParseExact((GuestHouseDataSet1.Booking.Rows(n)("BookedTill").ToString), "yyyyMMdd", Nothing)
                 BookingID(n).Controls.Add(BookedTill(n))
                 yPos = (50 + BookingID(n).Height) * (n + 1) 'Left of next button
                 n += 1
@@ -205,15 +227,13 @@ Public Class UserControl_dynamiccontrol
             BookingID(i) = New System.Windows.Forms.GroupBox
             Name(i) = New System.Windows.Forms.Label
             RoomNum(i) = New System.Windows.Forms.Label
-
-
         Next i
 
         Dim xPos As Integer = 0  ' these two lines set the location for making the button array
         Dim yPos As Integer = 0
         While (n < length)
             With (BookingID(n))
-                .Width = 500 ' Width of button
+                .Width = 1024 ' Width of button
                 .Height = 250 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
@@ -223,7 +243,7 @@ Public Class UserControl_dynamiccontrol
                 yPos = 50
             End With
             With (RoomNum(n))
-                .Width = 100 ' Width of button
+                .Width = 300 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
@@ -232,29 +252,29 @@ Public Class UserControl_dynamiccontrol
                 yPos = yPos + .Height ' Left of next button
             End With
             With (Name(n))
-                .Width = 100 ' Width of button
+                .Width = 300 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Name    " & GuestHouseDataSet1.Booking.Rows(n)("BookingForFirstName").ToString & " " & GuestHouseDataSet1.Booking.Rows(n)("BookingForLastName").ToString
+                .Text = "Name:    " & GuestHouseDataSet1.Booking.Rows(n)("BookingForFirstName").ToString & " " & GuestHouseDataSet1.Booking.Rows(n)("BookingForLastName").ToString
                 BookingID(n).Controls.Add(Name(n))
                 yPos = yPos + .Height ' Left of next button
             End With
             With (BookingFrom(n))
-                .Width = 100 ' Width of button
+                .Width = 300 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Booking From:   " & GuestHouseDataSet1.Booking.Rows(n)("BookedFrom").ToString
+                .Text = "Booked From:    " & DateTime.ParseExact((GuestHouseDataSet1.Booking.Rows(n)("BookedFrom").ToString), "yyyyMMdd", Nothing)
                 BookingID(n).Controls.Add(BookingFrom(n))
                 yPos = yPos + .Height ' Yaha ki hai Bakchodi '
             End With
             With (BookingTill(n))
-                .Width = 100 ' Width of button
+                .Width = 300 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Booking Till:   " & GuestHouseDataSet1.Booking.Rows(n)("BookedTill").ToString
+                .Text = "Booked Till:    " & DateTime.ParseExact((GuestHouseDataSet1.Booking.Rows(n)("BookedTill").ToString), "yyyyMMdd", Nothing)
                 BookingID(n).Controls.Add(BookingTill(n))
                 yPos = (50 + BookingID(n).Height) * (n + 1)  ' Next Y will be far ' 
                 n += 1
@@ -262,39 +282,14 @@ Public Class UserControl_dynamiccontrol
         End While
     End Function
 
-
     Dim length As Integer
-
-    Private Sub max()
-        Dim CW As Integer = Me.Width ' Current Width
-        Dim CH As Integer = Me.Height ' Current Height
-        Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1024)
-        Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
-        Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
-        Dim min As Double = RW
-        If RW > RH Then
-            min = RH
-        End If
-        For Each Ctrl As Control In Controls
-            Ctrl.Width += CInt(Ctrl.Width * RW)
-            Ctrl.Height += CInt(Ctrl.Height * RH)
-            Ctrl.Left += CInt(Ctrl.Left * RW)
-            Ctrl.Top += CInt(Ctrl.Top * RH)
-            'Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * min), Ctrl.Font.Style)
-        Next
-        CW = Me.Width
-        CH = Me.Height
-    End Sub
 
     Public Sub UserControl_dynamiccontrol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Controls.Clear()
         InitializeComponent()
-        SetProcessDPIAware()
         max()
         BookingTableAdapter1.FillByPendingBookings(GuestHouseDataSet1.Booking)
         UserTableTableAdapter1.getNonApproved(GuestHouseDataSet1.userTable)
-        Me.Top = AdminDashboard.btnPendingBookings.Top
-        Me.Left = AdminDashboard.btnPendingBookings.Right + 10
         Console.Write(length.ToString)
         If AdminDashboard.pendingbooking = 1 Then
             BookingTableAdapter1.FillByPendingBookings(GuestHouseDataSet1.Booking)

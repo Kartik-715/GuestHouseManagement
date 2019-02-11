@@ -40,7 +40,6 @@ Partial Class AdminDashboard
         Me.BookingTableAdapter = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
         Me.UserControl_dynamiccontrol1 = New WindowsApplication1.UserControl_dynamiccontrol()
         Me.UserControl_admindashboardnontabular1 = New WindowsApplication1.UserControl_admindashboardnontabular()
-        Me.UserControl_admindashboard1 = New WindowsApplication1.UserControl_admindashboard()
         Me.btnAllBookings = New System.Windows.Forms.Button()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,8 +50,7 @@ Partial Class AdminDashboard
         '
         Me.lblHello.AutoSize = True
         Me.lblHello.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.lblHello.Location = New System.Drawing.Point(263, 17)
-        Me.lblHello.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHello.Location = New System.Drawing.Point(351, 21)
         Me.lblHello.Name = "lblHello"
         Me.lblHello.Size = New System.Drawing.Size(131, 29)
         Me.lblHello.TabIndex = 13
@@ -61,10 +59,10 @@ Partial Class AdminDashboard
         'btnUpdatePassword
         '
         Me.btnUpdatePassword.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUpdatePassword.Location = New System.Drawing.Point(46, 358)
-        Me.btnUpdatePassword.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnUpdatePassword.Location = New System.Drawing.Point(61, 407)
+        Me.btnUpdatePassword.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnUpdatePassword.Name = "btnUpdatePassword"
-        Me.btnUpdatePassword.Size = New System.Drawing.Size(123, 46)
+        Me.btnUpdatePassword.Size = New System.Drawing.Size(164, 50)
         Me.btnUpdatePassword.TabIndex = 12
         Me.btnUpdatePassword.Text = "Update Password"
         Me.btnUpdatePassword.UseVisualStyleBackColor = True
@@ -72,10 +70,10 @@ Partial Class AdminDashboard
         'btnMyBills
         '
         Me.btnMyBills.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMyBills.Location = New System.Drawing.Point(46, 257)
-        Me.btnMyBills.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnMyBills.Location = New System.Drawing.Point(61, 353)
+        Me.btnMyBills.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnMyBills.Name = "btnMyBills"
-        Me.btnMyBills.Size = New System.Drawing.Size(123, 46)
+        Me.btnMyBills.Size = New System.Drawing.Size(164, 50)
         Me.btnMyBills.TabIndex = 11
         Me.btnMyBills.Text = "My Bills"
         Me.btnMyBills.UseVisualStyleBackColor = True
@@ -83,10 +81,10 @@ Partial Class AdminDashboard
         'btnBookARoom
         '
         Me.btnBookARoom.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBookARoom.Location = New System.Drawing.Point(46, 206)
-        Me.btnBookARoom.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBookARoom.Location = New System.Drawing.Point(61, 299)
+        Me.btnBookARoom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnBookARoom.Name = "btnBookARoom"
-        Me.btnBookARoom.Size = New System.Drawing.Size(123, 46)
+        Me.btnBookARoom.Size = New System.Drawing.Size(164, 50)
         Me.btnBookARoom.TabIndex = 10
         Me.btnBookARoom.Text = "Book A Room"
         Me.btnBookARoom.UseVisualStyleBackColor = True
@@ -94,10 +92,10 @@ Partial Class AdminDashboard
         'btnLogOut
         '
         Me.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLogOut.Location = New System.Drawing.Point(46, 409)
-        Me.btnLogOut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnLogOut.Location = New System.Drawing.Point(61, 187)
+        Me.btnLogOut.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnLogOut.Name = "btnLogOut"
-        Me.btnLogOut.Size = New System.Drawing.Size(123, 46)
+        Me.btnLogOut.Size = New System.Drawing.Size(164, 50)
         Me.btnLogOut.TabIndex = 9
         Me.btnLogOut.Text = "Log Out"
         Me.btnLogOut.UseVisualStyleBackColor = True
@@ -105,10 +103,10 @@ Partial Class AdminDashboard
         'btnApproveUsers
         '
         Me.btnApproveUsers.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnApproveUsers.Location = New System.Drawing.Point(46, 308)
-        Me.btnApproveUsers.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnApproveUsers.Location = New System.Drawing.Point(61, 515)
+        Me.btnApproveUsers.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnApproveUsers.Name = "btnApproveUsers"
-        Me.btnApproveUsers.Size = New System.Drawing.Size(123, 46)
+        Me.btnApproveUsers.Size = New System.Drawing.Size(164, 50)
         Me.btnApproveUsers.TabIndex = 14
         Me.btnApproveUsers.Text = "Approve Users"
         Me.btnApproveUsers.UseVisualStyleBackColor = True
@@ -116,10 +114,9 @@ Partial Class AdminDashboard
         'labelNonApproved
         '
         Me.labelNonApproved.AutoSize = True
-        Me.labelNonApproved.Location = New System.Drawing.Point(280, 61)
-        Me.labelNonApproved.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.labelNonApproved.Location = New System.Drawing.Point(373, 75)
         Me.labelNonApproved.Name = "labelNonApproved"
-        Me.labelNonApproved.Size = New System.Drawing.Size(45, 15)
+        Me.labelNonApproved.Size = New System.Drawing.Size(51, 17)
         Me.labelNonApproved.TabIndex = 15
         Me.labelNonApproved.Text = "Label1"
         '
@@ -129,10 +126,10 @@ Partial Class AdminDashboard
         '
         'btnAddRoom
         '
-        Me.btnAddRoom.Location = New System.Drawing.Point(46, 460)
-        Me.btnAddRoom.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAddRoom.Location = New System.Drawing.Point(61, 461)
+        Me.btnAddRoom.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAddRoom.Name = "btnAddRoom"
-        Me.btnAddRoom.Size = New System.Drawing.Size(123, 41)
+        Me.btnAddRoom.Size = New System.Drawing.Size(164, 50)
         Me.btnAddRoom.TabIndex = 17
         Me.btnAddRoom.Text = "Add Room"
         Me.btnAddRoom.UseVisualStyleBackColor = True
@@ -157,10 +154,10 @@ Partial Class AdminDashboard
         '
         'btnPendingBookings
         '
-        Me.btnPendingBookings.Location = New System.Drawing.Point(46, 148)
-        Me.btnPendingBookings.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnPendingBookings.Location = New System.Drawing.Point(61, 569)
+        Me.btnPendingBookings.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnPendingBookings.Name = "btnPendingBookings"
-        Me.btnPendingBookings.Size = New System.Drawing.Size(123, 54)
+        Me.btnPendingBookings.Size = New System.Drawing.Size(164, 50)
         Me.btnPendingBookings.TabIndex = 20
         Me.btnPendingBookings.Text = "Pending Bookings"
         Me.btnPendingBookings.UseVisualStyleBackColor = True
@@ -172,47 +169,39 @@ Partial Class AdminDashboard
         'UserControl_dynamiccontrol1
         '
         Me.UserControl_dynamiccontrol1.AutoScroll = True
-        Me.UserControl_dynamiccontrol1.Location = New System.Drawing.Point(218, 148)
-        Me.UserControl_dynamiccontrol1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.UserControl_dynamiccontrol1.Location = New System.Drawing.Point(245, 187)
+        Me.UserControl_dynamiccontrol1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UserControl_dynamiccontrol1.Name = "UserControl_dynamiccontrol1"
-        Me.UserControl_dynamiccontrol1.Size = New System.Drawing.Size(789, 489)
+        Me.UserControl_dynamiccontrol1.Size = New System.Drawing.Size(562, 452)
         Me.UserControl_dynamiccontrol1.TabIndex = 24
         '
         'UserControl_admindashboardnontabular1
         '
-        Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(201, 125)
-        Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(268, 154)
+        Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
-        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(0, 1)
+        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(1, 1)
         Me.UserControl_admindashboardnontabular1.TabIndex = 23
-        '
-        'UserControl_admindashboard1
-        '
-        Me.UserControl_admindashboard1.Location = New System.Drawing.Point(250, 125)
-        Me.UserControl_admindashboard1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.UserControl_admindashboard1.Name = "UserControl_admindashboard1"
-        Me.UserControl_admindashboard1.Size = New System.Drawing.Size(0, 1)
-        Me.UserControl_admindashboard1.TabIndex = 18
         '
         'btnAllBookings
         '
-        Me.btnAllBookings.Location = New System.Drawing.Point(46, 102)
+        Me.btnAllBookings.Location = New System.Drawing.Point(61, 243)
+        Me.btnAllBookings.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAllBookings.Name = "btnAllBookings"
-        Me.btnAllBookings.Size = New System.Drawing.Size(123, 41)
+        Me.btnAllBookings.Size = New System.Drawing.Size(164, 50)
         Me.btnAllBookings.TabIndex = 25
         Me.btnAllBookings.Text = "Current Bookings"
         Me.btnAllBookings.UseVisualStyleBackColor = True
         '
         'AdminDashboard
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(754, 586)
+        Me.ClientSize = New System.Drawing.Size(1005, 721)
         Me.Controls.Add(Me.btnAllBookings)
         Me.Controls.Add(Me.UserControl_dynamiccontrol1)
         Me.Controls.Add(Me.UserControl_admindashboardnontabular1)
         Me.Controls.Add(Me.btnPendingBookings)
-        Me.Controls.Add(Me.UserControl_admindashboard1)
         Me.Controls.Add(Me.btnAddRoom)
         Me.Controls.Add(Me.labelNonApproved)
         Me.Controls.Add(Me.btnApproveUsers)
@@ -221,7 +210,7 @@ Partial Class AdminDashboard
         Me.Controls.Add(Me.btnMyBills)
         Me.Controls.Add(Me.btnBookARoom)
         Me.Controls.Add(Me.btnLogOut)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "AdminDashboard"
         Me.Text = "AdminDashboard"
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -242,7 +231,6 @@ Partial Class AdminDashboard
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
     Friend WithEvents btnAddRoom As System.Windows.Forms.Button
     Friend WithEvents RoomTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter
-    Friend WithEvents UserControl_admindashboard1 As WindowsApplication1.UserControl_admindashboard
     Friend WithEvents btnPendingBookings As System.Windows.Forms.Button
     Friend WithEvents GuestHouseDataSet As WindowsApplication1.guestHouseDataSet
     Friend WithEvents BookingBindingSource As System.Windows.Forms.BindingSource

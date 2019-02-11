@@ -18,11 +18,6 @@
     End Sub
 
     Private Sub btnclicks()
-        With UserControl_admindashboard1
-            .Hide()
-            .DataGridView1.Hide()
-            .DataGridPendingBookings.Hide()
-        End With
         With UserControl_admindashboardnontabular1
             .Hide()
             .GroupBox1.Hide()
@@ -74,12 +69,14 @@
         Me.BookingTableAdapter.Fill(Me.GuestHouseDataSet.Booking)
         max()
         Form1.Hide()
-        UserControl_admindashboard1.Width = 800
         UserControl_admindashboardnontabular1.Width = 800
-        UserControl_admindashboard1.Height = 800
         UserControl_admindashboardnontabular1.Height = 800
-        UserControl_dynamiccontrol1.Width = 800
-        UserControl_dynamiccontrol1.Height = 800
+        UserControl_dynamiccontrol1.Width = Form1.Width - btnLogOut.Right - 250
+        UserControl_dynamiccontrol1.Height = Form1.Height - btnLogOut.Top + 70
+        UserControl_admindashboardnontabular1.Top = btnLogOut.Top
+        UserControl_admindashboardnontabular1.Left = btnLogOut.Right + 46
+        UserControl_dynamiccontrol1.Top = btnLogOut.Top + 56
+        UserControl_dynamiccontrol1.Left = btnLogOut.Right + 200
         Me.WindowState = FormWindowState.Maximized
         lblHello.Text = "Hello! " & loggedUser
         reload_data()

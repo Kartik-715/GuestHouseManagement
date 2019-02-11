@@ -5,7 +5,6 @@ Public Class UserControl_admindashboardnontabular
     Private Shared Function SetProcessDPIAware() As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
 
-
     Private Sub max()
         Dim CW As Integer = Me.Width + 1 ' Current Width
         Dim CH As Integer = Me.Height + 1 ' Current Height
@@ -108,5 +107,9 @@ Public Class UserControl_admindashboardnontabular
         PassButton3.Image = My.Resources.vision_off
         PassButton3.FlatStyle = FlatStyle.Popup
         PassButton3.FlatAppearance.BorderSize = 0
+    End Sub
+
+    Private Sub rbtnIsVIP_CheckedChanged(sender As Object, e As EventArgs)
+
     End Sub
 End Class

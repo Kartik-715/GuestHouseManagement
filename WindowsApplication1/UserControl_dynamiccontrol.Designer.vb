@@ -47,7 +47,7 @@ Partial Class UserControl_dynamiccontrol
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.Name = "UserControl_dynamiccontrol"
-        Me.Size = New System.Drawing.Size(1052, 602)
+        Me.Size = New System.Drawing.Size(1634, 920)
         CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
