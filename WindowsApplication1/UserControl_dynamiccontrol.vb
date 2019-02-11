@@ -122,7 +122,6 @@ Public Class UserControl_dynamiccontrol
     Private Sub cancelbutton_click(sender As Object, e As EventArgs)
         Dim btn As Button = CType(sender, Button)
         Dim str As String = btn.Tag
-        Dim row As guestHouseDataSet.BookingRow
         GuestHouseDataSet1.Booking.Rows(CInt(str)).Delete()
         BookingTableAdapter1.Update(GuestHouseDataSet1.Booking)
         Me.Controls.Clear()
