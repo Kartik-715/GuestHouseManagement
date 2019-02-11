@@ -28,7 +28,7 @@ Public Class SignupForm1
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         
             If IsValidEmailFormat(txtUsername.Text) = False Then
-                MsgBox("Invalid Phone Number")
+            MsgBox("Invalid Email Format")
             '  Me.Close()
         ElseIf IsPhoneNumberValid(txtPhone.Text) = False Then
                 MsgBox("Invalid Phone Number")
