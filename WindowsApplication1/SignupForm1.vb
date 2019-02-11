@@ -83,8 +83,8 @@ Public Class SignupForm1
         max()
         Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)
         UserTableBindingSource.AddNew()
-        LblEmail1.Visible = False
-        lblValidPhone.Visible = False
+        'LblEmail1.Visible = False
+        'lblValidPhone.Visible = False
         btnRefresh.PerformClick()
     End Sub
 
