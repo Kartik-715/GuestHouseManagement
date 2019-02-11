@@ -41,8 +41,6 @@ Partial Class Check_Availability
         Me.rbtnIsVIP = New System.Windows.Forms.CheckBox()
         Me.lblSelectRoom = New System.Windows.Forms.Label()
         Me.PictureBoxHeader = New System.Windows.Forms.PictureBox()
-        Me.btnBookNow = New WindowsApplication1.RoundButton()
-        Me.btnCheckAval = New WindowsApplication1.RoundButton()
         Me.BookingTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
         Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
         Me.RoomTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter()
@@ -51,6 +49,8 @@ Partial Class Check_Availability
         Me.rbtnSingle = New System.Windows.Forms.RadioButton()
         Me.rbtnDouble = New System.Windows.Forms.RadioButton()
         Me.lblOccupancy = New System.Windows.Forms.Label()
+        Me.btnBookNow = New WindowsApplication1.RoundButton()
+        Me.btnCheckAval = New WindowsApplication1.RoundButton()
         CType(Me.PictureBoxHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxOccupancy.SuspendLayout()
@@ -251,37 +251,6 @@ Partial Class Check_Availability
         Me.PictureBoxHeader.TabIndex = 1394
         Me.PictureBoxHeader.TabStop = False
         '
-        'btnBookNow
-        '
-        Me.btnBookNow.BackColor = System.Drawing.Color.Teal
-        Me.btnBookNow.FlatAppearance.BorderSize = 0
-        Me.btnBookNow.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBookNow.Font = New System.Drawing.Font("Microsoft Tai Le", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBookNow.ForeColor = System.Drawing.Color.White
-        Me.btnBookNow.Location = New System.Drawing.Point(205, 664)
-        Me.btnBookNow.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnBookNow.Name = "btnBookNow"
-        Me.btnBookNow.Size = New System.Drawing.Size(133, 42)
-        Me.btnBookNow.TabIndex = 9
-        Me.btnBookNow.Text = "Book Now"
-        Me.btnBookNow.UseVisualStyleBackColor = False
-        Me.btnBookNow.Visible = False
-        '
-        'btnCheckAval
-        '
-        Me.btnCheckAval.BackColor = System.Drawing.Color.Teal
-        Me.btnCheckAval.FlatAppearance.BorderSize = 0
-        Me.btnCheckAval.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCheckAval.Font = New System.Drawing.Font("Microsoft Tai Le", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCheckAval.ForeColor = System.Drawing.Color.White
-        Me.btnCheckAval.Location = New System.Drawing.Point(205, 252)
-        Me.btnCheckAval.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnCheckAval.Name = "btnCheckAval"
-        Me.btnCheckAval.Size = New System.Drawing.Size(133, 42)
-        Me.btnCheckAval.TabIndex = 4
-        Me.btnCheckAval.Text = "Check"
-        Me.btnCheckAval.UseVisualStyleBackColor = False
-        '
         'BookingTableAdapter1
         '
         Me.BookingTableAdapter1.ClearBeforeFill = True
@@ -309,6 +278,7 @@ Partial Class Check_Availability
         Me.GroupBoxOccupancy.Size = New System.Drawing.Size(438, 43)
         Me.GroupBoxOccupancy.TabIndex = 1398
         Me.GroupBoxOccupancy.TabStop = False
+        Me.GroupBoxOccupancy.Visible = False
         '
         'rbtnSingle
         '
@@ -340,6 +310,37 @@ Partial Class Check_Availability
         Me.lblOccupancy.Size = New System.Drawing.Size(79, 17)
         Me.lblOccupancy.TabIndex = 2
         Me.lblOccupancy.Text = "Occupancy"
+        '
+        'btnBookNow
+        '
+        Me.btnBookNow.BackColor = System.Drawing.Color.Teal
+        Me.btnBookNow.FlatAppearance.BorderSize = 0
+        Me.btnBookNow.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBookNow.Font = New System.Drawing.Font("Microsoft Tai Le", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBookNow.ForeColor = System.Drawing.Color.White
+        Me.btnBookNow.Location = New System.Drawing.Point(205, 664)
+        Me.btnBookNow.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnBookNow.Name = "btnBookNow"
+        Me.btnBookNow.Size = New System.Drawing.Size(133, 42)
+        Me.btnBookNow.TabIndex = 9
+        Me.btnBookNow.Text = "Book Now"
+        Me.btnBookNow.UseVisualStyleBackColor = False
+        Me.btnBookNow.Visible = False
+        '
+        'btnCheckAval
+        '
+        Me.btnCheckAval.BackColor = System.Drawing.Color.Teal
+        Me.btnCheckAval.FlatAppearance.BorderSize = 0
+        Me.btnCheckAval.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCheckAval.Font = New System.Drawing.Font("Microsoft Tai Le", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheckAval.ForeColor = System.Drawing.Color.White
+        Me.btnCheckAval.Location = New System.Drawing.Point(205, 252)
+        Me.btnCheckAval.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnCheckAval.Name = "btnCheckAval"
+        Me.btnCheckAval.Size = New System.Drawing.Size(133, 42)
+        Me.btnCheckAval.TabIndex = 4
+        Me.btnCheckAval.Text = "Check"
+        Me.btnCheckAval.UseVisualStyleBackColor = False
         '
         'Check_Availability
         '
