@@ -370,7 +370,7 @@ Partial Class Dashboard
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DodgerBlue
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.blueAbstract2
-        Me.ClientSize = New System.Drawing.Size(953, 597)
+        Me.ClientSize = New System.Drawing.Size(1006, 721)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblDashboard)
         Me.Controls.Add(Me.RoundButton1)
