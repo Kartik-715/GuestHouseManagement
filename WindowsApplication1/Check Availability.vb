@@ -24,6 +24,7 @@
 
     Private Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         max()
+        lblWelcome.Parent = PictureBoxHeader
         DateTimePickerFrom.MinDate = Date.Today
         If loggedUser = "admin" Then
             rbtnIsVIP.Show()
@@ -75,6 +76,7 @@
             comboBoxAvailRooms.Items.AddRange(availRooms)
             comboBoxAvailRooms.Show()
             btnBookNow.Show()
+            lblSelectRoom.Show()
         Else
             comboBoxAvailRooms.Hide()
             btnBookNow.Hide()
@@ -118,4 +120,6 @@
     Private Sub DateTimePickerFrom_DropDown(sender As Object, e As EventArgs) Handles DateTimePickerFrom.DropDown
         DateTimePickerTo.MinDate = DateTimePickerFrom.Value
     End Sub
+
+   
 End Class
