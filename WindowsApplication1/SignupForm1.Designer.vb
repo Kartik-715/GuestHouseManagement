@@ -54,7 +54,7 @@ Partial Class SignupForm1
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.RoomTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter()
         Me.LblEmail1 = New System.Windows.Forms.Label()
-        Me.lblValidatioMessage = New System.Windows.Forms.Label()
+        Me.lblValidPhone = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblFirstName = New System.Windows.Forms.Label()
         Me.txtFirName = New System.Windows.Forms.TextBox()
@@ -277,15 +277,15 @@ Partial Class SignupForm1
         Me.LblEmail1.TabIndex = 17
         Me.LblEmail1.Visible = False
         '
-        'lblValidatioMessage
+        'lblValidPhone
         '
-        Me.lblValidatioMessage.AutoSize = True
-        Me.lblValidatioMessage.Location = New System.Drawing.Point(495, 184)
-        Me.lblValidatioMessage.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblValidatioMessage.Name = "lblValidatioMessage"
-        Me.lblValidatioMessage.Size = New System.Drawing.Size(0, 13)
-        Me.lblValidatioMessage.TabIndex = 18
-        Me.lblValidatioMessage.Visible = False
+        Me.lblValidPhone.AutoSize = True
+        Me.lblValidPhone.Location = New System.Drawing.Point(495, 184)
+        Me.lblValidPhone.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblValidPhone.Name = "lblValidPhone"
+        Me.lblValidPhone.Size = New System.Drawing.Size(0, 13)
+        Me.lblValidPhone.TabIndex = 18
+        Me.lblValidPhone.Visible = False
         '
         'Label2
         '
@@ -351,7 +351,7 @@ Partial Class SignupForm1
         Me.Controls.Add(Me.txtFirName)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.lblLastName)
-        Me.Controls.Add(Me.lblValidatioMessage)
+        Me.Controls.Add(Me.lblValidPhone)
         Me.Controls.Add(Me.LblEmail1)
         Me.Controls.Add(Me.lblCategory)
         Me.Controls.Add(Me.ComboBox1)
@@ -402,7 +402,7 @@ Partial Class SignupForm1
     Friend WithEvents lblCategory As System.Windows.Forms.Label
     Friend WithEvents RoomTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.RoomTableAdapter
     Friend WithEvents LblEmail1 As System.Windows.Forms.Label
-    Friend WithEvents lblValidatioMessage As System.Windows.Forms.Label
+    Friend WithEvents lblValidPhone As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents lblFirstName As System.Windows.Forms.Label
     Friend WithEvents txtFirName As System.Windows.Forms.TextBox

@@ -26,35 +26,36 @@ Public Class SignupForm1
         CH = Me.Height
     End Sub
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        If IsPhoneNumberValid(txtPhone.Text) = False Then
-            MsgBox("Invalid Phone Number")
-            Me.Close()
+        
             If IsValidEmailFormat(txtUsername.Text) = False Then
                 MsgBox("Invalid Phone Number")
-                Me.Close()
-            End If
-        ElseIf txtCaptcha.Text = str Then
-            Dim userData As guestHouseDataSet.userTableRow
-            userData = GuestHouseDataSet.userTable.FindByusername(txtUsername.Text)
-            If userData Is Nothing Then
-                txtPassword.Text = GenerateSHA256String(txtPassword.Text)
-                txtConfirmPassword.Text = GenerateSHA256String(txtConfirmPassword.Text)
-                UserTableBindingSource.EndEdit()
-                UserTableTableAdapter.Update(GuestHouseDataSet.userTable)
-                UserTableTableAdapter.changeApprovalStatus(False, txtUsername.Text)
-                MsgBox("Register Success")
-                Me.Close()
+            '  Me.Close()
+        ElseIf IsPhoneNumberValid(txtPhone.Text) = False Then
+                MsgBox("Invalid Phone Number")
+                '  Me.Close()
+                'End If
+            ElseIf txtCaptcha.Text = str Then
+                Dim userData As guestHouseDataSet.userTableRow
+                userData = GuestHouseDataSet.userTable.FindByusername(txtUsername.Text)
+                If userData Is Nothing Then
+                    txtPassword.Text = GenerateSHA256String(txtPassword.Text)
+                    txtConfirmPassword.Text = GenerateSHA256String(txtConfirmPassword.Text)
+                    UserTableBindingSource.EndEdit()
+                    UserTableTableAdapter.Update(GuestHouseDataSet.userTable)
+                    UserTableTableAdapter.changeApprovalStatus(False, txtUsername.Text)
+                    MsgBox("Register Success")
+                    Me.Close()
+                Else
+                    MsgBox("User Already Exists! Please Try Again!")
+                    txtCaptcha.Clear()
+                    txtUsername.Clear()
+                    btnRefresh.PerformClick()
+                End If
             Else
-                MsgBox("User Already Exists! Please Try Again!")
+                MsgBox("Register Failed")
                 txtCaptcha.Clear()
-                txtUsername.Clear()
                 btnRefresh.PerformClick()
             End If
-        Else
-            MsgBox("Register Failed")
-            txtCaptcha.Clear()
-            btnRefresh.PerformClick()
-        End If
     End Sub
 
 
@@ -83,7 +84,7 @@ Public Class SignupForm1
         Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)
         UserTableBindingSource.AddNew()
         LblEmail1.Visible = False
-        lblValidatioMessage.Visible = False
+        lblValidPhone.Visible = False
         btnRefresh.PerformClick()
     End Sub
 
@@ -112,24 +113,27 @@ Public Class SignupForm1
     Protected Sub txtPhone_TextChanged(sender As Object, e As EventArgs) Handles txtPhone.TextChanged
         If Not IsPhoneNumberValid(txtPhone.Text) Then
             Dim isvalid = False
-            lblValidatioMessage.Visible = True
-            lblValidatioMessage.Text = "!!"
+            '  lblValidPhone.Visible = True
+            'lblValidPhone.Text = "!!"
+            txtPhone.ForeColor = Color.Red
         Else
-            lblValidatioMessage.Visible = False
-            lblValidatioMessage.Text = ""
+            'lblValidPhone.Visible = False
+            'lblValidPhone.Text = ""
+            txtPhone.ForeColor = Color.Black
         End If
     End Sub
 
     Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
         If IsValidEmailFormat(txtUsername.Text) = True Then
 
-            LblEmail1.Visible = False
-            LblEmail1.Text = ""
+            'LblEmail1.Visible = False
+            'LblEmail1.Text = ""
+            txtUsername.ForeColor = Color.Black
 
         Else
-            LblEmail1.Visible = True
-            LblEmail1.Text = "!!"
-
+            'LblEmail1.Visible = True
+            'LblEmail1.Text = "!!"
+            txtUsername.ForeColor = Color.Red
         End If
     End Sub
 
