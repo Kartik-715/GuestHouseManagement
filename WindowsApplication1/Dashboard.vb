@@ -89,13 +89,17 @@
         Dim currBooking As guestHouseDataSet.BookingRow
         If GuestHouseDataSet1.Booking.Rows.Count = 0 Then
         Else
-            ' Get The Most Recent One '
+            ' Get The Most Recent Booking of the User '
             currBooking = GuestHouseDataSet1.Booking.Rows(0)
-            Console.WriteLine(currBooking.BookedBy)
             lblBookingIDval.Text = currBooking.ID.ToString
             lblBookedForval.Text = currBooking.BookingForFirstName & " " & currBooking.BookingForLastName
             lblBookedTillval.Text = DateTime.ParseExact(currBooking.BookedTill.ToString, "yyyyMMdd", Nothing)
             lblBookedFromval.Text = DateTime.ParseExact(currBooking.BookedFrom.ToString, "yyyyMMdd", Nothing)
+            'Calculation of Bill'
+            lblRoomChargesValue.Text = currBooking.Bill.ToString
+            lblTaxValue.Text = (currBooking.Bill * 0.05).ToString
+            lblTotalChargesValue.Text = (currBooking.Bill + (currBooking.Bill * 0.05)).ToString
+
         End If
     End Sub
 
@@ -253,4 +257,5 @@
         GroupBox1.Visible = True
         Timer2.Start()
     End Sub
+
 End Class
