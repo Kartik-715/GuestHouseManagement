@@ -49,6 +49,9 @@ Partial Class Dashboard
         Me.btnMyBills = New WindowsApplication1.RoundButton()
         Me.btnBookARoom = New WindowsApplication1.RoundButton()
         Me.btnLogOut = New WindowsApplication1.RoundButton()
+        Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
+        Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
+        Me.BookingTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IITGLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +59,7 @@ Partial Class Dashboard
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -347,13 +351,26 @@ Partial Class Dashboard
         Me.btnLogOut.Text = "Log Out"
         Me.btnLogOut.UseVisualStyleBackColor = False
         '
+        'UserTableTableAdapter1
+        '
+        Me.UserTableTableAdapter1.ClearBeforeFill = True
+        '
+        'GuestHouseDataSet1
+        '
+        Me.GuestHouseDataSet1.DataSetName = "guestHouseDataSet"
+        Me.GuestHouseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BookingTableAdapter1
+        '
+        Me.BookingTableAdapter1.ClearBeforeFill = True
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DodgerBlue
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.blueAbstract2
-        Me.ClientSize = New System.Drawing.Size(1121, 721)
+        Me.ClientSize = New System.Drawing.Size(953, 597)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblDashboard)
         Me.Controls.Add(Me.RoundButton1)
@@ -378,6 +395,7 @@ Partial Class Dashboard
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -407,4 +425,7 @@ Partial Class Dashboard
     Friend WithEvents lblBookedTill As System.Windows.Forms.Label
     Friend WithEvents lblBookedFrom As System.Windows.Forms.Label
     Friend WithEvents lblBookingID As System.Windows.Forms.Label
+    Friend WithEvents UserTableTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
+    Friend WithEvents GuestHouseDataSet1 As WindowsApplication1.guestHouseDataSet
+    Friend WithEvents BookingTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter
 End Class
