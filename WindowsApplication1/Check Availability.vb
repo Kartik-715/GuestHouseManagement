@@ -117,6 +117,7 @@
             comboBoxAvailRooms.Show()
             btnBookNow.Show()
             lblSelectRoom.Show()
+            GroupBoxOccupancy.Show()
         Else
             comboBoxAvailRooms.Hide()
             btnBookNow.Hide()
@@ -128,6 +129,45 @@
         InitializeComponent()
         Show()
     End Sub
+
+    Public Function calculateBill(type As String, occupancy As Integer) As Integer
+        Dim initialBill As Integer = 0
+        Dim RoomChargesSingle() As Integer = {500, 900, 1500, 3000}
+        Dim RoomChargesDouble() As Integer = {700, 1100, 1700, 3500}
+        Dim noOfDays As Integer = (createDateTimeStamp(DateTimePickerTo.Value) - createDateTimeStamp(DateTimePickerFrom.Value)) + 1
+        If loggedUser = "admin" Then
+            initialBill = 0
+        ElseIf type = "Staff" Then
+            If occupancy = 1 Then
+                initialBill = noOfDays * RoomChargesSingle(3)
+            Else
+                initialBill = noOfDays * RoomChargesDouble(3)
+            End If
+        Else
+            If type = "Student" Then
+                If occupancy = 1 Then
+                    initialBill = Math.Min(noOfDays, 3) * RoomChargesSingle(1) + Math.Max(0, (noOfDays - 3)) * RoomChargesSingle(2)
+                Else
+                    initialBill = Math.Min(noOfDays, 3) * RoomChargesDouble(1) + Math.Max(0, (noOfDays - 3)) * RoomChargesDouble(2)
+                End If
+            ElseIf type = "Faculty" Then
+                If occupancy = 1 Then
+                    initialBill = noOfDays * RoomChargesSingle(2)
+                Else
+                    initialBill = noOfDays * RoomChargesDouble(2)
+                End If
+            Else
+                If occupancy = 1 Then
+                    initialBill = noOfDays * RoomChargesSingle(0)
+                Else
+                    initialBill = noOfDays * RoomChargesDouble(0)
+                End If
+            End If
+        End If
+
+        Return initialBill
+
+    End Function
 
     Private Sub btnBookNow_Click(sender As Object, e As EventArgs) Handles btnBookNow.Click
         If loggedUser = "anonymous" Then
@@ -142,8 +182,18 @@
                 Table = UserTableTableAdapter1.GetUserData(loggedUser)
                 Dim user As guestHouseDataSet.userTableRow
                 user = Table.Rows(0)
+
+                Dim Occpancy As Integer = 1
+                If rbtnSingle.Checked = True Then
+                    Occpancy = 1
+                Else
+                    Occpancy = 2
+                End If
+
+                Dim initialBill As Integer = 0
+                initialBill = calculateBill(user.Category, Occpancy)
                 If loggedUser = "admin" Or user.Category = "Staff" Then
-                    BookingTableAdapter1.BookRoom(comboBoxAvailRooms.Text, loggedUser, createDateTimeStamp(DateTimePickerFrom.Value), createDateTimeStamp(DateTimePickerTo.Value), txtName.Text, txtLastName.Text, txtPhone.Text, True)
+                    BookingTableAdapter1.BookRoom(comboBoxAvailRooms.Text, loggedUser, createDateTimeStamp(DateTimePickerFrom.Value), createDateTimeStamp(DateTimePickerTo.Value), txtName.Text, txtLastName.Text, txtPhone.Text, True, initialBill, Occpancy)
                     ' Room Booked ' 
                     Dim lastAdded As Integer = BookingTableAdapter1.getLatestID()
                     Dim bookingID As String = genBookingID(user, lastAdded)
@@ -153,7 +203,7 @@
                     If BookingTableAdapter1.GetCurrentBooking(createDateTimeStamp(Date.Now), loggedUser).Rows.Count > 0 Then
                         MsgBox("You Have Already Booked A Room!")
                     Else
-                        BookingTableAdapter1.BookRoom(comboBoxAvailRooms.Text, loggedUser, createDateTimeStamp(DateTimePickerFrom.Value), createDateTimeStamp(DateTimePickerTo.Value), txtName.Text, txtLastName.Text, txtPhone.Text, False)
+                        BookingTableAdapter1.BookRoom(comboBoxAvailRooms.Text, loggedUser, createDateTimeStamp(DateTimePickerFrom.Value), createDateTimeStamp(DateTimePickerTo.Value), txtName.Text, txtLastName.Text, txtPhone.Text, False, initialBill, Occpancy)
                         Dim lastAdded As Integer = BookingTableAdapter1.getLatestID()
                         Dim bookingID As String = genBookingID(user, lastAdded)
                         BookingTableAdapter1.updateBookingID(bookingID, lastAdded)
@@ -162,8 +212,8 @@
                 End If
                 reloadForm()
             End If
-
         End If
+
     End Sub
 
     Private Sub DateTimePickerFrom_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerFrom.ValueChanged

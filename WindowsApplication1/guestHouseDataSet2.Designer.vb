@@ -1093,8 +1093,6 @@ Partial Public Class guestHouseDataSet
 
         Private columnBookedBy As Global.System.Data.DataColumn
 
-        Private columnBill As Global.System.Data.DataColumn
-
         Private columnBookingConfirmed As Global.System.Data.DataColumn
 
         Private columnBookedFrom As Global.System.Data.DataColumn
@@ -1106,6 +1104,12 @@ Partial Public Class guestHouseDataSet
         Private columnBookingForLastName As Global.System.Data.DataColumn
 
         Private columnBookingForMobileNo As Global.System.Data.DataColumn
+
+        Private columnBookingID As Global.System.Data.DataColumn
+
+        Private columnOccupancy As Global.System.Data.DataColumn
+
+        Private columnBill As Global.System.Data.DataColumn
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
@@ -1168,14 +1172,6 @@ Partial Public Class guestHouseDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property BillColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnBill
-            End Get
-        End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public ReadOnly Property BookingConfirmedColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnBookingConfirmed
@@ -1223,6 +1219,30 @@ Partial Public Class guestHouseDataSet
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property BookingIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBookingID
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property OccupancyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOccupancy
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property BillColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBill
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -1259,9 +1279,9 @@ Partial Public Class guestHouseDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddBookingRow(ByVal RoomNo As String, ByVal BookedBy As String, ByVal Bill As String, ByVal BookingConfirmed As Boolean, ByVal BookedFrom As Integer, ByVal BookedTill As Integer, ByVal BookingForFirstName As String, ByVal BookingForLastName As String, ByVal BookingForMobileNo As String) As BookingRow
+        Public Overloads Function AddBookingRow(ByVal RoomNo As String, ByVal BookedBy As String, ByVal BookingConfirmed As Boolean, ByVal BookedFrom As Integer, ByVal BookedTill As Integer, ByVal BookingForFirstName As String, ByVal BookingForLastName As String, ByVal BookingForMobileNo As String, ByVal BookingID As String, ByVal Occupancy As Integer, ByVal Bill As Integer) As BookingRow
             Dim rowBookingRow As BookingRow = CType(Me.NewRow, BookingRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, RoomNo, BookedBy, Bill, BookingConfirmed, BookedFrom, BookedTill, BookingForFirstName, BookingForLastName, BookingForMobileNo}
+            Dim columnValuesArray() As Object = New Object() {Nothing, RoomNo, BookedBy, BookingConfirmed, BookedFrom, BookedTill, BookingForFirstName, BookingForLastName, BookingForMobileNo, BookingID, Occupancy, Bill}
             rowBookingRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowBookingRow)
             Return rowBookingRow
@@ -1293,13 +1313,15 @@ Partial Public Class guestHouseDataSet
             Me.columnID = MyBase.Columns("ID")
             Me.columnRoomNo = MyBase.Columns("RoomNo")
             Me.columnBookedBy = MyBase.Columns("BookedBy")
-            Me.columnBill = MyBase.Columns("Bill")
             Me.columnBookingConfirmed = MyBase.Columns("BookingConfirmed")
             Me.columnBookedFrom = MyBase.Columns("BookedFrom")
             Me.columnBookedTill = MyBase.Columns("BookedTill")
             Me.columnBookingForFirstName = MyBase.Columns("BookingForFirstName")
             Me.columnBookingForLastName = MyBase.Columns("BookingForLastName")
             Me.columnBookingForMobileNo = MyBase.Columns("BookingForMobileNo")
+            Me.columnBookingID = MyBase.Columns("BookingID")
+            Me.columnOccupancy = MyBase.Columns("Occupancy")
+            Me.columnBill = MyBase.Columns("Bill")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -1311,8 +1333,6 @@ Partial Public Class guestHouseDataSet
             MyBase.Columns.Add(Me.columnRoomNo)
             Me.columnBookedBy = New Global.System.Data.DataColumn("BookedBy", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBookedBy)
-            Me.columnBill = New Global.System.Data.DataColumn("Bill", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnBill)
             Me.columnBookingConfirmed = New Global.System.Data.DataColumn("BookingConfirmed", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBookingConfirmed)
             Me.columnBookedFrom = New Global.System.Data.DataColumn("BookedFrom", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
@@ -1325,6 +1345,12 @@ Partial Public Class guestHouseDataSet
             MyBase.Columns.Add(Me.columnBookingForLastName)
             Me.columnBookingForMobileNo = New Global.System.Data.DataColumn("BookingForMobileNo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnBookingForMobileNo)
+            Me.columnBookingID = New Global.System.Data.DataColumn("BookingID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBookingID)
+            Me.columnOccupancy = New Global.System.Data.DataColumn("Occupancy", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOccupancy)
+            Me.columnBill = New Global.System.Data.DataColumn("Bill", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBill)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, True))
             Me.columnID.AutoIncrement = True
             Me.columnID.AutoIncrementSeed = -1
@@ -1333,10 +1359,10 @@ Partial Public Class guestHouseDataSet
             Me.columnID.Unique = True
             Me.columnRoomNo.MaxLength = 255
             Me.columnBookedBy.MaxLength = 255
-            Me.columnBill.MaxLength = 255
             Me.columnBookingForFirstName.MaxLength = 255
             Me.columnBookingForLastName.MaxLength = 255
             Me.columnBookingForMobileNo.MaxLength = 255
+            Me.columnBookingID.MaxLength = 255
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -1967,21 +1993,6 @@ Partial Public Class guestHouseDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Bill() As String
-            Get
-                Try
-                    Return CType(Me(Me.tableBooking.BillColumn), String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Bill' in table 'Booking' is DBNull.", e)
-                End Try
-            End Get
-            Set(value As String)
-                Me(Me.tableBooking.BillColumn) = value
-            End Set
-        End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Property BookingConfirmed() As Boolean
             Get
                 Try
@@ -2072,6 +2083,51 @@ Partial Public Class guestHouseDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property BookingID() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableBooking.BookingIDColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BookingID' in table 'Booking' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableBooking.BookingIDColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Occupancy() As Integer
+            Get
+                Try
+                    Return CType(Me(Me.tableBooking.OccupancyColumn), Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Occupancy' in table 'Booking' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Integer)
+                Me(Me.tableBooking.OccupancyColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Bill() As Integer
+            Get
+                Try
+                    Return CType(Me(Me.tableBooking.BillColumn), Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Bill' in table 'Booking' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Integer)
+                Me(Me.tableBooking.BillColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsRoomNoNull() As Boolean
             Return Me.IsNull(Me.tableBooking.RoomNoColumn)
         End Function
@@ -2092,18 +2148,6 @@ Partial Public Class guestHouseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetBookedByNull()
             Me(Me.tableBooking.BookedByColumn) = Global.System.Convert.DBNull
-        End Sub
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function IsBillNull() As Boolean
-            Return Me.IsNull(Me.tableBooking.BillColumn)
-        End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub SetBillNull()
-            Me(Me.tableBooking.BillColumn) = Global.System.Convert.DBNull
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -2176,6 +2220,42 @@ Partial Public Class guestHouseDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetBookingForMobileNoNull()
             Me(Me.tableBooking.BookingForMobileNoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsBookingIDNull() As Boolean
+            Return Me.IsNull(Me.tableBooking.BookingIDColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetBookingIDNull()
+            Me(Me.tableBooking.BookingIDColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsOccupancyNull() As Boolean
+            Return Me.IsNull(Me.tableBooking.OccupancyColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetOccupancyNull()
+            Me(Me.tableBooking.OccupancyColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsBillNull() As Boolean
+            Return Me.IsNull(Me.tableBooking.BillColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetBillNull()
+            Me(Me.tableBooking.BillColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 
@@ -3774,32 +3854,34 @@ Namespace guestHouseDataSetTableAdapters
             tableMapping.ColumnMappings.Add("ID", "ID")
             tableMapping.ColumnMappings.Add("RoomNo", "RoomNo")
             tableMapping.ColumnMappings.Add("BookedBy", "BookedBy")
-            tableMapping.ColumnMappings.Add("Bill", "Bill")
             tableMapping.ColumnMappings.Add("BookingConfirmed", "BookingConfirmed")
             tableMapping.ColumnMappings.Add("BookedFrom", "BookedFrom")
             tableMapping.ColumnMappings.Add("BookedTill", "BookedTill")
             tableMapping.ColumnMappings.Add("BookingForFirstName", "BookingForFirstName")
             tableMapping.ColumnMappings.Add("BookingForLastName", "BookingForLastName")
             tableMapping.ColumnMappings.Add("BookingForMobileNo", "BookingForMobileNo")
+            tableMapping.ColumnMappings.Add("BookingID", "BookingID")
+            tableMapping.ColumnMappings.Add("Occupancy", "Occupancy")
+            tableMapping.ColumnMappings.Add("Bill", "Bill")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM `Booking` WHERE ((`ID` = ?) AND ((? = 1 AND `RoomNo` IS NULL) OR (`Ro" & _
                 "omNo` = ?)) AND ((? = 1 AND `BookedBy` IS NULL) OR (`BookedBy` = ?)) AND ((? = 1" & _
-                " AND `Bill` IS NULL) OR (`Bill` = ?)) AND ((? = 1 AND `BookingConfirmed` IS NULL" & _
-                ") OR (`BookingConfirmed` = ?)) AND ((? = 1 AND `BookedFrom` IS NULL) OR (`Booked" & _
-                "From` = ?)) AND ((? = 1 AND `BookedTill` IS NULL) OR (`BookedTill` = ?)) AND ((?" & _
-                " = 1 AND `BookingForFirstName` IS NULL) OR (`BookingForFirstName` = ?)) AND ((? " & _
-                "= 1 AND `BookingForLastName` IS NULL) OR (`BookingForLastName` = ?)) AND ((? = 1" & _
-                " AND `BookingForMobileNo` IS NULL) OR (`BookingForMobileNo` = ?)))"
+                " AND `BookingConfirmed` IS NULL) OR (`BookingConfirmed` = ?)) AND ((? = 1 AND `B" & _
+                "ookedFrom` IS NULL) OR (`BookedFrom` = ?)) AND ((? = 1 AND `BookedTill` IS NULL)" & _
+                " OR (`BookedTill` = ?)) AND ((? = 1 AND `BookingForFirstName` IS NULL) OR (`Book" & _
+                "ingForFirstName` = ?)) AND ((? = 1 AND `BookingForLastName` IS NULL) OR (`Bookin" & _
+                "gForLastName` = ?)) AND ((? = 1 AND `BookingForMobileNo` IS NULL) OR (`BookingFo" & _
+                "rMobileNo` = ?)) AND ((? = 1 AND `BookingID` IS NULL) OR (`BookingID` = ?)) AND " & _
+                "((? = 1 AND `Occupancy` IS NULL) OR (`Occupancy` = ?)) AND ((? = 1 AND `Bill` IS" & _
+                " NULL) OR (`Bill` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "ID", Global.System.Data.DataRowVersion.Original, False, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RoomNo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "RoomNo", Global.System.Data.DataRowVersion.Original, True, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RoomNo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "RoomNo", Global.System.Data.DataRowVersion.Original, False, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookedBy", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedBy", Global.System.Data.DataRowVersion.Original, True, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookedBy", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedBy", Global.System.Data.DataRowVersion.Original, False, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Bill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bill", Global.System.Data.DataRowVersion.Original, True, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Bill", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bill", Global.System.Data.DataRowVersion.Original, False, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookingConfirmed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingConfirmed", Global.System.Data.DataRowVersion.Original, True, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookingConfirmed", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingConfirmed", Global.System.Data.DataRowVersion.Original, False, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookedFrom", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedFrom", Global.System.Data.DataRowVersion.Original, True, Nothing))
@@ -3812,51 +3894,60 @@ Namespace guestHouseDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookingForLastName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForLastName", Global.System.Data.DataRowVersion.Original, False, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookingForMobileNo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForMobileNo", Global.System.Data.DataRowVersion.Original, True, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookingForMobileNo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForMobileNo", Global.System.Data.DataRowVersion.Original, False, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookingID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingID", Global.System.Data.DataRowVersion.Original, True, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookingID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingID", Global.System.Data.DataRowVersion.Original, False, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Occupancy", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Occupancy", Global.System.Data.DataRowVersion.Original, True, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Occupancy", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Occupancy", Global.System.Data.DataRowVersion.Original, False, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Bill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bill", Global.System.Data.DataRowVersion.Original, True, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Bill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bill", Global.System.Data.DataRowVersion.Original, False, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Booking` (`RoomNo`, `BookedBy`, `Bill`, `BookingConfirmed`, `BookedF" & _
-                "rom`, `BookedTill`, `BookingForFirstName`, `BookingForLastName`, `BookingForMobi" & _
-                "leNo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `Booking` (`RoomNo`, `BookedBy`, `BookingConfirmed`, `BookedFrom`, `B" & _
+                "ookedTill`, `BookingForFirstName`, `BookingForLastName`, `BookingForMobileNo`, `" & _
+                "BookingID`, `Occupancy`, `Bill`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RoomNo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "RoomNo", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedBy", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedBy", Global.System.Data.DataRowVersion.Current, False, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Bill", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bill", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingConfirmed", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingConfirmed", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedFrom", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedFrom", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedTill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedTill", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingForFirstName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForFirstName", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingForLastName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForLastName", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingForMobileNo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForMobileNo", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingID", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Occupancy", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Occupancy", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Bill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bill", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `Booking` SET `RoomNo` = ?, `BookedBy` = ?, `Bill` = ?, `BookingConfirmed`" & _
-                " = ?, `BookedFrom` = ?, `BookedTill` = ?, `BookingForFirstName` = ?, `BookingFor" & _
-                "LastName` = ?, `BookingForMobileNo` = ? WHERE ((`ID` = ?) AND ((? = 1 AND `RoomN" & _
-                "o` IS NULL) OR (`RoomNo` = ?)) AND ((? = 1 AND `BookedBy` IS NULL) OR (`BookedBy" & _
-                "` = ?)) AND ((? = 1 AND `Bill` IS NULL) OR (`Bill` = ?)) AND ((? = 1 AND `Bookin" & _
-                "gConfirmed` IS NULL) OR (`BookingConfirmed` = ?)) AND ((? = 1 AND `BookedFrom` I" & _
-                "S NULL) OR (`BookedFrom` = ?)) AND ((? = 1 AND `BookedTill` IS NULL) OR (`Booked" & _
-                "Till` = ?)) AND ((? = 1 AND `BookingForFirstName` IS NULL) OR (`BookingForFirstN" & _
-                "ame` = ?)) AND ((? = 1 AND `BookingForLastName` IS NULL) OR (`BookingForLastName" & _
-                "` = ?)) AND ((? = 1 AND `BookingForMobileNo` IS NULL) OR (`BookingForMobileNo` =" & _
-                " ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `Booking` SET `RoomNo` = ?, `BookedBy` = ?, `BookingConfirmed` = ?, `Booke" & _
+                "dFrom` = ?, `BookedTill` = ?, `BookingForFirstName` = ?, `BookingForLastName` = " & _
+                "?, `BookingForMobileNo` = ?, `BookingID` = ?, `Occupancy` = ?, `Bill` = ? WHERE " & _
+                "((`ID` = ?) AND ((? = 1 AND `RoomNo` IS NULL) OR (`RoomNo` = ?)) AND ((? = 1 AND" & _
+                " `BookedBy` IS NULL) OR (`BookedBy` = ?)) AND ((? = 1 AND `BookingConfirmed` IS " & _
+                "NULL) OR (`BookingConfirmed` = ?)) AND ((? = 1 AND `BookedFrom` IS NULL) OR (`Bo" & _
+                "okedFrom` = ?)) AND ((? = 1 AND `BookedTill` IS NULL) OR (`BookedTill` = ?)) AND" & _
+                " ((? = 1 AND `BookingForFirstName` IS NULL) OR (`BookingForFirstName` = ?)) AND " & _
+                "((? = 1 AND `BookingForLastName` IS NULL) OR (`BookingForLastName` = ?)) AND ((?" & _
+                " = 1 AND `BookingForMobileNo` IS NULL) OR (`BookingForMobileNo` = ?)) AND ((? = " & _
+                "1 AND `BookingID` IS NULL) OR (`BookingID` = ?)) AND ((? = 1 AND `Occupancy` IS " & _
+                "NULL) OR (`Occupancy` = ?)) AND ((? = 1 AND `Bill` IS NULL) OR (`Bill` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RoomNo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "RoomNo", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedBy", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedBy", Global.System.Data.DataRowVersion.Current, False, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Bill", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bill", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingConfirmed", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingConfirmed", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedFrom", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedFrom", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedTill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedTill", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingForFirstName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForFirstName", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingForLastName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForLastName", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingForMobileNo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForMobileNo", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingID", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Occupancy", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Occupancy", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Bill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bill", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "ID", Global.System.Data.DataRowVersion.Original, False, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RoomNo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "RoomNo", Global.System.Data.DataRowVersion.Original, True, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RoomNo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "RoomNo", Global.System.Data.DataRowVersion.Original, False, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookedBy", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedBy", Global.System.Data.DataRowVersion.Original, True, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookedBy", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedBy", Global.System.Data.DataRowVersion.Original, False, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Bill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bill", Global.System.Data.DataRowVersion.Original, True, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Bill", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bill", Global.System.Data.DataRowVersion.Original, False, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookingConfirmed", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingConfirmed", Global.System.Data.DataRowVersion.Original, True, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookingConfirmed", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingConfirmed", Global.System.Data.DataRowVersion.Original, False, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookedFrom", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedFrom", Global.System.Data.DataRowVersion.Original, True, Nothing))
@@ -3869,6 +3960,12 @@ Namespace guestHouseDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookingForLastName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForLastName", Global.System.Data.DataRowVersion.Original, False, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookingForMobileNo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForMobileNo", Global.System.Data.DataRowVersion.Original, True, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookingForMobileNo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForMobileNo", Global.System.Data.DataRowVersion.Original, False, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_BookingID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingID", Global.System.Data.DataRowVersion.Original, True, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_BookingID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingID", Global.System.Data.DataRowVersion.Original, False, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Occupancy", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Occupancy", Global.System.Data.DataRowVersion.Original, True, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Occupancy", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Occupancy", Global.System.Data.DataRowVersion.Original, False, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Bill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bill", Global.System.Data.DataRowVersion.Original, True, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Bill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bill", Global.System.Data.DataRowVersion.Original, False, Nothing))
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -3884,13 +3981,15 @@ Namespace guestHouseDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(7) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, RoomNo, BookedBy, Bill, BookingConfirmed, BookedFrom, BookedTill, Book" & _
-                "ingForFirstName, BookingForLastName, BookingForMobileNo FROM Booking"
+            Me._commandCollection(0).CommandText = "SELECT ID, RoomNo, BookedBy, BookingConfirmed, BookedFrom, BookedTill, BookingFor" & _
+                "FirstName, BookingForLastName, BookingForMobileNo, BookingID, Occupancy, Bill FR" & _
+                "OM Booking"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "INSERT INTO Booking" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                  (RoomNo, BookedBy, BookedFrom, BookedTill," & _
-                " BookingForFirstName, BookingForLastName, BookingForMobileNo, BookingConfirmed)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+                " BookingForFirstName, BookingForLastName, BookingForMobileNo, BookingConfirmed, " & _
+                "Bill, Occupancy)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RoomNo", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "RoomNo", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedBy", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedBy", Global.System.Data.DataRowVersion.Current, False, Nothing))
@@ -3900,32 +3999,35 @@ Namespace guestHouseDataSetTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingForLastName", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForLastName", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingForMobileNo", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingForMobileNo", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookingConfirmed", Global.System.Data.OleDb.OleDbType.[Boolean], 2, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookingConfirmed", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Bill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Bill", Global.System.Data.DataRowVersion.Current, False, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Occupancy", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "Occupancy", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(2) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT ID, RoomNo, BookedBy, Bill, BookingConfirmed, BookedFrom, BookedTill, Book" & _
-                "ingForFirstName, BookingForLastName, BookingForMobileNo, BookingID" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM     Boo" & _
-                "king" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE  (BookedTill >= ?) AND (BookingConfirmed = True)"
+            Me._commandCollection(2).CommandText = "SELECT ID, RoomNo, BookedBy, BookingConfirmed, BookedFrom, BookedTill, BookingFor" & _
+                "FirstName, BookingForLastName, BookingForMobileNo, BookingID, Occupancy, Bill FR" & _
+                "OM Booking WHERE (BookedTill >= ?) AND (BookingConfirmed = True)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedTill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedTill", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(3) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT ID, RoomNo, BookedBy, Bill, BookingConfirmed, BookedFrom, BookedTill, Book" & _
-                "ingForFirstName, BookingForLastName, BookingForMobileNo FROM Booking WHERE (Book" & _
-                "ingConfirmed = False) ORDER BY BookedFrom"
+            Me._commandCollection(3).CommandText = "SELECT ID, RoomNo, BookedBy, BookingConfirmed, BookedFrom, BookedTill, BookingFor" & _
+                "FirstName, BookingForLastName, BookingForMobileNo, BookingID, Occupancy, Bill FR" & _
+                "OM Booking WHERE (BookingConfirmed = False) ORDER BY BookedFrom"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT     RoomNo, BookedBy, BookingConfirmed, BookedFrom, BookedTill, BookingFor" & _
-                "FirstName, BookingForLastName, BookingForMobileNo, ID" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM        Booking" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHER" & _
-                "E     (BookedTill >= ?) AND (BookedBy = ?)"
+            Me._commandCollection(4).CommandText = "SELECT RoomNo, BookedBy, BookingConfirmed, BookedFrom, BookedTill, BookingForFirs" & _
+                "tName, BookingForLastName, BookingForMobileNo, ID, BookingID, Occupancy, Bill FR" & _
+                "OM Booking WHERE (BookedTill >= ?) AND (BookedBy = ?)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedTill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedTill", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedBy", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedBy", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(5) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(5).Connection = Me.Connection
             Me._commandCollection(5).CommandText = "SELECT RoomNo, BookingConfirmed, BookedFrom, BookedTill, BookingForFirstName, Boo" & _
-                "kingForLastName, BookingForMobileNo FROM Booking WHERE (BookedFrom <= ?) AND (Bo" & _
-                "okedTill >= ?) OR (BookedFrom <= ?) AND (BookedTill >= ?)"
+                "kingForLastName, BookingForMobileNo, BookingID, Occupancy, Bill FROM Booking WHE" & _
+                "RE (BookedFrom <= ?) AND (BookedTill >= ?) OR (BookedFrom <= ?) AND (BookedTill " & _
+                ">= ?)"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedFrom", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedFrom", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedTill", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedTill", Global.System.Data.DataRowVersion.Current, False, Nothing))
@@ -4107,7 +4209,7 @@ Namespace guestHouseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, True)> _
-        Public Overridable Overloads Function Delete(ByVal Original_ID As Integer, ByVal Original_RoomNo As String, ByVal Original_BookedBy As String, ByVal Original_Bill As String, ByVal Original_BookingConfirmed As Boolean, ByVal Original_BookedFrom As Global.System.Nullable(Of Integer), ByVal Original_BookedTill As Global.System.Nullable(Of Integer), ByVal Original_BookingForFirstName As String, ByVal Original_BookingForLastName As String, ByVal Original_BookingForMobileNo As String) As Integer
+        Public Overridable Overloads Function Delete(ByVal Original_ID As Integer, ByVal Original_RoomNo As String, ByVal Original_BookedBy As String, ByVal Original_BookingConfirmed As Boolean, ByVal Original_BookedFrom As Global.System.Nullable(Of Integer), ByVal Original_BookedTill As Global.System.Nullable(Of Integer), ByVal Original_BookingForFirstName As String, ByVal Original_BookingForLastName As String, ByVal Original_BookingForMobileNo As String, ByVal Original_BookingID As String, ByVal Original_Occupancy As Global.System.Nullable(Of Integer), ByVal Original_Bill As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID, Integer)
             If (Original_RoomNo Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1, Object)
@@ -4123,49 +4225,63 @@ Namespace guestHouseDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0, Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_BookedBy, String)
             End If
-            If (Original_Bill Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1, Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0, Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Bill, String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0, Object)
-            Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_BookingConfirmed, Boolean)
+            Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0, Object)
+            Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_BookingConfirmed, Boolean)
             If (Original_BookedFrom.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_BookedFrom.Value, Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (Original_BookedTill.HasValue = True) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0, Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_BookedFrom.Value, Integer)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_BookedTill.Value, Integer)
             Else
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
-            If (Original_BookedTill.HasValue = True) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0, Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_BookedTill.Value, Integer)
-            Else
+            If (Original_BookingForFirstName Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_BookingForFirstName, String)
             End If
-            If (Original_BookingForFirstName Is Nothing) Then
+            If (Original_BookingForLastName Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0, Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_BookingForFirstName, String)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_BookingForLastName, String)
             End If
-            If (Original_BookingForLastName Is Nothing) Then
+            If (Original_BookingForMobileNo Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0, Object)
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_BookingForLastName, String)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_BookingForMobileNo, String)
             End If
-            If (Original_BookingForMobileNo Is Nothing) Then
+            If (Original_BookingID Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1, Object)
                 Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0, Object)
-                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_BookingForMobileNo, String)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_BookingID, String)
+            End If
+            If (Original_Occupancy.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_Occupancy.Value, Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Bill.HasValue = True) Then
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0, Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_Bill.Value, Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1, Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
@@ -4186,7 +4302,7 @@ Namespace guestHouseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, True)> _
-        Public Overridable Overloads Function Insert(ByVal RoomNo As String, ByVal BookedBy As String, ByVal Bill As String, ByVal BookingConfirmed As Boolean, ByVal BookedFrom As Global.System.Nullable(Of Integer), ByVal BookedTill As Global.System.Nullable(Of Integer), ByVal BookingForFirstName As String, ByVal BookingForLastName As String, ByVal BookingForMobileNo As String) As Integer
+        Public Overridable Overloads Function Insert(ByVal RoomNo As String, ByVal BookedBy As String, ByVal BookingConfirmed As Boolean, ByVal BookedFrom As Global.System.Nullable(Of Integer), ByVal BookedTill As Global.System.Nullable(Of Integer), ByVal BookingForFirstName As String, ByVal BookingForLastName As String, ByVal BookingForMobileNo As String, ByVal BookingID As String, ByVal Occupancy As Global.System.Nullable(Of Integer), ByVal Bill As Global.System.Nullable(Of Integer)) As Integer
             If (RoomNo Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -4197,36 +4313,46 @@ Namespace guestHouseDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(BookedBy, String)
             End If
-            If (Bill Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Bill, String)
-            End If
-            Me.Adapter.InsertCommand.Parameters(3).Value = CType(BookingConfirmed, Boolean)
+            Me.Adapter.InsertCommand.Parameters(2).Value = CType(BookingConfirmed, Boolean)
             If (BookedFrom.HasValue = True) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(BookedFrom.Value, Integer)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(BookedFrom.Value, Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (BookedTill.HasValue = True) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(BookedTill.Value, Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (BookedTill.HasValue = True) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(BookedTill.Value, Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
-            End If
             If (BookingForFirstName Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(BookingForFirstName, String)
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(BookingForFirstName, String)
             End If
             If (BookingForLastName Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(BookingForLastName, String)
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(BookingForLastName, String)
             End If
             If (BookingForMobileNo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(BookingForMobileNo, String)
+            End If
+            If (BookingID Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(BookingForMobileNo, String)
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(BookingID, String)
+            End If
+            If (Occupancy.HasValue = True) Then
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(Occupancy.Value, Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            If (Bill.HasValue = True) Then
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(Bill.Value, Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
@@ -4250,23 +4376,27 @@ Namespace guestHouseDataSetTableAdapters
         Public Overridable Overloads Function Update( _
                     ByVal RoomNo As String, _
                     ByVal BookedBy As String, _
-                    ByVal Bill As String, _
                     ByVal BookingConfirmed As Boolean, _
                     ByVal BookedFrom As Global.System.Nullable(Of Integer), _
                     ByVal BookedTill As Global.System.Nullable(Of Integer), _
                     ByVal BookingForFirstName As String, _
                     ByVal BookingForLastName As String, _
                     ByVal BookingForMobileNo As String, _
+                    ByVal BookingID As String, _
+                    ByVal Occupancy As Global.System.Nullable(Of Integer), _
+                    ByVal Bill As Global.System.Nullable(Of Integer), _
                     ByVal Original_ID As Integer, _
                     ByVal Original_RoomNo As String, _
                     ByVal Original_BookedBy As String, _
-                    ByVal Original_Bill As String, _
                     ByVal Original_BookingConfirmed As Boolean, _
                     ByVal Original_BookedFrom As Global.System.Nullable(Of Integer), _
                     ByVal Original_BookedTill As Global.System.Nullable(Of Integer), _
                     ByVal Original_BookingForFirstName As String, _
                     ByVal Original_BookingForLastName As String, _
-                    ByVal Original_BookingForMobileNo As String) As Integer
+                    ByVal Original_BookingForMobileNo As String, _
+                    ByVal Original_BookingID As String, _
+                    ByVal Original_Occupancy As Global.System.Nullable(Of Integer), _
+                    ByVal Original_Bill As Global.System.Nullable(Of Integer)) As Integer
             If (RoomNo Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -4277,58 +4407,61 @@ Namespace guestHouseDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(BookedBy, String)
             End If
-            If (Bill Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Bill, String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(BookingConfirmed, Boolean)
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(BookingConfirmed, Boolean)
             If (BookedFrom.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(BookedFrom.Value, Integer)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(BookedFrom.Value, Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (BookedTill.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(BookedTill.Value, Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (BookedTill.HasValue = True) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(BookedTill.Value, Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
-            End If
             If (BookingForFirstName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(BookingForFirstName, String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(BookingForFirstName, String)
             End If
             If (BookingForLastName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(BookingForLastName, String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(BookingForLastName, String)
             End If
             If (BookingForMobileNo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(BookingForMobileNo, String)
+            End If
+            If (BookingID Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(BookingForMobileNo, String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(BookingID, String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_ID, Integer)
-            If (Original_RoomNo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1, Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            If (Occupancy.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Occupancy.Value, Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_RoomNo, String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
-            If (Original_BookedBy Is Nothing) Then
+            If (Bill.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Bill.Value, Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_ID, Integer)
+            If (Original_RoomNo Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_BookedBy, String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_RoomNo, String)
             End If
-            If (Original_Bill Is Nothing) Then
+            If (Original_BookedBy Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1, Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0, Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Bill, String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_BookedBy, String)
             End If
             Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0, Object)
             Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_BookingConfirmed, Boolean)
@@ -4367,6 +4500,27 @@ Namespace guestHouseDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0, Object)
                 Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_BookingForMobileNo, String)
             End If
+            If (Original_BookingID Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_BookingID, String)
+            End If
+            If (Original_Occupancy.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_Occupancy.Value, Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Bill.HasValue = True) Then
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0, Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_Bill.Value, Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1, Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4386,7 +4540,7 @@ Namespace guestHouseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, False)> _
-        Public Overridable Overloads Function BookRoom(ByVal RoomNo As String, ByVal BookedBy As String, ByVal BookedFrom As Global.System.Nullable(Of Integer), ByVal BookedTill As Global.System.Nullable(Of Integer), ByVal BookingForFirstName As String, ByVal BookingForLastName As String, ByVal BookingForMobileNo As String, ByVal BookingConfirmed As Boolean) As Integer
+        Public Overridable Overloads Function BookRoom(ByVal RoomNo As String, ByVal BookedBy As String, ByVal BookedFrom As Global.System.Nullable(Of Integer), ByVal BookedTill As Global.System.Nullable(Of Integer), ByVal BookingForFirstName As String, ByVal BookingForLastName As String, ByVal BookingForMobileNo As String, ByVal BookingConfirmed As Boolean, ByVal Bill As Global.System.Nullable(Of Integer), ByVal Occupancy As Global.System.Nullable(Of Integer)) As Integer
             Dim command As Global.System.Data.OleDb.OleDbCommand = Me.CommandCollection(1)
             If (RoomNo Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
@@ -4424,6 +4578,16 @@ Namespace guestHouseDataSetTableAdapters
                 command.Parameters(6).Value = CType(BookingForMobileNo, String)
             End If
             command.Parameters(7).Value = CType(BookingConfirmed, Boolean)
+            If (Bill.HasValue = True) Then
+                command.Parameters(8).Value = CType(Bill.Value, Integer)
+            Else
+                command.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (Occupancy.HasValue = True) Then
+                command.Parameters(9).Value = CType(Occupancy.Value, Integer)
+            Else
+                command.Parameters(9).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then
