@@ -79,4 +79,21 @@
     Private Sub PassButton_MouseDown(sender As Object, e As MouseEventArgs) Handles PassButton.MouseDown
 
     End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles lblForgotPass.Click
+        Me.Hide()
+        forgotPass.Show()
+    End Sub
+    Private Sub Label2_MouseHover(sender As Object, e As EventArgs) Handles lblForgotPass.MouseHover
+        Dim standardFont As Font = lblForgotPass.Font
+        Dim underFont As New Font(standardFont, FontStyle.Underline)
+
+        Me.lblForgotPass.Font = underFont
+    End Sub
+    Private Sub Label2_Mouseleave(sender As Object, e As EventArgs) Handles lblForgotPass.MouseLeave
+        Dim standardFont As Font = lblForgotPass.Font
+        Dim underFont As New Font(standardFont, FontStyle.Regular)
+
+        Me.lblForgotPass.Font = underFont
+    End Sub
 End Class

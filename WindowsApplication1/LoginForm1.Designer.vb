@@ -43,6 +43,7 @@ Partial Class LoginForm1
         Me.PassButton = New System.Windows.Forms.Button()
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.lblLogin = New System.Windows.Forms.Label()
+        Me.lblForgotPass = New System.Windows.Forms.Label()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,10 +53,9 @@ Partial Class LoginForm1
         '
         Me.lblEmail.Font = New System.Drawing.Font("Microsoft Tai Le", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEmail.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblEmail.Location = New System.Drawing.Point(101, 141)
-        Me.lblEmail.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblEmail.Location = New System.Drawing.Point(76, 115)
         Me.lblEmail.Name = "lblEmail"
-        Me.lblEmail.Size = New System.Drawing.Size(212, 46)
+        Me.lblEmail.Size = New System.Drawing.Size(159, 37)
         Me.lblEmail.TabIndex = 0
         Me.lblEmail.Text = "&Email"
         Me.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -65,10 +65,9 @@ Partial Class LoginForm1
         '
         Me.lblPassword.Font = New System.Drawing.Font("Microsoft Tai Le", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPassword.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblPassword.Location = New System.Drawing.Point(93, 235)
-        Me.lblPassword.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPassword.Location = New System.Drawing.Point(70, 191)
         Me.lblPassword.Name = "lblPassword"
-        Me.lblPassword.Size = New System.Drawing.Size(251, 46)
+        Me.lblPassword.Size = New System.Drawing.Size(188, 37)
         Me.lblPassword.TabIndex = 2
         Me.lblPassword.Text = "&Password"
         Me.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -76,22 +75,20 @@ Partial Class LoginForm1
         'txtEmail
         '
         Me.txtEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.Location = New System.Drawing.Point(103, 190)
-        Me.txtEmail.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtEmail.Location = New System.Drawing.Point(77, 154)
         Me.txtEmail.Multiline = True
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(348, 34)
+        Me.txtEmail.Size = New System.Drawing.Size(262, 28)
         Me.txtEmail.TabIndex = 1
         '
         'txtPassword
         '
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(103, 283)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPassword.Location = New System.Drawing.Point(77, 230)
         Me.txtPassword.Multiline = True
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(348, 34)
+        Me.txtPassword.Size = New System.Drawing.Size(262, 28)
         Me.txtPassword.TabIndex = 3
         '
         'OK
@@ -101,10 +98,9 @@ Partial Class LoginForm1
         Me.OK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.OK.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OK.ForeColor = System.Drawing.Color.White
-        Me.OK.Location = New System.Drawing.Point(101, 345)
-        Me.OK.Margin = New System.Windows.Forms.Padding(4)
+        Me.OK.Location = New System.Drawing.Point(75, 299)
         Me.OK.Name = "OK"
-        Me.OK.Size = New System.Drawing.Size(147, 44)
+        Me.OK.Size = New System.Drawing.Size(110, 36)
         Me.OK.TabIndex = 4
         Me.OK.Text = "&OK"
         Me.OK.UseVisualStyleBackColor = False
@@ -117,10 +113,9 @@ Partial Class LoginForm1
         Me.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancel.ForeColor = System.Drawing.Color.White
-        Me.Cancel.Location = New System.Drawing.Point(306, 345)
-        Me.Cancel.Margin = New System.Windows.Forms.Padding(4)
+        Me.Cancel.Location = New System.Drawing.Point(229, 299)
         Me.Cancel.Name = "Cancel"
-        Me.Cancel.Size = New System.Drawing.Size(147, 44)
+        Me.Cancel.Size = New System.Drawing.Size(110, 36)
         Me.Cancel.TabIndex = 5
         Me.Cancel.Text = "&Cancel"
         Me.Cancel.UseVisualStyleBackColor = False
@@ -143,10 +138,9 @@ Partial Class LoginForm1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(386, 252)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(290, 205)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(0, 17)
+        Me.Label1.Size = New System.Drawing.Size(0, 13)
         Me.Label1.TabIndex = 6
         '
         'PassButton
@@ -154,20 +148,19 @@ Partial Class LoginForm1
         Me.PassButton.BackColor = System.Drawing.Color.Transparent
         Me.PassButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.PassButton.Image = Global.WindowsApplication1.My.Resources.Resources.vision_off
-        Me.PassButton.Location = New System.Drawing.Point(418, 283)
-        Me.PassButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.PassButton.Location = New System.Drawing.Point(314, 230)
         Me.PassButton.Name = "PassButton"
-        Me.PassButton.Size = New System.Drawing.Size(35, 34)
+        Me.PassButton.Size = New System.Drawing.Size(26, 28)
         Me.PassButton.TabIndex = 6
         Me.PassButton.UseVisualStyleBackColor = False
         '
         'LogoPictureBox
         '
         Me.LogoPictureBox.Image = Global.WindowsApplication1.My.Resources.Resources.tealAbstract
-        Me.LogoPictureBox.Location = New System.Drawing.Point(-4, -1)
+        Me.LogoPictureBox.Location = New System.Drawing.Point(-3, -1)
         Me.LogoPictureBox.Margin = New System.Windows.Forms.Padding(0)
         Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(557, 94)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(418, 76)
         Me.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.LogoPictureBox.TabIndex = 0
         Me.LogoPictureBox.TabStop = False
@@ -177,23 +170,35 @@ Partial Class LoginForm1
         Me.lblLogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
         Me.lblLogin.Font = New System.Drawing.Font("Microsoft Tai Le", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLogin.ForeColor = System.Drawing.Color.White
-        Me.lblLogin.Location = New System.Drawing.Point(0, 75)
+        Me.lblLogin.Location = New System.Drawing.Point(0, 61)
         Me.lblLogin.Margin = New System.Windows.Forms.Padding(0)
         Me.lblLogin.Name = "lblLogin"
-        Me.lblLogin.Size = New System.Drawing.Size(553, 54)
+        Me.lblLogin.Size = New System.Drawing.Size(415, 44)
         Me.lblLogin.TabIndex = 8
         Me.lblLogin.Text = "Log In to your account"
         Me.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'lblForgotPass
+        '
+        Me.lblForgotPass.AutoSize = True
+        Me.lblForgotPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblForgotPass.ForeColor = System.Drawing.Color.Teal
+        Me.lblForgotPass.Location = New System.Drawing.Point(74, 265)
+        Me.lblForgotPass.Name = "lblForgotPass"
+        Me.lblForgotPass.Size = New System.Drawing.Size(148, 16)
+        Me.lblForgotPass.TabIndex = 9
+        Me.lblForgotPass.Text = "Forgot Your Password?"
+        '
         'LoginForm1
         '
         Me.AcceptButton = Me.OK
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.Azure
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(552, 417)
+        Me.ClientSize = New System.Drawing.Size(414, 357)
+        Me.Controls.Add(Me.lblForgotPass)
         Me.Controls.Add(Me.lblLogin)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PassButton)
@@ -207,7 +212,7 @@ Partial Class LoginForm1
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.Name = "LoginForm1"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
@@ -228,5 +233,6 @@ Partial Class LoginForm1
     Friend WithEvents lblLogin As System.Windows.Forms.Label
     Friend WithEvents OK As WindowsApplication1.RoundButton
     Friend WithEvents Cancel As WindowsApplication1.RoundButton
+    Friend WithEvents lblForgotPass As System.Windows.Forms.Label
 
 End Class
