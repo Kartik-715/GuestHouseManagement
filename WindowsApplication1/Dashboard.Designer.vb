@@ -174,10 +174,10 @@ Partial Class Dashboard
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Controls.Add(Me.PictureBox4)
-        Me.Panel1.Location = New System.Drawing.Point(227, 194)
+        Me.Panel1.Location = New System.Drawing.Point(194, 194)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(947, 566)
+        Me.Panel1.Size = New System.Drawing.Size(980, 566)
         Me.Panel1.TabIndex = 19
         '
         'GroupBox1

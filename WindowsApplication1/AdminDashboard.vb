@@ -26,6 +26,9 @@
             .GroupBox1.Hide()
             .GroupBox2.Hide()
         End With
+        With UserControl_dynamiccontrol1
+            .Hide()
+        End With
     End Sub
 
     Private Sub max()
@@ -103,8 +106,8 @@
         forminit()
         btnclicks()
         approveuser = 1
-        UserControl_admindashboard1.Show()
-        UserControl_admindashboard1.DataGridView1.Show()
+        UserControl_dynamiccontrol1.UserControl_dynamiccontrol_Load(e, e)
+        UserControl_dynamiccontrol1.Show()
     End Sub
 
     Private Sub btnAddRoom_Click(sender As Object, e As EventArgs) Handles btnAddRoom.Click
@@ -127,8 +130,8 @@
         forminit()
         btnclicks()
         pendingbooking = 1
-        UserControl_admindashboard1.Show()
-        UserControl_admindashboard1.DataGridPendingBookings.Show()
+        UserControl_dynamiccontrol1.UserControl_dynamiccontrol_Load(e, e)
+        UserControl_dynamiccontrol1.Show()
     End Sub
 
     Private Sub btnMyBills_Click(sender As Object, e As EventArgs) Handles btnMyBills.Click
