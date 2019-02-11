@@ -4,6 +4,10 @@ Public Class UserControl_dynamiccontrol
     <DllImport("user32.dll", EntryPoint:="SetProcessDPIAware")> _
     Public Shared Function SetProcessDPIAware() As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
+    Public Function createDateTimeStamp(currDate As Date) As Integer
+        Return CInt(currDate.ToString("yyyyMMdd"))
+    End Function
+
     Private Function loadApproveButtons()
         length = GuestHouseDataSet1.userTable.Rows.Count
         Dim n As Integer = 0
@@ -185,20 +189,97 @@ Public Class UserControl_dynamiccontrol
             End With
         End While
     End Function
+
+    Private Function loadAllBookings()
+        length = GuestHouseDataSet1.Booking.Rows.Count
+        Dim n As Integer = 0
+        Dim BookingTill(length - 1) As System.Windows.Forms.Label
+        Dim BookingFrom(length - 1) As System.Windows.Forms.Label
+        Dim RoomNum(length - 1) As System.Windows.Forms.Label
+        Dim BookingID(length - 1) As System.Windows.Forms.GroupBox
+        Dim Name(length - 1) As System.Windows.Forms.Label
+
+        For i As Integer = 0 To length - 1   ' making the button array and initialising it
+            BookingTill(i) = New System.Windows.Forms.Label
+            BookingFrom(i) = New System.Windows.Forms.Label
+            BookingID(i) = New System.Windows.Forms.GroupBox
+            Name(i) = New System.Windows.Forms.Label
+            RoomNum(i) = New System.Windows.Forms.Label
+
+
+        Next i
+
+        Dim xPos As Integer = 0  ' these two lines set the location for making the button array
+        Dim yPos As Integer = 0
+        While (n < length)
+            With (BookingID(n))
+                .Width = 500 ' Width of button
+                .Height = 250 ' Height of button
+                .Top = yPos  ' y coordinate of button
+                .Left = xPos  ' x coordinate of button
+                .Text = "Booking ID   " & GuestHouseDataSet1.Booking.Rows(n)("ID").ToString
+                Me.Controls.Add(BookingID(n))
+                xPos = xPos + 2 ' Left of next button
+                yPos = 50
+            End With
+            With (RoomNum(n))
+                .Width = 100 ' Width of button
+                .Height = 50 ' Height of button
+                .Top = yPos  ' y coordinate of button
+                .Left = xPos  ' x coordinate of button
+                .Text = "RoomNum:   " & GuestHouseDataSet1.Booking.Rows(n)("RoomNo")
+                BookingID(n).Controls.Add(RoomNum(n))
+                yPos = yPos + .Height ' Left of next button
+            End With
+            With (Name(n))
+                .Width = 100 ' Width of button
+                .Height = 50 ' Height of button
+                .Top = yPos  ' y coordinate of button
+                .Left = xPos  ' x coordinate of button
+                .Text = "Name    " & GuestHouseDataSet1.Booking.Rows(n)("BookingForFirstName").ToString & " " & GuestHouseDataSet1.Booking.Rows(n)("BookingForLastName").ToString
+                BookingID(n).Controls.Add(Name(n))
+                yPos = yPos + .Height ' Left of next button
+            End With
+            With (BookingFrom(n))
+                .Width = 100 ' Width of button
+                .Height = 50 ' Height of button
+                .Top = yPos  ' y coordinate of button
+                .Left = xPos  ' x coordinate of button
+                .Text = "Booking From:   " & GuestHouseDataSet1.Booking.Rows(n)("BookedFrom").ToString
+                BookingID(n).Controls.Add(BookingFrom(n))
+                yPos = yPos + .Height ' Yaha ki hai Bakchodi '
+            End With
+            With (BookingTill(n))
+                .Width = 100 ' Width of button
+                .Height = 50 ' Height of button
+                .Top = yPos  ' y coordinate of button
+                .Left = xPos  ' x coordinate of button
+                .Text = "Booking Till:   " & GuestHouseDataSet1.Booking.Rows(n)("BookedTill").ToString
+                BookingID(n).Controls.Add(BookingTill(n))
+                yPos = (50 + BookingID(n).Height) * (n + 1)  ' Next Y will be far ' 
+                n += 1
+            End With
+        End While
+    End Function
+
+
     Dim length As Integer
     Public Sub UserControl_dynamiccontrol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Controls.Clear()
         InitializeComponent()
         SetProcessDPIAware()
-        BookingTableAdapter1.FillByPendingBookings(GuestHouseDataSet1.Booking)
         UserTableTableAdapter1.getNonApproved(GuestHouseDataSet1.userTable)
         Me.Top = AdminDashboard.btnPendingBookings.Top
         Me.Left = AdminDashboard.btnPendingBookings.Right + 10
         Console.Write(length.ToString)
         If AdminDashboard.pendingbooking = 1 Then
+            BookingTableAdapter1.FillByPendingBookings(GuestHouseDataSet1.Booking)
             loadBookingButtons()
         ElseIf AdminDashboard.approveuser = 1 Then
             loadApproveButtons()
+        ElseIf AdminDashboard.allBooking = 1 Then
+            BookingTableAdapter1.FillAllCurrent(GuestHouseDataSet1.Booking, createDateTimeStamp(Date.Now))
+            loadAllBookings()
         End If
     End Sub
 

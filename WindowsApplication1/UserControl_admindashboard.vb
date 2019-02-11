@@ -29,7 +29,7 @@ Public Class UserControl_admindashboard
     Private Sub approveUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetProcessDPIAware()
         DataGridView1.Hide()
-        max()
+        'max()
         Try
             Me.UserTableTableAdapter.getNonApproved(Me.GuestHouseDataSet.userTable)
         Catch ex As System.Exception

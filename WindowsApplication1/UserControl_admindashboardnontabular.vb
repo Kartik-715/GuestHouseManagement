@@ -28,7 +28,7 @@ Public Class UserControl_admindashboardnontabular
     End Sub
 
     Private Sub usercontrol_load(sender As Object, e As EventArgs) Handles MyBase.Load
-        max()
+        'max()
         Try
             Me.UserTableTableAdapter.getNonApproved(Me.GuestHouseDataSet.userTable)
         Catch ex As System.Exception
