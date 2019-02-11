@@ -326,6 +326,11 @@ Public Class UserControl_dynamiccontrol
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
                 .Text = allRooms(n)
+                If availRooms.Contains(allRooms(n)) Then
+                    .BackColor = Color.Green
+                Else
+                    .BackColor = Color.Red
+                End If
                 If (n + 1) Mod 5 = 0 Then
                     yPos += .Height + 20 ' Next Y will be far 
                     xPos = 0
