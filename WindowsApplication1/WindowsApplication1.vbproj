@@ -237,6 +237,9 @@
     <Content Include="guestHouse.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="My Project\teal.jpg" />
+    <None Include="My Project\blueAbstract.jpg" />
+    <None Include="Resources\blueAbstract.jpg" />
     <None Include="Resources\tealAbstract.jpg" />
     <None Include="My Project\ghover.jpg" />
     <None Include="My Project\vision-off.png" />
