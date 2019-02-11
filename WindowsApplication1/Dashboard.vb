@@ -135,10 +135,43 @@
         End If
     End Sub
 
+    Private Sub btnUpdatePassword_MouseDown(sender As Object, e As EventArgs) Handles btnUpdatePassword.MouseHover
+        btnUpdatePassword.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub btnUpdatePassword_MouseOver(sender As Object, e As EventArgs) Handles btnUpdatePassword.MouseLeave
+        btnUpdatePassword.FlatAppearance.BorderSize = 0
+    End Sub
+
+
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
         check = 1
         Me.Close()
     End Sub
+    Private Sub btnLogout_MouseDown(sender As Object, e As EventArgs) Handles btnLogOut.MouseHover
+        btnLogOut.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub btnLogout_MouseOver(sender As Object, e As EventArgs) Handles btnLogOut.MouseLeave
+        btnLogOut.FlatAppearance.BorderSize = 0
+    End Sub
+    Private Sub btnMyBookings_MouseDown(sender As Object, e As EventArgs) Handles btnMyBookings.MouseHover
+        btnMyBookings.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub btnMyBookings_MouseOver(sender As Object, e As EventArgs) Handles btnMyBookings.MouseLeave
+        btnMyBookings.FlatAppearance.BorderSize = 0
+    End Sub
+    Private Sub btnMyBills_MouseDown(sender As Object, e As EventArgs) Handles btnMyBills.MouseHover
+        btnMyBills.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub btnMyBills_MouseOver(sender As Object, e As EventArgs) Handles btnMyBills.MouseLeave
+        btnMyBills.FlatAppearance.BorderSize = 0
+    End Sub
+    Private Sub btnBookARoom_MouseDown(sender As Object, e As EventArgs) Handles btnBookARoom.MouseHover
+        btnBookARoom.FlatAppearance.BorderSize = 1
+    End Sub
+    Private Sub btnBookARoom_MouseOver(sender As Object, e As EventArgs) Handles btnBookARoom.MouseLeave
+        btnBookARoom.FlatAppearance.BorderSize = 0
+    End Sub
+
 
     Public Sub New()
         InitializeComponent()
@@ -204,7 +237,7 @@
         Check_Availability.Show()
     End Sub
 
-    Private Sub RoundButton1_Click(sender As Object, e As EventArgs) Handles RoundButton1.Click
+    Private Sub RoundButton1_Click(sender As Object, e As EventArgs) Handles btnMyBookings.Click
         frminit()
         btnclicks()
         togglUP = False

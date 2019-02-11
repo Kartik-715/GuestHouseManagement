@@ -3,6 +3,7 @@
     Public approveuser As Integer
     Public bookroom As Integer
     Public pendingbooking As Integer
+    Public allBooking As Integer
     Public addremoveroom As Integer
     Public updatepassword As Integer
     Dim check As Integer = 0
@@ -13,6 +14,7 @@
         addremoveroom = 0
         pendingbooking = 0
         updatepassword = 0
+        allBooking = 0
     End Sub
 
     Private Sub btnclicks()
@@ -137,5 +139,13 @@
     Private Sub btnMyBills_Click(sender As Object, e As EventArgs) Handles btnMyBills.Click
         forminit()
         btnclicks()
+    End Sub
+
+    Private Sub btnAllBookings_Click(sender As Object, e As EventArgs) Handles btnAllBookings.Click
+        forminit()
+        btnclicks()
+        allBooking = 1
+        UserControl_dynamiccontrol1.UserControl_dynamiccontrol_Load(e, e)
+        UserControl_dynamiccontrol1.Show()
     End Sub
 End Class

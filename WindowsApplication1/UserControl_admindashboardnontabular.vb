@@ -7,8 +7,8 @@ Public Class UserControl_admindashboardnontabular
 
 
     Private Sub max()
-        Dim CW As Integer = Me.Width ' Current Width
-        Dim CH As Integer = Me.Height ' Current Height
+        Dim CW As Integer = Me.Width + 1 ' Current Width
+        Dim CH As Integer = Me.Height + 1 ' Current Height
         Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1080)
         Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
         Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
@@ -17,6 +17,7 @@ Public Class UserControl_admindashboardnontabular
             min = RH
         End If
         For Each Ctrl As Control In Controls
+            Console.WriteLine(Ctrl.Width & " " & RW)
             Ctrl.Width += CInt(Ctrl.Width * RW)
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
@@ -41,15 +42,18 @@ Public Class UserControl_admindashboardnontabular
             If rbtnAddARoomToService.Checked = True Then
                 If rbtnIsVIP.Checked = True Then
                     RoomTableAdapter1.AddRoom(txtRoomNo.Text, True)
+                    MsgBox("Room " & txtRoomNo.Text & " Successfully Added")
                 Else
                     Try
                         RoomTableAdapter1.AddRoom(txtRoomNo.Text, False)
+                        MsgBox("Room " & txtRoomNo.Text & " Successfully Added")
                     Catch ex As Exception
                         MsgBox("Room Already Exists!")
                     End Try
                 End If
             Else
                 RoomTableAdapter1.DeleteRoom(txtRoomNo.Text)
+                MsgBox("Room " & txtRoomNo.Text & " Successfully Deleted")
             End If
         End If
     End Sub

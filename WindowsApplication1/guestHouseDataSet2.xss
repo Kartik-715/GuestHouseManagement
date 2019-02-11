@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:userTable" ZOrder="3" X="70" Y="70" Height="503" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
     <Shape ID="DesignTable:Room" ZOrder="2" X="570" Y="71" Height="503" Width="293" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
-    <Shape ID="DesignTable:Booking" ZOrder="1" X="918" Y="82" Height="434" Width="327" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
+    <Shape ID="DesignTable:Booking" ZOrder="1" X="918" Y="82" Height="503" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
