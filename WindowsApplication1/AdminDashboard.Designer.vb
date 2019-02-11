@@ -25,7 +25,7 @@ Partial Class AdminDashboard
         Me.components = New System.ComponentModel.Container()
         Me.lblHello = New System.Windows.Forms.Label()
         Me.btnUpdatePassword = New System.Windows.Forms.Button()
-        Me.btnMyBills = New System.Windows.Forms.Button()
+        Me.btnRoomStatus = New System.Windows.Forms.Button()
         Me.btnBookARoom = New System.Windows.Forms.Button()
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.btnApproveUsers = New System.Windows.Forms.Button()
@@ -41,15 +41,15 @@ Partial Class AdminDashboard
         Me.UserControl_dynamiccontrol1 = New WindowsApplication1.UserControl_dynamiccontrol()
         Me.UserControl_admindashboardnontabular1 = New WindowsApplication1.UserControl_admindashboardnontabular()
         Me.btnAllBookings = New System.Windows.Forms.Button()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        CType(Me.ErrorProvider1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.BookingBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GuestHouseDataSet,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'lblHello
         '
-        Me.lblHello.AutoSize = True
-        Me.lblHello.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.lblHello.AutoSize = true
+        Me.lblHello.Font = New System.Drawing.Font("Microsoft Sans Serif", 15!)
         Me.lblHello.Location = New System.Drawing.Point(351, 21)
         Me.lblHello.Name = "lblHello"
         Me.lblHello.Size = New System.Drawing.Size(131, 29)
@@ -65,18 +65,18 @@ Partial Class AdminDashboard
         Me.btnUpdatePassword.Size = New System.Drawing.Size(164, 50)
         Me.btnUpdatePassword.TabIndex = 12
         Me.btnUpdatePassword.Text = "Update Password"
-        Me.btnUpdatePassword.UseVisualStyleBackColor = True
+        Me.btnUpdatePassword.UseVisualStyleBackColor = true
         '
-        'btnMyBills
+        'btnRoomStatus
         '
-        Me.btnMyBills.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMyBills.Location = New System.Drawing.Point(61, 353)
-        Me.btnMyBills.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnMyBills.Name = "btnMyBills"
-        Me.btnMyBills.Size = New System.Drawing.Size(164, 50)
-        Me.btnMyBills.TabIndex = 11
-        Me.btnMyBills.Text = "My Bills"
-        Me.btnMyBills.UseVisualStyleBackColor = True
+        Me.btnRoomStatus.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRoomStatus.Location = New System.Drawing.Point(61, 353)
+        Me.btnRoomStatus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnRoomStatus.Name = "btnRoomStatus"
+        Me.btnRoomStatus.Size = New System.Drawing.Size(164, 50)
+        Me.btnRoomStatus.TabIndex = 11
+        Me.btnRoomStatus.Text = "Rooms Status"
+        Me.btnRoomStatus.UseVisualStyleBackColor = true
         '
         'btnBookARoom
         '
@@ -87,7 +87,7 @@ Partial Class AdminDashboard
         Me.btnBookARoom.Size = New System.Drawing.Size(164, 50)
         Me.btnBookARoom.TabIndex = 10
         Me.btnBookARoom.Text = "Book A Room"
-        Me.btnBookARoom.UseVisualStyleBackColor = True
+        Me.btnBookARoom.UseVisualStyleBackColor = true
         '
         'btnLogOut
         '
@@ -98,7 +98,7 @@ Partial Class AdminDashboard
         Me.btnLogOut.Size = New System.Drawing.Size(164, 50)
         Me.btnLogOut.TabIndex = 9
         Me.btnLogOut.Text = "Log Out"
-        Me.btnLogOut.UseVisualStyleBackColor = True
+        Me.btnLogOut.UseVisualStyleBackColor = true
         '
         'btnApproveUsers
         '
@@ -109,11 +109,11 @@ Partial Class AdminDashboard
         Me.btnApproveUsers.Size = New System.Drawing.Size(164, 50)
         Me.btnApproveUsers.TabIndex = 14
         Me.btnApproveUsers.Text = "Approve Users"
-        Me.btnApproveUsers.UseVisualStyleBackColor = True
+        Me.btnApproveUsers.UseVisualStyleBackColor = true
         '
         'labelNonApproved
         '
-        Me.labelNonApproved.AutoSize = True
+        Me.labelNonApproved.AutoSize = true
         Me.labelNonApproved.Location = New System.Drawing.Point(373, 75)
         Me.labelNonApproved.Name = "labelNonApproved"
         Me.labelNonApproved.Size = New System.Drawing.Size(51, 17)
@@ -132,15 +132,15 @@ Partial Class AdminDashboard
         Me.btnAddRoom.Size = New System.Drawing.Size(164, 50)
         Me.btnAddRoom.TabIndex = 17
         Me.btnAddRoom.Text = "Add Room"
-        Me.btnAddRoom.UseVisualStyleBackColor = True
+        Me.btnAddRoom.UseVisualStyleBackColor = true
         '
         'UserTableTableAdapter1
         '
-        Me.UserTableTableAdapter1.ClearBeforeFill = True
+        Me.UserTableTableAdapter1.ClearBeforeFill = true
         '
         'RoomTableAdapter1
         '
-        Me.RoomTableAdapter1.ClearBeforeFill = True
+        Me.RoomTableAdapter1.ClearBeforeFill = true
         '
         'BookingBindingSource
         '
@@ -160,19 +160,19 @@ Partial Class AdminDashboard
         Me.btnPendingBookings.Size = New System.Drawing.Size(164, 50)
         Me.btnPendingBookings.TabIndex = 20
         Me.btnPendingBookings.Text = "Pending Bookings"
-        Me.btnPendingBookings.UseVisualStyleBackColor = True
+        Me.btnPendingBookings.UseVisualStyleBackColor = true
         '
         'BookingTableAdapter
         '
-        Me.BookingTableAdapter.ClearBeforeFill = True
+        Me.BookingTableAdapter.ClearBeforeFill = true
         '
         'UserControl_dynamiccontrol1
         '
-        Me.UserControl_dynamiccontrol1.AutoScroll = True
+        Me.UserControl_dynamiccontrol1.AutoScroll = true
         Me.UserControl_dynamiccontrol1.Location = New System.Drawing.Point(245, 187)
         Me.UserControl_dynamiccontrol1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UserControl_dynamiccontrol1.Name = "UserControl_dynamiccontrol1"
-        Me.UserControl_dynamiccontrol1.Size = New System.Drawing.Size(562, 452)
+        Me.UserControl_dynamiccontrol1.Size = New System.Drawing.Size(873, 656)
         Me.UserControl_dynamiccontrol1.TabIndex = 24
         '
         'UserControl_admindashboardnontabular1
@@ -191,11 +191,11 @@ Partial Class AdminDashboard
         Me.btnAllBookings.Size = New System.Drawing.Size(164, 50)
         Me.btnAllBookings.TabIndex = 25
         Me.btnAllBookings.Text = "Current Bookings"
-        Me.btnAllBookings.UseVisualStyleBackColor = True
+        Me.btnAllBookings.UseVisualStyleBackColor = true
         '
         'AdminDashboard
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8!, 16!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1005, 721)
         Me.Controls.Add(Me.btnAllBookings)
@@ -207,22 +207,22 @@ Partial Class AdminDashboard
         Me.Controls.Add(Me.btnApproveUsers)
         Me.Controls.Add(Me.lblHello)
         Me.Controls.Add(Me.btnUpdatePassword)
-        Me.Controls.Add(Me.btnMyBills)
+        Me.Controls.Add(Me.btnRoomStatus)
         Me.Controls.Add(Me.btnBookARoom)
         Me.Controls.Add(Me.btnLogOut)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "AdminDashboard"
         Me.Text = "AdminDashboard"
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        CType(Me.ErrorProvider1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.BookingBindingSource,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GuestHouseDataSet,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Friend WithEvents lblHello As System.Windows.Forms.Label
     Friend WithEvents btnUpdatePassword As System.Windows.Forms.Button
-    Friend WithEvents btnMyBills As System.Windows.Forms.Button
+    Friend WithEvents btnRoomStatus As System.Windows.Forms.Button
     Friend WithEvents btnBookARoom As System.Windows.Forms.Button
     Friend WithEvents btnLogOut As System.Windows.Forms.Button
     Friend WithEvents btnApproveUsers As System.Windows.Forms.Button

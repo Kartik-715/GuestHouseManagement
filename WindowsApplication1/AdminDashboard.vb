@@ -135,7 +135,7 @@
         UserControl_dynamiccontrol1.Show()
     End Sub
 
-    Private Sub btnMyBills_Click(sender As Object, e As EventArgs) Handles btnMyBills.Click
+    Private Sub btnRoomStatus_Click(sender As Object, e As EventArgs) Handles btnRoomStatus.Click
         forminit()
         btnclicks()
         RoomStatus = 1
