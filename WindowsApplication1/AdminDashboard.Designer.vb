@@ -25,7 +25,7 @@ Partial Class AdminDashboard
         Me.components = New System.ComponentModel.Container()
         Me.lblHello = New System.Windows.Forms.Label()
         Me.btnUpdatePassword = New WindowsApplication1.RoundButton()
-        Me.btnMyBills = New WindowsApplication1.RoundButton()
+        Me.btnRoomStatus = New WindowsApplication1.RoundButton()
         Me.btnBookARoom = New WindowsApplication1.RoundButton()
         Me.btnLogOut = New WindowsApplication1.RoundButton()
         Me.btnApproveUsers = New WindowsApplication1.RoundButton()
@@ -81,23 +81,23 @@ Partial Class AdminDashboard
         Me.btnUpdatePassword.Text = "Update Password"
         Me.btnUpdatePassword.UseVisualStyleBackColor = False
         '
-        'btnMyBills
+        'btnRoomStatus
         '
-        Me.btnMyBills.BackColor = System.Drawing.Color.Transparent
-        Me.btnMyBills.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMyBills.FlatAppearance.BorderSize = 0
-        Me.btnMyBills.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.btnMyBills.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.btnMyBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMyBills.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMyBills.ForeColor = System.Drawing.Color.White
-        Me.btnMyBills.Location = New System.Drawing.Point(-10, 407)
-        Me.btnMyBills.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnMyBills.Name = "btnMyBills"
-        Me.btnMyBills.Size = New System.Drawing.Size(270, 52)
-        Me.btnMyBills.TabIndex = 11
-        Me.btnMyBills.Text = "My Bills"
-        Me.btnMyBills.UseVisualStyleBackColor = False
+        Me.btnRoomStatus.BackColor = System.Drawing.Color.Transparent
+        Me.btnRoomStatus.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRoomStatus.FlatAppearance.BorderSize = 0
+        Me.btnRoomStatus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.btnRoomStatus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.btnRoomStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRoomStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRoomStatus.ForeColor = System.Drawing.Color.White
+        Me.btnRoomStatus.Location = New System.Drawing.Point(-10, 407)
+        Me.btnRoomStatus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnRoomStatus.Name = "btnRoomStatus"
+        Me.btnRoomStatus.Size = New System.Drawing.Size(270, 52)
+        Me.btnRoomStatus.TabIndex = 11
+        Me.btnRoomStatus.Text = "Room Status"
+        Me.btnRoomStatus.UseVisualStyleBackColor = False
         '
         'btnBookARoom
         '
@@ -321,8 +321,8 @@ Partial Class AdminDashboard
         Me.Controls.Add(Me.labelNonApproved)
         Me.Controls.Add(Me.btnApproveUsers)
         Me.Controls.Add(Me.lblHello)
+        Me.Controls.Add(Me.btnRoomStatus)
         Me.Controls.Add(Me.btnUpdatePassword)
-        Me.Controls.Add(Me.btnMyBills)
         Me.Controls.Add(Me.btnBookARoom)
         Me.Controls.Add(Me.btnLogOut)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -350,7 +350,7 @@ Partial Class AdminDashboard
     Friend WithEvents UserControl_dynamiccontrol1 As WindowsApplication1.UserControl_dynamiccontrol
     Friend WithEvents PictureBoxGrey As System.Windows.Forms.PictureBox
     Friend WithEvents btnUpdatePassword As WindowsApplication1.RoundButton
-    Friend WithEvents btnMyBills As WindowsApplication1.RoundButton
+    Friend WithEvents btnRoomStatus As WindowsApplication1.RoundButton
     Friend WithEvents btnBookARoom As WindowsApplication1.RoundButton
     Friend WithEvents btnLogOut As WindowsApplication1.RoundButton
     Friend WithEvents btnApproveUsers As WindowsApplication1.RoundButton

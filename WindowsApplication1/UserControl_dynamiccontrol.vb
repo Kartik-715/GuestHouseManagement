@@ -31,6 +31,32 @@ Public Class UserControl_dynamiccontrol
         Return CInt(currDate.ToString("yyyyMMdd"))
     End Function
 
+    Dim allRooms(-1) As String
+    Dim nonAvailRooms(-1) As String
+    Dim availRooms(-1) As String
+
+    Public Function getData()
+        BookingTableAdapter1.fillNonAvailRooms(GuestHouseDataSet1.Booking, Check_Availability.createDateTimeStamp(Date.Now), Check_Availability.createDateTimeStamp(Date.Now), Check_Availability.createDateTimeStamp(Date.Now), Check_Availability.createDateTimeStamp(Date.Now))
+        RoomTableAdapter1.Fill(GuestHouseDataSet1.Room)
+        ReDim allRooms(-1)
+        ReDim nonAvailRooms(-1)
+        ReDim availRooms(-1)
+        For Each row As guestHouseDataSet.BookingRow In GuestHouseDataSet1.Booking
+            nonAvailRooms = nonAvailRooms.Concat({row.RoomNo}).ToArray
+        Next
+
+        For Each row As guestHouseDataSet.RoomRow In GuestHouseDataSet1.Room
+            allRooms = allRooms.Concat({row.RoomNo}).ToArray
+        Next
+
+        For Each room As String In allRooms
+            If Not nonAvailRooms.Contains(room) Then
+                availRooms = availRooms.Concat({room}).ToArray
+            End If
+        Next
+
+    End Function
+
     Private Function loadApproveButtons()
         length = GuestHouseDataSet1.userTable.Rows.Count
         Dim n As Integer = 0
@@ -282,6 +308,43 @@ Public Class UserControl_dynamiccontrol
         End While
     End Function
 
+    Private Function loadRoomStatus()
+        length = allRooms.Length
+        Console.WriteLine(length & " number of rooms available")
+        Dim n As Integer = 0
+        Dim RoomNo(length - 1) As System.Windows.Forms.Label
+        
+
+        For i As Integer = 0 To length - 1   ' making the button array and initialising it
+            RoomNo(i) = New System.Windows.Forms.Label
+        Next i
+
+        Dim xPos As Integer = 0  ' these two lines set the location for making the button array
+        Dim yPos As Integer = 20
+        While (n < length)
+            With (RoomNo(n))
+                .Width = 70 ' Width of button
+                .Height = 50 ' Height of button
+                .Top = yPos  ' y coordinate of button
+                .Left = xPos  ' x coordinate of button
+                .Text = allRooms(n)
+                If availRooms.Contains(allRooms(n)) Then
+                    .BackColor = Color.Green
+                Else
+                    .BackColor = Color.Red
+                End If
+                If (n + 1) Mod 5 = 0 Then
+                    yPos += .Height + 20 ' Next Y will be far 
+                    xPos = 0
+                Else
+                    xPos += .Width + 20
+                End If
+
+                Me.Controls.Add(RoomNo(n))
+                n += 1
+            End With
+        End While
+    End Function
     Dim length As Integer
 
     Public Sub UserControl_dynamiccontrol_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -299,6 +362,9 @@ Public Class UserControl_dynamiccontrol
         ElseIf AdminDashboard.allBooking = 1 Then
             BookingTableAdapter1.FillAllCurrent(GuestHouseDataSet1.Booking, createDateTimeStamp(Date.Now))
             loadAllBookings()
+        ElseIf AdminDashboard.RoomStatus = 1 Then
+            getData()
+            loadRoomStatus()
         End If
     End Sub
 

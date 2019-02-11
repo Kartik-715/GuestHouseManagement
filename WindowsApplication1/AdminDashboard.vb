@@ -4,6 +4,7 @@
     Public bookroom As Integer
     Public pendingbooking As Integer
     Public allBooking As Integer
+    Public RoomStatus As Integer
     Public addremoveroom As Integer
     Public updatepassword As Integer
     Dim check As Integer = 0
@@ -15,6 +16,7 @@
         pendingbooking = 0
         updatepassword = 0
         allBooking = 0
+        RoomStatus = 0
     End Sub
 
     Private Sub btnclicks()
@@ -89,7 +91,7 @@
         btnLogOut.Parent = PictureBoxGrey
         btnAllBookings.Parent = PictureBoxGrey
         btnBookARoom.Parent = PictureBoxGrey
-        btnMyBills.Parent = PictureBoxGrey
+        btnRoomStatus.Parent = PictureBoxGrey
         btnUpdatePassword.Parent = PictureBoxGrey
         btnAddRoom.Parent = PictureBoxGrey
         btnApproveUsers.Parent = PictureBoxGrey
@@ -149,9 +151,12 @@
         UserControl_dynamiccontrol1.Show()
     End Sub
 
-    Private Sub btnMyBills_Click(sender As Object, e As EventArgs) Handles btnMyBills.Click
+    Private Sub btnRoomStatus_Click(sender As Object, e As EventArgs) Handles btnRoomStatus.Click
         forminit()
         btnclicks()
+        RoomStatus = 1
+        UserControl_dynamiccontrol1.UserControl_dynamiccontrol_Load(e, e)
+        UserControl_dynamiccontrol1.Show()
     End Sub
 
     Private Sub btnAllBookings_Click(sender As Object, e As EventArgs) Handles btnAllBookings.Click
@@ -202,11 +207,11 @@
     Private Sub btnUpdatePassword_MouseOver(sender As Object, e As EventArgs) Handles btnUpdatePassword.MouseLeave
         btnUpdatePassword.FlatAppearance.BorderSize = 0
     End Sub
-    Private Sub btnMyBills_MouseDown(sender As Object, e As EventArgs) Handles btnMyBills.MouseHover
-        btnMyBills.FlatAppearance.BorderSize = 1
+    Private Sub btnMyBills_MouseDown(sender As Object, e As EventArgs) Handles btnRoomStatus.MouseHover
+        btnRoomStatus.FlatAppearance.BorderSize = 1
     End Sub
-    Private Sub btnMyBills_MouseOver(sender As Object, e As EventArgs) Handles btnMyBills.MouseLeave
-        btnMyBills.FlatAppearance.BorderSize = 0
+    Private Sub btnMyBills_MouseOver(sender As Object, e As EventArgs) Handles btnRoomStatus.MouseLeave
+        btnRoomStatus.FlatAppearance.BorderSize = 0
     End Sub
     Private Sub btnBookARoom_MouseDown(sender As Object, e As EventArgs) Handles btnBookARoom.MouseHover
         btnBookARoom.FlatAppearance.BorderSize = 1
