@@ -38,6 +38,7 @@
                     Else
                         Dashboard.loggedUser = userData.username
                         Check_Availability.loggedUser = userData.username
+                        'Dashboard.Dashboard_Load(e, e)
                         Dashboard.Show()
                     End If
                     Form1.Hide()

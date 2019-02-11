@@ -35,8 +35,8 @@ Partial Class Dashboard
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.UserControl_admindashboardnontabular1 = New WindowsApplication1.UserControl_admindashboardnontabular()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblBookedTillval = New System.Windows.Forms.Label()
         Me.lblBookedFromval = New System.Windows.Forms.Label()
         Me.lblBookedForval = New System.Windows.Forms.Label()
@@ -53,6 +53,10 @@ Partial Class Dashboard
         Me.btnMyBills = New WindowsApplication1.RoundButton()
         Me.btnBookARoom = New WindowsApplication1.RoundButton()
         Me.btnLogOut = New WindowsApplication1.RoundButton()
+        Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
+        Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
+        Me.BookingTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IITGLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -174,9 +178,19 @@ Partial Class Dashboard
         Me.Panel1.Size = New System.Drawing.Size(735, 460)
         Me.Panel1.TabIndex = 19
         '
+        'UserControl_admindashboardnontabular1
+        '
+        Me.UserControl_admindashboardnontabular1.BackColor = System.Drawing.Color.Azure
+        Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(3, 354)
+        Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
+        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(9, 46)
+        Me.UserControl_admindashboardnontabular1.TabIndex = 8
+        Me.UserControl_admindashboardnontabular1.Visible = False
+        '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.BackColor = System.Drawing.Color.Azure
         Me.GroupBox1.Controls.Add(Me.lblBookedTillval)
         Me.GroupBox1.Controls.Add(Me.lblBookedFromval)
         Me.GroupBox1.Controls.Add(Me.lblBookedForval)
@@ -197,15 +211,6 @@ Partial Class Dashboard
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Current Booking"
         Me.GroupBox1.Visible = False
-        '
-        'UserControl_admindashboardnontabular1
-        '
-        Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(3, 354)
-        Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(0)
-        Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
-        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(207, 250)
-        Me.UserControl_admindashboardnontabular1.TabIndex = 8
-        Me.UserControl_admindashboardnontabular1.Visible = False
         '
         'lblBookedTillval
         '
@@ -396,6 +401,22 @@ Partial Class Dashboard
         Me.btnLogOut.TabIndex = 4
         Me.btnLogOut.Text = "Log Out"
         Me.btnLogOut.UseVisualStyleBackColor = False
+        '        'UserTableTableAdapter1
+        '
+        Me.UserTableTableAdapter1.ClearBeforeFill = True
+        '
+        'GuestHouseDataSet1
+        '
+        Me.GuestHouseDataSet1.DataSetName = "guestHouseDataSet"
+        Me.GuestHouseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BookingTableAdapter1
+        '
+        Me.BookingTableAdapter1.ClearBeforeFill = True
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 1
         '
         'Dashboard
         '
@@ -415,7 +436,6 @@ Partial Class Dashboard
         Me.Controls.Add(Me.btnMyBills)
         Me.Controls.Add(Me.btnBookARoom)
         Me.Controls.Add(Me.btnLogOut)
-        Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Dashboard"
@@ -462,4 +482,5 @@ Partial Class Dashboard
     Friend WithEvents GuestHouseDataSet1 As WindowsApplication1.guestHouseDataSet
     Friend WithEvents BookingTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter
     Friend WithEvents UserControl_admindashboardnontabular1 As WindowsApplication1.UserControl_admindashboardnontabular
+    Friend WithEvents Timer2 As System.Windows.Forms.Timer
 End Class
