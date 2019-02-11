@@ -36,6 +36,7 @@ Partial Class Dashboard
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.UserControl_admindashboardnontabular1 = New WindowsApplication1.UserControl_admindashboardnontabular()
         Me.lblBookedTillval = New System.Windows.Forms.Label()
         Me.lblBookedFromval = New System.Windows.Forms.Label()
         Me.lblBookedForval = New System.Windows.Forms.Label()
@@ -162,6 +163,7 @@ Partial Class Dashboard
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Teal
+        Me.Panel1.Controls.Add(Me.UserControl_admindashboardnontabular1)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.PictureBox3)
@@ -184,20 +186,33 @@ Partial Class Dashboard
         Me.GroupBox1.Controls.Add(Me.lblBookedFrom)
         Me.GroupBox1.Controls.Add(Me.lblBookingID)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+
         Me.GroupBox1.Location = New System.Drawing.Point(167, 129)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(353, 232)
+
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Current Booking"
+        Me.GroupBox1.Visible = False
+        '
+        'UserControl_admindashboardnontabular1
+        '
+        Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(3, 354)
+        Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
+        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(207, 250)
+        Me.UserControl_admindashboardnontabular1.TabIndex = 8
+        Me.UserControl_admindashboardnontabular1.Visible = False
         '
         'lblBookedTillval
         '
         Me.lblBookedTillval.AutoSize = True
         Me.lblBookedTillval.Location = New System.Drawing.Point(231, 179)
         Me.lblBookedTillval.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+
         Me.lblBookedTillval.Name = "lblBookedTillval"
         Me.lblBookedTillval.Size = New System.Drawing.Size(83, 26)
         Me.lblBookedTillval.TabIndex = 7
@@ -206,8 +221,10 @@ Partial Class Dashboard
         'lblBookedFromval
         '
         Me.lblBookedFromval.AutoSize = True
+
         Me.lblBookedFromval.Location = New System.Drawing.Point(231, 138)
         Me.lblBookedFromval.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+
         Me.lblBookedFromval.Name = "lblBookedFromval"
         Me.lblBookedFromval.Size = New System.Drawing.Size(83, 26)
         Me.lblBookedFromval.TabIndex = 6
@@ -216,8 +233,10 @@ Partial Class Dashboard
         'lblBookedForval
         '
         Me.lblBookedForval.AutoSize = True
+
         Me.lblBookedForval.Location = New System.Drawing.Point(231, 98)
         Me.lblBookedForval.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+
         Me.lblBookedForval.Name = "lblBookedForval"
         Me.lblBookedForval.Size = New System.Drawing.Size(83, 26)
         Me.lblBookedForval.TabIndex = 5
@@ -226,8 +245,10 @@ Partial Class Dashboard
         'lblBookingIDval
         '
         Me.lblBookingIDval.AutoSize = True
+
         Me.lblBookingIDval.Location = New System.Drawing.Point(231, 57)
         Me.lblBookingIDval.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+
         Me.lblBookingIDval.Name = "lblBookingIDval"
         Me.lblBookingIDval.Size = New System.Drawing.Size(83, 26)
         Me.lblBookingIDval.TabIndex = 4
@@ -440,4 +461,5 @@ Partial Class Dashboard
     Friend WithEvents UserTableTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
     Friend WithEvents GuestHouseDataSet1 As WindowsApplication1.guestHouseDataSet
     Friend WithEvents BookingTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter
+    Friend WithEvents UserControl_admindashboardnontabular1 As WindowsApplication1.UserControl_admindashboardnontabular
 End Class

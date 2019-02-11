@@ -41,15 +41,18 @@ Public Class UserControl_admindashboardnontabular
             If rbtnAddARoomToService.Checked = True Then
                 If rbtnIsVIP.Checked = True Then
                     RoomTableAdapter1.AddRoom(txtRoomNo.Text, True)
+                    MsgBox("Room " & txtRoomNo.Text & " Successfully Added")
                 Else
                     Try
                         RoomTableAdapter1.AddRoom(txtRoomNo.Text, False)
+                        MsgBox("Room " & txtRoomNo.Text & " Successfully Added")
                     Catch ex As Exception
                         MsgBox("Room Already Exists!")
                     End Try
                 End If
             Else
                 RoomTableAdapter1.DeleteRoom(txtRoomNo.Text)
+                MsgBox("Room " & txtRoomNo.Text & " Successfully Deleted")
             End If
         End If
     End Sub

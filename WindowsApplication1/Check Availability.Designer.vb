@@ -58,7 +58,7 @@ Partial Class Check_Availability
         Me.CheckIn.Location = New System.Drawing.Point(87, 132)
         Me.CheckIn.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.CheckIn.Name = "CheckIn"
-        Me.CheckIn.Size = New System.Drawing.Size(55, 24)
+        Me.CheckIn.Size = New System.Drawing.Size(70, 29)
         Me.CheckIn.TabIndex = 0
         Me.CheckIn.Text = "From"
         '
@@ -69,7 +69,7 @@ Partial Class Check_Availability
         Me.Checkout.Location = New System.Drawing.Point(109, 187)
         Me.Checkout.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Checkout.Name = "Checkout"
-        Me.Checkout.Size = New System.Drawing.Size(33, 24)
+        Me.Checkout.Size = New System.Drawing.Size(43, 29)
         Me.Checkout.TabIndex = 1
         Me.Checkout.Text = "To"
         '
@@ -81,7 +81,8 @@ Partial Class Check_Availability
         Me.DateTimePickerFrom.Location = New System.Drawing.Point(211, 132)
         Me.DateTimePickerFrom.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.DateTimePickerFrom.Name = "DateTimePickerFrom"
-        Me.DateTimePickerFrom.Size = New System.Drawing.Size(258, 29)
+        Me.DateTimePickerFrom.Size = New System.Drawing.Size(258, 34)
+
         Me.DateTimePickerFrom.TabIndex = 2
         Me.DateTimePickerFrom.Value = New Date(2019, 2, 10, 0, 0, 0, 0)
         '
@@ -93,17 +94,19 @@ Partial Class Check_Availability
         Me.DateTimePickerTo.Location = New System.Drawing.Point(211, 187)
         Me.DateTimePickerTo.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.DateTimePickerTo.Name = "DateTimePickerTo"
-        Me.DateTimePickerTo.Size = New System.Drawing.Size(258, 29)
+        Me.DateTimePickerTo.Size = New System.Drawing.Size(258, 34)
         Me.DateTimePickerTo.TabIndex = 3
         '
         'lblBooking
         '
         Me.lblBooking.AutoSize = True
         Me.lblBooking.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBooking.Location = New System.Drawing.Point(44, 90)
+
+        Me.lblBooking.Location = New System.Drawing.Point(167, 79)
         Me.lblBooking.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblBooking.Name = "lblBooking"
-        Me.lblBooking.Size = New System.Drawing.Size(98, 26)
+        Me.lblBooking.Size = New System.Drawing.Size(126, 32)
+
         Me.lblBooking.TabIndex = 5
         Me.lblBooking.Text = "Booking"
         '
@@ -127,7 +130,7 @@ Partial Class Check_Availability
         Me.lblAvailRoom.Location = New System.Drawing.Point(38, 313)
         Me.lblAvailRoom.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAvailRoom.Name = "lblAvailRoom"
-        Me.lblAvailRoom.Size = New System.Drawing.Size(204, 29)
+        Me.lblAvailRoom.Size = New System.Drawing.Size(262, 37)
         Me.lblAvailRoom.TabIndex = 6
         Me.lblAvailRoom.Text = "Available Rooms: "
         '
@@ -139,7 +142,8 @@ Partial Class Check_Availability
         Me.comboBoxAvailRooms.Location = New System.Drawing.Point(211, 499)
         Me.comboBoxAvailRooms.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.comboBoxAvailRooms.Name = "comboBoxAvailRooms"
-        Me.comboBoxAvailRooms.Size = New System.Drawing.Size(258, 28)
+
+        Me.comboBoxAvailRooms.Size = New System.Drawing.Size(258, 33)
         Me.comboBoxAvailRooms.TabIndex = 7
         Me.comboBoxAvailRooms.Visible = False
         '
@@ -150,7 +154,7 @@ Partial Class Check_Availability
         Me.lblnumAvail.Location = New System.Drawing.Point(274, 313)
         Me.lblnumAvail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblnumAvail.Name = "lblnumAvail"
-        Me.lblnumAvail.Size = New System.Drawing.Size(83, 29)
+        Me.lblnumAvail.Size = New System.Drawing.Size(107, 37)
         Me.lblnumAvail.TabIndex = 8
         Me.lblnumAvail.Text = "Label1"
         Me.lblnumAvail.Visible = False
@@ -158,7 +162,8 @@ Partial Class Check_Availability
         'lblFirstName
         '
         Me.lblFirstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFirstName.Location = New System.Drawing.Point(39, 353)
+        Me.lblFirstName.Location = New System.Drawing.Point(144, 442)
+
         Me.lblFirstName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFirstName.Name = "lblFirstName"
         Me.lblFirstName.Size = New System.Drawing.Size(140, 31)
@@ -172,7 +177,9 @@ Partial Class Check_Availability
         Me.txtName.Location = New System.Drawing.Point(211, 356)
         Me.txtName.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(258, 28)
+
+        Me.txtName.Size = New System.Drawing.Size(258, 34)
+
         Me.txtName.TabIndex = 1386
         Me.txtName.Visible = False
         '
@@ -183,7 +190,9 @@ Partial Class Check_Availability
         Me.txtLastName.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtLastName.Size = New System.Drawing.Size(258, 28)
+
+        Me.txtLastName.Size = New System.Drawing.Size(258, 34)
+
         Me.txtLastName.TabIndex = 1387
         Me.txtLastName.Visible = False
         '
@@ -216,7 +225,9 @@ Partial Class Check_Availability
         Me.txtPhone.Location = New System.Drawing.Point(211, 448)
         Me.txtPhone.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtPhone.Name = "txtPhone"
+
         Me.txtPhone.Size = New System.Drawing.Size(258, 28)
+
         Me.txtPhone.TabIndex = 1388
         Me.txtPhone.Visible = False
         '
@@ -228,7 +239,7 @@ Partial Class Check_Availability
         Me.lblWelcome.ForeColor = System.Drawing.Color.White
         Me.lblWelcome.Location = New System.Drawing.Point(68, 19)
         Me.lblWelcome.Name = "lblWelcome"
-        Me.lblWelcome.Size = New System.Drawing.Size(383, 41)
+        Me.lblWelcome.Size = New System.Drawing.Size(479, 51)
         Me.lblWelcome.TabIndex = 1395
         Me.lblWelcome.Text = "Check Room Availability"
         '
@@ -304,10 +315,10 @@ Partial Class Check_Availability
         '
         'Check_Availability
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Azure
-        Me.ClientSize = New System.Drawing.Size(514, 624)
+        Me.ClientSize = New System.Drawing.Size(559, 611)
         Me.Controls.Add(Me.lblSelectRoom)
         Me.Controls.Add(Me.rbtnIsVIP)
         Me.Controls.Add(Me.lblWelcome)
