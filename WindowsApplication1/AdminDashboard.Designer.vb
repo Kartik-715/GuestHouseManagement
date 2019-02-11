@@ -265,7 +265,7 @@ Partial Class AdminDashboard
         Me.PictureBoxGrey.Image = Global.WindowsApplication1.My.Resources.Resources.greySolid
         Me.PictureBoxGrey.Location = New System.Drawing.Point(0, 0)
         Me.PictureBoxGrey.Name = "PictureBoxGrey"
-        Me.PictureBoxGrey.Size = New System.Drawing.Size(253, 745)
+        Me.PictureBoxGrey.Size = New System.Drawing.Size(229, 745)
         Me.PictureBoxGrey.TabIndex = 26
         Me.PictureBoxGrey.TabStop = False
         '
@@ -283,25 +283,24 @@ Partial Class AdminDashboard
         'PictureBoxHeader
         '
         Me.PictureBoxHeader.Image = Global.WindowsApplication1.My.Resources.Resources.tealAbstract
-        Me.PictureBoxHeader.Location = New System.Drawing.Point(253, 0)
+        Me.PictureBoxHeader.Location = New System.Drawing.Point(229, 0)
         Me.PictureBoxHeader.Margin = New System.Windows.Forms.Padding(0)
         Me.PictureBoxHeader.Name = "PictureBoxHeader"
-        Me.PictureBoxHeader.Size = New System.Drawing.Size(756, 131)
+        Me.PictureBoxHeader.Size = New System.Drawing.Size(780, 131)
         Me.PictureBoxHeader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBoxHeader.TabIndex = 28
         Me.PictureBoxHeader.TabStop = False
         '
         'lblWelcome
         '
-        Me.lblWelcome.AutoSize = True
         Me.lblWelcome.BackColor = System.Drawing.Color.Transparent
-        Me.lblWelcome.Font = New System.Drawing.Font("Georgia", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWelcome.Font = New System.Drawing.Font("Georgia", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWelcome.ForeColor = System.Drawing.Color.White
-        Me.lblWelcome.Location = New System.Drawing.Point(259, 32)
+        Me.lblWelcome.Location = New System.Drawing.Point(101, 46)
         Me.lblWelcome.Name = "lblWelcome"
-        Me.lblWelcome.Size = New System.Drawing.Size(1390, 69)
+        Me.lblWelcome.Size = New System.Drawing.Size(743, 69)
         Me.lblWelcome.TabIndex = 29
-        Me.lblWelcome.Text = "Welcome to IITG Guest House Admin Portal"
+        Me.lblWelcome.Text = "Welcome to IITG Guest House Staff Portal"
         '
         'AdminDashboard
         '
