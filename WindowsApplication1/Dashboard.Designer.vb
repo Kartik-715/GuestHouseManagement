@@ -35,7 +35,6 @@ Partial Class Dashboard
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.UserControl_admindashboardnontabular1 = New WindowsApplication1.UserControl_admindashboardnontabular()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblBookedTillval = New System.Windows.Forms.Label()
         Me.lblBookedFromval = New System.Windows.Forms.Label()
@@ -48,12 +47,13 @@ Partial Class Dashboard
         Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
         Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
         Me.BookingTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.UserControl_admindashboardnontabular1 = New WindowsApplication1.UserControl_admindashboardnontabular()
         Me.btnMyBookings = New WindowsApplication1.RoundButton()
         Me.btnUpdatePassword = New WindowsApplication1.RoundButton()
         Me.btnMyBills = New WindowsApplication1.RoundButton()
         Me.btnBookARoom = New WindowsApplication1.RoundButton()
         Me.btnLogOut = New WindowsApplication1.RoundButton()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IITGLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -183,16 +183,6 @@ Partial Class Dashboard
         Me.Panel1.Size = New System.Drawing.Size(980, 566)
         Me.Panel1.TabIndex = 19
         '
-        'UserControl_admindashboardnontabular1
-        '
-        Me.UserControl_admindashboardnontabular1.BackColor = System.Drawing.Color.Azure
-        Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(4, 436)
-        Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(0)
-        Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
-        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(4, 30)
-        Me.UserControl_admindashboardnontabular1.TabIndex = 8
-        Me.UserControl_admindashboardnontabular1.Visible = False
-        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Azure
@@ -209,7 +199,7 @@ Partial Class Dashboard
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(532, 286)
+        Me.GroupBox1.Size = New System.Drawing.Size(655, 286)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Current Booking"
@@ -300,6 +290,20 @@ Partial Class Dashboard
         '
         Me.BookingTableAdapter1.ClearBeforeFill = True
         '
+        'Timer2
+        '
+        Me.Timer2.Interval = 1
+        '
+        'UserControl_admindashboardnontabular1
+        '
+        Me.UserControl_admindashboardnontabular1.BackColor = System.Drawing.Color.Azure
+        Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(4, 436)
+        Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
+        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(3, 22)
+        Me.UserControl_admindashboardnontabular1.TabIndex = 8
+        Me.UserControl_admindashboardnontabular1.Visible = False
+        '
         'btnMyBookings
         '
         Me.btnMyBookings.BackColor = System.Drawing.Color.Transparent
@@ -389,10 +393,6 @@ Partial Class Dashboard
         Me.btnLogOut.TabIndex = 4
         Me.btnLogOut.Text = "Log Out"
         Me.btnLogOut.UseVisualStyleBackColor = False
-        '
-        'Timer2
-        '
-        Me.Timer2.Interval = 1
         '
         'Dashboard
         '

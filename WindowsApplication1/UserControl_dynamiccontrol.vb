@@ -38,7 +38,9 @@ Public Class UserControl_dynamiccontrol
     Public Function getData()
         BookingTableAdapter1.fillNonAvailRooms(GuestHouseDataSet1.Booking, Check_Availability.createDateTimeStamp(Date.Now), Check_Availability.createDateTimeStamp(Date.Now), Check_Availability.createDateTimeStamp(Date.Now), Check_Availability.createDateTimeStamp(Date.Now))
         RoomTableAdapter1.Fill(GuestHouseDataSet1.Room)
-
+        ReDim allRooms(-1)
+        ReDim nonAvailRooms(-1)
+        ReDim availRooms(-1)
         For Each row As guestHouseDataSet.BookingRow In GuestHouseDataSet1.Booking
             nonAvailRooms = nonAvailRooms.Concat({row.RoomNo}).ToArray
         Next
@@ -379,6 +381,7 @@ Public Class UserControl_dynamiccontrol
             row = GuestHouseDataSet1.userTable.Rows(CInt(str))
             row.isApproved = True
             UserTableTableAdapter1.Update(GuestHouseDataSet1.userTable)
+            AdminDashboard.reload_data()
         End If
         Me.Controls.Clear()
         InitializeComponent()
@@ -394,6 +397,7 @@ Public Class UserControl_dynamiccontrol
         ElseIf AdminDashboard.approveuser = 1 Then
             GuestHouseDataSet1.userTable.Rows(CInt(str)).Delete()
             UserTableTableAdapter1.Update(GuestHouseDataSet1.userTable)
+            AdminDashboard.reload_data()
         End If
         Me.Controls.Clear()
         InitializeComponent()
