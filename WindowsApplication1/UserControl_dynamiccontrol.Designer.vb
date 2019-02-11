@@ -24,6 +24,7 @@ Partial Class UserControl_dynamiccontrol
     Private Sub InitializeComponent()
         Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
         Me.BookingTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
+        Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
         CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -35,6 +36,10 @@ Partial Class UserControl_dynamiccontrol
         'BookingTableAdapter1
         '
         Me.BookingTableAdapter1.ClearBeforeFill = True
+        '
+        'UserTableTableAdapter1
+        '
+        Me.UserTableTableAdapter1.ClearBeforeFill = True
         '
         'UserControl_dynamiccontrol
         '
@@ -49,5 +54,6 @@ Partial Class UserControl_dynamiccontrol
     End Sub
     Friend WithEvents GuestHouseDataSet1 As WindowsApplication1.guestHouseDataSet
     Friend WithEvents BookingTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter
+    Friend WithEvents UserTableTableAdapter1 As WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter
 
 End Class
