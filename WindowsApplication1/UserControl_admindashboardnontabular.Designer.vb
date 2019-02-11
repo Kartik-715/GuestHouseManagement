@@ -24,6 +24,7 @@ Partial Class UserControl_admindashboardnontabular
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rbtnIsVIP = New System.Windows.Forms.CheckBox()
         Me.rbtnAddARoomToService = New System.Windows.Forms.RadioButton()
         Me.txtRoomNo = New System.Windows.Forms.TextBox()
         Me.lblRoomNo = New System.Windows.Forms.Label()
@@ -45,7 +46,6 @@ Partial Class UserControl_admindashboardnontabular
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.rbtnIsVIP = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.UserTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,6 +67,17 @@ Partial Class UserControl_admindashboardnontabular
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Add Or Remove Rooms"
         Me.GroupBox1.Visible = False
+        '
+        'rbtnIsVIP
+        '
+        Me.rbtnIsVIP.AutoSize = True
+        Me.rbtnIsVIP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtnIsVIP.Location = New System.Drawing.Point(326, 159)
+        Me.rbtnIsVIP.Name = "rbtnIsVIP"
+        Me.rbtnIsVIP.Size = New System.Drawing.Size(86, 29)
+        Me.rbtnIsVIP.TabIndex = 11
+        Me.rbtnIsVIP.Text = "Is VIP"
+        Me.rbtnIsVIP.UseVisualStyleBackColor = True
         '
         'rbtnAddARoomToService
         '
@@ -265,17 +276,6 @@ Partial Class UserControl_admindashboardnontabular
         Me.Label1.Size = New System.Drawing.Size(494, 30)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Enter Old Password"
-        '
-        'rbtnIsVIP
-        '
-        Me.rbtnIsVIP.AutoSize = True
-        Me.rbtnIsVIP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbtnIsVIP.Location = New System.Drawing.Point(326, 159)
-        Me.rbtnIsVIP.Name = "rbtnIsVIP"
-        Me.rbtnIsVIP.Size = New System.Drawing.Size(86, 29)
-        Me.rbtnIsVIP.TabIndex = 11
-        Me.rbtnIsVIP.Text = "Is VIP"
-        Me.rbtnIsVIP.UseVisualStyleBackColor = True
         '
         'UserControl_admindashboardnontabular
         '

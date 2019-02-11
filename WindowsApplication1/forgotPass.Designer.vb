@@ -36,26 +36,31 @@ Partial Class forgotPass
         '
         'btnForgot
         '
-        Me.btnForgot.Location = New System.Drawing.Point(334, 268)
+        Me.btnForgot.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnForgot.Location = New System.Drawing.Point(266, 165)
+        Me.btnForgot.Margin = New System.Windows.Forms.Padding(2)
         Me.btnForgot.Name = "btnForgot"
-        Me.btnForgot.Size = New System.Drawing.Size(182, 37)
+        Me.btnForgot.Size = New System.Drawing.Size(187, 44)
         Me.btnForgot.TabIndex = 0
         Me.btnForgot.Text = "Recover"
         Me.btnForgot.UseVisualStyleBackColor = True
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(308, 141)
+        Me.txtEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmail.Location = New System.Drawing.Point(266, 68)
+        Me.txtEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(279, 31)
+        Me.txtEmail.Size = New System.Drawing.Size(187, 34)
         Me.txtEmail.TabIndex = 1
         '
         'lblEmail
         '
-        Me.lblEmail.AutoSize = True
-        Me.lblEmail.Location = New System.Drawing.Point(198, 144)
+        Me.lblEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmail.Location = New System.Drawing.Point(89, 71)
+        Me.lblEmail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblEmail.Name = "lblEmail"
-        Me.lblEmail.Size = New System.Drawing.Size(80, 26)
+        Me.lblEmail.Size = New System.Drawing.Size(173, 40)
         Me.lblEmail.TabIndex = 3
         Me.lblEmail.Text = "Email: "
         '
@@ -74,9 +79,11 @@ Partial Class forgotPass
         '
         'btnVerify
         '
-        Me.btnVerify.Location = New System.Drawing.Point(352, 311)
+        Me.btnVerify.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVerify.Location = New System.Drawing.Point(266, 213)
+        Me.btnVerify.Margin = New System.Windows.Forms.Padding(2)
         Me.btnVerify.Name = "btnVerify"
-        Me.btnVerify.Size = New System.Drawing.Size(151, 37)
+        Me.btnVerify.Size = New System.Drawing.Size(187, 40)
         Me.btnVerify.TabIndex = 4
         Me.btnVerify.Text = "Verify"
         Me.btnVerify.UseVisualStyleBackColor = True
@@ -84,33 +91,37 @@ Partial Class forgotPass
         '
         'lblOTP
         '
-        Me.lblOTP.AutoSize = True
-        Me.lblOTP.Location = New System.Drawing.Point(198, 196)
+        Me.lblOTP.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOTP.Location = New System.Drawing.Point(89, 119)
+        Me.lblOTP.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblOTP.Name = "lblOTP"
-        Me.lblOTP.Size = New System.Drawing.Size(83, 26)
+        Me.lblOTP.Size = New System.Drawing.Size(125, 39)
         Me.lblOTP.TabIndex = 5
         Me.lblOTP.Text = "Token: "
         Me.lblOTP.Visible = False
         '
         'txtOTP
         '
-        Me.txtOTP.Location = New System.Drawing.Point(308, 193)
+        Me.txtOTP.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtOTP.Location = New System.Drawing.Point(266, 116)
+        Me.txtOTP.Margin = New System.Windows.Forms.Padding(2)
         Me.txtOTP.Name = "txtOTP"
-        Me.txtOTP.Size = New System.Drawing.Size(279, 31)
+        Me.txtOTP.Size = New System.Drawing.Size(187, 34)
         Me.txtOTP.TabIndex = 6
         Me.txtOTP.Visible = False
         '
         'forgotPass
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(919, 433)
+        Me.ClientSize = New System.Drawing.Size(631, 264)
         Me.Controls.Add(Me.txtOTP)
         Me.Controls.Add(Me.lblOTP)
         Me.Controls.Add(Me.btnVerify)
         Me.Controls.Add(Me.lblEmail)
         Me.Controls.Add(Me.txtEmail)
         Me.Controls.Add(Me.btnForgot)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "forgotPass"
         Me.Text = "Form2"
         CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()

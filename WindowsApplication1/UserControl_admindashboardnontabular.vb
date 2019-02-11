@@ -58,7 +58,15 @@ Public Class UserControl_admindashboardnontabular
     End Sub
 
     Private Sub btnUpdatePass_Click(sender As Object, e As EventArgs) Handles btnUpdatePass.Click
-        If UserTableTableAdapter.getPassword(AdminDashboard.loggedUser) = SignupForm1.GenerateSHA256String(txtOldPass.Text) Then
+       
+        If UserTableTableAdapter.getPassword(Dashboard.loggedUser) = SignupForm1.GenerateSHA256String(txtOldPass.Text) Then
+            If txtNewPass.Text = txtConfirmNewPass.Text Then
+                UserTableTableAdapter.UpdatePassword(SignupForm1.GenerateSHA256String(txtNewPass.Text), Dashboard.loggedUser)
+                MessageBox.Show("Password changed successfully!")
+            Else
+                MessageBox.Show("New passwords dont match!")
+            End If
+        ElseIf UserTableTableAdapter.getPassword(AdminDashboard.loggedUser) = SignupForm1.GenerateSHA256String(txtOldPass.Text) Then
             If txtNewPass.Text = txtConfirmNewPass.Text Then
                 UserTableTableAdapter.UpdatePassword(SignupForm1.GenerateSHA256String(txtNewPass.Text), AdminDashboard.loggedUser)
                 MessageBox.Show("Password changed successfully!")
