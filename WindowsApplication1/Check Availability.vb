@@ -5,6 +5,40 @@
         Return CInt(currDate.ToString("yyyyMMdd"))
     End Function
 
+    Public Function genBookingID(userData As guestHouseDataSet.userTableRow, Id As Integer) As String
+        Dim BookingID As String = ""
+        Dim prefix As String = ""
+
+        ' Assigning the Prefix ' 
+        If userData.Category = "Staff" Then
+            prefix = "STA"
+        ElseIf userData.Category = "Student" Then
+            prefix = "STU"
+        ElseIf userData.Category = "Guest" Then
+            prefix = "GUE"
+        ElseIf userData.Category = "Faculty" Then
+            prefix = "FAC"
+        End If
+
+        BookingID = BookingID & prefix
+
+        Dim randomData As String = ""
+        ' Get Random Details of the Logged User ' 
+        Dim randNum = CInt(Math.Ceiling(Rnd() * (userData.First_Name.Length - 1)))
+        randomData = randomData & userData.First_Name(randNum).ToString.ToUpper
+        randNum = CInt(Math.Ceiling(Rnd() * (userData.Last_Name.Length - 1)))
+        randomData = randomData & userData.Last_Name(randNum).ToString.ToUpper
+        randNum = CInt(Math.Ceiling(Rnd() * (userData.username.Length - 1)))
+        randomData = randomData & userData.username(randNum).ToString.ToUpper
+
+        BookingID = BookingID & randomData
+
+        BookingID = BookingID & Id.ToString()
+
+        Return BookingID
+
+    End Function
+
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
@@ -110,12 +144,19 @@
                 user = Table.Rows(0)
                 If loggedUser = "admin" Or user.Category = "Staff" Then
                     BookingTableAdapter1.BookRoom(comboBoxAvailRooms.Text, loggedUser, createDateTimeStamp(DateTimePickerFrom.Value), createDateTimeStamp(DateTimePickerTo.Value), txtName.Text, txtLastName.Text, txtPhone.Text, True)
+                    ' Room Booked ' 
+                    Dim lastAdded As Integer = BookingTableAdapter1.getLatestID()
+                    Dim bookingID As String = genBookingID(user, lastAdded)
+                    BookingTableAdapter1.updateBookingID(bookingID, lastAdded)
                     MsgBox("Room: " & comboBoxAvailRooms.Text & " Booked Successfully!")
                 Else
                     If BookingTableAdapter1.GetCurrentBooking(createDateTimeStamp(Date.Now), loggedUser).Rows.Count > 0 Then
                         MsgBox("You Have Already Booked A Room!")
                     Else
                         BookingTableAdapter1.BookRoom(comboBoxAvailRooms.Text, loggedUser, createDateTimeStamp(DateTimePickerFrom.Value), createDateTimeStamp(DateTimePickerTo.Value), txtName.Text, txtLastName.Text, txtPhone.Text, False)
+                        Dim lastAdded As Integer = BookingTableAdapter1.getLatestID()
+                        Dim bookingID As String = genBookingID(user, lastAdded)
+                        BookingTableAdapter1.updateBookingID(bookingID, lastAdded)
                         MsgBox("Room: " & comboBoxAvailRooms.Text & " Booked Successfully!")
                     End If
                 End If
