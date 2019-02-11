@@ -293,12 +293,13 @@ Partial Class AdminDashboard
         '
         'lblWelcome
         '
+        Me.lblWelcome.AutoSize = True
         Me.lblWelcome.BackColor = System.Drawing.Color.Transparent
         Me.lblWelcome.Font = New System.Drawing.Font("Georgia", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWelcome.ForeColor = System.Drawing.Color.White
-        Me.lblWelcome.Location = New System.Drawing.Point(101, 46)
+        Me.lblWelcome.Location = New System.Drawing.Point(103, 44)
         Me.lblWelcome.Name = "lblWelcome"
-        Me.lblWelcome.Size = New System.Drawing.Size(743, 69)
+        Me.lblWelcome.Size = New System.Drawing.Size(1064, 56)
         Me.lblWelcome.TabIndex = 29
         Me.lblWelcome.Text = "Welcome to IITG Guest House Staff Portal"
         '

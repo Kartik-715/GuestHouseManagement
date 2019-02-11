@@ -88,7 +88,6 @@
         BookingTableAdapter1.FillCurrentBooking(GuestHouseDataSet1.Booking, CInt(Date.Now.ToString("yyyyMMdd")), loggedUser)
         Dim currBooking As guestHouseDataSet.BookingRow
         If GuestHouseDataSet1.Booking.Rows.Count = 0 Then
-            MsgBox("No Current Bookings")
         Else
             ' Get The Most Recent One '
             currBooking = GuestHouseDataSet1.Booking.Rows(0)
