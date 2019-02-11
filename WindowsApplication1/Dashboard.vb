@@ -69,7 +69,25 @@
         Me.WindowState = FormWindowState.Maximized
         NameofUser = UserTableTableAdapter1.getNamebyUsername(loggedUser)
         lblHello.Text = "Hello! " & NameofUser
-        Console.WriteLine(lblHello.Text)
+
+        BookingTableAdapter1.FillCurrentBooking(GuestHouseDataSet1.Booking, CInt(Date.Now.ToString("yyyyMMdd")), loggedUser)
+        Console.WriteLine(CInt(Date.Now.ToString("yyyyMMdd")))
+
+        Dim currBooking As guestHouseDataSet.BookingRow
+        If GuestHouseDataSet1.Booking.Rows.Count = 0 Then
+            MsgBox("No Current Bookings")
+        Else
+            ' Get The Most Recent One '
+            currBooking = GuestHouseDataSet1.Booking.Rows(0)
+            Console.WriteLine(currBooking.BookedBy)
+            lblBookingIDval.Text = currBooking.ID.ToString
+            lblBookedForval.Text = currBooking.BookingForFirstName & " " & currBooking.BookingForLastName
+            lblBookedTillval.Text = currBooking.BookedTill
+            lblBookedFromval.Text = currBooking.BookedFrom
+        End If
+
+
+
     End Sub
 
     Private Sub btnUpdatePassword_Click(sender As Object, e As EventArgs) Handles btnUpdatePassword.Click
