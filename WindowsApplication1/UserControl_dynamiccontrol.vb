@@ -315,6 +315,7 @@ Public Class UserControl_dynamiccontrol
             row = GuestHouseDataSet1.userTable.Rows(CInt(str))
             row.isApproved = True
             UserTableTableAdapter1.Update(GuestHouseDataSet1.userTable)
+            AdminDashboard.reload_data()
         End If
         Me.Controls.Clear()
         InitializeComponent()
@@ -330,6 +331,7 @@ Public Class UserControl_dynamiccontrol
         ElseIf AdminDashboard.approveuser = 1 Then
             GuestHouseDataSet1.userTable.Rows(CInt(str)).Delete()
             UserTableTableAdapter1.Update(GuestHouseDataSet1.userTable)
+            AdminDashboard.reload_data()
         End If
         Me.Controls.Clear()
         InitializeComponent()

@@ -69,6 +69,11 @@
         Me.BookingTableAdapter.Fill(Me.GuestHouseDataSet.Booking)
         max()
         Form1.Hide()
+        If loggedUser = "admin" Then
+            btnAddRoom.Visible = True
+            btnApproveUsers.Visible = True
+            btnPendingBookings.Visible = True
+        End If
         UserControl_admindashboardnontabular1.Width = 800
         UserControl_admindashboardnontabular1.Height = 800
         UserControl_dynamiccontrol1.Width = Form1.Width - btnLogOut.Right - 250

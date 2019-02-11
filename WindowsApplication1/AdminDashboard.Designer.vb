@@ -110,6 +110,7 @@ Partial Class AdminDashboard
         Me.btnApproveUsers.TabIndex = 14
         Me.btnApproveUsers.Text = "Approve Users"
         Me.btnApproveUsers.UseVisualStyleBackColor = True
+        Me.btnApproveUsers.Visible = False
         '
         'labelNonApproved
         '
@@ -133,6 +134,7 @@ Partial Class AdminDashboard
         Me.btnAddRoom.TabIndex = 17
         Me.btnAddRoom.Text = "Add Room"
         Me.btnAddRoom.UseVisualStyleBackColor = True
+        Me.btnAddRoom.Visible = False
         '
         'UserTableTableAdapter1
         '
@@ -161,6 +163,7 @@ Partial Class AdminDashboard
         Me.btnPendingBookings.TabIndex = 20
         Me.btnPendingBookings.Text = "Pending Bookings"
         Me.btnPendingBookings.UseVisualStyleBackColor = True
+        Me.btnPendingBookings.Visible = False
         '
         'BookingTableAdapter
         '
@@ -172,7 +175,7 @@ Partial Class AdminDashboard
         Me.UserControl_dynamiccontrol1.Location = New System.Drawing.Point(245, 187)
         Me.UserControl_dynamiccontrol1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UserControl_dynamiccontrol1.Name = "UserControl_dynamiccontrol1"
-        Me.UserControl_dynamiccontrol1.Size = New System.Drawing.Size(562, 452)
+        Me.UserControl_dynamiccontrol1.Size = New System.Drawing.Size(873, 656)
         Me.UserControl_dynamiccontrol1.TabIndex = 24
         '
         'UserControl_admindashboardnontabular1
