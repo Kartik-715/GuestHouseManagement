@@ -118,7 +118,7 @@ WHERE  (username = ?)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="userTable" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getNamebyUsername" Modifier="Public" Name="getNamebyUsername" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="getNamebyUsername">
+              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="userTable" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getNamebyUsername" Modifier="Public" Name="getNamebyUsername" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="getNamebyUsername">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT [First Name], [Last Name]
@@ -130,7 +130,7 @@ WHERE  (username = ?)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="userTable" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="getNonApproved" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="getNonApproved" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="getNonApproved">
+              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="userTable" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="getNonApproved" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="getNonApproved" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="getNonApproved">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT ID, username, [password], MobileNo, isApproved, [First Name], [Last Name], Category FROM userTable WHERE (isApproved = false)</CommandText>
@@ -138,7 +138,7 @@ WHERE  (username = ?)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="userTable" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getPassword" Modifier="Public" Name="getPassword" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="getPassword">
+              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="userTable" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getPassword" Modifier="Public" Name="getPassword" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="getPassword">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT [password], isApproved, [First Name], [Last Name], Category FROM userTable WHERE (username = ?)</CommandText>
@@ -148,7 +148,19 @@ WHERE  (username = ?)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="numNonApproved" Modifier="Public" Name="numNonApproved" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="numNonApproved">
+              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="userTable" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetUserData" GetMethodModifier="Public" GetMethodName="GetUserData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetUserData" UserSourceName="GetUserData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ID, username, [password], MobileNo, isApproved, [First Name], [Last Name], Category
+FROM     userTable
+WHERE  (username = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="username" DataSourceName="userTable" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="username" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="username" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="numNonApproved" Modifier="Public" Name="numNonApproved" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="numNonApproved">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) AS Expr1
@@ -158,7 +170,7 @@ WHERE  (isApproved = False)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdatePassword" Modifier="Public" Name="UpdatePassword" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdatePassword">
+              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdatePassword" Modifier="Public" Name="UpdatePassword" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdatePassword">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE userTable
@@ -398,8 +410,8 @@ WHERE  (RoomNo = ?)</CommandText>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Booking
-                  (RoomNo, BookedBy, BookedFrom, BookedTill, BookingForFirstName, BookingForLastName, BookingForMobileNo)
-VALUES (?, ?, ?, ?, ?, ?, ?)</CommandText>
+                  (RoomNo, BookedBy, BookedFrom, BookedTill, BookingForFirstName, BookingForLastName, BookingForMobileNo, BookingConfirmed)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="RoomNo" DataSourceName="Booking" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="RoomNo" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="RoomNo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="Param2" ColumnName="BookedBy" DataSourceName="Booking" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="BookedBy" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="BookedBy" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -408,6 +420,7 @@ VALUES (?, ?, ?, ?, ?, ?, ?)</CommandText>
                       <Parameter AllowDbNull="true" AutogeneratedName="Param5" ColumnName="BookingForFirstName" DataSourceName="Booking" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="BookingForFirstName" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="BookingForFirstName" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="Param6" ColumnName="BookingForLastName" DataSourceName="Booking" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="BookingForLastName" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="BookingForLastName" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="Param7" ColumnName="BookingForMobileNo" DataSourceName="Booking" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="BookingForMobileNo" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="BookingForMobileNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param8" ColumnName="BookingConfirmed" DataSourceName="Booking" DataTypeServer="DbType.Boolean(2)" DbType="Boolean" Direction="Input" ParameterName="BookingConfirmed" Precision="0" ProviderType="Boolean" Scale="0" Size="2" SourceColumn="BookingConfirmed" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
@@ -420,10 +433,12 @@ VALUES (?, ?, ?, ?, ?, ?, ?)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="Booking" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillCurrentBooking" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillCurrentBooking" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillCurrentBooking">
+              <DbSource ConnectionRef="guestHouseConnectionString (MySettings)" DbObjectName="Booking" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillCurrentBooking" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetCurrentBooking" GeneratorSourceName="FillCurrentBooking" GetMethodModifier="Public" GetMethodName="GetCurrentBooking" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetCurrentBooking" UserSourceName="FillCurrentBooking">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT RoomNo, BookedBy, BookingConfirmed, BookedFrom, BookedTill FROM Booking WHERE (BookedTill &gt;= ?) AND (BookedBy = ?)</CommandText>
+                    <CommandText>SELECT RoomNo, BookedBy, BookingConfirmed, BookedFrom, BookedTill, BookingForFirstName, BookingForLastName, BookingForMobileNo
+FROM     Booking
+WHERE  (BookedTill &gt;= ?) AND (BookedBy = ?)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="BookedTill" DataSourceName="Booking" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="BookedTill" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="BookedTill" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="Param2" ColumnName="BookedBy" DataSourceName="Booking" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="BookedBy" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="BookedBy" SourceColumnNullMapping="false" SourceVersion="Current" />

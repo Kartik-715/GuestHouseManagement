@@ -27,6 +27,7 @@ Public Class UserControl_admindashboard
     End Sub
 
     Private Sub approveUsers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SetProcessDPIAware()
         DataGridView1.Hide()
         max()
         Try

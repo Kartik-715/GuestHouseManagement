@@ -65,6 +65,7 @@
 
     Private Sub AdminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'GuestHouseDataSet.Booking' table. You can move, or remove it, as needed.
+        Form1.SetProcessDPIAware()
         Me.BookingTableAdapter.Fill(Me.GuestHouseDataSet.Booking)
         max()
         Form1.Hide()
@@ -72,6 +73,8 @@
         UserControl_admindashboardnontabular1.Width = 800
         UserControl_admindashboard1.Height = 800
         UserControl_admindashboardnontabular1.Height = 800
+        UserControl_dynamiccontrol1.Width = 800
+        UserControl_dynamiccontrol1.Height = 800
         Me.WindowState = FormWindowState.Maximized
         lblHello.Text = "Hello! " & loggedUser
         reload_data()
@@ -86,8 +89,7 @@
         forminit()
         btnclicks()
         updatepassword = 1
-        formUpdatePassword.loggedUser = loggedUser
-        formUpdatePassword.Show()
+        UserControl_admindashboardnontabular1.btnSaveChanges.Visible = False
         UserControl_admindashboardnontabular1.Show()
         UserControl_admindashboardnontabular1.GroupBox2.Show()
     End Sub
@@ -109,6 +111,7 @@
         forminit()
         btnclicks()
         addremoveroom = 1
+        UserControl_admindashboardnontabular1.btnSaveChanges.Visible = True
         UserControl_admindashboardnontabular1.Show()
         UserControl_admindashboardnontabular1.GroupBox1.Show()
     End Sub

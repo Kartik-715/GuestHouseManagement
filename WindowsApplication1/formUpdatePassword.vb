@@ -29,7 +29,7 @@
     End Sub
 
     Private Sub btnUpdatePass_Click(sender As Object, e As EventArgs) Handles btnUpdatePass.Click
-        If txtOldPass.Text = SignupForm1.GenerateSHA256String(UserTableTableAdapter.getPassword(loggedUser)) Then
+        If UserTableTableAdapter.getPassword(loggedUser) = SignupForm1.GenerateSHA256String(txtOldPass.Text) Then
             If txtNewPass.Text = txtConfirmNewPass.Text Then
                 UserTableTableAdapter.UpdatePassword(SignupForm1.GenerateSHA256String(txtNewPass.Text), loggedUser)
                 MessageBox.Show("Password changed successfully!")

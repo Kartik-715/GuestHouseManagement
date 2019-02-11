@@ -2,7 +2,7 @@
 Public Class Form1
 
     <DllImport("user32.dll", EntryPoint:="SetProcessDPIAware")> _
-    Private Shared Function SetProcessDPIAware() As <MarshalAs(UnmanagedType.Bool)> Boolean
+    Public Shared Function SetProcessDPIAware() As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
 
     Private Sub PreVentFlicker()

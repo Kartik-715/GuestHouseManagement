@@ -1,6 +1,10 @@
 ﻿Public Class Check_Availability
     Public loggedUser As String = "anonymous"
 
+    Public Function createDateTimeStamp(currDate As Date) As Integer
+        Return CInt(currDate.ToString("yyyyMMdd"))
+    End Function
+
     Private Sub max()
         Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
@@ -32,6 +36,8 @@
     End Sub
 
     Private Sub btnCheckAval_Click(sender As Object, e As EventArgs) Handles btnCheckAval.Click
+
+        ' Replace Time Stamp by Functions ' TO DOOOOO
         Dim timeFrom As Integer = CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd"))
         Dim timeTo As Integer = CInt(DateTimePickerTo.Value.ToString("yyyyMMdd"))
         BookingTableAdapter1.fillNonAvailRooms(GuestHouseDataSet1.Booking, timeFrom, timeFrom, timeTo, timeTo)
@@ -98,10 +104,24 @@
             If comboBoxAvailRooms.Text = Nothing Or (Not comboBoxAvailRooms.Items.Contains(comboBoxAvailRooms.Text)) Then
                 MsgBox("Please Select A Room!")
             Else
-                BookingTableAdapter1.BookRoom(comboBoxAvailRooms.Text, loggedUser, CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd")), CInt(DateTimePickerTo.Value.ToString("yyyyMMdd")), txtName.Text, txtLastName.Text, txtPhone.Text)
-                MsgBox("Room: " & comboBoxAvailRooms.Text & " booked Successfully!")
+                Dim Table As guestHouseDataSet.userTableDataTable
+                Table = UserTableTableAdapter1.GetUserData(loggedUser)
+                Dim user As guestHouseDataSet.userTableRow
+                user = Table.Rows(0)
+                If loggedUser = "admin" Or user.Category = "Staff" Then
+                    BookingTableAdapter1.BookRoom(comboBoxAvailRooms.Text, loggedUser, CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd")), CInt(DateTimePickerTo.Value.ToString("yyyyMMdd")), txtName.Text, txtLastName.Text, txtPhone.Text, True)
+                    MsgBox("Room: " & comboBoxAvailRooms.Text & " Booked Successfully!")
+                Else
+                    If BookingTableAdapter1.GetCurrentBooking(createDateTimeStamp(Date.Now), loggedUser).Rows.Count > 0 Then
+                        MsgBox("You Have Already Booked A Room!")
+                    Else
+                        BookingTableAdapter1.BookRoom(comboBoxAvailRooms.Text, loggedUser, CInt(DateTimePickerFrom.Value.ToString("yyyyMMdd")), CInt(DateTimePickerTo.Value.ToString("yyyyMMdd")), txtName.Text, txtLastName.Text, txtPhone.Text, False)
+                        MsgBox("Room: " & comboBoxAvailRooms.Text & " Booked Successfully!")
+                    End If
+                End If
+                reloadForm()
             End If
-            reloadForm()
+
         End If
     End Sub
 
