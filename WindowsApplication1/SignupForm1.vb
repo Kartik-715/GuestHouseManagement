@@ -26,36 +26,36 @@ Public Class SignupForm1
         CH = Me.Height
     End Sub
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        
-            If IsValidEmailFormat(txtUsername.Text) = False Then
+
+        If IsValidEmailFormat(txtUsername.Text) = False Then
             MsgBox("Invalid Email Format")
             '  Me.Close()
         ElseIf IsPhoneNumberValid(txtPhone.Text) = False Then
-                MsgBox("Invalid Phone Number")
-                '  Me.Close()
-                'End If
-            ElseIf txtCaptcha.Text = str Then
-                Dim userData As guestHouseDataSet.userTableRow
-                userData = GuestHouseDataSet.userTable.FindByusername(txtUsername.Text)
-                If userData Is Nothing Then
-                    txtPassword.Text = GenerateSHA256String(txtPassword.Text)
-                    txtConfirmPassword.Text = GenerateSHA256String(txtConfirmPassword.Text)
-                    UserTableBindingSource.EndEdit()
-                    UserTableTableAdapter.Update(GuestHouseDataSet.userTable)
-                    UserTableTableAdapter.changeApprovalStatus(False, txtUsername.Text)
-                    MsgBox("Register Success")
-                    Me.Close()
-                Else
-                    MsgBox("User Already Exists! Please Try Again!")
-                    txtCaptcha.Clear()
-                    txtUsername.Clear()
-                    btnRefresh.PerformClick()
-                End If
+            MsgBox("Invalid Phone Number")
+            '  Me.Close()
+            'End If
+        ElseIf txtCaptcha.Text = str Then
+            Dim userData As guestHouseDataSet.userTableRow
+            userData = GuestHouseDataSet.userTable.FindByusername(txtUsername.Text)
+            If userData Is Nothing Then
+                txtPassword.Text = GenerateSHA256String(txtPassword.Text)
+                txtConfirmPassword.Text = GenerateSHA256String(txtConfirmPassword.Text)
+                UserTableBindingSource.EndEdit()
+                UserTableTableAdapter.Update(GuestHouseDataSet.userTable)
+                UserTableTableAdapter.changeApprovalStatus(False, txtUsername.Text)
+                MsgBox("Register Success")
+                Me.Close()
             Else
-                MsgBox("Register Failed")
+                MsgBox("User Already Exists! Please Try Again!")
                 txtCaptcha.Clear()
+                txtUsername.Clear()
                 btnRefresh.PerformClick()
             End If
+        Else
+            MsgBox("Register Failed")
+            txtCaptcha.Clear()
+            btnRefresh.PerformClick()
+        End If
     End Sub
 
 

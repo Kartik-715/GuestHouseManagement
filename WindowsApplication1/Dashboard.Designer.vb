@@ -77,7 +77,7 @@ Partial Class Dashboard
         '
         Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.ghover
         Me.PictureBox2.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(933, 554)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -89,7 +89,7 @@ Partial Class Dashboard
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.IITgGH1
         Me.PictureBox1.Location = New System.Drawing.Point(-5, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(1141, 194)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -115,7 +115,7 @@ Partial Class Dashboard
         Me.IITGLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.IITGLogo.Image = Global.WindowsApplication1.My.Resources.Resources.IITG_logo_png
         Me.IITGLogo.Location = New System.Drawing.Point(71, 39)
-        Me.IITGLogo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.IITGLogo.Margin = New System.Windows.Forms.Padding(4)
         Me.IITGLogo.Name = "IITGLogo"
         Me.IITGLogo.Size = New System.Drawing.Size(120, 111)
         Me.IITGLogo.TabIndex = 12
@@ -151,7 +151,7 @@ Partial Class Dashboard
         '
         Me.PictureBox3.Image = Global.WindowsApplication1.My.Resources.Resources.ghnight
         Me.PictureBox3.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(933, 554)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -162,7 +162,7 @@ Partial Class Dashboard
         '
         Me.PictureBox4.Image = Global.WindowsApplication1.My.Resources.Resources.GH_dinning
         Me.PictureBox4.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(933, 554)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -189,7 +189,7 @@ Partial Class Dashboard
         Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(4, 436)
         Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(0)
         Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
-        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(7, 41)
+        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(4, 30)
         Me.UserControl_admindashboardnontabular1.TabIndex = 8
         Me.UserControl_admindashboardnontabular1.Visible = False
         '
@@ -205,11 +205,11 @@ Partial Class Dashboard
         Me.GroupBox1.Controls.Add(Me.lblBookedFrom)
         Me.GroupBox1.Controls.Add(Me.lblBookingID)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(223, 159)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 2)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(471, 286)
+        Me.GroupBox1.Size = New System.Drawing.Size(532, 286)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Current Booking"
