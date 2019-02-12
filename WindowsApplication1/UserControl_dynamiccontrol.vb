@@ -54,7 +54,9 @@ Public Class UserControl_dynamiccontrol
         ReDim nonAvailRooms(-1)
         ReDim availRooms(-1)
         For Each row As guestHouseDataSet.BookingRow In GuestHouseDataSet1.Booking
-            nonAvailRooms = nonAvailRooms.Concat({row.RoomNo}).ToArray
+            If row.BookingConfirmed = True Then
+                nonAvailRooms = nonAvailRooms.Concat({row.RoomNo}).ToArray
+            End If
         Next
 
         For Each row As guestHouseDataSet.RoomRow In GuestHouseDataSet1.Room
