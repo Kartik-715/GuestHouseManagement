@@ -99,11 +99,10 @@ Partial Class Dashboard
         '
         'lblHello
         '
-        Me.lblHello.AutoSize = True
         Me.lblHello.BackColor = System.Drawing.Color.Transparent
         Me.lblHello.Font = New System.Drawing.Font("Microsoft Tai Le", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHello.ForeColor = System.Drawing.Color.White
-        Me.lblHello.Location = New System.Drawing.Point(881, 145)
+        Me.lblHello.Location = New System.Drawing.Point(811, 146)
         Me.lblHello.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblHello.Name = "lblHello"
         Me.lblHello.Size = New System.Drawing.Size(213, 48)
@@ -187,7 +186,7 @@ Partial Class Dashboard
         '
         'GroupBoxBill
         '
-        Me.GroupBoxBill.BackColor = System.Drawing.Color.Azure
+        Me.GroupBoxBill.BackColor = System.Drawing.Color.PaleTurquoise
         Me.GroupBoxBill.Controls.Add(Me.lblTotal)
         Me.GroupBoxBill.Controls.Add(Me.lblTax)
         Me.GroupBoxBill.Controls.Add(Me.lblRoomCharges)
@@ -242,7 +241,7 @@ Partial Class Dashboard
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Azure
+        Me.GroupBox1.BackColor = System.Drawing.Color.PaleTurquoise
         Me.GroupBox1.Controls.Add(Me.lblBookedFor)
         Me.GroupBox1.Controls.Add(Me.lblBookedTill)
         Me.GroupBox1.Controls.Add(Me.lblBookedFrom)

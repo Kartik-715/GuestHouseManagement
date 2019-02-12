@@ -133,9 +133,10 @@
     End Sub
 
     Private Sub upsize()
-        UserControl_admindashboardnontabular1.GroupBox2.Left = 50
-        UserControl_admindashboardnontabular1.Width = 600
-        UserControl_admindashboardnontabular1.Height = 300
+        UserControl_admindashboardnontabular1.GroupBox2.Left = 50 * Form1.Width / 1920
+        UserControl_admindashboardnontabular1.Width = 600 * 1920 / Form1.Width
+        UserControl_admindashboardnontabular1.Height = 300 * 1024 / Form1.Height
+        UserControl_admindashboardnontabular1.BackColor = System.Drawing.Color.PaleTurquoise
         UserControl_admindashboardnontabular1.Top = 0
         If togglUP = False Or updatepasword = False Then
             UserControl_admindashboardnontabular1.Left = -810
