@@ -72,7 +72,7 @@ Public Class Check_Availability
         CH = Me.Height
     End Sub
 
-    Private Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetProcessDPIAware()
         max()
         Me.Top = 100
@@ -85,7 +85,7 @@ Public Class Check_Availability
     End Sub
 
     Private Sub btnCheckAval_Click(sender As Object, e As EventArgs) Handles btnCheckAval.Click
-
+        lblWelcome.Parent = PictureBoxHeader
         ' Replace Time Stamp by Functions ' TO DOOOOO
         Dim timeFrom As Integer = createDateTimeStamp(DateTimePickerFrom.Value)
         Dim timeTo As Integer = createDateTimeStamp(DateTimePickerTo.Value)
@@ -144,10 +144,12 @@ Public Class Check_Availability
     Public Sub reloadForm()
         Controls.Clear()
         InitializeComponent()
+        lblWelcome.Parent = PictureBoxHeader
         Show()
     End Sub
 
     Public Function calculateBill(type As String, occupancy As Integer) As Integer
+        lblWelcome.Parent = PictureBoxHeader
         Dim initialBill As Integer = 0
         Dim RoomChargesSingle() As Integer = {500, 900, 1500, 3000}
         Dim RoomChargesDouble() As Integer = {700, 1100, 1700, 3500}
@@ -187,6 +189,7 @@ Public Class Check_Availability
     End Function
 
     Private Sub btnBookNow_Click(sender As Object, e As EventArgs) Handles btnBookNow.Click
+        lblWelcome.Parent = PictureBoxHeader
         If loggedUser = "anonymous" Then
             MessageBox.Show("You need to login first!")
             Me.Hide()
@@ -216,6 +219,7 @@ Public Class Check_Availability
                     Dim bookingID As String = genBookingID(user, lastAdded)
                     BookingTableAdapter1.updateBookingID(bookingID, lastAdded)
                     MsgBox("Room: " & comboBoxAvailRooms.Text & " Booked Successfully!")
+                    Booking_Load(e, e)
                 Else
                     If BookingTableAdapter1.GetCurrentBooking(createDateTimeStamp(Date.Now), loggedUser).Rows.Count > 0 Then
                         MsgBox("You Have Already Booked A Room!")
@@ -225,6 +229,7 @@ Public Class Check_Availability
                         Dim bookingID As String = genBookingID(user, lastAdded)
                         BookingTableAdapter1.updateBookingID(bookingID, lastAdded)
                         MsgBox("Room: " & comboBoxAvailRooms.Text & " Booked Successfully!")
+                        Booking_Load(e, e)
                     End If
                 End If
                 reloadForm()
