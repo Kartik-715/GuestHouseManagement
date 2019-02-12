@@ -1,4 +1,5 @@
-﻿Imports System.Runtime.InteropServices
+﻿Imports System.Text.RegularExpressions
+Imports System.Runtime.InteropServices
 Public Class Check_Availability
     Dim count As Integer = 0
     Public loggedUser As String = "anonymous"
@@ -212,6 +213,11 @@ Public Class Check_Availability
         Else
             If comboBoxAvailRooms.Text = Nothing Or (Not comboBoxAvailRooms.Items.Contains(comboBoxAvailRooms.Text)) Then
                 MsgBox("Please Select A Room!")
+            ElseIf txtName.Text = "" Then
+                MsgBox("Enter Valid First Name")
+            ElseIf IsPhoneNumberValid(txtPhone.Text) = False Then
+                MsgBox("Enter Valid Phone Number")
+
             Else
                 Dim Table As guestHouseDataSet.userTableDataTable
                 Table = UserTableTableAdapter1.GetUserData(loggedUser)
@@ -251,6 +257,8 @@ Public Class Check_Availability
             End If
         End If
 
+
+
     End Sub
 
     Private Sub DateTimePickerFrom_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerFrom.ValueChanged
@@ -267,6 +275,45 @@ Public Class Check_Availability
 
     Private Sub DateTimePickerFrom_DropDown(sender As Object, e As EventArgs) Handles DateTimePickerFrom.DropDown
         DateTimePickerTo.MinDate = DateTimePickerFrom.Value
+    End Sub
+
+
+    Private Shared Function IsPhoneNumberValid(phoneNumber As String) As Boolean
+        Dim result As String = ""
+        Dim chars As Char() = phoneNumber.ToCharArray()
+        For count = 0 To chars.GetLength(0) - 1
+            Dim tempChar As Char = chars(count)
+            If [Char].IsDigit(tempChar) Or "".Contains(tempChar.ToString()) Then
+
+                result += StripNonAlphaNumeric(tempChar)
+            Else
+                Return False
+            End If
+
+        Next
+
+        Return result.Length = 10 'Length of US phone numbers is 10
+    End Function
+
+    Private Shared Function StripNonAlphaNumeric(value As String) As String
+        Dim regex = New Regex("[^0-9a-zA-Z]", RegexOptions.None)
+        Dim result As String = ""
+        If regex.IsMatch(value) Then
+            result = regex.Replace(value, "")
+        Else
+            result = value
+        End If
+
+        Return result
+    End Function
+
+    Private Sub txtPhone_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPhone.KeyPress 'Alerting users of wrong number
+        If Asc(e.KeyChar) = 8 Then
+        ElseIf (txtPhone.Text).Length = 10 Then
+            e.Handled = True
+        ElseIf (txtPhone.Text).Length = 0 And e.KeyChar = "0" Then
+            e.Handled = True
+        End If
     End Sub
 
 End Class
