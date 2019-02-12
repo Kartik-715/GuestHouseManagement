@@ -24,6 +24,41 @@
 
     End Sub
 
+    Private Function getCurrBookingData()
+        BookingTableAdapter1.FillCurrentBooking(GuestHouseDataSet1.Booking, CInt(Date.Now.ToString("yyyyMMdd")), loggedUser)        'Fills data table adapter according to current booking
+        Dim currBooking As guestHouseDataSet.BookingRow
+        If GuestHouseDataSet1.Booking.Rows.Count = 0 Then
+            'If there isnt current booking then the show it
+            lblBookingID.Text = "Booking ID:     None"
+            lblBookedFor.Text = "Booking For:    None"
+            lblBookedFrom.Text = "Booking From: None"
+            lblBookedTill.Text = "Booked Till:   None"
+            lblConfirm.Text = "Booking Confirmed: No "
+            'Calculation of Bill'
+            lblRoomCharges.Text = "Room Charges :    00"
+            lblTax.Text = "Tax ( 5% ):              00"
+            lblTotal.Text = "Total Amount:        00"
+        Else
+            ' Get The Most Recent Booking of the User '
+            currBooking = GuestHouseDataSet1.Booking.Rows(0)
+            lblBookingID.Text = "Booking ID:     " & currBooking.ID.ToString
+            lblBookedFor.Text = "Booking For:    " & currBooking.BookingForFirstName & " " & currBooking.BookingForLastName
+            lblBookedTill.Text = "Booked Till:   " & DateTime.ParseExact(currBooking.BookedTill.ToString, "yyyyMMdd", Nothing)
+            If currBooking.BookingConfirmed Then
+                lblConfirm.Text = "Booking Confirmed:  Yes"
+            Else
+
+                lblConfirm.Text = "Booking Confirmed:  No"
+            End If
+            lblBookedFrom.Text = "Booked From:   " & DateTime.ParseExact(currBooking.BookedFrom.ToString, "yyyyMMdd", Nothing)
+            'Calculation of Bill'
+            lblRoomCharges.Text = "Room Charges :    " & currBooking.Bill.ToString
+            lblTax.Text = "Tax ( 5% ):              " & (currBooking.Bill * 0.05).ToString
+            lblTotal.Text = "Total Amount:        " & (currBooking.Bill + (currBooking.Bill * 0.05)).ToString
+
+        End If
+    End Function
+
     Dim CW As Integer ' Current Width
     Dim CH As Integer  ' Current Height
     Dim RW As Double  ' Ratio change of width
@@ -102,22 +137,6 @@
         GroupBoxBill.Left = 0
         NameofUser = UserTableTableAdapter1.getNamebyUsername(loggedUser)           'getting name of loged in user from database
         lblHello.Text = "Hello! " & NameofUser                                      'and displaying it with Hello
-        BookingTableAdapter1.FillCurrentBooking(GuestHouseDataSet1.Booking, CInt(Date.Now.ToString("yyyyMMdd")), loggedUser)        'Fills data table adapter according to current booking
-        Dim currBooking As guestHouseDataSet.BookingRow
-        If GuestHouseDataSet1.Booking.Rows.Count = 0 Then                           'If there is a current booking then the show it
-        Else
-            ' Get The Most Recent Booking of the User '
-            currBooking = GuestHouseDataSet1.Booking.Rows(0)
-            lblBookingID.Text = "Booking ID:     " & currBooking.ID.ToString
-            lblBookedFor.Text = "Booking For:    " & currBooking.BookingForFirstName & " " & currBooking.BookingForLastName
-            lblBookedTill.Text = "Booked Till:   " & DateTime.ParseExact(currBooking.BookedTill.ToString, "yyyyMMdd", Nothing)
-            lblBookedFrom.Text = "Booked From:   " & DateTime.ParseExact(currBooking.BookedFrom.ToString, "yyyyMMdd", Nothing)
-            'Calculation of Bill'
-            lblRoomCharges.Text = "Room Charges :    " & currBooking.Bill.ToString
-            lblTax.Text = "Tax ( 5% ):              " & (currBooking.Bill * 0.05).ToString
-            lblTotal.Text = "Total Amount:        " & (currBooking.Bill + (currBooking.Bill * 0.05)).ToString
-
-        End If
     End Sub
     'function that decides what happens when update password is clicked
     Private Sub btnUpdatePassword_Click(sender As Object, e As EventArgs) Handles btnUpdatePassword.Click
@@ -296,6 +315,7 @@
         myboksize()
         togglBok = Not (togglBok)
         mybookings = True
+        getCurrBookingData()
         GroupBox1.Visible = True
         Timer2.Start()
     End Sub
