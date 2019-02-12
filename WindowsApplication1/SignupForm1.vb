@@ -39,35 +39,53 @@ Public Class SignupForm1
         CH = Me.Height
     End Sub
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        If IsPhoneNumberValid(txtPhone.Text) = False Then       'validating Phone number
+        If IsValidEmailFormat(txtUsername.Text) = False Then        'validating Email Address
+            MsgBox("Invalid Email Address")
+            txtUsername.Clear()
+            btnRefresh.PerformClick()
+        ElseIf txtFirName.Text = "" Then
+            MsgBox("Invalid First Name")
+            txtFirName.Clear()
+            btnRefresh.PerformClick()
+        ElseIf IsPhoneNumberValid(txtPhone.Text) = False Then       'validating Phone number
             MsgBox("Invalid Phone Number")
-            Me.Close()
-            If IsValidEmailFormat(txtUsername.Text) = False Then        'validating Email Address
-                MsgBox("Invalid Email Address")
-                Me.Close()
-            End If
-        ElseIf txtCaptcha.Text = str Then                           'validating Captcha text
-            Dim userData As guestHouseDataSet.userTableRow
-            userData = GuestHouseDataSet.userTable.FindByusername(txtUsername.Text)         'checking if user already exists in the data set
-            If userData Is Nothing Then
-                txtPassword.Text = GenerateSHA256String(txtPassword.Text)
-                txtConfirmPassword.Text = GenerateSHA256String(txtConfirmPassword.Text)
-                UserTableBindingSource.EndEdit()
-                UserTableTableAdapter.Update(GuestHouseDataSet.userTable)
-                UserTableTableAdapter.changeApprovalStatus(False, txtUsername.Text)
-                MsgBox("Register Success")
-                Me.Close()
+            txtPhone.Clear()
+            btnRefresh.PerformClick()
+        ElseIf txtPassword.Text = "" Then
+            MsgBox("Invalid Password")
+            txtPassword.Clear()
+            btnRefresh.PerformClick()
+        ElseIf txtPassword.Text = txtConfirmPassword.Text Then
+            If txtCaptcha.Text = str Then                           'validating Captcha text
+                Dim userData As guestHouseDataSet.userTableRow
+                userData = GuestHouseDataSet.userTable.FindByusername(txtUsername.Text)         'checking if user already exists in the data set
+                If userData Is Nothing Then
+                    txtPassword.Text = GenerateSHA256String(txtPassword.Text)
+                    txtConfirmPassword.Text = GenerateSHA256String(txtConfirmPassword.Text)
+                    UserTableBindingSource.EndEdit()
+                    UserTableTableAdapter.Update(GuestHouseDataSet.userTable)
+                    UserTableTableAdapter.changeApprovalStatus(False, txtUsername.Text)
+                    MsgBox("Register Success")
+                    Me.Close()
+                Else
+                    MsgBox("User Already Exists! Please Try Again!")
+                    txtCaptcha.Clear()
+                    txtUsername.Clear()
+                    btnRefresh.PerformClick()
+                End If
             Else
-                MsgBox("User Already Exists! Please Try Again!")
+                MsgBox("Register Failed")
                 txtCaptcha.Clear()
-                txtUsername.Clear()
                 btnRefresh.PerformClick()
             End If
         Else
-            MsgBox("Register Failed")
-            txtCaptcha.Clear()
+            MsgBox("Passfields Are Not Matching")
+            txtPassword.Clear()
+            txtConfirmPassword.Clear()
             btnRefresh.PerformClick()
         End If
+
+
     End Sub
 
 

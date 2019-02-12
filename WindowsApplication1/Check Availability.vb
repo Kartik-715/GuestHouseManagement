@@ -1,5 +1,7 @@
-﻿Imports System.Runtime.InteropServices
+﻿Imports System.Text.RegularExpressions
+Imports System.Runtime.InteropServices
 Public Class Check_Availability
+    Dim count1 As Integer = 0
     Public loggedUser As String = "anonymous"
 
     <DllImport("user32.dll", EntryPoint:="SetProcessDPIAware")> _
@@ -65,16 +67,28 @@ Public Class Check_Availability
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
             If TypeOf Ctrl Is TextBox Then
-                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (min + 1)), Ctrl.Font.Style)
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * Form1.Width / 1920), Ctrl.Font.Style)
+            End If
+            If TypeOf Ctrl Is Label Then
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * Form1.Width / 1920), Ctrl.Font.Style)
+            End If
+            If TypeOf Ctrl Is Button Then
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * Form1.Width / 1920), Ctrl.Font.Style)
+            End If
+            If TypeOf Ctrl Is RadioButton Then
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * Form1.Width / 1920), Ctrl.Font.Style)
             End If
         Next
         CW = Me.Width
         CH = Me.Height
     End Sub
 
-    Private Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SetProcessDPIAware()
-        max()
+    Public Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If count1 = 0 Then
+            SetProcessDPIAware()
+            max()
+            count1 = 1
+        End If
         Me.Top = 100
         Me.Left = (Form1.Width - Me.Width) / 2
         lblWelcome.Parent = PictureBoxHeader
@@ -85,7 +99,7 @@ Public Class Check_Availability
     End Sub
 
     Private Sub btnCheckAval_Click(sender As Object, e As EventArgs) Handles btnCheckAval.Click
-
+        lblWelcome.Parent = PictureBoxHeader
         ' Replace Time Stamp by Functions ' TO DOOOOO
         Dim timeFrom As Integer = createDateTimeStamp(DateTimePickerFrom.Value)
         Dim timeTo As Integer = createDateTimeStamp(DateTimePickerTo.Value)
@@ -122,7 +136,7 @@ Public Class Check_Availability
         lblnumAvail.Show()
 
         If availRooms.Length >= 1 Then
-            Me.Height = 700
+            Me.Height = 700 * Form1.Height / 1024
             Me.StartPosition = FormStartPosition.CenterScreen
             lblFirstName.Show()
             lblLastName.Show()
@@ -134,7 +148,6 @@ Public Class Check_Availability
             comboBoxAvailRooms.Show()
             btnBookNow.Show()
             lblSelectRoom.Show()
-            GroupBoxOccupancy.Show()
         Else
             comboBoxAvailRooms.Hide()
             btnBookNow.Hide()
@@ -142,12 +155,17 @@ Public Class Check_Availability
     End Sub
 
     Public Sub reloadForm()
-        Controls.Clear()
-        InitializeComponent()
-        Show()
+        For Each ctrl In Controls
+            If TypeOf ctrl Is TextBox Then
+                ctrl.text = ""
+            End If
+        Next
+        lblWelcome.Parent = PictureBoxHeader
+        Me.Show()
     End Sub
 
     Public Function calculateBill(type As String, occupancy As Integer) As Integer
+        lblWelcome.Parent = PictureBoxHeader
         Dim initialBill As Integer = 0
         Dim RoomChargesSingle() As Integer = {500, 900, 1500, 3000}
         Dim RoomChargesDouble() As Integer = {700, 1100, 1700, 3500}
@@ -187,6 +205,7 @@ Public Class Check_Availability
     End Function
 
     Private Sub btnBookNow_Click(sender As Object, e As EventArgs) Handles btnBookNow.Click
+        lblWelcome.Parent = PictureBoxHeader
         If loggedUser = "anonymous" Then
             MessageBox.Show("You need to login first!")
             Me.Hide()
@@ -194,6 +213,11 @@ Public Class Check_Availability
         Else
             If comboBoxAvailRooms.Text = Nothing Or (Not comboBoxAvailRooms.Items.Contains(comboBoxAvailRooms.Text)) Then
                 MsgBox("Please Select A Room!")
+            ElseIf txtName.Text = "" Then
+                MsgBox("Enter Valid First Name")
+            ElseIf IsPhoneNumberValid(txtPhone.Text) = False Then
+                MsgBox("Enter Valid Phone Number")
+
             Else
                 Dim Table As guestHouseDataSet.userTableDataTable
                 Table = UserTableTableAdapter1.GetUserData(loggedUser)
@@ -216,6 +240,7 @@ Public Class Check_Availability
                     Dim bookingID As String = genBookingID(user, lastAdded)
                     BookingTableAdapter1.updateBookingID(bookingID, lastAdded)
                     MsgBox("Room: " & comboBoxAvailRooms.Text & " Booked Successfully!")
+                    Booking_Load(e, e)
                 Else
                     If BookingTableAdapter1.GetCurrentBooking(createDateTimeStamp(Date.Now), loggedUser).Rows.Count > 0 Then
                         MsgBox("You Have Already Booked A Room!")
@@ -225,11 +250,14 @@ Public Class Check_Availability
                         Dim bookingID As String = genBookingID(user, lastAdded)
                         BookingTableAdapter1.updateBookingID(bookingID, lastAdded)
                         MsgBox("Room: " & comboBoxAvailRooms.Text & " Booked Successfully!")
+                        Booking_Load(e, e)
                     End If
                 End If
                 reloadForm()
             End If
         End If
+
+
 
     End Sub
 
@@ -247,6 +275,45 @@ Public Class Check_Availability
 
     Private Sub DateTimePickerFrom_DropDown(sender As Object, e As EventArgs) Handles DateTimePickerFrom.DropDown
         DateTimePickerTo.MinDate = DateTimePickerFrom.Value
+    End Sub
+
+
+    Private Shared Function IsPhoneNumberValid(phoneNumber As String) As Boolean
+        Dim result As String = ""
+        Dim chars As Char() = phoneNumber.ToCharArray()
+        For count = 0 To chars.GetLength(0) - 1
+            Dim tempChar As Char = chars(count)
+            If [Char].IsDigit(tempChar) Or "".Contains(tempChar.ToString()) Then
+
+                result += StripNonAlphaNumeric(tempChar)
+            Else
+                Return False
+            End If
+
+        Next
+
+        Return result.Length = 10 'Length of US phone numbers is 10
+    End Function
+
+    Private Shared Function StripNonAlphaNumeric(value As String) As String
+        Dim regex = New Regex("[^0-9a-zA-Z]", RegexOptions.None)
+        Dim result As String = ""
+        If regex.IsMatch(value) Then
+            result = regex.Replace(value, "")
+        Else
+            result = value
+        End If
+
+        Return result
+    End Function
+
+    Private Sub txtPhone_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPhone.KeyPress 'Alerting users of wrong number
+        If Asc(e.KeyChar) = 8 Then
+        ElseIf (txtPhone.Text).Length = 10 Then
+            e.Handled = True
+        ElseIf (txtPhone.Text).Length = 0 And e.KeyChar = "0" Then
+            e.Handled = True
+        End If
     End Sub
 
 End Class

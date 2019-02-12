@@ -62,6 +62,7 @@ Partial Class AdminDashboard
         Me.lblHello.AutoSize = True
         Me.lblHello.BackColor = System.Drawing.Color.Transparent
         Me.lblHello.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHello.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.lblHello.Location = New System.Drawing.Point(840, 85)
         Me.lblHello.Name = "lblHello"
         Me.lblHello.Size = New System.Drawing.Size(154, 36)
