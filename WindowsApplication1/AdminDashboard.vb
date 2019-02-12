@@ -235,6 +235,10 @@
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblPendingBooking.Click
+        btnPendingBookings.PerformClick()
+    End Sub
 
+    Private Sub labelNonApproved_Click(sender As Object, e As EventArgs) Handles labelNonApproved.Click
+        btnApproveUsers.PerformClick()
     End Sub
 End Class

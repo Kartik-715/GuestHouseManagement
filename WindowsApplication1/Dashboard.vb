@@ -12,7 +12,8 @@
     Private index As Integer
     Dim check As Integer = 0
     Dim count As Integer = 0
-
+    'A function to prevent flickering when opening the windows form
+    'We first load the windows form in buffer and then display it on the desktop
     Private Sub PreVentFlicker()
         With Me
             .SetStyle(ControlStyles.OptimizedDoubleBuffer, True)
@@ -28,6 +29,7 @@
     Dim RW As Double  ' Ratio change of width
     Dim RH As Double  ' Ratio change of height
     Dim min As Double
+    'A function to resize the windows form according to the screen resolution
     Private Sub max()
         CW = Me.Width ' Current Width
         CH = Me.Height ' Current Height
@@ -62,20 +64,21 @@
         CW = Me.Width
         CH = Me.Height
     End Sub
-
+    ' hides all the forms except the main dashboard 
     Private Sub frminit()
         Check_Availability.Hide()
         GroupBox1.Hide()
         UserControl_admindashboardnontabular1.Hide()
         GroupBoxBill.Hide()
     End Sub
-
+    ' initialise every boolean variable of each button to false
     Private Sub btnclicks()
         mybills = False
         mybookings = False
         updatepasword = False
     End Sub
-
+    'A function defining what happens if a user closes or logs out of dashboard
+    'if he/she logs out then show form 1 else close the entire program. along with dashboard close all it's children
     Private Sub Dashboard_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosing
         For Each frm As Form In Me.MdiChildren
             frm.Close()
@@ -85,23 +88,23 @@
             Form1.Close()
         End If
     End Sub
-
+    'funtion that defines what happens on loading of the dashboard
     Public Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PreVentFlicker()
-        max()
+        PreVentFlicker()                                            'prevent flicker
+        max()                                                       'calling max fn
         lblHello.Parent = PictureBox1
         lblDashboard.Parent = PictureBox1
         lblGH.Parent = PictureBox1
         IITGLogo.Parent = PictureBox1
         btnclicks()
         frminit()
-        GroupBoxBill.Top = 2
+        GroupBoxBill.Top = 2                                        'initial positions of groupbox bill before the sliding
         GroupBoxBill.Left = 0
-        NameofUser = UserTableTableAdapter1.getNamebyUsername(loggedUser)
-        lblHello.Text = "Hello! " & NameofUser
-        BookingTableAdapter1.FillCurrentBooking(GuestHouseDataSet1.Booking, CInt(Date.Now.ToString("yyyyMMdd")), loggedUser)
+        NameofUser = UserTableTableAdapter1.getNamebyUsername(loggedUser)           'getting name of loged in user from database
+        lblHello.Text = "Hello! " & NameofUser                                      'and displaying it with Hello
+        BookingTableAdapter1.FillCurrentBooking(GuestHouseDataSet1.Booking, CInt(Date.Now.ToString("yyyyMMdd")), loggedUser)        'Fills data table adapter according to current booking
         Dim currBooking As guestHouseDataSet.BookingRow
-        If GuestHouseDataSet1.Booking.Rows.Count = 0 Then
+        If GuestHouseDataSet1.Booking.Rows.Count = 0 Then                           'If there is a current booking then the show it
         Else
             ' Get The Most Recent Booking of the User '
             currBooking = GuestHouseDataSet1.Booking.Rows(0)
@@ -116,22 +119,22 @@
 
         End If
     End Sub
-
+    'function that decides what happens when update password is clicked
     Private Sub btnUpdatePassword_Click(sender As Object, e As EventArgs) Handles btnUpdatePassword.Click
-        frminit()
-        btnclicks()
-        togglBok = False
+        frminit()                                           'all buttons are closed
+        btnclicks()                                         'all boolean variables are false
+        togglBok = False                                    'toggle all the slides to false
         togglMB = False
-        upsize()
-        togglUP = Not (togglUP)
+        upsize()                                            'sets the initial position of slides 
+        togglUP = Not (togglUP)                             'sets it's toggle to opposite
         updatepasword = True
-        UserControl_admindashboardnontabular1.btnSaveChanges.Visible = False
+        UserControl_admindashboardnontabular1.btnSaveChanges.Visible = False        'Selecting Update password in Usercontrol
         UserControl_admindashboardnontabular1.Visible = True
         UserControl_admindashboardnontabular1.BringToFront()
         UserControl_admindashboardnontabular1.GroupBox2.Show()
         Timer2.Start()
     End Sub
-
+    'fn setting initial position and sizes of slides according to thier toggle
     Private Sub upsize()
         UserControl_admindashboardnontabular1.GroupBox2.Left = 50 * Form1.Width / 1920
         UserControl_admindashboardnontabular1.Width = 600 * 1920 / Form1.Width
@@ -145,7 +148,7 @@
             UserControl_admindashboardnontabular1.Left = 0
         End If
     End Sub
-
+    'setting size of my bookings according to it's toggle
     Private Sub myboksize()
         If togglBok = False Or mybookings = False Then
             GroupBox1.Left = GroupBox1.Left - GroupBox1.Width + 10
@@ -154,7 +157,7 @@
             GroupBox1.Left = 2
         End If
     End Sub
-
+    'setting size of my bills according to it's toggle
     Private Sub mybillsize()
         If togglMB = False Or mybills = False Then
             GroupBoxBill.Left = GroupBoxBill.Left - GroupBox1.Width + 10
@@ -163,7 +166,7 @@
             GroupBoxBill.Left = 2
         End If
     End Sub
-
+    'showing the lines around the button when mouse is hovered over it
     Private Sub btnUpdatePassword_MouseDown(sender As Object, e As EventArgs) Handles btnUpdatePassword.MouseHover
         btnUpdatePassword.FlatAppearance.BorderSize = 1
     End Sub
@@ -171,29 +174,33 @@
         btnUpdatePassword.FlatAppearance.BorderSize = 0
     End Sub
 
-
+    'When user logs out check changes to 1 and dashboard is closed
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
         check = 1
         Me.Close()
     End Sub
+    'showing the lines around the button when mouse is hovered over it
     Private Sub btnLogout_MouseDown(sender As Object, e As EventArgs) Handles btnLogOut.MouseHover
         btnLogOut.FlatAppearance.BorderSize = 1
     End Sub
     Private Sub btnLogout_MouseOver(sender As Object, e As EventArgs) Handles btnLogOut.MouseLeave
         btnLogOut.FlatAppearance.BorderSize = 0
     End Sub
+    'showing the lines around the button when mouse is hovered over it
     Private Sub btnMyBookings_MouseDown(sender As Object, e As EventArgs) Handles btnMyBookings.MouseHover
         btnMyBookings.FlatAppearance.BorderSize = 1
     End Sub
     Private Sub btnMyBookings_MouseOver(sender As Object, e As EventArgs) Handles btnMyBookings.MouseLeave
         btnMyBookings.FlatAppearance.BorderSize = 0
     End Sub
+    'showing the lines around the button when mouse is hovered over it
     Private Sub btnMyBills_MouseDown(sender As Object, e As EventArgs) Handles btnMyBills.MouseHover
         btnMyBills.FlatAppearance.BorderSize = 1
     End Sub
     Private Sub btnMyBills_MouseOver(sender As Object, e As EventArgs) Handles btnMyBills.MouseLeave
         btnMyBills.FlatAppearance.BorderSize = 0
     End Sub
+    'showing the lines around the button when mouse is hovered over it
     Private Sub btnBookARoom_MouseDown(sender As Object, e As EventArgs) Handles btnBookARoom.MouseHover
         btnBookARoom.FlatAppearance.BorderSize = 1
     End Sub
@@ -201,13 +208,13 @@
         btnBookARoom.FlatAppearance.BorderSize = 0
     End Sub
 
-
+    'initialising timer
     Public Sub New()
         InitializeComponent()
         Timer1.Interval = 1
         Timer1.Start()
     End Sub
-
+    'Function for setting the positions of the 3 pictures in slideshow according to count
     Private Sub slideshow()
         If count = 0 Then
             PictureBox3.Left = PictureBox2.Width + PictureBox2.Left - 3
@@ -220,7 +227,7 @@
             PictureBox3.Left = PictureBox2.Width + PictureBox2.Left - 3
         End If
     End Sub
-
+    'starting slideshow of a picture with each tick of the timer
     Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles Timer1.Tick
         If count = 0 Then
             PictureBox2.Left -= 1
@@ -241,16 +248,16 @@
         End If
         Timer1.Start()
     End Sub
-
+    'Function for slideshow of slides of button
     Private Sub Timer2_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles Timer2.Tick
         If togglUP = True Or togglBok = True Or togglMB = True Then
-            steps = 20
+            steps = 20                          'number of increments in each step
         Else
-            steps = -20
+            steps = -20                         'number of decrements in each step
         End If
         If mybookings = True Then
-            If (GroupBox1.Left < 0 And togglBok = True) Or (GroupBox1.Left > -GroupBox1.Width And togglBok = False) Then
-                GroupBox1.Left += steps
+            If (GroupBox1.Left < 0 And togglBok = True) Or (GroupBox1.Left > -GroupBox1.Width And togglBok = False) Then            'Moving the slides forward if toggle is true and it is slightly hidden 
+                GroupBox1.Left += steps                                                                                             'Or moves the slide backwards till it's hidden width is less than actual width
             End If
             If GroupBox1.Left > 0 Then
                 GroupBox1.Left = 0
@@ -272,15 +279,15 @@
                 UserControl_admindashboardnontabular1.Left = 0
             End If
         End If
-        Timer2.Start()
+        Timer2.Start()                                                                  'starting of timer
     End Sub
-
+    'Opening the check availiblity form when user wants to book a room
     Private Sub btnBookARoom_Click(sender As Object, e As EventArgs) Handles btnBookARoom.Click
         Check_Availability.loggedUser = loggedUser
         Check_Availability.BringToFront()
         Check_Availability.Show()
     End Sub
-
+    'showing slide of my bookings on clicking of the button
     Private Sub RoundButton1_Click(sender As Object, e As EventArgs) Handles btnMyBookings.Click
         frminit()
         btnclicks()
@@ -292,7 +299,7 @@
         GroupBox1.Visible = True
         Timer2.Start()
     End Sub
-
+    'showing slide of my bills on clicking of the button
     Private Sub btnMyBills_Click(sender As Object, e As EventArgs) Handles btnMyBills.Click
         frminit()
         btnclicks()
@@ -304,4 +311,5 @@
         GroupBoxBill.Visible = True
         Timer2.Start()
     End Sub
+
 End Class

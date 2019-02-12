@@ -23,7 +23,7 @@ Public Class UserControl_dynamiccontrol
         End If
         'adjusting all controls
         For Each Ctrl As Control In Controls
-            Console.WriteLine(Ctrl.Width & " " & RW)
+            'Console.WriteLine(Ctrl.Width & " " & RW)
             Ctrl.Width += CInt(Ctrl.Width * RW)
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
@@ -313,7 +313,7 @@ Public Class UserControl_dynamiccontrol
                 .Font = New Font(Name(n).Font.Name, CInt(13), Name(n).Font.Style)
                 BookingID(n).Controls.Add(Name(n))
                 .Padding = New Padding(25, 0, 0, 0)
-                 yPos = yPos + .Height ' Left of next button
+                yPos = yPos + .Height ' Left of next button
             End With
             With (RoomNum(n))
                 .Width = 500 * (Form1.Width / 1920) ' Width of button
@@ -354,7 +354,7 @@ Public Class UserControl_dynamiccontrol
 
     Private Function loadRoomStatus()
         length = allRooms.Length
-        Console.WriteLine(length & " number of rooms available")
+        'Console.WriteLine(length & " number of rooms available")
         Dim n As Integer = 0
         Dim RoomNo(length - 1) As System.Windows.Forms.Label
 
@@ -365,7 +365,9 @@ Public Class UserControl_dynamiccontrol
 
         Dim xPos As Integer = 0  ' these two lines set the location for making the button array
         Dim yPos As Integer = 20
+
         While (n < length)
+
             With (RoomNo(n))
                 .Width = 70 ' Width of button
                 .Height = 50 ' Height of button
@@ -379,12 +381,21 @@ Public Class UserControl_dynamiccontrol
                     .Font = New Font("Microsoft Sans Serif", CInt(15))
                     .TextAlign = ContentAlignment.MiddleCenter
                     .BorderStyle = Windows.Forms.BorderStyle.Fixed3D
+                    Dim tt As New ToolTip
+                    tt.SetToolTip(RoomNo(n), "This room is available")
                 Else
                     .BackColor = Color.Firebrick
                     .ForeColor = Color.White
                     .Font = New Font("Microsoft Sans Serif", CInt(15))
                     .TextAlign = ContentAlignment.MiddleCenter
                     .BorderStyle = Windows.Forms.BorderStyle.Fixed3D
+
+                    Dim data As guestHouseDataSet.BookingRow
+                    data = BookingTableAdapter1.GetTodayBooking(allRooms(n), createDateTimeStamp(Date.Now), createDateTimeStamp(Date.Now)).Rows(0)
+                    'Console.WriteLine(table.Rows.Count & "Rows Returned Bitch for Room Number" & allRooms(n))
+                    Dim tt As New ToolTip
+                    Dim tooltipText As String = "Booking ID: " & data.BookingID & vbNewLine & "Name: " & data.BookingForFirstName & " " & data.BookingForLastName & vbNewLine
+                    tt.SetToolTip(RoomNo(n), tooltipText)
                 End If
                 If (n + 1) Mod 5 = 0 Then
                     yPos += .Height + 20 ' Next Y will be far 
@@ -406,7 +417,7 @@ Public Class UserControl_dynamiccontrol
         max()
         BookingTableAdapter1.FillByPendingBookings(GuestHouseDataSet1.Booking)
         UserTableTableAdapter1.getNonApproved(GuestHouseDataSet1.userTable)
-        Console.Write(length.ToString)
+        'Console.Write(length.ToString)
         If AdminDashboard.pendingbooking = 1 Then
             BookingTableAdapter1.FillByPendingBookings(GuestHouseDataSet1.Booking)
             loadBookingButtons()
