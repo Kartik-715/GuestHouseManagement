@@ -21,6 +21,7 @@ Public Class UserControl_dynamiccontrol
         If RW > RH Then
             min = RH
         End If
+        'adjusting all controls
         For Each Ctrl As Control In Controls
             'Console.WriteLine(Ctrl.Width & " " & RW)
             Ctrl.Width += CInt(Ctrl.Width * RW)
@@ -35,14 +36,17 @@ Public Class UserControl_dynamiccontrol
         CH = Me.Height
     End Sub
 
+    'function to change timestamp to date
     Public Function createDateTimeStamp(currDate As Date) As Integer
         Return CInt(currDate.ToString("yyyyMMdd"))
     End Function
 
+    'array to store data of rooms
     Dim allRooms(-1) As String
     Dim nonAvailRooms(-1) As String
     Dim availRooms(-1) As String
 
+    'funtion to fill data in arrays declared just above 
     Public Function getData()
         BookingTableAdapter1.fillNonAvailRooms(GuestHouseDataSet1.Booking, Check_Availability.createDateTimeStamp(Date.Now), Check_Availability.createDateTimeStamp(Date.Now), Check_Availability.createDateTimeStamp(Date.Now), Check_Availability.createDateTimeStamp(Date.Now))
         RoomTableAdapter1.Fill(GuestHouseDataSet1.Room)
@@ -62,12 +66,13 @@ Public Class UserControl_dynamiccontrol
                 availRooms = availRooms.Concat({room}).ToArray
             End If
         Next
-
     End Function
 
+    'function fir approve button
     Private Function loadApproveButtons()
         length = GuestHouseDataSet1.userTable.Rows.Count
         Dim n As Integer = 0
+        'declaring arrays of necessary controls
         Dim cancel(length - 1) As System.Windows.Forms.Button
         Dim Confirm(length - 1) As System.Windows.Forms.Button
         Dim EmailID(length - 1) As System.Windows.Forms.GroupBox
@@ -319,7 +324,7 @@ Public Class UserControl_dynamiccontrol
                 .Font = New Font(RoomNum(n).Font.Name, CInt(13), RoomNum(n).Font.Style)
                 BookingID(n).Controls.Add(RoomNum(n))
                 .Padding = New Padding(25, 0, 0, 0)
-               yPos = yPos + .Height ' Left of next button
+                yPos = yPos + .Height ' adjust positioning of next control
             End With
             With (BookingFrom(n))
                 .Width = 500 ' Width of button
@@ -329,8 +334,8 @@ Public Class UserControl_dynamiccontrol
                 .Padding = New Padding(25, 0, 0, 0)
                 .Text = "Booked From:     " & DateTime.ParseExact((GuestHouseDataSet1.Booking.Rows(n)("BookedFrom").ToString), "yyyyMMdd", Nothing)
                 .Font = New Font(BookingFrom(n).Font.Name, CInt(13), BookingFrom(n).Font.Style)
-                BookingID(n).Controls.Add(BookingFrom(n))
-                yPos = yPos + .Height ' Yaha ki hai Bakchodi '
+                BookingID(n).Controls.Add(BookingFrom(n)) 'add control to its parent
+                yPos = yPos + .Height 'adjust positioning of  next control
             End With
             With (BookingTill(n))
                 .Width = 500 ' Width of button
