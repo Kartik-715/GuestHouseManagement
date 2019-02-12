@@ -4471,7 +4471,7 @@ Namespace guestHouseDataSetTableAdapters
             Me._commandCollection(7).CommandText = "SELECT ID, RoomNo, BookedBy, BookingConfirmed, BookedFrom, BookedTill, BookingFor" & _
                 "FirstName, BookingForLastName, BookingForMobileNo, BookingID, Occupancy, Bill" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "F" & _
                 "ROM     Booking" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE  (RoomNo = ?) AND (BookedFrom <= ?) AND (BookedTill >= ?)" & _
-                ""
+                " AND (BookingConfirmed = True)"
             Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(7).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RoomNo", Global.System.Data.OleDb.OleDbType.WChar, 255, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "RoomNo", Global.System.Data.DataRowVersion.Current, False, Nothing))
             Me._commandCollection(7).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("BookedFrom", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0, Byte), CType(0, Byte), "BookedFrom", Global.System.Data.DataRowVersion.Current, False, Nothing))
