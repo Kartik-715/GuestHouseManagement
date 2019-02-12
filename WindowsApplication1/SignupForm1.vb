@@ -4,12 +4,12 @@ Imports System.Text.RegularExpressions
 Imports System.Security.Cryptography
 Public Class SignupForm1
     Dim str As String
-    Private Sub Form1_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint
+    Private Sub Form1_Paint(ByVal sender As Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Me.Paint      'Function for overlaying teal on background image
         Dim brushy As Brush
         brushy = New Drawing.SolidBrush(Color.FromArgb(100, 0, 128, 128))
         e.Graphics.FillRectangle(brushy, Me.ClientRectangle)
     End Sub
-    Private Sub max()
+    Private Sub max()       'Function to resize the form according to screen resolution
         Dim CW As Integer = Me.Width ' Current Width
         Dim CH As Integer = Me.Height ' Current Height
         Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1024)
@@ -30,16 +30,16 @@ Public Class SignupForm1
         CH = Me.Height
     End Sub
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        If IsPhoneNumberValid(txtPhone.Text) = False Then
+        If IsPhoneNumberValid(txtPhone.Text) = False Then       'validating Phone number
             MsgBox("Invalid Phone Number")
             Me.Close()
-            If IsValidEmailFormat(txtUsername.Text) = False Then
-                MsgBox("Invalid Phone Number")
+            If IsValidEmailFormat(txtUsername.Text) = False Then        'validating Email Address
+                MsgBox("Invalid Email Address")
                 Me.Close()
             End If
-        ElseIf txtCaptcha.Text = str Then
+        ElseIf txtCaptcha.Text = str Then                           'validating Captcha text
             Dim userData As guestHouseDataSet.userTableRow
-            userData = GuestHouseDataSet.userTable.FindByusername(txtUsername.Text)
+            userData = GuestHouseDataSet.userTable.FindByusername(txtUsername.Text)         'checking if user already exists in the data set
             If userData Is Nothing Then
                 txtPassword.Text = GenerateSHA256String(txtPassword.Text)
                 txtConfirmPassword.Text = GenerateSHA256String(txtConfirmPassword.Text)
@@ -62,30 +62,30 @@ Public Class SignupForm1
     End Sub
 
 
-    Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
+    Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click       'removing the entry that could have been made in data set if cancel had not been clicked
         UserTableBindingSource.RemoveCurrent()
         Me.Close()
     End Sub
 
-    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
-        Dim NumCaptcha As String = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click     'function for generating Captcha
+        Dim NumCaptcha As String = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"      'String from which captcha will be picked randomly
         str = ""
         Dim R As New Random
         For i As Integer = 0 To 5
-            str = str + NumCaptcha(R.Next(0, 60))
+            str = str + NumCaptcha(R.Next(0, 60))       'generating captcha string
         Next
         Dim b As New Bitmap(141 * 2, 36 * 2, Imaging.PixelFormat.Format32bppArgb)
         Dim g As Graphics = Graphics.FromImage(b)
         Dim Hb As New HatchBrush(HatchStyle.DottedDiamond, Color.FromArgb(255, 128, 0), Color.Black)
         g.DrawString(str, New Font("Monotype Corsiva", 26, FontStyle.Strikeout, GraphicsUnit.Point), Brushes.White, 5, 5)
-        picCaptcha.Image = b
+        picCaptcha.Image = b            'generating captcha image from the string
     End Sub
 
-    Private Sub SignupForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub SignupForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load      'things to do when form loads
         'TODO: This line of code loads data into the 'GuestHouseDataSet.userTable' table. You can move, or remove it, as needed.
         max()
         Me.UserTableTableAdapter.Fill(Me.GuestHouseDataSet.userTable)
-        UserTableBindingSource.AddNew()
+        UserTableBindingSource.AddNew()                                     'add new entry in the data set which is to be filled
         LblEmail1.Visible = False
         lblValidatioMessage.Visible = False
         btnRefresh.PerformClick()
@@ -93,10 +93,10 @@ Public Class SignupForm1
     End Sub
 
     Private Sub SignupForm1_closing(sender As Object, e As EventArgs) Handles MyBase.FormClosed
-        UserTableBindingSource.RemoveCurrent()
+        UserTableBindingSource.RemoveCurrent()              'removing the entry that could have been made in data set if cancel had not been clicked
     End Sub
 
-    Public Shared Function GenerateSHA256String(ByVal inputString) As String
+    Public Shared Function GenerateSHA256String(ByVal inputString) As String        'function to generate hash values of passwords
         Dim sha256 As SHA256 = SHA256Managed.Create()
         Dim bytes As Byte() = Encoding.UTF8.GetBytes(inputString)
         Dim hash As Byte() = sha256.ComputeHash(bytes)
@@ -109,12 +109,12 @@ Public Class SignupForm1
         Return stringBuilder.ToString()
     End Function
 
-    Public Function IsValidEmailFormat(ByVal s As String) As Boolean
+    Public Function IsValidEmailFormat(ByVal s As String) As Boolean        'function to Valiadate email
         Return Regex.IsMatch(s, "^[A-Z0-9a-z._%+-]+[@][A-Za-z0-9-]+[.][a-z.]+$")
     End Function
 
 
-    Protected Sub txtPhone_TextChanged(sender As Object, e As EventArgs) Handles txtPhone.TextChanged
+    Protected Sub txtPhone_TextChanged(sender As Object, e As EventArgs) Handles txtPhone.TextChanged   'fn to valiadate number 
         If Not IsPhoneNumberValid(txtPhone.Text) Then
             Dim isvalid = False
             lblValidatioMessage.Visible = True
@@ -125,7 +125,7 @@ Public Class SignupForm1
         End If
     End Sub
 
-    Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
+    Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged 'Alerting user of wrong email
         If IsValidEmailFormat(txtUsername.Text) = True Then
 
             LblEmail1.Visible = False
@@ -167,7 +167,7 @@ Public Class SignupForm1
         Return result
     End Function
 
-    Private Sub txtPhone_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPhone.KeyPress
+    Private Sub txtPhone_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPhone.KeyPress 'Alerting users of wrong number
         If Asc(e.KeyChar) = 8 Then
         ElseIf (txtPhone.Text).Length = 10 Then
             e.Handled = True

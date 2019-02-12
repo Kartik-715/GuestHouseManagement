@@ -95,18 +95,18 @@ Partial Class SignupForm1
         'LblEmail1
         '
         Me.LblEmail1.AutoSize = True
-        Me.LblEmail1.Location = New System.Drawing.Point(317, 172)
+        Me.LblEmail1.Location = New System.Drawing.Point(239, 29)
         Me.LblEmail1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LblEmail1.Name = "LblEmail1"
         Me.LblEmail1.Size = New System.Drawing.Size(0, 13)
         Me.LblEmail1.TabIndex = 17
-        Me.LblEmail1.Visible = False
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Azure
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.lblFirstName)
+        Me.Panel1.Controls.Add(Me.LblEmail1)
         Me.Panel1.Controls.Add(Me.txtFirName)
         Me.Panel1.Controls.Add(Me.TextBox2)
         Me.Panel1.Controls.Add(Me.lblLastName)
@@ -135,7 +135,7 @@ Partial Class SignupForm1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(237, 29)
+        Me.Label2.Location = New System.Drawing.Point(239, 84)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(0, 13)
@@ -397,7 +397,6 @@ Partial Class SignupForm1
         Me.ClientSize = New System.Drawing.Size(720, 730)
         Me.Controls.Add(Me.lblSignUp)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.LblEmail1)
         Me.Controls.Add(Me.LogoPictureBox)
         Me.DoubleBuffered = true
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
