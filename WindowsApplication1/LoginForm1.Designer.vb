@@ -181,6 +181,7 @@ Partial Class LoginForm1
         'lblForgotPass
         '
         Me.lblForgotPass.AutoSize = True
+        Me.lblForgotPass.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblForgotPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblForgotPass.ForeColor = System.Drawing.Color.Teal
         Me.lblForgotPass.Location = New System.Drawing.Point(74, 265)
