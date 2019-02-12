@@ -29,19 +29,19 @@
         Dim currBooking As guestHouseDataSet.BookingRow
         If GuestHouseDataSet1.Booking.Rows.Count = 0 Then
             'If there isnt current booking then the show it
-            lblBookingID.Text = "Booking ID:     None"
-            lblBookedFor.Text = "Booking For:    None"
-            lblBookedFrom.Text = "Booking From: None"
-            lblBookedTill.Text = "Booked Till:   None"
-            lblConfirm.Text = "Booking Confirmed: No "
+            lblBookingID.Text = "Booking ID:     NA"
+            lblBookedFor.Text = "Booking For:    NA"
+            lblBookedFrom.Text = "Booking From: NA"
+            lblBookedTill.Text = "Booked Till:   NA"
+            lblConfirm.Text = "Booking Confirmed: NA "
             'Calculation of Bill'
-            lblRoomCharges.Text = "Room Charges :    00"
-            lblTax.Text = "Tax ( 5% ):              00"
-            lblTotal.Text = "Total Amount:        00"
+            lblRoomCharges.Text = "Room Charges :    NA"
+            lblTax.Text = "Tax ( 5% ):              NA"
+            lblTotal.Text = "Total Amount:        NA"
         Else
             ' Get The Most Recent Booking of the User '
             currBooking = GuestHouseDataSet1.Booking.Rows(0)
-            lblBookingID.Text = "Booking ID:     " & currBooking.ID.ToString
+            lblBookingID.Text = "Booking ID:     " & currBooking.BookingID.ToString
             lblBookedFor.Text = "Booking For:    " & currBooking.BookingForFirstName & " " & currBooking.BookingForLastName
             lblBookedTill.Text = "Booked Till:   " & DateTime.ParseExact(currBooking.BookedTill.ToString, "yyyyMMdd", Nothing)
             If currBooking.BookingConfirmed Then
@@ -161,7 +161,7 @@
         UserControl_admindashboardnontabular1.BackColor = System.Drawing.Color.PaleTurquoise
         UserControl_admindashboardnontabular1.Top = 0
         If togglUP = False Or updatepasword = False Then
-            UserControl_admindashboardnontabular1.Left = -810
+            UserControl_admindashboardnontabular1.Left = -810 * 1920 / Form1.Width
         End If
         If togglUP = True Then
             UserControl_admindashboardnontabular1.Left = 0
@@ -291,7 +291,7 @@
             End If
         End If
         If updatepasword = True Then
-            If (UserControl_admindashboardnontabular1.Left < 0 And togglUP = True) Or (UserControl_admindashboardnontabular1.Left > -810 And togglUP = False) Then
+            If (UserControl_admindashboardnontabular1.Left < 0 And togglUP = True) Or (UserControl_admindashboardnontabular1.Left > -810 * 1920 / Form1.Width And togglUP = False) Then
                 UserControl_admindashboardnontabular1.Left += steps
             End If
             If UserControl_admindashboardnontabular1.Left > 0 Then
