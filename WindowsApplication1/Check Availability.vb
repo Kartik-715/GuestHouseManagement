@@ -52,7 +52,7 @@ Public Class Check_Availability
     Private Sub max()
         CW = Me.Width ' Current Width
         CH = Me.Height ' Current Height
-        Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1080)
+        Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1024)
         RW = (Me.Width - CW) / CW ' Ratio change of width
         RH = (Me.Height - CH) / CH ' Ratio change of height
         min = RW

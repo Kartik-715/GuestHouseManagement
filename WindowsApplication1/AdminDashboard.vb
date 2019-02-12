@@ -53,7 +53,11 @@
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
             If TypeOf Ctrl Is TextBox Then
-                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (min + 1)), Ctrl.Font.Style)         'resizing font according to min of Ratio change of width and height
+
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * Form1.Width / 1920), Ctrl.Font.Style)
+            End If
+            If TypeOf Ctrl Is Label Then
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * Form1.Width / 1920), Ctrl.Font.Style)
             End If
         Next
         CW = Me.Width
@@ -86,8 +90,8 @@
             btnApproveUsers.Visible = True
             btnPendingBookings.Visible = True
         End If
-        UserControl_admindashboardnontabular1.Width = 800           'setting hieghts and widths of usercontrols
-        UserControl_admindashboardnontabular1.Height = 800
+        UserControl_admindashboardnontabular1.Width = 800 * (Form1.Width / 1920)
+        UserControl_admindashboardnontabular1.Height = 800 * (Form1.Height / 1024)
         UserControl_dynamiccontrol1.Width = Form1.Width - btnLogOut.Right - 250
         UserControl_dynamiccontrol1.Height = Form1.Height - btnLogOut.Top + 70
         UserControl_admindashboardnontabular1.Top = btnLogOut.Top

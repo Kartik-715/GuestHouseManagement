@@ -161,13 +161,12 @@ Partial Class AdminDashboard
         '
         'labelNonApproved
         '
-        Me.labelNonApproved.AutoSize = True
         Me.labelNonApproved.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelNonApproved.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelNonApproved.Location = New System.Drawing.Point(268, 158)
         Me.labelNonApproved.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelNonApproved.Name = "labelNonApproved"
-        Me.labelNonApproved.Size = New System.Drawing.Size(86, 29)
+        Me.labelNonApproved.Size = New System.Drawing.Size(276, 29)
         Me.labelNonApproved.TabIndex = 15
         Me.labelNonApproved.Text = "Label1"
         '
@@ -189,7 +188,7 @@ Partial Class AdminDashboard
         Me.btnAddRoom.Name = "btnAddRoom"
         Me.btnAddRoom.Size = New System.Drawing.Size(269, 52)
         Me.btnAddRoom.TabIndex = 17
-        Me.btnAddRoom.Text = "Add Room"
+        Me.btnAddRoom.Text = "Add/Remove Room"
         Me.btnAddRoom.UseVisualStyleBackColor = False
         Me.btnAddRoom.Visible = False
         '
@@ -239,11 +238,12 @@ Partial Class AdminDashboard
         Me.UserControl_dynamiccontrol1.Location = New System.Drawing.Point(723, 370)
         Me.UserControl_dynamiccontrol1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UserControl_dynamiccontrol1.Name = "UserControl_dynamiccontrol1"
-        Me.UserControl_dynamiccontrol1.Size = New System.Drawing.Size(872, 655)
+        Me.UserControl_dynamiccontrol1.Size = New System.Drawing.Size(872, 691)
         Me.UserControl_dynamiccontrol1.TabIndex = 24
         '
         'UserControl_admindashboardnontabular1
         '
+        Me.UserControl_admindashboardnontabular1.BackColor = System.Drawing.Color.Azure
         Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(876, 226)
         Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
@@ -303,11 +303,10 @@ Partial Class AdminDashboard
         '
         'lblWelcome
         '
-        Me.lblWelcome.AutoSize = True
         Me.lblWelcome.BackColor = System.Drawing.Color.Transparent
         Me.lblWelcome.Font = New System.Drawing.Font("Georgia", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWelcome.ForeColor = System.Drawing.Color.White
-        Me.lblWelcome.Location = New System.Drawing.Point(175, 44)
+        Me.lblWelcome.Location = New System.Drawing.Point(88, 43)
         Me.lblWelcome.Name = "lblWelcome"
         Me.lblWelcome.Size = New System.Drawing.Size(1064, 56)
         Me.lblWelcome.TabIndex = 29
@@ -315,13 +314,12 @@ Partial Class AdminDashboard
         '
         'lblPendingBooking
         '
-        Me.lblPendingBooking.AutoSize = True
         Me.lblPendingBooking.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblPendingBooking.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPendingBooking.Location = New System.Drawing.Point(956, 158)
+        Me.lblPendingBooking.Location = New System.Drawing.Point(898, 158)
         Me.lblPendingBooking.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPendingBooking.Name = "lblPendingBooking"
-        Me.lblPendingBooking.Size = New System.Drawing.Size(86, 29)
+        Me.lblPendingBooking.Size = New System.Drawing.Size(279, 29)
         Me.lblPendingBooking.TabIndex = 30
         Me.lblPendingBooking.Text = "Label1"
         '
@@ -353,8 +351,10 @@ Partial Class AdminDashboard
         Me.Controls.Add(Me.btnUpdatePassword)
         Me.Controls.Add(Me.btnBookARoom)
         Me.Controls.Add(Me.btnLogOut)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximizeBox = False
         Me.Name = "AdminDashboard"
         Me.Text = "Admin Dashboard"
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()

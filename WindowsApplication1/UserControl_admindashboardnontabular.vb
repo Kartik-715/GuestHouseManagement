@@ -23,11 +23,14 @@ Public Class UserControl_admindashboardnontabular
         For Each Ctrl As Control In Controls
             Console.WriteLine(Ctrl.Width & " " & RW)
             Ctrl.Width += CInt(Ctrl.Width * RW)
-            Ctrl.Height += CInt(Ctrl.Height * RH)
+            Ctrl.Height = CInt(Ctrl.Height * Form1.Height / 1080)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
             If TypeOf Ctrl Is TextBox Then
-                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (min + 1)), Ctrl.Font.Style)
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * Form1.Width / 1920), Ctrl.Font.Style)
+            End If
+            If TypeOf Ctrl Is Label Then
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * Form1.Width / 1920), Ctrl.Font.Style)
             End If
         Next
         CW = Me.Width
@@ -122,9 +125,5 @@ Public Class UserControl_admindashboardnontabular
         PassButton3.Image = My.Resources.vision_off
         PassButton3.FlatStyle = FlatStyle.Popup
         PassButton3.FlatAppearance.BorderSize = 0
-    End Sub
-
-    Private Sub rbtnIsVIP_CheckedChanged(sender As Object, e As EventArgs)
-
     End Sub
 End Class
