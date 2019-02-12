@@ -1,7 +1,7 @@
 ﻿Imports System.Text.RegularExpressions
 Imports System.Runtime.InteropServices
 Public Class Check_Availability
-    Dim count As Integer = 0
+    Dim count1 As Integer = 0
     Public loggedUser As String = "anonymous"
 
     <DllImport("user32.dll", EntryPoint:="SetProcessDPIAware")> _
@@ -84,10 +84,10 @@ Public Class Check_Availability
     End Sub
 
     Public Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If count = 0 Then
+        If count1 = 0 Then
             SetProcessDPIAware()
             max()
-            count = 1
+            count1 = 1
         End If
         Me.Top = 100
         Me.Left = (Form1.Width - Me.Width) / 2

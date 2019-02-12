@@ -79,10 +79,10 @@ Public Class SignupForm1
                 btnRefresh.PerformClick()
             End If
         Else
-        MsgBox("Passfields Are Not Matching")
-        txtPassword.Clear()
-        txtConfirmPassword.Clear()
-        btnRefresh.PerformClick()
+            MsgBox("Passfields Are Not Matching")
+            txtPassword.Clear()
+            txtConfirmPassword.Clear()
+            btnRefresh.PerformClick()
         End If
 
 
