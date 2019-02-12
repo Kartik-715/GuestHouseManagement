@@ -85,6 +85,7 @@ Public Class UserControl_dynamiccontrol
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
                 .Text = "Email:   " & GuestHouseDataSet1.userTable.Rows(n)("username").ToString
+                .BackColor = System.Drawing.Color.PaleTurquoise
                 .Font = New Font(EmailID(n).Font.Name, CInt(13), EmailID(n).Font.Style)
                 Me.Controls.Add(EmailID(n))
                 xPos = xPos + 2 ' Left of next button
@@ -177,8 +178,9 @@ Public Class UserControl_dynamiccontrol
                 .Height = 250 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Booking ID:   " & GuestHouseDataSet1.Booking.Rows(n)("ID").ToString
+                .Text = "Booking ID:   " & GuestHouseDataSet1.Booking.Rows(n)("BookingID").ToString
                 .Font = New Font(BookingID(n).Font.Name, CInt(13), BookingID(n).Font.Style)
+                .BackColor = System.Drawing.Color.PaleTurquoise
                 Me.Controls.Add(BookingID(n))
                 xPos = xPos + 2 ' Left of next button
                 yPos = 50
@@ -276,8 +278,10 @@ Public Class UserControl_dynamiccontrol
                 .Height = 250 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Booking ID   " & GuestHouseDataSet1.Booking.Rows(n)("ID").ToString
-                .Font = New Font(BookingID(n).Font.Name, CInt(13), BookingID(n).Font.Style)
+                .Text = "Booking ID   " & GuestHouseDataSet1.Booking.Rows(n)("BookingID").ToString
+                .Font = New Font("Microsoft Tai Le", CInt(18))
+                .BackColor = System.Drawing.Color.PaleTurquoise
+                .Padding = New Padding(5, 10, 5, 0)
                 Me.Controls.Add(BookingID(n))
                 xPos = xPos + 2 ' Left of next button
                 yPos = 50
@@ -287,7 +291,8 @@ Public Class UserControl_dynamiccontrol
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "RoomNum:   " & GuestHouseDataSet1.Booking.Rows(n)("RoomNo")
+                .Padding = New Padding(25, 0, 0, 0)
+                .Text = "Room Number:   " & GuestHouseDataSet1.Booking.Rows(n)("RoomNo")
                 .Font = New Font(RoomNum(n).Font.Name, CInt(13), RoomNum(n).Font.Style)
                 BookingID(n).Controls.Add(RoomNum(n))
                 yPos = yPos + .Height ' Left of next button
@@ -297,7 +302,8 @@ Public Class UserControl_dynamiccontrol
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Name:    " & GuestHouseDataSet1.Booking.Rows(n)("BookingForFirstName").ToString & " " & GuestHouseDataSet1.Booking.Rows(n)("BookingForLastName").ToString
+                .Padding = New Padding(25, 0, 0, 0)
+                .Text = "Name:                 " & GuestHouseDataSet1.Booking.Rows(n)("BookingForFirstName").ToString & " " & GuestHouseDataSet1.Booking.Rows(n)("BookingForLastName").ToString
                 .Font = New Font(Name(n).Font.Name, CInt(13), Name(n).Font.Style)
                 BookingID(n).Controls.Add(Name(n))
                 yPos = yPos + .Height ' Left of next button
@@ -307,7 +313,8 @@ Public Class UserControl_dynamiccontrol
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Booked From:    " & DateTime.ParseExact((GuestHouseDataSet1.Booking.Rows(n)("BookedFrom").ToString), "yyyyMMdd", Nothing)
+                .Padding = New Padding(25, 0, 0, 0)
+                .Text = "Booked From:     " & DateTime.ParseExact((GuestHouseDataSet1.Booking.Rows(n)("BookedFrom").ToString), "yyyyMMdd", Nothing)
                 .Font = New Font(BookingFrom(n).Font.Name, CInt(13), BookingFrom(n).Font.Style)
                 BookingID(n).Controls.Add(BookingFrom(n))
                 yPos = yPos + .Height ' Yaha ki hai Bakchodi '
@@ -317,7 +324,8 @@ Public Class UserControl_dynamiccontrol
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Booked Till:    " & DateTime.ParseExact((GuestHouseDataSet1.Booking.Rows(n)("BookedTill").ToString), "yyyyMMdd", Nothing)
+                .Padding = New Padding(25, 0, 0, 0)
+                .Text = "Booked Till:        " & DateTime.ParseExact((GuestHouseDataSet1.Booking.Rows(n)("BookedTill").ToString), "yyyyMMdd", Nothing)
                 .Font = New Font(BookingTill(n).Font.Name, CInt(13), BookingTill(n).Font.Style)
                 BookingID(n).Controls.Add(BookingTill(n))
                 yPos = (50 + BookingID(n).Height) * (n + 1)  ' Next Y will be far ' 
@@ -345,11 +353,20 @@ Public Class UserControl_dynamiccontrol
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
+                .BackColor = Color.Azure
                 .Text = allRooms(n)
                 If availRooms.Contains(allRooms(n)) Then
-                    .BackColor = Color.Green
+                    .BackColor = Color.LimeGreen
+                    .ForeColor = Color.White
+                    .Font = New Font("Microsoft Sans Serif", CInt(15))
+                    .TextAlign = ContentAlignment.MiddleCenter
+                    .BorderStyle = Windows.Forms.BorderStyle.Fixed3D
                 Else
-                    .BackColor = Color.Red
+                    .BackColor = Color.Firebrick
+                    .ForeColor = Color.White
+                    .Font = New Font("Microsoft Sans Serif", CInt(15))
+                    .TextAlign = ContentAlignment.MiddleCenter
+                    .BorderStyle = Windows.Forms.BorderStyle.Fixed3D
                 End If
                 If (n + 1) Mod 5 = 0 Then
                     yPos += .Height + 20 ' Next Y will be far 
