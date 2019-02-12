@@ -36,18 +36,11 @@ Partial Class Dashboard
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBoxBill = New System.Windows.Forms.GroupBox()
-        Me.lblTotalChargesValue = New System.Windows.Forms.Label()
-        Me.lblTaxValue = New System.Windows.Forms.Label()
-        Me.lblRoomChargesValue = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.lblTax = New System.Windows.Forms.Label()
         Me.lblRoomCharges = New System.Windows.Forms.Label()
         Me.UserControl_admindashboardnontabular1 = New WindowsApplication1.UserControl_admindashboardnontabular()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.lblBookedTillval = New System.Windows.Forms.Label()
-        Me.lblBookedFromval = New System.Windows.Forms.Label()
-        Me.lblBookedForval = New System.Windows.Forms.Label()
-        Me.lblBookingIDval = New System.Windows.Forms.Label()
         Me.lblBookedFor = New System.Windows.Forms.Label()
         Me.lblBookedTill = New System.Windows.Forms.Label()
         Me.lblBookedFrom = New System.Windows.Forms.Label()
@@ -194,67 +187,46 @@ Partial Class Dashboard
         '
         'GroupBoxBill
         '
-        Me.GroupBoxBill.Controls.Add(Me.lblTotalChargesValue)
-        Me.GroupBoxBill.Controls.Add(Me.lblTaxValue)
-        Me.GroupBoxBill.Controls.Add(Me.lblRoomChargesValue)
+        Me.GroupBoxBill.BackColor = System.Drawing.Color.Azure
         Me.GroupBoxBill.Controls.Add(Me.lblTotal)
         Me.GroupBoxBill.Controls.Add(Me.lblTax)
         Me.GroupBoxBill.Controls.Add(Me.lblRoomCharges)
-        Me.GroupBoxBill.Location = New System.Drawing.Point(314, 277)
+        Me.GroupBoxBill.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBoxBill.Location = New System.Drawing.Point(0, 295)
         Me.GroupBoxBill.Name = "GroupBoxBill"
-        Me.GroupBoxBill.Size = New System.Drawing.Size(441, 194)
+        Me.GroupBoxBill.Size = New System.Drawing.Size(655, 259)
         Me.GroupBoxBill.TabIndex = 20
         Me.GroupBoxBill.TabStop = False
         Me.GroupBoxBill.Text = "Your Bill"
-        '
-        'lblTotalChargesValue
-        '
-        Me.lblTotalChargesValue.AutoSize = True
-        Me.lblTotalChargesValue.Location = New System.Drawing.Point(243, 120)
-        Me.lblTotalChargesValue.Name = "lblTotalChargesValue"
-        Me.lblTotalChargesValue.Size = New System.Drawing.Size(0, 17)
-        Me.lblTotalChargesValue.TabIndex = 5
-        '
-        'lblTaxValue
-        '
-        Me.lblTaxValue.AutoSize = True
-        Me.lblTaxValue.Location = New System.Drawing.Point(243, 84)
-        Me.lblTaxValue.Name = "lblTaxValue"
-        Me.lblTaxValue.Size = New System.Drawing.Size(0, 17)
-        Me.lblTaxValue.TabIndex = 4
-        '
-        'lblRoomChargesValue
-        '
-        Me.lblRoomChargesValue.AutoSize = True
-        Me.lblRoomChargesValue.Location = New System.Drawing.Point(243, 42)
-        Me.lblRoomChargesValue.Name = "lblRoomChargesValue"
-        Me.lblRoomChargesValue.Size = New System.Drawing.Size(0, 17)
-        Me.lblRoomChargesValue.TabIndex = 3
+        Me.GroupBoxBill.Visible = False
         '
         'lblTotal
         '
         Me.lblTotal.AutoSize = True
-        Me.lblTotal.Location = New System.Drawing.Point(50, 120)
+        Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.Location = New System.Drawing.Point(29, 187)
         Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(92, 17)
+        Me.lblTotal.Size = New System.Drawing.Size(196, 32)
         Me.lblTotal.TabIndex = 2
         Me.lblTotal.Text = "Total Amount"
         '
         'lblTax
         '
         Me.lblTax.AutoSize = True
-        Me.lblTax.Location = New System.Drawing.Point(50, 84)
+        Me.lblTax.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTax.Location = New System.Drawing.Point(29, 151)
         Me.lblTax.Name = "lblTax"
-        Me.lblTax.Size = New System.Drawing.Size(81, 17)
+        Me.lblTax.Size = New System.Drawing.Size(169, 32)
         Me.lblTax.TabIndex = 1
         Me.lblTax.Text = "Tax ( 5% ) :"
         '
         'lblRoomCharges
         '
         Me.lblRoomCharges.AutoSize = True
-        Me.lblRoomCharges.Location = New System.Drawing.Point(50, 42)
+        Me.lblRoomCharges.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRoomCharges.Location = New System.Drawing.Point(29, 109)
         Me.lblRoomCharges.Name = "lblRoomCharges"
-        Me.lblRoomCharges.Size = New System.Drawing.Size(110, 17)
+        Me.lblRoomCharges.Size = New System.Drawing.Size(233, 32)
         Me.lblRoomCharges.TabIndex = 0
         Me.lblRoomCharges.Text = "Room Charges :"
         '
@@ -264,17 +236,13 @@ Partial Class Dashboard
         Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(4, 436)
         Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(0)
         Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
-        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(2, 7)
+        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(1, 1)
         Me.UserControl_admindashboardnontabular1.TabIndex = 8
         Me.UserControl_admindashboardnontabular1.Visible = False
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Azure
-        Me.GroupBox1.Controls.Add(Me.lblBookedTillval)
-        Me.GroupBox1.Controls.Add(Me.lblBookedFromval)
-        Me.GroupBox1.Controls.Add(Me.lblBookedForval)
-        Me.GroupBox1.Controls.Add(Me.lblBookingIDval)
         Me.GroupBox1.Controls.Add(Me.lblBookedFor)
         Me.GroupBox1.Controls.Add(Me.lblBookedTill)
         Me.GroupBox1.Controls.Add(Me.lblBookedFrom)
@@ -289,42 +257,6 @@ Partial Class Dashboard
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Current Booking"
         Me.GroupBox1.Visible = False
-        '
-        'lblBookedTillval
-        '
-        Me.lblBookedTillval.AutoSize = True
-        Me.lblBookedTillval.Location = New System.Drawing.Point(308, 220)
-        Me.lblBookedTillval.Name = "lblBookedTillval"
-        Me.lblBookedTillval.Size = New System.Drawing.Size(108, 32)
-        Me.lblBookedTillval.TabIndex = 7
-        Me.lblBookedTillval.Text = "Label6"
-        '
-        'lblBookedFromval
-        '
-        Me.lblBookedFromval.AutoSize = True
-        Me.lblBookedFromval.Location = New System.Drawing.Point(308, 170)
-        Me.lblBookedFromval.Name = "lblBookedFromval"
-        Me.lblBookedFromval.Size = New System.Drawing.Size(108, 32)
-        Me.lblBookedFromval.TabIndex = 6
-        Me.lblBookedFromval.Text = "Label5"
-        '
-        'lblBookedForval
-        '
-        Me.lblBookedForval.AutoSize = True
-        Me.lblBookedForval.Location = New System.Drawing.Point(308, 121)
-        Me.lblBookedForval.Name = "lblBookedForval"
-        Me.lblBookedForval.Size = New System.Drawing.Size(108, 32)
-        Me.lblBookedForval.TabIndex = 5
-        Me.lblBookedForval.Text = "Label4"
-        '
-        'lblBookingIDval
-        '
-        Me.lblBookingIDval.AutoSize = True
-        Me.lblBookingIDval.Location = New System.Drawing.Point(308, 70)
-        Me.lblBookingIDval.Name = "lblBookingIDval"
-        Me.lblBookingIDval.Size = New System.Drawing.Size(108, 32)
-        Me.lblBookingIDval.TabIndex = 4
-        Me.lblBookingIDval.Text = "Label3"
         '
         'lblBookedFor
         '
@@ -524,10 +456,6 @@ Partial Class Dashboard
     Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents lblBookedTillval As System.Windows.Forms.Label
-    Friend WithEvents lblBookedFromval As System.Windows.Forms.Label
-    Friend WithEvents lblBookedForval As System.Windows.Forms.Label
-    Friend WithEvents lblBookingIDval As System.Windows.Forms.Label
     Friend WithEvents lblBookedFor As System.Windows.Forms.Label
     Friend WithEvents lblBookedTill As System.Windows.Forms.Label
     Friend WithEvents lblBookedFrom As System.Windows.Forms.Label
@@ -541,7 +469,4 @@ Partial Class Dashboard
     Friend WithEvents lblRoomCharges As System.Windows.Forms.Label
     Friend WithEvents lblTax As System.Windows.Forms.Label
     Friend WithEvents lblTotal As System.Windows.Forms.Label
-    Friend WithEvents lblRoomChargesValue As System.Windows.Forms.Label
-    Friend WithEvents lblTaxValue As System.Windows.Forms.Label
-    Friend WithEvents lblTotalChargesValue As System.Windows.Forms.Label
 End Class

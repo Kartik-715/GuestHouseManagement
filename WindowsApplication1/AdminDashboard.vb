@@ -7,7 +7,7 @@
     Public RoomStatus As Integer
     Public addremoveroom As Integer
     Public updatepassword As Integer
-    Dim check As Integer = 0
+   Dim check As Integer = 0
 
     Public Sub forminit()
         approveuser = 0
@@ -31,13 +31,18 @@
         Check_Availability.Close()
     End Sub
 
+    Dim CW As Integer ' Current Width
+    Dim CH As Integer  ' Current Height
+    Dim RW As Double  ' Ratio change of width
+    Dim RH As Double  ' Ratio change of height
+    Dim min As Double
     Private Sub max()
-        Dim CW As Integer = Me.Width ' Current Width
-        Dim CH As Integer = Me.Height ' Current Height
+        CW = Me.Width ' Current Width
+        CH = Me.Height ' Current Height
         Me.WindowState = FormWindowState.Maximized
-        Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
-        Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
-        Dim min As Double = RW
+        RW = (Me.Width - CW) / CW ' Ratio change of width
+        RH = (Me.Height - CH) / CH ' Ratio change of height
+        min = RW
         If RW > RH Then
             min = RH
         End If
@@ -46,7 +51,9 @@
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
-            'Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * min), Ctrl.Font.Style)
+            If TypeOf Ctrl Is TextBox Then
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (min + 1)), Ctrl.Font.Style)
+            End If
         Next
         CW = Me.Width
         CH = Me.Height
@@ -70,6 +77,7 @@
         'TODO: This line of code loads data into the 'GuestHouseDataSet.Booking' table. You can move, or remove it, as needed.
         Form1.SetProcessDPIAware()
         Me.BookingTableAdapter.Fill(Me.GuestHouseDataSet.Booking)
+        BookingTableAdapter.FillByPendingBookings(GuestHouseDataSet1.Booking)
         max()
         Form1.Hide()
         If loggedUser = "admin" Then
@@ -86,6 +94,7 @@
         UserControl_dynamiccontrol1.Top = btnLogOut.Top + 56
         UserControl_dynamiccontrol1.Left = btnLogOut.Right + 200
         Me.WindowState = FormWindowState.Maximized
+        lblHello.Parent = PictureBoxHeader
         lblHello.Text = "Hello! " & loggedUser
         reload_data()
         btnclicks()
@@ -104,6 +113,7 @@
 
     Public Sub reload_data()
         labelNonApproved.Text = "There are " & UserTableTableAdapter1.numNonApproved & " non Approved Users "
+        lblPendingBooking.Text = "There are " & GuestHouseDataSet1.Booking.Rows.Count & " Pending Booking "
     End Sub
 
     Private Sub btnUpdatePassword_Click(sender As Object, e As EventArgs) Handles btnUpdatePassword.Click
@@ -219,5 +229,9 @@
     End Sub
     Private Sub btnBookARoom_MouseOver(sender As Object, e As EventArgs) Handles btnBookARoom.MouseLeave
         btnBookARoom.FlatAppearance.BorderSize = 0
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblPendingBooking.Click
+
     End Sub
 End Class

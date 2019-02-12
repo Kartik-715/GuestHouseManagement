@@ -1,5 +1,10 @@
-﻿Public Class Check_Availability
+﻿Imports System.Runtime.InteropServices
+Public Class Check_Availability
     Public loggedUser As String = "anonymous"
+
+    <DllImport("user32.dll", EntryPoint:="SetProcessDPIAware")> _
+    Public Shared Function SetProcessDPIAware() As <MarshalAs(UnmanagedType.Bool)> Boolean
+    End Function
 
     Public Function createDateTimeStamp(currDate As Date) As Integer
         Return CInt(currDate.ToString("yyyyMMdd"))
@@ -39,13 +44,18 @@
 
     End Function
 
+    Dim CW As Integer ' Current Width
+    Dim CH As Integer  ' Current Height
+    Dim RW As Double  ' Ratio change of width
+    Dim RH As Double  ' Ratio change of height
+    Dim min As Double
     Private Sub max()
-        Dim CW As Integer = Me.Width ' Current Width
-        Dim CH As Integer = Me.Height ' Current Height
-        Me.Size = New Size(CW * Form1.Width / 1386, CH * Form1.Height / 768)
-        Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
-        Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
-        Dim min As Double = RW
+        CW = Me.Width ' Current Width
+        CH = Me.Height ' Current Height
+        Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1080)
+        RW = (Me.Width - CW) / CW ' Ratio change of width
+        RH = (Me.Height - CH) / CH ' Ratio change of height
+        min = RW
         If RW > RH Then
             min = RH
         End If
@@ -54,13 +64,16 @@
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
-            'Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * min), Ctrl.Font.Style)
+            If TypeOf Ctrl Is TextBox Then
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (min + 1)), Ctrl.Font.Style)
+            End If
         Next
         CW = Me.Width
         CH = Me.Height
     End Sub
 
     Private Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SetProcessDPIAware()
         max()
         Me.Top = 100
         Me.Left = (Form1.Width - Me.Width) / 2
@@ -109,7 +122,7 @@
         lblnumAvail.Show()
 
         If availRooms.Length >= 1 Then
-            Me.Height = 868
+            Me.Height = 700
             Me.StartPosition = FormStartPosition.CenterScreen
             lblFirstName.Show()
             lblLastName.Show()

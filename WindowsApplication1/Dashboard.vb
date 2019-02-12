@@ -3,9 +3,11 @@
     Public NameofUser As String
     Public updatepasword As Boolean = False
     Public mybookings As Boolean = False
+    Public mybills As Boolean = False
     Dim steps As Integer = 20
     Dim togglBok As Boolean = False
     Dim togglUP As Boolean = False
+    Dim togglMB As Boolean = False
     Private images(3) As System.Drawing.Image
     Private index As Integer
     Dim check As Integer = 0
@@ -21,13 +23,18 @@
 
     End Sub
 
+    Dim CW As Integer ' Current Width
+    Dim CH As Integer  ' Current Height
+    Dim RW As Double  ' Ratio change of width
+    Dim RH As Double  ' Ratio change of height
+    Dim min As Double
     Private Sub max()
-        Dim CW As Integer = Me.Width ' Current Width
-        Dim CH As Integer = Me.Height ' Current Height
+        CW = Me.Width ' Current Width
+        CH = Me.Height ' Current Height
         Me.WindowState = FormWindowState.Maximized
-        Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
-        Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
-        Dim min As Double = RW
+        RW = (Me.Width - CW) / CW ' Ratio change of width
+        RH = (Me.Height - CH) / CH ' Ratio change of height
+        min = RW
         If RW > RH Then
             min = RH
         End If
@@ -36,7 +43,9 @@
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
-            ' Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * min), Ctrl.Font.Style)
+            If TypeOf Ctrl Is TextBox Then
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (min + 1)), Ctrl.Font.Style)
+            End If
         Next
         With PictureBox2
             .Width += CInt(PictureBox2.Width * RW)
@@ -55,11 +64,14 @@
     End Sub
 
     Private Sub frminit()
+        Check_Availability.Hide()
         GroupBox1.Hide()
         UserControl_admindashboardnontabular1.Hide()
+        GroupBoxBill.Hide()
     End Sub
 
     Private Sub btnclicks()
+        mybills = False
         mybookings = False
         updatepasword = False
     End Sub
@@ -83,6 +95,8 @@
         IITGLogo.Parent = PictureBox1
         btnclicks()
         frminit()
+        GroupBoxBill.Top = 2
+        GroupBoxBill.Left = 0
         NameofUser = UserTableTableAdapter1.getNamebyUsername(loggedUser)
         lblHello.Text = "Hello! " & NameofUser
         BookingTableAdapter1.FillCurrentBooking(GuestHouseDataSet1.Booking, CInt(Date.Now.ToString("yyyyMMdd")), loggedUser)
@@ -91,14 +105,14 @@
         Else
             ' Get The Most Recent Booking of the User '
             currBooking = GuestHouseDataSet1.Booking.Rows(0)
-            lblBookingIDval.Text = currBooking.ID.ToString
-            lblBookedForval.Text = currBooking.BookingForFirstName & " " & currBooking.BookingForLastName
-            lblBookedTillval.Text = DateTime.ParseExact(currBooking.BookedTill.ToString, "yyyyMMdd", Nothing)
-            lblBookedFromval.Text = DateTime.ParseExact(currBooking.BookedFrom.ToString, "yyyyMMdd", Nothing)
+            lblBookingID.Text = "Booking ID:     " & currBooking.ID.ToString
+            lblBookedFor.Text = "Booking For:    " & currBooking.BookingForFirstName & " " & currBooking.BookingForLastName
+            lblBookedTill.Text = "Booked Till:   " & DateTime.ParseExact(currBooking.BookedTill.ToString, "yyyyMMdd", Nothing)
+            lblBookedFrom.Text = "Booked From:   " & DateTime.ParseExact(currBooking.BookedFrom.ToString, "yyyyMMdd", Nothing)
             'Calculation of Bill'
-            lblRoomChargesValue.Text = currBooking.Bill.ToString
-            lblTaxValue.Text = (currBooking.Bill * 0.05).ToString
-            lblTotalChargesValue.Text = (currBooking.Bill + (currBooking.Bill * 0.05)).ToString
+            lblRoomCharges.Text = "Room Charges :    " & currBooking.Bill.ToString
+            lblTax.Text = "Tax ( 5% ):              " & (currBooking.Bill * 0.05).ToString
+            lblTotal.Text = "Total Amount:        " & (currBooking.Bill + (currBooking.Bill * 0.05)).ToString
 
         End If
     End Sub
@@ -107,6 +121,7 @@
         frminit()
         btnclicks()
         togglBok = False
+        togglMB = False
         upsize()
         togglUP = Not (togglUP)
         updatepasword = True
@@ -136,6 +151,15 @@
         End If
         If togglBok = True Then
             GroupBox1.Left = 2
+        End If
+    End Sub
+
+    Private Sub mybillsize()
+        If togglMB = False Or mybills = False Then
+            GroupBoxBill.Left = GroupBoxBill.Left - GroupBox1.Width + 10
+        End If
+        If togglMB = True Then
+            GroupBoxBill.Left = 2
         End If
     End Sub
 
@@ -218,7 +242,7 @@
     End Sub
 
     Private Sub Timer2_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles Timer2.Tick
-        If togglUP = True Or togglBok = True Then
+        If togglUP = True Or togglBok = True Or togglMB = True Then
             steps = 20
         Else
             steps = -20
@@ -229,6 +253,14 @@
             End If
             If GroupBox1.Left > 0 Then
                 GroupBox1.Left = 0
+            End If
+        End If
+        If mybills = True Then
+            If (GroupBoxBill.Left < 0 And togglMB = True) Or (GroupBoxBill.Left > -GroupBoxBill.Width And togglMB = False) Then
+                GroupBoxBill.Left += steps
+            End If
+            If GroupBoxBill.Left > 0 Then
+                GroupBoxBill.Left = 0
             End If
         End If
         If updatepasword = True Then
@@ -244,6 +276,7 @@
 
     Private Sub btnBookARoom_Click(sender As Object, e As EventArgs) Handles btnBookARoom.Click
         Check_Availability.loggedUser = loggedUser
+        Check_Availability.BringToFront()
         Check_Availability.Show()
     End Sub
 
@@ -251,6 +284,7 @@
         frminit()
         btnclicks()
         togglUP = False
+        togglMB = False
         myboksize()
         togglBok = Not (togglBok)
         mybookings = True
@@ -258,4 +292,15 @@
         Timer2.Start()
     End Sub
 
+    Private Sub btnMyBills_Click(sender As Object, e As EventArgs) Handles btnMyBills.Click
+        frminit()
+        btnclicks()
+        togglUP = False
+        togglBok = False
+        mybillsize()
+        togglMB = Not (togglMB)
+        mybills = True
+        GroupBoxBill.Visible = True
+        Timer2.Start()
+    End Sub
 End Class
