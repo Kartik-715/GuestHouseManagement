@@ -94,6 +94,7 @@
         UserControl_dynamiccontrol1.Top = btnLogOut.Top + 56
         UserControl_dynamiccontrol1.Left = btnLogOut.Right + 200
         Me.WindowState = FormWindowState.Maximized
+        lblHello.Parent = PictureBoxHeader
         lblHello.Text = "Hello! " & loggedUser
         reload_data()
         btnclicks()

@@ -182,8 +182,4 @@ Public Class SignupForm1
             e.Handled = True
         End If
     End Sub
-
-    Private Sub Cancel_Click_1(sender As Object, e As EventArgs)
-
-    End Sub
 End Class

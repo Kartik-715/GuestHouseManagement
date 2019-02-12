@@ -126,4 +126,27 @@
   <metadata name="ForgotPassTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>462, 21</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEADw8AAAEAIADoAwAAFgAAACgAAAAPAAAAHgAAAAEAIAAAAAAAhAMAANcNAADXDQAAAAAAAAAA
+        AAD///8A////AP///wD///8A////AICAAAeAgAD7gIAA/4CAAP+AgAD/gIAA/4CAAP+AgAD8gIAAx4CA
+        ACj///8A////AP///wD///8A////AICAAAOAgACFgIAAiICAAIiAgACIgIAAiICAAIiAgACRgIAA8YCA
+        AMT///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AgIAAm4CA
+        APf///8A////AP///wD///8A////AICAABiAgAAn////AP///wD///8A////AP///wD///8AgIAAlYCA
+        APr///8A////AP///wD///8A////AICAAFSAgAD6gIAAmYCAABT///8A////AP///wD///8AgIAAlYCA
+        APqAgABegIAAZoCAAGaAgABmgIAAZoCAAJiAgAD/gIAA/4CAAOqAgABngIAAA////wD///8AgIAAlYCA
+        APqAgAD6gIAA/4CAAP+AgAD/gIAA/4CAAP+AgAD/gIAA/4CAAP+AgAD/gIAA1oCAAEf///8AgIAAlYCA
+        APqAgAD6gIAA/4CAAP+AgAD/gIAA/4CAAP+AgAD/gIAA/4CAAP+AgAD/gIAA/4CAAP+AgABIgIAAlYCA
+        APqAgAD6gIAA/4CAAP+AgAD/gIAA/4CAAP+AgAD/gIAA/4CAAP+AgAD/gIAA1oCAAEf///8AgIAAlYCA
+        APqAgABegIAAZoCAAGaAgABmgIAAZoCAAJiAgAD/gIAA/4CAAOqAgABngIAAA////wD///8AgIAAlYCA
+        APr///8A////AP///wD///8A////AICAAFSAgAD6gIAAmYCAABT///8A////AP///wD///8AgIAAlYCA
+        APr///8A////AP///wD///8A////AICAABeAgAAm////AP///wD///8A////AP///wD///8AgIAAlYCA
+        APr///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AgIAAm4CA
+        APf///8A////AP///wD///8A////AICAAAOAgACFgIAAiICAAIiAgACIgIAAiICAAIiAgACRgIAA8ICA
+        AMX///8A////AP///wD///8A////AICAAAeAgAD7gIAA/4CAAP+AgAD/gIAA/4CAAP+AgAD8gIAAyYCA
+        ACn4AAAA+AAAAP/4AAD5+AAA+HgAAAAYAAAACAAAAAAAAAAIAAAAGAAA+HgAAPn4AAD/+AAA+AAAAPgA
+        AAA=
+</value>
+  </data>
 </root>

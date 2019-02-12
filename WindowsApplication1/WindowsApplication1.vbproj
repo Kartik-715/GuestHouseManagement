@@ -186,9 +186,6 @@
     <EmbeddedResource Include="forgotPass.resx">
       <DependentUpon>forgotPass.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formUpdatePassword.resx">
-      <DependentUpon>formUpdatePassword.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm1.resx">
       <DependentUpon>LoginForm1.vb</DependentUpon>
     </EmbeddedResource>
