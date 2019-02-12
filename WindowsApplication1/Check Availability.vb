@@ -1,5 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
 Public Class Check_Availability
+    Dim count As Integer = 0
     Public loggedUser As String = "anonymous"
 
     <DllImport("user32.dll", EntryPoint:="SetProcessDPIAware")> _
@@ -65,7 +66,16 @@ Public Class Check_Availability
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
             If TypeOf Ctrl Is TextBox Then
-                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (min + 1)), Ctrl.Font.Style)
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * Form1.Width / 1920), Ctrl.Font.Style)
+            End If
+            If TypeOf Ctrl Is Label Then
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * Form1.Width / 1920), Ctrl.Font.Style)
+            End If
+            If TypeOf Ctrl Is Button Then
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * Form1.Width / 1920), Ctrl.Font.Style)
+            End If
+            If TypeOf Ctrl Is RadioButton Then
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * Form1.Width / 1920), Ctrl.Font.Style)
             End If
         Next
         CW = Me.Width
@@ -73,8 +83,11 @@ Public Class Check_Availability
     End Sub
 
     Public Sub Booking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SetProcessDPIAware()
-        max()
+        If count = 0 Then
+            SetProcessDPIAware()
+            max()
+            count = 1
+        End If
         Me.Top = 100
         Me.Left = (Form1.Width - Me.Width) / 2
         lblWelcome.Parent = PictureBoxHeader
@@ -122,7 +135,7 @@ Public Class Check_Availability
         lblnumAvail.Show()
 
         If availRooms.Length >= 1 Then
-            Me.Height = 700
+            Me.Height = 700 * Form1.Height / 1024
             Me.StartPosition = FormStartPosition.CenterScreen
             lblFirstName.Show()
             lblLastName.Show()
@@ -134,7 +147,6 @@ Public Class Check_Availability
             comboBoxAvailRooms.Show()
             btnBookNow.Show()
             lblSelectRoom.Show()
-            GroupBoxOccupancy.Show()
         Else
             comboBoxAvailRooms.Hide()
             btnBookNow.Hide()
@@ -142,10 +154,13 @@ Public Class Check_Availability
     End Sub
 
     Public Sub reloadForm()
-        Controls.Clear()
-        InitializeComponent()
+        For Each ctrl In Controls
+            If TypeOf ctrl Is TextBox Then
+                ctrl.text = ""
+            End If
+        Next
         lblWelcome.Parent = PictureBoxHeader
-        Show()
+        Me.Show()
     End Sub
 
     Public Function calculateBill(type As String, occupancy As Integer) As Integer
