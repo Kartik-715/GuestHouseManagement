@@ -39,21 +39,21 @@ Partial Class Dashboard
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.lblTax = New System.Windows.Forms.Label()
         Me.lblRoomCharges = New System.Windows.Forms.Label()
-        Me.UserControl_admindashboardnontabular1 = New WindowsApplication1.UserControl_admindashboardnontabular()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblBookedFor = New System.Windows.Forms.Label()
         Me.lblBookedTill = New System.Windows.Forms.Label()
         Me.lblBookedFrom = New System.Windows.Forms.Label()
         Me.lblBookingID = New System.Windows.Forms.Label()
-        Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
-        Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
-        Me.BookingTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.UserControl_admindashboardnontabular1 = New WindowsApplication1.UserControl_admindashboardnontabular()
         Me.btnMyBookings = New WindowsApplication1.RoundButton()
         Me.btnUpdatePassword = New WindowsApplication1.RoundButton()
         Me.btnMyBills = New WindowsApplication1.RoundButton()
         Me.btnBookARoom = New WindowsApplication1.RoundButton()
         Me.btnLogOut = New WindowsApplication1.RoundButton()
+        Me.UserTableTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.userTableTableAdapter()
+        Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
+        Me.BookingTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IITGLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -230,16 +230,6 @@ Partial Class Dashboard
         Me.lblRoomCharges.TabIndex = 0
         Me.lblRoomCharges.Text = "Room Charges :"
         '
-        'UserControl_admindashboardnontabular1
-        '
-        Me.UserControl_admindashboardnontabular1.BackColor = System.Drawing.Color.Azure
-        Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(4, 436)
-        Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(0)
-        Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
-        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(1, 1)
-        Me.UserControl_admindashboardnontabular1.TabIndex = 8
-        Me.UserControl_admindashboardnontabular1.Visible = False
-        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Azure
@@ -294,22 +284,19 @@ Partial Class Dashboard
         Me.lblBookingID.TabIndex = 0
         Me.lblBookingID.Text = "Booking ID"
         '
-        'UserTableTableAdapter1
-        '
-        Me.UserTableTableAdapter1.ClearBeforeFill = True
-        '
-        'GuestHouseDataSet1
-        '
-        Me.GuestHouseDataSet1.DataSetName = "guestHouseDataSet"
-        Me.GuestHouseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'BookingTableAdapter1
-        '
-        Me.BookingTableAdapter1.ClearBeforeFill = True
-        '
         'Timer2
         '
         Me.Timer2.Interval = 1
+        '
+        'UserControl_admindashboardnontabular1
+        '
+        Me.UserControl_admindashboardnontabular1.BackColor = System.Drawing.Color.Azure
+        Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(4, 436)
+        Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
+        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(1, 1)
+        Me.UserControl_admindashboardnontabular1.TabIndex = 8
+        Me.UserControl_admindashboardnontabular1.Visible = False
         '
         'btnMyBookings
         '
@@ -400,6 +387,19 @@ Partial Class Dashboard
         Me.btnLogOut.TabIndex = 4
         Me.btnLogOut.Text = "Log Out"
         Me.btnLogOut.UseVisualStyleBackColor = False
+        '
+        'UserTableTableAdapter1
+        '
+        Me.UserTableTableAdapter1.ClearBeforeFill = True
+        '
+        'GuestHouseDataSet1
+        '
+        Me.GuestHouseDataSet1.DataSetName = "guestHouseDataSet"
+        Me.GuestHouseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BookingTableAdapter1
+        '
+        Me.BookingTableAdapter1.ClearBeforeFill = True
         '
         'Dashboard
         '

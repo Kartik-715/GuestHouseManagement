@@ -303,4 +303,5 @@
         GroupBoxBill.Visible = True
         Timer2.Start()
     End Sub
+
 End Class

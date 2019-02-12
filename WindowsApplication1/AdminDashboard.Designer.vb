@@ -162,6 +162,7 @@ Partial Class AdminDashboard
         'labelNonApproved
         '
         Me.labelNonApproved.AutoSize = True
+        Me.labelNonApproved.Cursor = System.Windows.Forms.Cursors.Hand
         Me.labelNonApproved.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelNonApproved.Location = New System.Drawing.Point(268, 158)
         Me.labelNonApproved.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
@@ -315,6 +316,7 @@ Partial Class AdminDashboard
         'lblPendingBooking
         '
         Me.lblPendingBooking.AutoSize = True
+        Me.lblPendingBooking.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblPendingBooking.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPendingBooking.Location = New System.Drawing.Point(956, 158)
         Me.lblPendingBooking.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
