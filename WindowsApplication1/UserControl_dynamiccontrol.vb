@@ -5,13 +5,19 @@ Public Class UserControl_dynamiccontrol
     Private Shared Function SetProcessDPIAware() As <MarshalAs(UnmanagedType.Bool)> Boolean
     End Function
 
+
+    Dim CW As Integer ' Current Width
+    Dim CH As Integer  ' Current Height
+    Dim RW As Double  ' Ratio change of width
+    Dim RH As Double  ' Ratio change of height
+    Dim min As Double
     Private Sub max()
-        Dim CW As Integer = Me.Width + 1 ' Current Width
-        Dim CH As Integer = Me.Height + 1 ' Current Height
+        CW = Me.Width ' Current Width
+        CH = Me.Height ' Current Height
         Me.Size = New Size(CW * Form1.Width / 1920, CH * Form1.Height / 1080)
-        Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
-        Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
-        Dim min As Double = RW
+        RW = (Me.Width - CW) / CW ' Ratio change of width
+        RH = (Me.Height - CH) / CH ' Ratio change of height
+        min = RW
         If RW > RH Then
             min = RH
         End If
@@ -21,7 +27,9 @@ Public Class UserControl_dynamiccontrol
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
-            'Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * min), Ctrl.Font.Style)
+            If TypeOf Ctrl Is TextBox Then
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * min), Ctrl.Font.Style)
+            End If
         Next
         CW = Me.Width
         CH = Me.Height
@@ -86,12 +94,13 @@ Public Class UserControl_dynamiccontrol
                 .Left = xPos  ' x coordinate of button
                 .Text = "Email:   " & GuestHouseDataSet1.userTable.Rows(n)("username").ToString
                 .Font = New Font(EmailID(n).Font.Name, CInt(13), EmailID(n).Font.Style)
+                .BackColor = System.Drawing.Color.PaleTurquoise
                 Me.Controls.Add(EmailID(n))
                 xPos = xPos + 2 ' Left of next button
                 yPos = 50
             End With
             With (Name(n))
-                .Width = 300 ' Width of button
+                .Width = 500 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
@@ -101,7 +110,7 @@ Public Class UserControl_dynamiccontrol
                 yPos = yPos + .Height ' Left of next button
             End With
             With (Mobile(n))
-                .Width = 300 ' Width of button
+                .Width = 500 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
@@ -118,6 +127,7 @@ Public Class UserControl_dynamiccontrol
                 .Text = "Confirm"
                 .Font = New Font(Confirm(n).Font.Name, CInt(13), Confirm(n).Font.Style)
                 .Tag = n
+                .BackColor = System.Drawing.Color.LightGreen
                 EmailID(n).Controls.Add(Confirm(n))
                 yPos = yPos + 50 ' Left of next button
             End With
@@ -130,12 +140,13 @@ Public Class UserControl_dynamiccontrol
                 .Text = "Cancel"
                 .Font = New Font(cancel(n).Font.Name, CInt(13), cancel(n).Font.Style)
                 .Tag = n
+                .BackColor = System.Drawing.Color.Tomato
                 EmailID(n).Controls.Add(cancel(n))
                 xPos = 2 ' Left of next button
             End With
             AddHandler cancel(n).Click, AddressOf cancelbutton_click
             With (Category(n))
-                .Width = 300 ' Width of button
+                .Width = 500 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
@@ -177,30 +188,31 @@ Public Class UserControl_dynamiccontrol
                 .Height = 250 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Booking ID:   " & GuestHouseDataSet1.Booking.Rows(n)("ID").ToString
+                .Text = "Booking ID:   " & GuestHouseDataSet1.Booking.Rows(n)("BookingID").ToString
                 .Font = New Font(BookingID(n).Font.Name, CInt(13), BookingID(n).Font.Style)
+                .BackColor = System.Drawing.Color.PaleTurquoise
                 Me.Controls.Add(BookingID(n))
                 xPos = xPos + 2 ' Left of next button
                 yPos = 50
             End With
+            With (BookedBy(n))
+                .Width = 500 ' Width of button
+                .Height = 50 ' Height of button
+                .Top = yPos  ' y coordinate of button
+                .Left = xPos  ' x coordinate of button
+                .Text = "Booked By:   " & GuestHouseDataSet1.Booking.Rows(n)("BookedBy").ToString
+                .Font = New Font(BookedBy(n).Font.Name, CInt(13), BookedBy(n).Font.Style)
+                yPos = yPos + .Height ' Left of next button
+                BookingID(n).Controls.Add(BookedBy(n))
+            End With
             With (RoomNo(n))
-                .Width = 300 ' Width of button
+                .Width = 500 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
                 .Text = "Room No:    " & GuestHouseDataSet1.Booking.Rows(n)("RoomNo").ToString
                 .Font = New Font(RoomNo(n).Font.Name, CInt(13), RoomNo(n).Font.Style)
                 BookingID(n).Controls.Add(RoomNo(n))
-                yPos = yPos + .Height ' Left of next button
-            End With
-            With (BookedBy(n))
-                .Width = 300 ' Width of button
-                .Height = 50 ' Height of button
-                .Top = yPos  ' y coordinate of button
-                .Left = xPos  ' x coordinate of button
-                .Text = "Booked By:   " & GuestHouseDataSet1.Booking.Rows(n)("BookedBy").ToString
-                .Font = New Font(BookedBy(n).Font.Name, CInt(13), BookedBy(n).Font.Style)
-                BookingID(n).Controls.Add(BookedBy(n))
                 xPos = xPos + 700 ' Left of next button
             End With
             With (Confirm(n))
@@ -211,6 +223,7 @@ Public Class UserControl_dynamiccontrol
                 .Text = "Confirm"
                 .Tag = n
                 .Font = New Font(Confirm(n).Font.Name, CInt(13), Confirm(n).Font.Style)
+                .BackColor = System.Drawing.Color.MediumTurquoise
                 BookingID(n).Controls.Add(Confirm(n))
                 yPos = yPos + 50 ' Left of next button
             End With
@@ -223,12 +236,13 @@ Public Class UserControl_dynamiccontrol
                 .Text = "Cancel"
                 .Tag = n
                 .Font = New Font(cancel(n).Font.Name, CInt(13), cancel(n).Font.Style)
+                .BackColor = System.Drawing.Color.MediumTurquoise
                 BookingID(n).Controls.Add(cancel(n))
                 xPos = 2 ' Left of next button
             End With
             AddHandler cancel(n).Click, AddressOf cancelbutton_click
             With (BookedFrom(n))
-                .Width = 300 ' Width of button
+                .Width = 500 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
@@ -238,7 +252,7 @@ Public Class UserControl_dynamiccontrol
                 yPos = yPos + .Height ' Left of next button
             End With
             With (BookedTill(n))
-                .Width = 300 ' Width of button
+                .Width = 500 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
@@ -276,24 +290,15 @@ Public Class UserControl_dynamiccontrol
                 .Height = 250 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
-                .Text = "Booking ID   " & GuestHouseDataSet1.Booking.Rows(n)("ID").ToString
+                .Text = "Booking ID:   " & GuestHouseDataSet1.Booking.Rows(n)("BookingID").ToString
                 .Font = New Font(BookingID(n).Font.Name, CInt(13), BookingID(n).Font.Style)
+                .BackColor = System.Drawing.Color.PaleTurquoise
                 Me.Controls.Add(BookingID(n))
                 xPos = xPos + 2 ' Left of next button
                 yPos = 50
             End With
-            With (RoomNum(n))
-                .Width = 300 ' Width of button
-                .Height = 50 ' Height of button
-                .Top = yPos  ' y coordinate of button
-                .Left = xPos  ' x coordinate of button
-                .Text = "RoomNum:   " & GuestHouseDataSet1.Booking.Rows(n)("RoomNo")
-                .Font = New Font(RoomNum(n).Font.Name, CInt(13), RoomNum(n).Font.Style)
-                BookingID(n).Controls.Add(RoomNum(n))
-                yPos = yPos + .Height ' Left of next button
-            End With
             With (Name(n))
-                .Width = 300 ' Width of button
+                .Width = 500 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
@@ -302,8 +307,18 @@ Public Class UserControl_dynamiccontrol
                 BookingID(n).Controls.Add(Name(n))
                 yPos = yPos + .Height ' Left of next button
             End With
+            With (RoomNum(n))
+                .Width = 500 ' Width of button
+                .Height = 50 ' Height of button
+                .Top = yPos  ' y coordinate of button
+                .Left = xPos  ' x coordinate of button
+                .Text = "RoomNum:   " & GuestHouseDataSet1.Booking.Rows(n)("RoomNo")
+                .Font = New Font(RoomNum(n).Font.Name, CInt(13), RoomNum(n).Font.Style)
+                BookingID(n).Controls.Add(RoomNum(n))
+                yPos = yPos + .Height ' Left of next button
+            End With
             With (BookingFrom(n))
-                .Width = 300 ' Width of button
+                .Width = 500 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button
@@ -313,7 +328,7 @@ Public Class UserControl_dynamiccontrol
                 yPos = yPos + .Height ' Yaha ki hai Bakchodi '
             End With
             With (BookingTill(n))
-                .Width = 300 ' Width of button
+                .Width = 500 ' Width of button
                 .Height = 50 ' Height of button
                 .Top = yPos  ' y coordinate of button
                 .Left = xPos  ' x coordinate of button

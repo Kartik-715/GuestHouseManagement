@@ -35,7 +35,6 @@ Partial Class Dashboard
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.UserControl_admindashboardnontabular1 = New WindowsApplication1.UserControl_admindashboardnontabular()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblBookedTillval = New System.Windows.Forms.Label()
         Me.lblBookedFromval = New System.Windows.Forms.Label()
@@ -49,6 +48,7 @@ Partial Class Dashboard
         Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
         Me.BookingTableAdapter1 = New WindowsApplication1.guestHouseDataSetTableAdapters.BookingTableAdapter()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.UserControl_admindashboardnontabular1 = New WindowsApplication1.UserControl_admindashboardnontabular()
         Me.btnMyBookings = New WindowsApplication1.RoundButton()
         Me.btnUpdatePassword = New WindowsApplication1.RoundButton()
         Me.btnMyBills = New WindowsApplication1.RoundButton()
@@ -183,16 +183,6 @@ Partial Class Dashboard
         Me.Panel1.Size = New System.Drawing.Size(980, 566)
         Me.Panel1.TabIndex = 19
         '
-        'UserControl_admindashboardnontabular1
-        '
-        Me.UserControl_admindashboardnontabular1.BackColor = System.Drawing.Color.Azure
-        Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(4, 436)
-        Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(0)
-        Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
-        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(2, 16)
-        Me.UserControl_admindashboardnontabular1.TabIndex = 8
-        Me.UserControl_admindashboardnontabular1.Visible = False
-        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Azure
@@ -303,6 +293,16 @@ Partial Class Dashboard
         'Timer2
         '
         Me.Timer2.Interval = 1
+        '
+        'UserControl_admindashboardnontabular1
+        '
+        Me.UserControl_admindashboardnontabular1.BackColor = System.Drawing.Color.Azure
+        Me.UserControl_admindashboardnontabular1.Location = New System.Drawing.Point(4, 436)
+        Me.UserControl_admindashboardnontabular1.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserControl_admindashboardnontabular1.Name = "UserControl_admindashboardnontabular1"
+        Me.UserControl_admindashboardnontabular1.Size = New System.Drawing.Size(2, 5)
+        Me.UserControl_admindashboardnontabular1.TabIndex = 8
+        Me.UserControl_admindashboardnontabular1.Visible = False
         '
         'btnMyBookings
         '

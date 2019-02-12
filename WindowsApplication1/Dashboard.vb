@@ -21,13 +21,18 @@
 
     End Sub
 
+    Dim CW As Integer ' Current Width
+    Dim CH As Integer  ' Current Height
+    Dim RW As Double  ' Ratio change of width
+    Dim RH As Double  ' Ratio change of height
+    Dim min As Double
     Private Sub max()
-        Dim CW As Integer = Me.Width ' Current Width
-        Dim CH As Integer = Me.Height ' Current Height
+        CW = Me.Width ' Current Width
+        CH = Me.Height ' Current Height
         Me.WindowState = FormWindowState.Maximized
-        Dim RW As Double = (Me.Width - CW) / CW ' Ratio change of width
-        Dim RH As Double = (Me.Height - CH) / CH ' Ratio change of height
-        Dim min As Double = RW
+        RW = (Me.Width - CW) / CW ' Ratio change of width
+        RH = (Me.Height - CH) / CH ' Ratio change of height
+        min = RW
         If RW > RH Then
             min = RH
         End If
@@ -36,7 +41,9 @@
             Ctrl.Height += CInt(Ctrl.Height * RH)
             Ctrl.Left += CInt(Ctrl.Left * RW)
             Ctrl.Top += CInt(Ctrl.Top * RH)
-            ' Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * min), Ctrl.Font.Style)
+            If TypeOf Ctrl Is TextBox Then
+                Ctrl.Font = New Font(Ctrl.Font.Name, CInt(Ctrl.Font.Size * (min + 1)), Ctrl.Font.Style)
+            End If
         Next
         With PictureBox2
             .Width += CInt(PictureBox2.Width * RW)

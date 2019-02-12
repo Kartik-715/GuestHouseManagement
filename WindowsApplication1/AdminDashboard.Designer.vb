@@ -45,12 +45,15 @@ Partial Class AdminDashboard
         Me.PictureBoxLogo = New System.Windows.Forms.PictureBox()
         Me.PictureBoxHeader = New System.Windows.Forms.PictureBox()
         Me.lblWelcome = New System.Windows.Forms.Label()
+        Me.lblPendingBooking = New System.Windows.Forms.Label()
+        Me.GuestHouseDataSet1 = New WindowsApplication1.guestHouseDataSet()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GuestHouseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxGrey, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxHeader, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblHello
@@ -157,9 +160,10 @@ Partial Class AdminDashboard
         'labelNonApproved
         '
         Me.labelNonApproved.AutoSize = True
-        Me.labelNonApproved.Location = New System.Drawing.Point(373, 75)
+        Me.labelNonApproved.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelNonApproved.Location = New System.Drawing.Point(244, 152)
         Me.labelNonApproved.Name = "labelNonApproved"
-        Me.labelNonApproved.Size = New System.Drawing.Size(51, 17)
+        Me.labelNonApproved.Size = New System.Drawing.Size(86, 29)
         Me.labelNonApproved.TabIndex = 15
         Me.labelNonApproved.Text = "Label1"
         '
@@ -303,12 +307,28 @@ Partial Class AdminDashboard
         Me.lblWelcome.TabIndex = 29
         Me.lblWelcome.Text = "Welcome to IITG Guest House Staff Portal"
         '
+        'lblPendingBooking
+        '
+        Me.lblPendingBooking.AutoSize = True
+        Me.lblPendingBooking.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPendingBooking.Location = New System.Drawing.Point(812, 152)
+        Me.lblPendingBooking.Name = "lblPendingBooking"
+        Me.lblPendingBooking.Size = New System.Drawing.Size(86, 29)
+        Me.lblPendingBooking.TabIndex = 30
+        Me.lblPendingBooking.Text = "Label1"
+        '
+        'GuestHouseDataSet1
+        '
+        Me.GuestHouseDataSet1.DataSetName = "guestHouseDataSet"
+        Me.GuestHouseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Azure
         Me.ClientSize = New System.Drawing.Size(1005, 721)
+        Me.Controls.Add(Me.lblPendingBooking)
         Me.Controls.Add(Me.lblWelcome)
         Me.Controls.Add(Me.PictureBoxHeader)
         Me.Controls.Add(Me.PictureBoxLogo)
@@ -334,6 +354,7 @@ Partial Class AdminDashboard
         CType(Me.PictureBoxGrey, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxHeader, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GuestHouseDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -360,4 +381,6 @@ Partial Class AdminDashboard
     Friend WithEvents PictureBoxLogo As System.Windows.Forms.PictureBox
     Friend WithEvents lblWelcome As System.Windows.Forms.Label
     Friend WithEvents PictureBoxHeader As System.Windows.Forms.PictureBox
+    Friend WithEvents lblPendingBooking As System.Windows.Forms.Label
+    Friend WithEvents GuestHouseDataSet1 As WindowsApplication1.guestHouseDataSet
 End Class
