@@ -313,7 +313,7 @@ Public Class UserControl_dynamiccontrol
                 .Font = New Font(Name(n).Font.Name, CInt(13), Name(n).Font.Style)
                 BookingID(n).Controls.Add(Name(n))
                 .Padding = New Padding(25, 0, 0, 0)
-                 yPos = yPos + .Height ' Left of next button
+                yPos = yPos + .Height ' Left of next button
             End With
             With (RoomNum(n))
                 .Width = 500 ' Width of button
